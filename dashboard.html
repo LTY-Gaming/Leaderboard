@@ -23,7 +23,7 @@ h1{font-size:28px}h2{font-size:20px;margin-bottom:12px;color:var(--gold)}
 .v{font-family:'Lilita One',sans-serif;font-size:24px;margin-top:4px}
 .v small{font-family:'Rubik';font-size:12px;color:var(--dim)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
-.grid>div{background:rgba(0,0,0,.2);border-radius:12px;padding:10px 12px}
+.grid>div{background:var(--ph);border-radius:12px;padding:10px 12px}
 .tw{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:14px}
 th{text-align:left;font-size:12px;color:var(--dim);text-transform:uppercase;padding:8px 8px;cursor:pointer;white-space:nowrap;user-select:none}
@@ -31,44 +31,74 @@ td{padding:8px;border-top:1px solid var(--line);white-space:nowrap}
 tr.me td{background:rgba(255,201,74,.12);color:var(--gold);font-weight:600}
 .up{color:var(--teal)}.down{color:var(--pink)}
 .btn{border:1px solid var(--line);background:transparent;color:var(--dim);border-radius:10px;padding:7px 14px;font:600 13px 'Rubik';cursor:pointer}
-.btn:hover{color:var(--text)}.btn.on{background:var(--gold);color:#241800;border-color:var(--gold)}
+.btn:hover{color:var(--text)}.btn.on{background:var(--gold);color:var(--gtext);border-color:var(--gold)}
 .btn.small{padding:5px 10px;margin-right:6px}
 .more{text-align:center;margin-top:12px}
 .bar{margin-bottom:10px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.chip{display:inline-block;background:rgba(0,0,0,.25);border-radius:999px;padding:5px 12px;margin:0 6px 6px 0;font-size:13px}
+.chip{display:inline-block;background:var(--ph);border-radius:999px;padding:5px 12px;margin:0 6px 6px 0;font-size:13px}
 .note{color:var(--dim);font-size:13px}
 ul{margin:0;padding-left:18px}li{margin:5px 0}
 @media(max-width:760px){.hero{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+
+:root{--navbg:rgba(11,13,23,.88);--ph:rgba(0,0,0,.22);--gtext:#241800}
+[data-theme=light]{--bg:#F4F2FB;--panel:#FFFFFF;--alt:#F1EEFF;--line:rgba(0,0,0,.1);--gold:#B07A00;--pink:#D93A62;--teal:#00806F;--text:#241F3D;--dim:#5E5885;--navbg:rgba(244,242,251,.92);--ph:rgba(0,0,0,.06);--gtext:#fff}
+[data-theme=light] body{background:var(--bg)}
+html{scroll-behavior:smooth}
+body{padding:0 14px 70px}.wrap{padding-top:20px}
+.card,h1{scroll-margin-top:64px}
+#nav{position:sticky;top:0;z-index:20;display:flex;gap:4px;align-items:center;overflow-x:auto;padding:10px 14px;margin:0 -14px;background:var(--navbg);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);scrollbar-width:none}
+#nav::-webkit-scrollbar{display:none}
+#nav a{color:var(--dim);text-decoration:none;font-weight:600;font-size:13px;padding:6px 10px;border-radius:9px;white-space:nowrap}
+#nav a:hover{color:var(--text);background:var(--ph)}
+#nav .sp{flex:1}#nav .btn{white-space:nowrap;margin-right:0;margin-left:4px}
+.clk{cursor:pointer}.clk:hover td{background:var(--ph)}
+#modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:50;align-items:center;justify-content:center;padding:14px}
+.mbox{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;width:100%;max-width:560px;max-height:90vh;overflow:auto;position:relative}
+#mclose{position:absolute;top:12px;right:12px}
+.inp{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--ph);color:var(--text);font:500 15px 'Rubik';margin:8px 0}
+.pb{height:12px;border-radius:99px;background:var(--ph);overflow:hidden;margin:6px 0}.pb div{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold))}
+.goal{margin-bottom:14px}.gh{display:flex;justify-content:space-between}
+#banner ul{list-style:none;padding:0}#banner li{margin:7px 0}
+@media(max-width:560px){body{padding:0 10px 60px}#nav{margin:0 -10px;padding:8px 10px}h1{font-size:23px}td,th{padding:6px 5px;font-size:13px}.card{padding:14px}.mbox{padding:16px}.v{font-size:20px}}
 </style>
 </head>
 <body>
+<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-sa">SA</a><a href="#sec-rivals">Rivals</a><a href="#sec-climbers">Climbers</a><a href="#sec-membership">Membership</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
 <div class="wrap">
   <h1 id="title">Club Leaderboard</h1>
   <p class="sub" id="updated">Loading…</p>
   <div id="err"></div>
   <div class="hero" id="hero"></div>
+  <div class="card" id="banner"></div>
+  <div class="card" id="meCard" style="display:none"></div>
+  <div class="card" id="sec-goal"><h2>Club goals</h2><div id="goals"></div><p class="note">Rank goals: progress is your trophies as a share of the target club's trophies.</p></div>
 
-  <div class="card"><h2>Member trophy leaderboard</h2><div class="tw" id="tMembers"></div></div>
-  <div class="card" id="rankedCard" style="display:none"><h2>Member ranked leaderboard</h2><p class="note" id="rankedNote"></p><div class="tw" id="tRanked"></div></div>
+  <div class="card" id="sec-members"><h2>Member trophy leaderboard</h2><p class="note">Tap a member to see their history.</p><div class="tw" id="tMembers"></div></div>
+  <div class="card" id="rankedCard" style="display:none"><h2>Member ranked leaderboard</h2><p class="note" id="rankedNote"></p><div id="tierChips"></div><canvas id="cTier" height="90"></canvas><div class="tw" id="tRanked" style="margin-top:14px"></div></div>
 
-  <div class="card"><h2>Club vs South Africa</h2>
+  <div class="card" id="sec-sa"><h2>Club vs South Africa</h2>
     <div class="grid" id="saCards"></div>
     <div class="bar" id="barSA"></div><canvas id="cSA" height="110"></canvas>
     <h2 style="margin-top:20px;font-size:17px">South African top 200 clubs</h2><div class="tw" id="tZA"></div>
   </div>
+
+  <div class="card" id="sec-rivals"><h2>Rival clubs</h2>
+    <p class="note" id="rivalsNote" style="display:none">Rivals appear once the club is in the SA top 200.</p>
+    <div id="rivalsBody"><p class="note">The three clubs above and below us. Chart: us and the two nearest on each side.</p><div class="tw" id="tRivals"></div>
+    <div class="bar" id="barRiv" style="margin-top:14px"></div><canvas id="cRiv" height="110"></canvas></div></div>
 
   <div class="card"><h2>Our members in the SA top 200 players</h2><div class="tw" id="tZP"></div></div>
 
   <div class="card"><h2>Club trophy trend</h2><p class="note" id="weekly"></p>
     <div class="bar" id="barClub"></div><canvas id="cClub" height="110"></canvas></div>
 
-  <div class="card two">
+  <div class="card two" id="sec-climbers">
     <div><h2>Top climbers this week</h2><div id="climb7"></div></div>
     <div><h2>Top climbers this month</h2><div id="climb30"></div></div>
   </div>
 
-  <div class="card"><h2>Membership</h2>
+  <div class="card" id="sec-membership"><h2>Membership</h2>
     <p id="roles"></p><p class="note" id="joins"></p>
     <div class="two"><div><div class="k">Member count</div><canvas id="cCount" height="150"></canvas></div>
     <div><div class="k">Trophy distribution</div><canvas id="cHist" height="150"></canvas></div></div>
@@ -76,8 +106,11 @@ ul{margin:0;padding-left:18px}li{margin:5px 0}
 
 </div>
 
+<div id="modal"><div class="mbox"><button class="btn small" id="mclose" aria-label="Close">✕</button><div id="mbody"></div></div></div>
 <script>
-const SHOW_MEMBER_NAMES = true;   // <-- set to true to show member names publicly
+const SHOW_MEMBER_NAMES = false;   // <-- set to true to show member names publicly
+// Goals: add more, e.g. {label: '100k club trophies', type: 'trophies', target: 100000}
+const GOALS = [{label: 'Top 10 in South Africa', type: 'rank', target: 10}];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = v => (v === '' || v == null || isNaN(v)) ? null : Number(v);
@@ -89,7 +122,17 @@ const nm = r => SHOW_MEMBER_NAMES ? r.name : anon(r.tag);
 const ROLES = {president:'President', vicePresident:'Vice President', senior:'Senior', member:'Member'};
 const ROLE_ORDER = {president:0, vicePresident:1, senior:2, member:3};
 const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0, 10);
-const GOLD = '#FFC94A', TEAL = '#00B8A5', PINK = '#FF5C82';
+const cv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null;
+const paint = () => { GOLD = cv('--gold'); TEAL = cv('--teal'); PINK = cv('--pink'); };
+const store = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
+const fetchStore = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const setTheme = t => { document.documentElement.dataset.theme = t; store('lty_theme', t); };
+setTheme(fetchStore('lty_theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+ME = fetchStore('lty_me');
+const mkChart = (id, cfg) => { const old = Chart.getChart($(id)); if (old) old.destroy(); return new Chart($(id), cfg); };
+const kv = (k, v) => `<div><div class="k">${k}</div><div class="v">${v}</div></div>`;
+const normTag = t => { t = t.trim().toUpperCase().replace(/O/g, '0'); return t.startsWith('#') ? t : '#' + t; };
 
 async function load(n) {
   const r = await fetch(n + '.csv?' + Date.now());
@@ -101,31 +144,31 @@ const group = rows => { const m = new Map(); rows.forEach(r => { if (!m.has(r.da
 const before = (dates, d) => { let b = null; for (const x of dates) if (x <= d) b = x; return b; };
 const base = (dates, latest, days) => before(dates, addDays(latest, -days)) || (dates[0] !== latest ? dates[0] : null);
 
-function mkTable(id, cols, rows, sk, sd, hl, n0 = 25) {
+function mkTable(id, cols, rows, sk, sd, hl, n0 = 25, mem = false) {
   const st = {k: sk, d: sd, n: n0}, el = $(id);
   if (!rows.length) { el.innerHTML = '<p class="note">Nothing to show yet.</p>'; return; }
   const draw = () => {
     const c = cols.find(c => c.k === st.k);
     const s = [...rows].sort((a, b) => { const x = c.v(a), y = c.v(b); if (x == null) return 1; if (y == null) return -1; return (typeof x === 'string' ? x.localeCompare(y) : x - y) * st.d; });
     el.innerHTML = '<table><thead><tr>' + cols.map(c => `<th data-k="${c.k}">${c.l}${c.k === st.k ? (st.d > 0 ? ' ▲' : ' ▼') : ''}</th>`).join('') + '</tr></thead><tbody>' +
-      s.slice(0, st.n).map(r => `<tr class="${hl && hl(r) ? 'me' : ''}">` + cols.map(c => `<td>${c.f(r)}</td>`).join('') + '</tr>').join('') + '</tbody></table>' +
+      s.slice(0, st.n).map(r => `<tr class="${hl && hl(r) ? 'me' : ''}${mem ? ' clk' : ''}"${mem ? ` data-tag="${esc(r.tag)}"` : ''}>` + cols.map(c => `<td>${c.f(r)}</td>`).join('') + '</tr>').join('') + '</tbody></table>' +
       (s.length > st.n ? '<div class="more"><button class="btn">Load more</button></div>' : '');
     el.querySelectorAll('th').forEach(h => h.onclick = () => { const k = h.dataset.k; st.d = st.k === k ? -st.d : (cols.find(c => c.k === k).first || -1); st.k = k; draw(); });
     const b = el.querySelector('.more button'); if (b) b.onclick = () => { st.n += 25; draw(); };
+    el.querySelectorAll('tr[data-tag]').forEach(tr => tr.onclick = () => openMember(tr.dataset.tag));
   };
   draw();
 }
 
 const charts = {};
 const cut = (dates, rng) => rng ? dates.filter(d => d >= addDays(dates[dates.length - 1], -rng)) : dates;
-const axis = (extra = {}) => ({ticks: {color: '#9C96C9', maxTicksLimit: 8}, grid: {color: 'rgba(255,255,255,.05)'}, ...extra});
-const opts = scales => ({responsive: true, plugins: {legend: {labels: {color: '#9C96C9'}}}, scales});
+const axis = (extra = {}) => ({ticks: {color: cv('--dim'), maxTicksLimit: 8}, grid: {color: cv('--line')}, ...extra});
+const opts = scales => ({responsive: true, plugins: {legend: {labels: {color: cv('--dim')}}}, scales});
 function trend(id, bar, build) {
   const el = $(bar); let rng = 0;
   el.innerHTML = [['7D', 7], ['30D', 30], ['90D', 90], ['All', 0]].map(([l, d]) => `<button class="btn small" data-d="${d}">${l}</button>`).join('');
   const go = () => {
-    if (charts[id]) charts[id].destroy();
-    charts[id] = new Chart($(id), build(rng));
+    charts[id] = mkChart(id, build(rng));
     el.querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.d === rng));
   };
   el.onclick = e => { const b = e.target.closest('button'); if (b) { rng = +b.dataset.d; go(); } };
@@ -135,6 +178,7 @@ const line = (labels, datasets, scales) => ({type: 'line', data: {labels, datase
 const ds = (label, data, color, extra = {}) => ({label, data, borderColor: color, backgroundColor: color, tension: .25, pointRadius: 2, spanGaps: false, ...extra});
 
 function render(mem, club, zc, zp) {
+  paint();
   const MG = group(mem), md = [...MG.keys()].sort(), L = md[md.length - 1];
   if (!L) throw new Error('no data yet — run the workflow once');
   club.sort((a, b) => a.date < b.date ? -1 : 1);
@@ -163,24 +207,30 @@ function render(mem, club, zc, zp) {
     {k: 'd1', l: '1d', v: r => r.d1, f: r => `<span class="${cls(r.d1)}">${sgn(r.d1)}</span>`},
     {k: 'd7', l: '7d', v: r => r.d7, f: r => `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`},
     {k: 'mv', l: 'Move', v: r => r.mv, f: r => arrow(r.mv)}
-  ], cur, 'rank', 1, null, 999);
+  ], cur, 'rank', 1, r => r.tag === ME, 999, true);
 
   // ---- ranked (only if real data exists)
   const rk = cur.filter(r => num(r.ranked_season_id) != null && num(r.ranked_elo) != null);
   if (rk.length) {
     const season = Math.max(...rk.map(r => num(r.ranked_season_id)));
-    const rows = rk.filter(r => num(r.ranked_season_id) === season).map(r => ({...r, rr: num(r.ranked_rank) ?? 0, elo: num(r.ranked_elo), best: num(r.best_elo)}));
+    const E7 = new Map((MG.get(base(md, L, 7)) || []).map(r => [r.tag, {s: num(r.ranked_season_id), e: num(r.ranked_elo)}]));
+    const rows = rk.filter(r => num(r.ranked_season_id) === season).map(r => { const o = E7.get(r.tag), elo = num(r.ranked_elo); return {...r, rr: num(r.ranked_rank) ?? 0, elo, best: num(r.best_elo), e7: o && o.s === season && o.e != null ? elo - o.e : null}; });
     rows.sort((a, b) => (b.rr * 1e5 + b.elo) - (a.rr * 1e5 + a.elo));
     rows.forEach((r, i) => r.pos = i + 1);
     $('rankedCard').style.display = '';
     $('rankedNote').textContent = `Season ${season}. Sorted by tier, then Elo. Members with no ranked data this season aren't listed.`;
+    const tiers = new Map(); rows.forEach(r => { const k = r.ranked_rank_name; if (!tiers.has(k)) tiers.set(k, {n: 0, rr: r.rr}); tiers.get(k).n++; });
+    const tl = [...tiers].sort((a, b) => b[1].rr - a[1].rr);
+    $('tierChips').innerHTML = tl.map(([k, v]) => `<span class="chip">${esc(k)}: <b>${v.n}</b></span>`).join('');
+    mkChart('cTier', {type: 'bar', data: {labels: tl.map(x => x[0]), datasets: [{label: 'Members', data: tl.map(x => x[1].n), backgroundColor: GOLD}]}, options: opts({x: axis(), y: axis({ticks: {color: cv('--dim'), precision: 0}})})});
     mkTable('tRanked', [
       {k: 'pos', l: '#', v: r => r.pos, f: r => r.pos, first: 1},
       {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
       {k: 'tier', l: 'Tier', v: r => r.rr * 1e5 + r.elo, f: r => esc(r.ranked_rank_name)},
       {k: 'elo', l: 'Elo', v: r => r.elo, f: r => fmt(r.elo)},
+      {k: 'e7', l: 'Elo 7d', v: r => r.e7, f: r => `<span class="${cls(r.e7)}">${sgn(r.e7)}</span>`},
       {k: 'best', l: 'All-time best', v: r => r.best, f: r => r.best == null ? '–' : `${esc(r.best_rank_name)} (${fmt(r.best)})`}
-    ], rows, 'pos', 1, null, 999);
+    ], rows, 'pos', 1, r => r.tag === ME, 999, true);
   }
 
   // ---- club vs SA
@@ -222,7 +272,7 @@ function render(mem, club, zc, zp) {
     {k: 'rank', l: 'SA #', v: r => r.rank, f: r => r.rank, first: 1},
     {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
     {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}
-  ], pr, 'rank', 1, () => true, 999);
+  ], pr, 'rank', 1, r => r.tag === ME, 999, true);
 
   // ---- club trophy trend + weekly gain
   const cd = club.map(r => r.date), cmap = new Map(club.map(r => [r.date, r]));
@@ -252,17 +302,124 @@ function render(mem, club, zc, zp) {
     b.forEach(t => { if (!a.has(t)) j++; }); a.forEach(t => { if (!b.has(t)) lv++; });
   }
   $('joins').textContent = md.length > 1 ? `Last 7 days: ${j} joined, ${lv} left` : 'Joins and leaves appear after a second day of data.';
-  new Chart($('cCount'), line(cd, [ds('Members', club.map(r => num(r.member_count)), TEAL)], {x: axis(), y: axis({beginAtZero: false})}));
+  mkChart('cCount', line(cd, [ds('Members', club.map(r => num(r.member_count)), TEAL)], {x: axis(), y: axis({beginAtZero: false})}));
   const ts = cur.map(r => r.t), lo = Math.floor(Math.min(...ts) / 5000) * 5000, bins = [];
   for (let b = lo; b <= Math.max(...ts); b += 5000) bins.push(b);
-  new Chart($('cHist'), {type: 'bar', data: {labels: bins.map(b => (b / 1000) + 'k'), datasets: [{label: 'Members', data: bins.map(b => ts.filter(t => t >= b && t < b + 5000).length), backgroundColor: PINK}]},
-    options: opts({x: axis(), y: axis({ticks: {color: '#9C96C9', precision: 0}})})});
+  mkChart('cHist', {type: 'bar', data: {labels: bins.map(b => (b / 1000) + 'k'), datasets: [{label: 'Members', data: bins.map(b => ts.filter(t => t >= b && t < b + 5000).length), backgroundColor: PINK}]},
+    options: opts({x: axis(), y: axis({ticks: {color: cv('--dim'), precision: 0}})})});
+
+  // ===== extras: find me, goals, rivals, highlights =====
+  const H = new Map();
+  md.forEach(d => MG.get(d).forEach(r => { if (!H.has(r.tag)) H.set(r.tag, []); H.get(r.tag).push({d, t: num(r.trophies), s: num(r.ranked_season_id), elo: num(r.ranked_elo)}); }));
+  CTX = {H, cur};
+  const b7m = base(md, L, 7);
+  const rank7 = new Map([...T7].sort((a, b) => b[1] - a[1]).map(([t], i) => [t, i + 1]));
+  const myG = b7 ? myT - num(cmap.get(b7).trophies) : null;
+  const zh = new Map(); zc.forEach(r => { if (!zh.has(r.tag)) zh.set(r.tag, new Map()); zh.get(r.tag).set(r.date, num(r.trophies)); });
+  const zb = zL ? base(zd, zL, 7) : null;
+  const zg = t => { const m = zh.get(t); return zb && m && m.has(zb) && m.has(zL) ? m.get(zL) - m.get(zb) : null; };
+
+  // find me
+  const meR = cur.find(r => r.tag === ME), meC = $('meCard');
+  if (meR) {
+    const up = cur[meR.rank - 2];
+    meC.style.display = '';
+    meC.innerHTML = `<h2>Your stats <button class="btn small" id="meChange" style="float:right">Change</button></h2><div class="grid">` +
+      kv('Club rank', '#' + meR.rank + ' of ' + cur.length) + kv('Trophies', fmt(meR.t)) +
+      kv('7-day gain', `<span class="${cls(meR.d7)}">${sgn(meR.d7)}</span>`) +
+      (up ? kv('To pass ' + esc(nm(up)), fmt(up.t - meR.t + 1)) : kv('Position', 'You lead the club')) +
+      (meR.ranked_rank_name ? kv('Ranked', esc(meR.ranked_rank_name) + ' · ' + fmt(num(meR.ranked_elo))) : '') + '</div>';
+    $('meChange').onclick = openFind;
+  } else meC.style.display = 'none';
+
+  // goals
+  $('goals').innerHTML = GOALS.map(g => {
+    let pct, done, line, eta = '';
+    if (g.type === 'rank') {
+      const tg = zr.find(r => r.rank === g.target);
+      if (!tg) return '';
+      done = !!me && me.rank <= g.target;
+      pct = Math.min(100, myT / tg.t * 100);
+      const gap = tg.t - myT + 1, rg = zg(tg.tag);
+      if (!done && myG != null && rg != null) { const net = myG - rg; eta = net > 0 ? ` At the current pace (${sgn(myG)} vs ${sgn(rg)} for #${g.target} this week) that's roughly ${Math.ceil(gap / net)} week(s) - a rough estimate, as the target keeps moving.` : ` Out-gain the #${g.target} club (${sgn(rg)} this week) to start closing the gap.`; }
+      line = done ? `We're at #${me.rank} in South Africa!` : `${fmt(gap)} trophies to pass ${esc(tg.name)} (#${g.target}).${eta}`;
+    } else {
+      done = myT >= g.target; pct = Math.min(100, myT / g.target * 100);
+      if (!done && myG > 0) eta = ` At ${sgn(myG)} a week, roughly ${Math.ceil((g.target - myT) / myG)} week(s).`;
+      line = done ? 'Reached!' : `${fmt(g.target - myT)} trophies to go.${eta}`;
+    }
+    return `<div class="goal"><div class="gh"><b>${esc(g.label)}</b><span>${done ? 'Done' : pct.toFixed(1) + '%'}</span></div><div class="pb"><div style="width:${done ? 100 : pct}%"></div></div><p class="note">${line}</p></div>`;
+  }).join('') || '<p class="note">Goals appear once South African ranking data exists.</p>';
+
+  // rivals
+  $('rivalsBody').style.display = me ? '' : 'none';
+  $('rivalsNote').style.display = me ? 'none' : '';
+  if (me) {
+    const rv = zr.filter(r => Math.abs(r.rank - me.rank) <= 3).map(r => ({...r, gap: r.t - me.t, wk: zg(r.tag)}));
+    mkTable('tRivals', [
+      {k: 'rank', l: '#', v: r => r.rank, f: r => r.rank, first: 1},
+      {k: 'name', l: 'Club', v: r => r.name, f: r => esc(r.name), first: 1},
+      {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
+      {k: 'gap', l: 'vs us', v: r => r.gap, f: r => r.tag === tag ? '–' : sgn(r.gap)},
+      {k: 'wk', l: '7d gain', v: r => r.wk, f: r => `<span class="${cls(r.wk)}">${sgn(r.wk)}</span>`}
+    ], rv, 'rank', 1, r => r.tag === tag, 999);
+    const PAL = [TEAL, PINK, '#8C7CFF', '#FF9F4A'], pick = rv.filter(r => Math.abs(r.rank - me.rank) <= 2);
+    trend('cRiv', 'barRiv', rng => {
+      const d = cut(zd, rng); let i = 0;
+      return line(d, pick.map(r => r.tag === tag ? ds(r.name + ' (us)', d.map(x => zh.get(r.tag)?.get(x) ?? null), GOLD, {borderWidth: 4}) : ds(r.name, d.map(x => zh.get(r.tag)?.get(x) ?? null), PAL[i++ % PAL.length])), {x: axis(), y: axis()});
+    });
+  }
+
+  // weekly highlights (positive only)
+  const items = [];
+  const tc = cur.filter(r => r.d7 > 0).sort((a, b) => b.d7 - a.d7)[0];
+  if (tc) items.push(`🚀 <b>${esc(nm(tc))}</b> led the climb: <b class="up">${sgn(tc.d7)}</b> trophies`);
+  const jump = cur.map(r => ({r, m: rank7.has(r.tag) ? rank7.get(r.tag) - r.rank : null})).filter(x => x.m > 0).sort((a, b) => b.m - a.m)[0];
+  if (jump) items.push(`📈 Biggest rank jump: <b>${esc(nm(jump.r))}</b> up ${jump.m} place${jump.m > 1 ? 's' : ''}`);
+  const pbN = b7m ? cur.filter(r => { const h = H.get(r.tag).filter(x => x.d <= b7m).map(x => x.t); return h.length && r.t > Math.max(...h); }).length : 0;
+  if (pbN) items.push(`⭐ ${pbN} member${pbN > 1 ? 's' : ''} hit a new personal best`);
+  if (myG > 0) items.push(`🏆 The club gained <b class="up">${sgn(myG)}</b> trophies`);
+  const sr = zb && me && Z.get(zb) ? Z.get(zb).find(r => r.tag === tag) : null;
+  if (sr && num(sr.rank) > me.rank) items.push(`🇿🇦 Up ${num(sr.rank) - me.rank} place${num(sr.rank) - me.rank > 1 ? 's' : ''} in South Africa`);
+  if (j > 0) items.push(`👋 ${j} new member${j > 1 ? 's' : ''} joined`);
+  $('banner').innerHTML = `<h2>This week's highlights</h2>` + (items.length ? '<ul>' + items.map(x => `<li>${x}</li>`).join('') + '</ul>' : `<p class="note">${b7m ? 'Nothing new to highlight yet - keep pushing!' : 'Highlights appear after a second day of data.'}</p>`);
 }
+
+function closeModal() { ['cMT', 'cME'].forEach(i => { const c = $(i) && Chart.getChart($(i)); if (c) c.destroy(); }); $('modal').style.display = 'none'; $('mbody').innerHTML = ''; }
+function openMember(t) {
+  if (!CTX || !CTX.H.has(t)) return;
+  const h = CTX.H.get(t), r = CTX.cur.find(x => x.tag === t); if (!r) return;
+  const season = num(r.ranked_season_id), eh = h.filter(x => x.s != null && x.s === season && x.elo != null);
+  $('mbody').innerHTML = `<h2>${esc(nm(r))}</h2><p class="note">${ROLES[r.role] || esc(r.role)} · club rank #${r.rank}</p><div class="grid">` +
+    kv('Trophies', fmt(r.t)) + kv('Best tracked', fmt(Math.max(...h.map(x => x.t)))) + kv('7-day gain', `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`) +
+    (r.ranked_rank_name ? kv('Ranked', esc(r.ranked_rank_name) + ' · ' + fmt(num(r.ranked_elo))) : '') + '</div>' +
+    '<div class="k">Trophy history</div><canvas id="cMT" height="130"></canvas>' +
+    (eh.length > 1 ? `<div class="k" style="margin-top:12px">Ranked Elo (season ${season})</div><canvas id="cME" height="110"></canvas>` : '');
+  $('modal').style.display = 'flex';
+  mkChart('cMT', line(h.map(x => x.d), [ds('Trophies', h.map(x => x.t), GOLD)], {x: axis(), y: axis()}));
+  if (eh.length > 1) mkChart('cME', line(eh.map(x => x.d), [ds('Elo', eh.map(x => x.elo), TEAL)], {x: axis(), y: axis()}));
+}
+function openFind() {
+  if (!CTX) return;
+  $('mbody').innerHTML = `<h2>Find me</h2><p class="note">Enter your player tag from your in-game profile. It's saved in this browser only.</p><input id="tagIn" class="inp" placeholder="#ABC123" value="${esc(ME || '')}"><p class="note" id="findMsg"></p><button class="btn on" id="findGo">Save</button> <button class="btn" id="findClr">Clear</button>`;
+  $('modal').style.display = 'flex';
+  $('findGo').onclick = () => {
+    const t = normTag($('tagIn').value);
+    if (!CTX.cur.some(r => r.tag === t)) { $('findMsg').textContent = `That tag isn't in the club right now.`; return; }
+    ME = t; store('lty_me', t); closeModal(); render(...DATA);
+  };
+  $('findClr').onclick = () => { ME = null; store('lty_me', null); closeModal(); render(...DATA); };
+}
+$('mclose').onclick = closeModal;
+$('modal').onclick = e => { if (e.target.id === 'modal') closeModal(); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+$('findBtn').onclick = openFind;
+$('themeBtn').onclick = () => { setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'); if (DATA) render(...DATA); };
 
 (async () => {
   try {
     const [mem, club, zc, zp] = await Promise.all(['club_members', 'club_daily', 'za_clubs', 'za_players'].map(load));
-    render(mem, club, zc, zp);
+    DATA = [mem, club, zc, zp]; render(...DATA);
   } catch (e) {
     $('err').style.display = 'block';
     $('err').innerHTML = 'Could not load data: <code>' + esc(e.message) + '</code>. Run the workflow once so the CSV files exist, and open the deployed site rather than the file directly.';
