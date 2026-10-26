@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Club Leaderboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<style>
+:root{--bg:#0B0D17;--panel:#121625;--alt:#191E30;--line:rgba(255,255,255,.08);--gold:#FFC94A;--pink:#FF5C82;--teal:#00B8A5;--text:#F1EEFF;--dim:#9C96C9}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Rubik',sans-serif;color:var(--text);padding:28px 14px 70px;background:radial-gradient(ellipse at top left,rgba(255,92,130,.12),transparent 45%),radial-gradient(ellipse at bottom right,rgba(0,184,165,.10),transparent 50%),var(--bg)}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2{font-family:'Lilita One',sans-serif;font-weight:400;margin:0}
+h1{font-size:28px}h2{font-size:20px;margin-bottom:12px;color:var(--gold)}
+.sub{color:var(--dim);font-size:13px;margin:4px 0 22px}
+#err{display:none;background:rgba(255,92,130,.1);border:1px solid rgba(255,92,130,.3);border-radius:14px;padding:14px 16px;margin-bottom:18px;font-size:14px}
+.hero{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.card{background:linear-gradient(160deg,var(--alt),var(--panel));border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:18px}
+.hero .card{margin:0;padding:14px}
+.k{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.5px}
+.v{font-family:'Lilita One',sans-serif;font-size:24px;margin-top:4px}
+.v small{font-family:'Rubik';font-size:12px;color:var(--dim)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.grid>div{background:rgba(0,0,0,.2);border-radius:12px;padding:10px 12px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:12px;color:var(--dim);text-transform:uppercase;padding:8px 8px;cursor:pointer;white-space:nowrap;user-select:none}
+td{padding:8px;border-top:1px solid var(--line);white-space:nowrap}
+tr.me td{background:rgba(255,201,74,.12);color:var(--gold);font-weight:600}
+.up{color:var(--teal)}.down{color:var(--pink)}
+.btn{border:1px solid var(--line);background:transparent;color:var(--dim);border-radius:10px;padding:7px 14px;font:600 13px 'Rubik';cursor:pointer}
+.btn:hover{color:var(--text)}.btn.on{background:var(--gold);color:#241800;border-color:var(--gold)}
+.btn.small{padding:5px 10px;margin-right:6px}
+.more{text-align:center;margin-top:12px}
+.bar{margin-bottom:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chip{display:inline-block;background:rgba(0,0,0,.25);border-radius:999px;padding:5px 12px;margin:0 6px 6px 0;font-size:13px}
+.note{color:var(--dim);font-size:13px}
+ul{margin:0;padding-left:18px}li{margin:5px 0}
+@media(max-width:760px){.hero{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 id="title">Club Leaderboard</h1>
+  <p class="sub" id="updated">Loading…</p>
+  <div id="err"></div>
+  <div class="hero" id="hero"></div>
+
+  <div class="card"><h2>Member trophy leaderboard</h2><div class="tw" id="tMembers"></div></div>
+  <div class="card" id="rankedCard" style="display:none"><h2>Member ranked leaderboard</h2><p class="note" id="rankedNote"></p><div class="tw" id="tRanked"></div></div>
+
+  <div class="card"><h2>Club vs South Africa</h2>
+    <div class="grid" id="saCards"></div>
+    <div class="bar" id="barSA"></div><canvas id="cSA" height="110"></canvas>
+    <h2 style="margin-top:20px;font-size:17px">South African top 200 clubs</h2><div class="tw" id="tZA"></div>
+  </div>
+
+  <div class="card"><h2>Our members in the SA top 200 players</h2><div class="tw" id="tZP"></div></div>
+
+  <div class="card"><h2>Club trophy trend</h2><p class="note" id="weekly"></p>
+    <div class="bar" id="barClub"></div><canvas id="cClub" height="110"></canvas></div>
+
+  <div class="card two">
+    <div><h2>Top climbers this week</h2><div id="climb7"></div></div>
+    <div><h2>Top climbers this month</h2><div id="climb30"></div></div>
+  </div>
+
+  <div class="card"><h2>Membership</h2>
+    <p id="roles"></p><p class="note" id="joins"></p>
+    <div class="two"><div><div class="k">Member count</div><canvas id="cCount" height="150"></canvas></div>
+    <div><div class="k">Trophy distribution</div><canvas id="cHist" height="150"></canvas></div></div>
+  </div>
+
+  <div class="card"><h2>Club settings change log</h2><div id="changes"></div></div>
+</div>
+
+<script>
+const SHOW_MEMBER_NAMES = false;   // <-- set to true to show member names publicly
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num = v => (v === '' || v == null || isNaN(v)) ? null : Number(v);
+const fmt = n => n == null ? '–' : Math.round(n).toLocaleString('en-ZA');
+const sgn = n => n == null ? '–' : (n > 0 ? '+' : '') + fmt(n);
+const cls = n => n > 0 ? 'up' : n < 0 ? 'down' : '';
+const anon = t => 'Member ' + [...t].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7).toString(36).slice(0, 4).toUpperCase();
+const nm = r => SHOW_MEMBER_NAMES ? r.name : anon(r.tag);
+const ROLES = {president:'President', vicePresident:'Vice President', senior:'Senior', member:'Member'};
+const ROLE_ORDER = {president:0, vicePresident:1, senior:2, member:3};
+const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0, 10);
+const GOLD = '#FFC94A', TEAL = '#00B8A5', PINK = '#FF5C82';
+
+async function load(n) {
+  const r = await fetch(n + '.csv?' + Date.now());
+  if (!r.ok) throw new Error(n + '.csv not found');
+  // dynamicTyping stays OFF: ISO dates stay strings; numbers go through num()
+  return Papa.parse(await r.text(), {header: true, skipEmptyLines: true}).data;
+}
+const group = rows => { const m = new Map(); rows.forEach(r => { if (!m.has(r.date)) m.set(r.date, []); m.get(r.date).push(r); }); return m; };
+const before = (dates, d) => { let b = null; for (const x of dates) if (x <= d) b = x; return b; };
+const base = (dates, latest, days) => before(dates, addDays(latest, -days)) || (dates[0] !== latest ? dates[0] : null);
+
+function mkTable(id, cols, rows, sk, sd, hl) {
+  const st = {k: sk, d: sd, n: 25}, el = $(id);
+  if (!rows.length) { el.innerHTML = '<p class="note">Nothing to show yet.</p>'; return; }
+  const draw = () => {
+    const c = cols.find(c => c.k === st.k);
+    const s = [...rows].sort((a, b) => { const x = c.v(a), y = c.v(b); if (x == null) return 1; if (y == null) return -1; return (typeof x === 'string' ? x.localeCompare(y) : x - y) * st.d; });
+    el.innerHTML = '<table><thead><tr>' + cols.map(c => `<th data-k="${c.k}">${c.l}${c.k === st.k ? (st.d > 0 ? ' ▲' : ' ▼') : ''}</th>`).join('') + '</tr></thead><tbody>' +
+      s.slice(0, st.n).map(r => `<tr class="${hl && hl(r) ? 'me' : ''}">` + cols.map(c => `<td>${c.f(r)}</td>`).join('') + '</tr>').join('') + '</tbody></table>' +
+      (s.length > st.n ? '<div class="more"><button class="btn">Load more</button></div>' : '');
+    el.querySelectorAll('th').forEach(h => h.onclick = () => { const k = h.dataset.k; st.d = st.k === k ? -st.d : (cols.find(c => c.k === k).first || -1); st.k = k; draw(); });
+    const b = el.querySelector('.more button'); if (b) b.onclick = () => { st.n += 25; draw(); };
+  };
+  draw();
+}
+
+const charts = {};
+const cut = (dates, rng) => rng ? dates.filter(d => d >= addDays(dates[dates.length - 1], -rng)) : dates;
+const axis = (extra = {}) => ({ticks: {color: '#9C96C9', maxTicksLimit: 8}, grid: {color: 'rgba(255,255,255,.05)'}, ...extra});
+const opts = scales => ({responsive: true, plugins: {legend: {labels: {color: '#9C96C9'}}}, scales});
+function trend(id, bar, build) {
+  const el = $(bar); let rng = 0;
+  el.innerHTML = [['7D', 7], ['30D', 30], ['90D', 90], ['All', 0]].map(([l, d]) => `<button class="btn small" data-d="${d}">${l}</button>`).join('');
+  const go = () => {
+    if (charts[id]) charts[id].destroy();
+    charts[id] = new Chart($(id), build(rng));
+    el.querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.d === rng));
+  };
+  el.onclick = e => { const b = e.target.closest('button'); if (b) { rng = +b.dataset.d; go(); } };
+  go();
+}
+const line = (labels, datasets, scales) => ({type: 'line', data: {labels, datasets}, options: opts(scales)});
+const ds = (label, data, color, extra = {}) => ({label, data, borderColor: color, backgroundColor: color, tension: .25, pointRadius: 2, spanGaps: false, ...extra});
+
+function render(mem, club, zc, zp) {
+  const MG = group(mem), md = [...MG.keys()].sort(), L = md[md.length - 1];
+  if (!L) throw new Error('no data yet — run the workflow once');
+  club.sort((a, b) => a.date < b.date ? -1 : 1);
+  const last = club[club.length - 1], tag = last.tag;
+  $('title').textContent = last.name + ' — Club Leaderboard';
+  document.title = last.name + ' — Club Leaderboard';
+  $('updated').textContent = 'Last updated: ' + new Date(last.fetched_at).toLocaleString('en-ZA', {timeZone: 'Africa/Johannesburg', dateStyle: 'medium', timeStyle: 'short'}) + ' SAST';
+
+  // ---- member trophy leaderboard
+  const cur = MG.get(L).map(r => ({...r, t: num(r.trophies)})).sort((a, b) => b.t - a.t);
+  cur.forEach((r, i) => r.rank = i + 1);
+  const tmap = d => d ? new Map(MG.get(d).map(r => [r.tag, num(r.trophies)])) : new Map();
+  const pd = md[md.length - 2], T1 = tmap(pd), T7 = tmap(base(md, L, 7));
+  const prank = new Map(); [...T1].sort((a, b) => b[1] - a[1]).forEach(([t], i) => prank.set(t, i + 1));
+  cur.forEach(r => {
+    r.d1 = T1.has(r.tag) ? r.t - T1.get(r.tag) : null;
+    r.d7 = T7.has(r.tag) ? r.t - T7.get(r.tag) : null;
+    r.mv = prank.has(r.tag) ? prank.get(r.tag) - r.rank : null;
+  });
+  const arrow = m => m == null ? '–' : m > 0 ? `<span class="up">▲ ${m}</span>` : m < 0 ? `<span class="down">▼ ${-m}</span>` : '–';
+  mkTable('tMembers', [
+    {k: 'rank', l: '#', v: r => r.rank, f: r => r.rank, first: 1},
+    {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
+    {k: 'role', l: 'Role', v: r => ROLE_ORDER[r.role] ?? 9, f: r => ROLES[r.role] || esc(r.role), first: 1},
+    {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
+    {k: 'd1', l: '1d', v: r => r.d1, f: r => `<span class="${cls(r.d1)}">${sgn(r.d1)}</span>`},
+    {k: 'd7', l: '7d', v: r => r.d7, f: r => `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`},
+    {k: 'mv', l: 'Move', v: r => r.mv, f: r => arrow(r.mv)}
+  ], cur, 'rank', 1);
+
+  // ---- ranked (only if real data exists)
+  const rk = cur.filter(r => num(r.ranked_season_id) != null && num(r.ranked_elo) != null);
+  if (rk.length) {
+    const season = Math.max(...rk.map(r => num(r.ranked_season_id)));
+    const rows = rk.filter(r => num(r.ranked_season_id) === season).map(r => ({...r, rr: num(r.ranked_rank) ?? 0, elo: num(r.ranked_elo), best: num(r.best_elo)}));
+    rows.sort((a, b) => (b.rr * 1e5 + b.elo) - (a.rr * 1e5 + a.elo));
+    rows.forEach((r, i) => r.pos = i + 1);
+    $('rankedCard').style.display = '';
+    $('rankedNote').textContent = `Season ${season}. Sorted by tier, then Elo. Members with no ranked data this season aren't listed.`;
+    mkTable('tRanked', [
+      {k: 'pos', l: '#', v: r => r.pos, f: r => r.pos, first: 1},
+      {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
+      {k: 'tier', l: 'Tier', v: r => r.rr * 1e5 + r.elo, f: r => esc(r.ranked_rank_name)},
+      {k: 'elo', l: 'Elo', v: r => r.elo, f: r => fmt(r.elo)},
+      {k: 'best', l: 'All-time best', v: r => r.best, f: r => r.best == null ? '–' : `${esc(r.best_rank_name)} (${fmt(r.best)})`}
+    ], rows, 'pos', 1);
+  }
+
+  // ---- club vs SA
+  const Z = group(zc), zd = [...Z.keys()].sort(), zL = zd[zd.length - 1];
+  const zr = (Z.get(zL) || []).map(r => ({...r, rank: num(r.rank), t: num(r.trophies)})).sort((a, b) => a.rank - b.rank);
+  const me = zr.find(r => r.tag === tag), myT = num(last.trophies);
+  const card = (k, v) => `<div><div class="k">${k}</div><div class="v">${v}</div></div>`;
+  let sa = '', saHero = 'Not ranked';
+  if (me) {
+    const above = zr.find(r => r.rank === me.rank - 1), below = zr.find(r => r.rank === me.rank + 1), t10 = zr.find(r => r.rank === 10);
+    saHero = '#' + me.rank;
+    sa = card('SA rank', '#' + me.rank) + card('Trophies', fmt(me.t)) +
+      card('To climb a spot', above ? fmt(above.t - me.t + 1) : 'You\'re #1') +
+      card('Gap to top 10', me.rank <= 10 ? 'In the top 10' : t10 ? fmt(t10.t - me.t + 1) : '–') +
+      card('Lead over club below', below ? fmt(me.t - below.t) : '–');
+  } else {
+    const c200 = zr.length >= 200 ? zr[199] : null;
+    sa = card('SA rank', 'Not in top 200') + card('Trophies', fmt(myT)) + card('To reach #200', c200 ? fmt(c200.t - myT + 1) : '–');
+  }
+  $('saCards').innerHTML = sa;
+  mkTable('tZA', [
+    {k: 'rank', l: '#', v: r => r.rank, f: r => r.rank, first: 1},
+    {k: 'name', l: 'Club', v: r => r.name, f: r => esc(r.name), first: 1},
+    {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
+    {k: 'mc', l: 'Members', v: r => num(r.member_count), f: r => fmt(num(r.member_count))}
+  ], zr, 'rank', 1, r => r.tag === tag);
+  const mine = new Map(zc.filter(r => r.tag === tag).map(r => [r.date, r]));
+  trend('cSA', 'barSA', rng => {
+    const d = cut(zd, rng);
+    return line(d, [ds('SA rank', d.map(x => mine.has(x) ? num(mine.get(x).rank) : null), GOLD, {yAxisID: 'y'}),
+                    ds('Trophies', d.map(x => mine.has(x) ? num(mine.get(x).trophies) : null), TEAL, {yAxisID: 'y1'})],
+      {x: axis(), y: axis({reverse: true, position: 'left'}), y1: axis({position: 'right', grid: {drawOnChartArea: false}})});
+  });
+
+  // ---- our members in the SA player top 200
+  const P = group(zp), pL = [...P.keys()].sort().pop();
+  const pr = (P.get(pL) || []).map(r => ({...r, rank: num(r.rank), t: num(r.trophies)}));
+  mkTable('tZP', [
+    {k: 'rank', l: 'SA #', v: r => r.rank, f: r => r.rank, first: 1},
+    {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
+    {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}
+  ], pr, 'rank', 1, () => true);
+
+  // ---- club trophy trend + weekly gain
+  const cd = club.map(r => r.date), cmap = new Map(club.map(r => [r.date, r]));
+  const b7 = base(cd, last.date, 7);
+  $('weekly').innerHTML = b7 ? `Weekly gain: <b class="${cls(myT - num(cmap.get(b7).trophies))}">${sgn(myT - num(cmap.get(b7).trophies))}</b> trophies` : 'Weekly gain appears after a second day of data.';
+  trend('cClub', 'barClub', rng => { const d = cut(cd, rng); return line(d, [ds('Club trophies', d.map(x => num(cmap.get(x).trophies)), GOLD)], {x: axis(), y: axis()}); });
+  $('hero').innerHTML = [['Club trophies', fmt(myT)], ['SA rank', saHero], ['Members', last.member_count + '<small> / 30</small>'],
+    ['Weekly gain', b7 ? sgn(myT - num(cmap.get(b7).trophies)) : '–']].map(([k, v]) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
+
+  // ---- climbers (positive only)
+  const climbers = (id, days) => {
+    const b = base(md, L, days);
+    if (!b) { $(id).innerHTML = '<p class="note">Needs another day of data.</p>'; return; }
+    const T = tmap(b);
+    const top = cur.filter(r => T.has(r.tag)).map(r => ({r, g: r.t - T.get(r.tag)})).filter(x => x.g > 0).sort((a, b) => b.g - a.g).slice(0, 5);
+    $(id).innerHTML = top.length ? '<ul>' + top.map(x => `<li>${esc(nm(x.r))} <b class="up">${sgn(x.g)}</b></li>`).join('') + '</ul>' : '<p class="note">No gains recorded yet.</p>';
+  };
+  climbers('climb7', 7); climbers('climb30', 30);
+
+  // ---- membership
+  const rc = {}; cur.forEach(r => rc[r.role] = (rc[r.role] || 0) + 1);
+  $('roles').innerHTML = Object.keys(rc).sort((a, b) => (ROLE_ORDER[a] ?? 9) - (ROLE_ORDER[b] ?? 9)).map(k => `<span class="chip">${ROLES[k] || esc(k)}: <b>${rc[k]}</b></span>`).join('');
+  let j = 0, lv = 0;
+  for (let i = 1; i < md.length; i++) {
+    if (md[i] <= addDays(L, -7)) continue;
+    const a = new Set(MG.get(md[i - 1]).map(r => r.tag)), b = new Set(MG.get(md[i]).map(r => r.tag));
+    b.forEach(t => { if (!a.has(t)) j++; }); a.forEach(t => { if (!b.has(t)) lv++; });
+  }
+  $('joins').textContent = md.length > 1 ? `Last 7 days: ${j} joined, ${lv} left` : 'Joins and leaves appear after a second day of data.';
+  new Chart($('cCount'), line(cd, [ds('Members', club.map(r => num(r.member_count)), TEAL)], {x: axis(), y: axis({beginAtZero: false})}));
+  const ts = cur.map(r => r.t), lo = Math.floor(Math.min(...ts) / 5000) * 5000, bins = [];
+  for (let b = lo; b <= Math.max(...ts); b += 5000) bins.push(b);
+  new Chart($('cHist'), {type: 'bar', data: {labels: bins.map(b => (b / 1000) + 'k'), datasets: [{label: 'Members', data: bins.map(b => ts.filter(t => t >= b && t < b + 5000).length), backgroundColor: PINK}]},
+    options: opts({x: axis(), y: axis({ticks: {color: '#9C96C9', precision: 0}})})});
+
+  // ---- change log
+  const log = [];
+  for (let i = 1; i < club.length; i++) {
+    const a = club[i - 1], b = club[i];
+    if (a.required_trophies !== b.required_trophies) log.push(`${b.date}: required trophies ${fmt(num(a.required_trophies))} → ${fmt(num(b.required_trophies))}`);
+    if (a.type !== b.type) log.push(`${b.date}: club type ${esc(a.type)} → ${esc(b.type)}`);
+  }
+  $('changes').innerHTML = (log.length ? '<ul>' + log.reverse().map(x => `<li>${x}</li>`).join('') + '</ul>' : '<p class="note">No changes recorded yet.</p>') +
+    `<p class="note">Current: ${fmt(num(last.required_trophies))} required trophies, ${esc(last.type)}.</p>`;
+}
+
+(async () => {
+  try {
+    const [mem, club, zc, zp] = await Promise.all(['club_members', 'club_daily', 'za_clubs', 'za_players'].map(load));
+    render(mem, club, zc, zp);
+  } catch (e) {
+    $('err').style.display = 'block';
+    $('err').innerHTML = 'Could not load data: <code>' + esc(e.message) + '</code>. Run the workflow once so the CSV files exist, and open the deployed site rather than the file directly.';
+    $('updated').textContent = '';
+  }
+})();
+</script>
+</body>
+</html>
