@@ -74,11 +74,10 @@ ul{margin:0;padding-left:18px}li{margin:5px 0}
     <div><div class="k">Trophy distribution</div><canvas id="cHist" height="150"></canvas></div></div>
   </div>
 
-  <div class="card"><h2>Club settings change log</h2><div id="changes"></div></div>
 </div>
 
 <script>
-const SHOW_MEMBER_NAMES = true;   // <-- set to true to show member names publicly
+const SHOW_MEMBER_NAMES = false;   // <-- set to true to show member names publicly
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = v => (v === '' || v == null || isNaN(v)) ? null : Number(v);
@@ -102,8 +101,8 @@ const group = rows => { const m = new Map(); rows.forEach(r => { if (!m.has(r.da
 const before = (dates, d) => { let b = null; for (const x of dates) if (x <= d) b = x; return b; };
 const base = (dates, latest, days) => before(dates, addDays(latest, -days)) || (dates[0] !== latest ? dates[0] : null);
 
-function mkTable(id, cols, rows, sk, sd, hl) {
-  const st = {k: sk, d: sd, n: 25}, el = $(id);
+function mkTable(id, cols, rows, sk, sd, hl, n0 = 25) {
+  const st = {k: sk, d: sd, n: n0}, el = $(id);
   if (!rows.length) { el.innerHTML = '<p class="note">Nothing to show yet.</p>'; return; }
   const draw = () => {
     const c = cols.find(c => c.k === st.k);
@@ -164,7 +163,7 @@ function render(mem, club, zc, zp) {
     {k: 'd1', l: '1d', v: r => r.d1, f: r => `<span class="${cls(r.d1)}">${sgn(r.d1)}</span>`},
     {k: 'd7', l: '7d', v: r => r.d7, f: r => `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`},
     {k: 'mv', l: 'Move', v: r => r.mv, f: r => arrow(r.mv)}
-  ], cur, 'rank', 1);
+  ], cur, 'rank', 1, null, 999);
 
   // ---- ranked (only if real data exists)
   const rk = cur.filter(r => num(r.ranked_season_id) != null && num(r.ranked_elo) != null);
@@ -181,7 +180,7 @@ function render(mem, club, zc, zp) {
       {k: 'tier', l: 'Tier', v: r => r.rr * 1e5 + r.elo, f: r => esc(r.ranked_rank_name)},
       {k: 'elo', l: 'Elo', v: r => r.elo, f: r => fmt(r.elo)},
       {k: 'best', l: 'All-time best', v: r => r.best, f: r => r.best == null ? '–' : `${esc(r.best_rank_name)} (${fmt(r.best)})`}
-    ], rows, 'pos', 1);
+    ], rows, 'pos', 1, null, 999);
   }
 
   // ---- club vs SA
@@ -223,7 +222,7 @@ function render(mem, club, zc, zp) {
     {k: 'rank', l: 'SA #', v: r => r.rank, f: r => r.rank, first: 1},
     {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
     {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}
-  ], pr, 'rank', 1, () => true);
+  ], pr, 'rank', 1, () => true, 999);
 
   // ---- club trophy trend + weekly gain
   const cd = club.map(r => r.date), cmap = new Map(club.map(r => [r.date, r]));
@@ -258,16 +257,6 @@ function render(mem, club, zc, zp) {
   for (let b = lo; b <= Math.max(...ts); b += 5000) bins.push(b);
   new Chart($('cHist'), {type: 'bar', data: {labels: bins.map(b => (b / 1000) + 'k'), datasets: [{label: 'Members', data: bins.map(b => ts.filter(t => t >= b && t < b + 5000).length), backgroundColor: PINK}]},
     options: opts({x: axis(), y: axis({ticks: {color: '#9C96C9', precision: 0}})})});
-
-  // ---- change log
-  const log = [];
-  for (let i = 1; i < club.length; i++) {
-    const a = club[i - 1], b = club[i];
-    if (a.required_trophies !== b.required_trophies) log.push(`${b.date}: required trophies ${fmt(num(a.required_trophies))} → ${fmt(num(b.required_trophies))}`);
-    if (a.type !== b.type) log.push(`${b.date}: club type ${esc(a.type)} → ${esc(b.type)}`);
-  }
-  $('changes').innerHTML = (log.length ? '<ul>' + log.reverse().map(x => `<li>${x}</li>`).join('') + '</ul>' : '<p class="note">No changes recorded yet.</p>') +
-    `<p class="note">Current: ${fmt(num(last.required_trophies))} required trophies, ${esc(last.type)}.</p>`;
 }
 
 (async () => {
