@@ -77,7 +77,7 @@ ul{margin:0;padding-left:18px}li{margin:5px 0}
 </div>
 
 <script>
-const SHOW_MEMBER_NAMES = false;   // <-- set to true to show member names publicly
+const SHOW_MEMBER_NAMES = true;   // <-- set to true to show member names publicly
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = v => (v === '' || v == null || isNaN(v)) ? null : Number(v);
