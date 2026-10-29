@@ -120,9 +120,11 @@ select.inp{appearance:auto}
 
 <div id="modal"><div class="mbox"><button class="btn small" id="mclose" aria-label="Close">✕</button><div id="mbody"></div></div></div>
 <script>
-const SHOW_MEMBER_NAMES = false;   // <-- set to true to show member names publicly
+const SHOW_MEMBER_NAMES = true;   // <-- set to true to show member names publicly
 // Goals: add more, e.g. {label: '100k club trophies', type: 'trophies', target: 100000}
-const GOALS = [{label: 'Top 10 in South Africa', type: 'rank', target: 10}];
+const GOALS = [{label: '2.5 Million Club Trophies', type: 'trophies', target: 2500000},
+               {label: 'Top 15 in South Africa', type: 'rank', target: 15}, 
+               {label: 'Top 10 in South Africa', type: 'rank', target: 10}];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = v => (v === '' || v == null || isNaN(v)) ? null : Number(v);
