@@ -69,10 +69,13 @@ tr.rival td{background:rgba(255,77,77,.14);color:var(--red);font-weight:600}
 .pod{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
 .pod>div{background:var(--ph);border-radius:14px;padding:12px;text-align:center}.pod .m{font-size:26px}
 select.inp{appearance:auto}
+.cme{color:var(--gold)}.crv{color:var(--red)}
+details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
+.sub2{font-size:17px!important;margin:18px 0 10px!important}
 </style>
 </head>
 <body>
-<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-sa">SA</a><a href="#sec-h2h" id="navRival" style="display:none">Head to head</a><a href="#sec-rivals">Rival clubs</a><a href="#sec-race">Monthly race</a><a href="#sec-membership">Membership</a><a href="#sec-fame">Hall of fame</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="rivalBtn">Rival</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
+<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-sa">SA</a><a href="#sec-h2h" id="navRival" style="display:none">Head to head</a><a href="#sec-rivals">Rival clubs</a><a href="#sec-race">Monthly races</a><a href="#sec-membership">Membership</a><a href="#sec-fame">Hall of fame</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="rivalBtn">Rival</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
 <div class="wrap">
   <h1 id="title">Club Leaderboard</h1>
   <p class="sub" id="updated">Loading…</p>
@@ -107,6 +110,8 @@ select.inp{appearance:auto}
 
   <div class="card" id="sec-race"><h2>Monthly trophy race</h2><div class="bar"><select id="raceMonth" class="inp" style="width:auto;margin:0"></select></div>
     <p class="note" id="raceNote"></p><div class="pod" id="racePod"></div><div class="tw" id="tRace"></div></div>
+  <div class="card" id="sec-race-ranked" style="display:none"><h2>Monthly ranked race</h2><div class="bar"><select id="raceMonthE" class="inp" style="width:auto;margin:0"></select></div>
+    <p class="note" id="raceNoteE"></p><div class="pod" id="racePodE"></div><div class="tw" id="tRaceE"></div></div>
 
   <div class="card" id="sec-membership"><h2>Membership</h2>
     <p id="roles"></p><p class="note" id="joins"></p>
@@ -114,8 +119,10 @@ select.inp{appearance:auto}
     <div><div class="k">Trophy distribution</div><canvas id="cHist" height="150"></canvas></div></div>
   </div>
 
-  <div class="card" id="sec-fame"><h2>Hall of fame</h2><p class="note" id="fameNote"></p><div class="grid" id="fameRecords"></div>
-    <h2 style="font-size:17px;margin-top:16px">Past monthly winners</h2><div id="fameWinners"></div></div>
+  <div class="card" id="sec-fame"><h2>Hall of fame</h2><p class="note" id="fameNote"></p>
+    <h2 class="sub2">Club records</h2><div class="grid" id="fameClub"></div>
+    <h2 class="sub2">Member records</h2><div class="grid" id="fameMembers"></div>
+    <h2 class="sub2">Monthly champions</h2><div id="fameChamps"></div></div>
 </div>
 
 <div id="modal"><div class="mbox"><button class="btn small" id="mclose" aria-label="Close">✕</button><div id="mbody"></div></div></div>
@@ -137,7 +144,7 @@ const ROLES = {president:'President', vicePresident:'Vice President', senior:'Se
 const ROLE_ORDER = {president:0, vicePresident:1, senior:2, member:3};
 const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0, 10);
 const cv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null, RIVAL = null, RACE_M = null;
+let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null, RIVAL = null, RACE_M = null, RACE_E = null;
 const paint = () => { GOLD = cv('--gold'); TEAL = cv('--teal'); PINK = cv('--pink'); };
 const store = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
 const fetchStore = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
@@ -389,62 +396,84 @@ function render(mem, club, zc, zp) {
   if (j > 0) items.push(`👋 ${j} new member${j > 1 ? 's' : ''} joined`);
   $('banner').innerHTML = `<h2>This week's highlights</h2>` + (items.length ? '<ul>' + items.map(x => `<li>${x}</li>`).join('') + '</ul>' : `<p class="note">${b7m ? 'Nothing new to highlight yet - keep pushing!' : 'Highlights appear after a second day of data.'}</p>`);
 
-  // ===== monthly race =====
+  // ===== monthly races (trophies + ranked Elo) =====
   const NAMES = new Map(); mem.forEach(r => NAMES.set(r.tag, r.name));
   const who = t => SHOW_MEMBER_NAMES ? (NAMES.get(t) || t) : anon(t);
   const months = [...new Set(md.map(d => d.slice(0, 7)))];
-  const raceOf = m => {
+  const raceOf = (m, kind = 't') => {
     const inM = md.filter(d => d.slice(0, 7) === m), lastD = inM[inM.length - 1];
     const baseD = before(md, addDays(m + '-01', -1));
     const rows = [];
     MG.get(lastD).forEach(r => {
-      const h = H.get(r.tag).filter(x => x.d.slice(0, 7) <= m);
+      let h = H.get(r.tag).filter(x => x.d.slice(0, 7) <= m);
+      if (kind === 'e') {   // Elo resets each season, so only count the member's latest season
+        const sEnd = num(r.ranked_season_id);
+        if (sEnd == null || num(r.ranked_elo) == null) return;
+        h = h.filter(x => x.s === sEnd && x.elo != null);
+      }
+      const v = x => kind === 't' ? x.t : x.elo;
       const start = (baseD && h.find(x => x.d === baseD)) || h.find(x => x.d.slice(0, 7) === m);
-      rows.push({tag: r.tag, name: r.name, t: num(r.trophies), g: num(r.trophies) - start.t});
+      if (!start) return;
+      const end = kind === 't' ? num(r.trophies) : num(r.ranked_elo);
+      rows.push({tag: r.tag, name: r.name, t: end, g: end - v(start), tier: r.ranked_rank_name});
     });
     return {rows, baseD};
   };
-  const drawRace = m => {
-    const R = raceOf(m), pos = R.rows.filter(x => x.g > 0).sort((a, b) => b.g - a.g).map((x, i) => ({...x, pos: i + 1}));
+  const IDS = {t: {note: 'raceNote', pod: 'racePod', tab: 'tRace'}, e: {note: 'raceNoteE', pod: 'racePodE', tab: 'tRaceE'}};
+  const drawRace = (kind, m) => {
+    const I = IDS[kind], R = raceOf(m, kind), pos = R.rows.filter(x => x.g > 0).sort((a, b) => b.g - a.g).map((x, i) => ({...x, pos: i + 1}));
     const today = new Date(Date.now() + 72e5).toISOString().slice(0, 10);
     const dim = new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 0)).getUTCDate(), left = dim - Number(today.slice(8, 10));
-    $('raceNote').textContent = (today.slice(0, 7) === m ? `${left} day${left === 1 ? '' : 's'} left this month. ` : '') +
-      (R.baseD ? 'Gains since the end of the previous month. ' : 'Tracking began mid-month, so gains count from the first tracked day. ') + `Members with no gain aren't listed.`;
-    $('racePod').innerHTML = pos.slice(0, 3).map((x, i) => `<div><div class="m">${['🥇', '🥈', '🥉'][i]}</div><b>${esc(nm(x))}</b><div class="v up">${sgn(x.g)}</div></div>`).join('');
-    mkTable('tRace', [
-      {k: 'pos', l: '#', v: r => r.pos, f: r => r.pos, first: 1},
+    $(I.note).textContent = (today.slice(0, 7) === m ? `${left} day${left === 1 ? '' : 's'} left this month. ` : '') +
+      (R.baseD ? 'Gains since the end of the previous month. ' : 'Tracking began mid-month, so gains count from the first tracked day. ') +
+      (kind === 'e' ? 'Ranked seasons reset Elo, so only gains within the latest season count. ' : '') + `Members with no gain aren't listed.`;
+    $(I.pod).innerHTML = pos.slice(0, 3).map((x, i) => `<div><div class="m">${['🥇', '🥈', '🥉'][i]}</div><b>${esc(nm(x))}</b><div class="v up">${sgn(x.g)}</div></div>`).join('');
+    const c0 = [{k: 'pos', l: '#', v: r => r.pos, f: r => r.pos, first: 1},
       {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
-      {k: 'g', l: 'Gain', v: r => r.g, f: r => `<span class="up">${sgn(r.g)}</span>`},
-      {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}
-    ], pos, 'pos', 1, hlm, 999, true);
+      {k: 'g', l: kind === 't' ? 'Gain' : 'Elo gain', v: r => r.g, f: r => `<span class="up">${sgn(r.g)}</span>`}];
+    mkTable(I.tab, kind === 't' ? [...c0, {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}]
+      : [...c0, {k: 'tier', l: 'Tier', v: r => r.tier, f: r => esc(r.tier), first: 1}, {k: 't', l: 'Elo', v: r => r.t, f: r => fmt(r.t)}], pos, 'pos', 1, hlm, 999, true);
   };
   RACE_M = months.includes(RACE_M) ? RACE_M : months[months.length - 1];
-  const sel = $('raceMonth');
-  sel.innerHTML = months.slice().reverse().map(m => `<option value="${m}">${mlabel(m)}</option>`).join('');
-  sel.value = RACE_M; sel.onchange = () => { RACE_M = sel.value; drawRace(RACE_M); };
-  drawRace(RACE_M);
+  RACE_E = months.includes(RACE_E) ? RACE_E : months[months.length - 1];
+  const mopts = months.slice().reverse().map(m => `<option value="${m}">${mlabel(m)}</option>`).join('');
+  const sel = $('raceMonth'), selE = $('raceMonthE');
+  sel.innerHTML = mopts; sel.value = RACE_M; sel.onchange = () => { RACE_M = sel.value; drawRace('t', RACE_M); };
+  selE.innerHTML = mopts; selE.value = RACE_E; selE.onchange = () => { RACE_E = selE.value; drawRace('e', RACE_E); };
+  drawRace('t', RACE_M);
+  const hasElo = cur.some(r => num(r.ranked_season_id) != null && num(r.ranked_elo) != null);
+  $('sec-race-ranked').style.display = hasElo ? '' : 'none';
+  if (hasElo) drawRace('e', RACE_E);
 
   // ===== hall of fame =====
-  const rec = [], rc2 = (l, v, w, d) => `<div><div class="k">${l}</div><div class="v">${v}</div><div class="note">${[w, d].filter(Boolean).join(' · ')}</div></div>`;
+  const rc2 = (l, v, w, d) => `<div><div class="k">${l}</div><div class="v">${v}</div><div class="note">${[w, d].filter(Boolean).join(' · ')}</div></div>`;
+  const recC = [], recM = [];
   const topClub = club.reduce((a, r) => num(r.trophies) > num(a.trophies) ? r : a, club[0]);
-  rec.push(rc2('Club trophy record', fmt(num(topClub.trophies)), '', topClub.date));
+  recC.push(rc2('Club trophy record', fmt(num(topClub.trophies)), '', topClub.date));
   const myZ = zc.filter(r => r.tag === tag);
-  if (myZ.length) { const b = myZ.reduce((a, r) => num(r.rank) < num(a.rank) ? r : a, myZ[0]); rec.push(rc2('Best SA club rank', '#' + b.rank, '', b.date)); }
+  if (myZ.length) { const b = myZ.reduce((a, r) => num(r.rank) < num(a.rank) ? r : a, myZ[0]); recC.push(rc2('Best SA club rank', '#' + b.rank, '', b.date)); }
   const cb = best7(club.map(r => ({d: r.date, t: num(r.trophies)})));
-  if (cb && cb.g > 0) rec.push(rc2('Best club 7-day gain', sgn(cb.g), '', cb.d));
+  if (cb && cb.g > 0) recC.push(rc2('Best club 7-day gain', sgn(cb.g), '', cb.d));
   let hi = null, wkr = null;
   H.forEach((h, t) => {
     h.forEach(x => { if (!hi || x.t > hi.v) hi = {t, v: x.t, d: x.d}; });
     const b = best7(h); if (b && b.g > 0 && (!wkr || b.g > wkr.v)) wkr = {t, v: b.g, d: b.d};
   });
-  if (hi) rec.push(rc2('Most trophies by a member', fmt(hi.v), esc(who(hi.t)), hi.d));
-  if (wkr) rec.push(rc2('Best member 7-day gain', sgn(wkr.v), esc(who(wkr.t)), wkr.d));
+  if (hi) recM.push(rc2('Most trophies', fmt(hi.v), esc(who(hi.t)), hi.d));
+  if (wkr) recM.push(rc2('Best 7-day gain', sgn(wkr.v), esc(who(wkr.t)), wkr.d));
   const bestR = cur.filter(r => num(r.best_elo) != null).sort((a, b) => (num(b.best_rank) * 1e5 + num(b.best_elo)) - (num(a.best_rank) * 1e5 + num(a.best_elo)))[0];
-  if (bestR) rec.push(rc2('Highest ranked ever', esc(bestR.best_rank_name) + ' · ' + fmt(num(bestR.best_elo)), esc(nm(bestR)), ''));
-  $('fameRecords').innerHTML = rec.join('');
+  if (bestR) recM.push(rc2('Highest ranked ever', esc(bestR.best_rank_name) + ' · ' + fmt(num(bestR.best_elo)), esc(nm(bestR)), ''));
+  $('fameClub').innerHTML = recC.join('');
+  $('fameMembers').innerHTML = recM.join('') || '<p class="note">Records appear as data builds up.</p>';
   $('fameNote').textContent = `Records cover tracked data since ${md[0]}.`;
-  const wins = months.slice(0, -1).reverse().map(m => { const R = raceOf(m), w = R.rows.filter(x => x.g > 0).sort((a, b) => b.g - a.g)[0]; return w ? `<li>${mlabel(m)}${R.baseD ? '' : ' (partial month)'}: <b>${esc(who(w.tag))}</b> <b class="up">${sgn(w.g)}</b></li>` : ''; }).join('');
-  $('fameWinners').innerHTML = wins ? '<ul>' + wins + '</ul>' : '<p class="note">Winners appear after the first full month.</p>';
+  const win = (m, k) => { const w = raceOf(m, k).rows.filter(x => x.g > 0).sort((a, b) => b.g - a.g)[0]; return w || null; };
+  const cell = w => w ? `<span class="${w.tag === ME ? 'cme' : w.tag === RIVAL ? 'crv' : ''}"><b>${esc(who(w.tag))}</b></span> <span class="up">${sgn(w.g)}</span>` : '–';
+  const rowsC = months.slice(0, -1).reverse().map(m => ({m, a: win(m, 't'), b: hasElo ? win(m, 'e') : null, part: !before(md, addDays(m + '-01', -1))}));
+  const tbl = rs => `<div class="tw"><table><thead><tr><th>Month</th><th>🏆 Trophy race</th>${hasElo ? '<th>📈 Ranked race</th>' : ''}</tr></thead><tbody>` +
+    rs.map(r => `<tr><td>${mlabel(r.m)}${r.part ? ' (partial)' : ''}</td><td>${cell(r.a)}</td>${hasElo ? `<td>${cell(r.b)}</td>` : ''}</tr>`).join('') + '</tbody></table></div>';
+  const tally = (k, label) => { const c = new Map(); rowsC.forEach(r => { if (r[k]) c.set(r[k].tag, (c.get(r[k].tag) || 0) + 1); }); const mx = Math.max(0, ...c.values()); if (!mx) return ''; const ns = [...c].filter(([, n]) => n === mx).map(([t]) => who(t)); return `<p class="note">${label}: <b>${esc(ns.slice(0, 3).join(', '))}${ns.length > 3 ? ' …' : ''}</b> (${mx})</p>`; };
+  $('fameChamps').innerHTML = rowsC.length ? tbl(rowsC.slice(0, 6)) + (rowsC.length > 6 ? `<details><summary>Earlier months (${rowsC.length - 6})</summary>${tbl(rowsC.slice(6))}</details>` : '') +
+    tally('a', 'Most trophy-race wins') + (hasElo ? tally('b', 'Most ranked-race wins') : '') : '<p class="note">Champions appear after the first full month.</p>';
 
   // ===== friendly rival & head-to-head =====
   const rivR = RIVAL && RIVAL !== ME ? cur.find(r => r.tag === RIVAL) : null, showH = !!(meR && rivR);
