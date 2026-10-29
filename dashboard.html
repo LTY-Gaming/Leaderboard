@@ -61,10 +61,18 @@ body{padding:0 14px 70px}.wrap{padding-top:20px}
 .goal{margin-bottom:14px}.gh{display:flex;justify-content:space-between}
 #banner ul{list-style:none;padding:0}#banner li{margin:7px 0}
 @media(max-width:560px){body{padding:0 10px 60px}#nav{margin:0 -10px;padding:8px 10px}h1{font-size:23px}td,th{padding:6px 5px;font-size:13px}.card{padding:14px}.mbox{padding:16px}.v{font-size:20px}}
+:root{--red:#FF4D4D}
+[data-theme=light]{--red:#D32F2F}
+tr.rival td{background:rgba(255,77,77,.14);color:var(--red);font-weight:600}
+.nl{text-decoration:underline dotted;text-underline-offset:3px}
+.win{color:var(--teal);font-weight:700}
+.pod{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.pod>div{background:var(--ph);border-radius:14px;padding:12px;text-align:center}.pod .m{font-size:26px}
+select.inp{appearance:auto}
 </style>
 </head>
 <body>
-<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-sa">SA</a><a href="#sec-rivals">Rivals</a><a href="#sec-climbers">Climbers</a><a href="#sec-membership">Membership</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
+<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-sa">SA</a><a href="#sec-h2h" id="navRival" style="display:none">Head to head</a><a href="#sec-rivals">Rival clubs</a><a href="#sec-race">Monthly race</a><a href="#sec-membership">Membership</a><a href="#sec-fame">Hall of fame</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="rivalBtn">Rival</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
 <div class="wrap">
   <h1 id="title">Club Leaderboard</h1>
   <p class="sub" id="updated">Loading…</p>
@@ -72,6 +80,10 @@ body{padding:0 14px 70px}.wrap{padding-top:20px}
   <div class="hero" id="hero"></div>
   <div class="card" id="banner"></div>
   <div class="card" id="meCard" style="display:none"></div>
+  <div class="card" id="sec-h2h" style="display:none"><h2 id="h2hTitle">Head to head</h2><div class="tw" id="tH2H"></div><p class="note" id="h2hNote"></p>
+    <div class="k" style="margin-top:14px">Trophies over time</div><div class="bar" id="barH2H"></div><canvas id="cH2H" height="110"></canvas>
+    <div id="h2hElo"><div class="k" style="margin-top:14px">Ranked Elo (this season)</div><canvas id="cH2HE" height="100"></canvas></div>
+    <div class="k" style="margin-top:14px">Monthly gains</div><canvas id="cH2HM" height="100"></canvas></div>
   <div class="card" id="sec-goal"><h2>Club goals</h2><div id="goals"></div><p class="note">Rank goals: progress is your trophies as a share of the target club's trophies.</p></div>
 
   <div class="card" id="sec-members"><h2>Member trophy leaderboard</h2><p class="note">Tap a member to see their history.</p><div class="tw" id="tMembers"></div></div>
@@ -90,13 +102,11 @@ body{padding:0 14px 70px}.wrap{padding-top:20px}
 
   <div class="card"><h2>Our members in the SA top 200 players</h2><div class="tw" id="tZP"></div></div>
 
-  <div class="card"><h2>Club trophy trend</h2><p class="note" id="weekly"></p>
+  <div class="card"><h2>Club trophy trend</h2>
     <div class="bar" id="barClub"></div><canvas id="cClub" height="110"></canvas></div>
 
-  <div class="card two" id="sec-climbers">
-    <div><h2>Top climbers this week</h2><div id="climb7"></div></div>
-    <div><h2>Top climbers this month</h2><div id="climb30"></div></div>
-  </div>
+  <div class="card" id="sec-race"><h2>Monthly trophy race</h2><div class="bar"><select id="raceMonth" class="inp" style="width:auto;margin:0"></select></div>
+    <p class="note" id="raceNote"></p><div class="pod" id="racePod"></div><div class="tw" id="tRace"></div></div>
 
   <div class="card" id="sec-membership"><h2>Membership</h2>
     <p id="roles"></p><p class="note" id="joins"></p>
@@ -104,11 +114,13 @@ body{padding:0 14px 70px}.wrap{padding-top:20px}
     <div><div class="k">Trophy distribution</div><canvas id="cHist" height="150"></canvas></div></div>
   </div>
 
+  <div class="card" id="sec-fame"><h2>Hall of fame</h2><p class="note" id="fameNote"></p><div class="grid" id="fameRecords"></div>
+    <h2 style="font-size:17px;margin-top:16px">Past monthly winners</h2><div id="fameWinners"></div></div>
 </div>
 
 <div id="modal"><div class="mbox"><button class="btn small" id="mclose" aria-label="Close">✕</button><div id="mbody"></div></div></div>
 <script>
-const SHOW_MEMBER_NAMES = true;   // <-- set to true to show member names publicly
+const SHOW_MEMBER_NAMES = false;   // <-- set to true to show member names publicly
 // Goals: add more, e.g. {label: '100k club trophies', type: 'trophies', target: 100000}
 const GOALS = [{label: 'Top 10 in South Africa', type: 'rank', target: 10}];
 const $ = id => document.getElementById(id);
@@ -123,16 +135,20 @@ const ROLES = {president:'President', vicePresident:'Vice President', senior:'Se
 const ROLE_ORDER = {president:0, vicePresident:1, senior:2, member:3};
 const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0, 10);
 const cv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null;
+let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null, RIVAL = null, RACE_M = null;
 const paint = () => { GOLD = cv('--gold'); TEAL = cv('--teal'); PINK = cv('--pink'); };
 const store = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
 const fetchStore = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
 const setTheme = t => { document.documentElement.dataset.theme = t; store('lty_theme', t); };
 setTheme(fetchStore('lty_theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
 ME = fetchStore('lty_me');
+RIVAL = fetchStore('lty_rival');
 const mkChart = (id, cfg) => { const old = Chart.getChart($(id)); if (old) old.destroy(); return new Chart($(id), cfg); };
 const kv = (k, v) => `<div><div class="k">${k}</div><div class="v">${v}</div></div>`;
 const normTag = t => { t = t.trim().toUpperCase().replace(/O/g, '0'); return t.startsWith('#') ? t : '#' + t; };
+const hlm = r => r.tag === ME ? 'me' : (RIVAL && r.tag === RIVAL ? 'rival' : '');
+const mlabel = m => new Date(m + '-01T00:00:00Z').toLocaleString('en-ZA', {month: 'long', year: 'numeric', timeZone: 'UTC'});
+const best7 = h => { const dd = h.map(y => y.d); let b = null; h.forEach(x => { const bd = before(dd, addDays(x.d, -7)); if (bd && bd !== x.d && bd >= addDays(x.d, -9)) { const g = x.t - h.find(y => y.d === bd).t; if (!b || g > b.g) b = {g, d: x.d}; } }); return b; };
 
 async function load(n) {
   const r = await fetch(n + '.csv?' + Date.now());
@@ -151,7 +167,7 @@ function mkTable(id, cols, rows, sk, sd, hl, n0 = 25, mem = false) {
     const c = cols.find(c => c.k === st.k);
     const s = [...rows].sort((a, b) => { const x = c.v(a), y = c.v(b); if (x == null) return 1; if (y == null) return -1; return (typeof x === 'string' ? x.localeCompare(y) : x - y) * st.d; });
     el.innerHTML = '<table><thead><tr>' + cols.map(c => `<th data-k="${c.k}">${c.l}${c.k === st.k ? (st.d > 0 ? ' ▲' : ' ▼') : ''}</th>`).join('') + '</tr></thead><tbody>' +
-      s.slice(0, st.n).map(r => `<tr class="${hl && hl(r) ? 'me' : ''}${mem ? ' clk' : ''}"${mem ? ` data-tag="${esc(r.tag)}"` : ''}>` + cols.map(c => `<td>${c.f(r)}</td>`).join('') + '</tr>').join('') + '</tbody></table>' +
+      s.slice(0, st.n).map(r => `<tr class="${hl ? hl(r) : ''}${mem ? ' clk' : ''}"${mem ? ` data-tag="${esc(r.tag)}"` : ''}>` + cols.map(c => `<td>${c.f(r)}</td>`).join('') + '</tr>').join('') + '</tbody></table>' +
       (s.length > st.n ? '<div class="more"><button class="btn">Load more</button></div>' : '');
     el.querySelectorAll('th').forEach(h => h.onclick = () => { const k = h.dataset.k; st.d = st.k === k ? -st.d : (cols.find(c => c.k === k).first || -1); st.k = k; draw(); });
     const b = el.querySelector('.more button'); if (b) b.onclick = () => { st.n += 25; draw(); };
@@ -194,20 +210,18 @@ function render(mem, club, zc, zp) {
   const pd = md[md.length - 2], T1 = tmap(pd), T7 = tmap(base(md, L, 7));
   const prank = new Map(); [...T1].sort((a, b) => b[1] - a[1]).forEach(([t], i) => prank.set(t, i + 1));
   cur.forEach(r => {
-    r.d1 = T1.has(r.tag) ? r.t - T1.get(r.tag) : null;
     r.d7 = T7.has(r.tag) ? r.t - T7.get(r.tag) : null;
     r.mv = prank.has(r.tag) ? prank.get(r.tag) - r.rank : null;
   });
   const arrow = m => m == null ? '–' : m > 0 ? `<span class="up">▲ ${m}</span>` : m < 0 ? `<span class="down">▼ ${-m}</span>` : '–';
   mkTable('tMembers', [
     {k: 'rank', l: '#', v: r => r.rank, f: r => r.rank, first: 1},
-    {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
+    {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
     {k: 'role', l: 'Role', v: r => ROLE_ORDER[r.role] ?? 9, f: r => ROLES[r.role] || esc(r.role), first: 1},
     {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
-    {k: 'd1', l: '1d', v: r => r.d1, f: r => `<span class="${cls(r.d1)}">${sgn(r.d1)}</span>`},
     {k: 'd7', l: '7d', v: r => r.d7, f: r => `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`},
     {k: 'mv', l: 'Move', v: r => r.mv, f: r => arrow(r.mv)}
-  ], cur, 'rank', 1, r => r.tag === ME, 999, true);
+  ], cur, 'rank', 1, hlm, 999, true);
 
   // ---- ranked (only if real data exists)
   const rk = cur.filter(r => num(r.ranked_season_id) != null && num(r.ranked_elo) != null);
@@ -225,12 +239,12 @@ function render(mem, club, zc, zp) {
     mkChart('cTier', {type: 'bar', data: {labels: tl.map(x => x[0]), datasets: [{label: 'Members', data: tl.map(x => x[1].n), backgroundColor: GOLD}]}, options: opts({x: axis(), y: axis({ticks: {color: cv('--dim'), precision: 0}})})});
     mkTable('tRanked', [
       {k: 'pos', l: '#', v: r => r.pos, f: r => r.pos, first: 1},
-      {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
+      {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
       {k: 'tier', l: 'Tier', v: r => r.rr * 1e5 + r.elo, f: r => esc(r.ranked_rank_name)},
       {k: 'elo', l: 'Elo', v: r => r.elo, f: r => fmt(r.elo)},
       {k: 'e7', l: 'Elo 7d', v: r => r.e7, f: r => `<span class="${cls(r.e7)}">${sgn(r.e7)}</span>`},
       {k: 'best', l: 'All-time best', v: r => r.best, f: r => r.best == null ? '–' : `${esc(r.best_rank_name)} (${fmt(r.best)})`}
-    ], rows, 'pos', 1, r => r.tag === ME, 999, true);
+    ], rows, 'pos', 1, hlm, 999, true);
   }
 
   // ---- club vs SA
@@ -256,7 +270,7 @@ function render(mem, club, zc, zp) {
     {k: 'name', l: 'Club', v: r => r.name, f: r => esc(r.name), first: 1},
     {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
     {k: 'mc', l: 'Members', v: r => num(r.member_count), f: r => fmt(num(r.member_count))}
-  ], zr, 'rank', 1, r => r.tag === tag);
+  ], zr, 'rank', 1, r => r.tag === tag ? 'me' : '');
   const mine = new Map(zc.filter(r => r.tag === tag).map(r => [r.date, r]));
   trend('cSA', 'barSA', rng => {
     const d = cut(zd, rng);
@@ -270,27 +284,17 @@ function render(mem, club, zc, zp) {
   const pr = (P.get(pL) || []).map(r => ({...r, rank: num(r.rank), t: num(r.trophies)}));
   mkTable('tZP', [
     {k: 'rank', l: 'SA #', v: r => r.rank, f: r => r.rank, first: 1},
-    {k: 'name', l: 'Name', v: nm, f: r => esc(nm(r)), first: 1},
+    {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
     {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}
-  ], pr, 'rank', 1, r => r.tag === ME, 999, true);
+  ], pr, 'rank', 1, hlm, 999, true);
 
   // ---- club trophy trend + weekly gain
   const cd = club.map(r => r.date), cmap = new Map(club.map(r => [r.date, r]));
   const b7 = base(cd, last.date, 7);
-  $('weekly').innerHTML = b7 ? `Weekly gain: <b class="${cls(myT - num(cmap.get(b7).trophies))}">${sgn(myT - num(cmap.get(b7).trophies))}</b> trophies` : 'Weekly gain appears after a second day of data.';
   trend('cClub', 'barClub', rng => { const d = cut(cd, rng); return line(d, [ds('Club trophies', d.map(x => num(cmap.get(x).trophies)), GOLD)], {x: axis(), y: axis()}); });
   $('hero').innerHTML = [['Club trophies', fmt(myT)], ['SA rank', saHero], ['Members', last.member_count + '<small> / 30</small>'],
     ['Weekly gain', b7 ? sgn(myT - num(cmap.get(b7).trophies)) : '–']].map(([k, v]) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
 
-  // ---- climbers (positive only)
-  const climbers = (id, days) => {
-    const b = base(md, L, days);
-    if (!b) { $(id).innerHTML = '<p class="note">Needs another day of data.</p>'; return; }
-    const T = tmap(b);
-    const top = cur.filter(r => T.has(r.tag)).map(r => ({r, g: r.t - T.get(r.tag)})).filter(x => x.g > 0).sort((a, b) => b.g - a.g).slice(0, 5);
-    $(id).innerHTML = top.length ? '<ul>' + top.map(x => `<li>${esc(nm(x.r))} <b class="up">${sgn(x.g)}</b></li>`).join('') + '</ul>' : '<p class="note">No gains recorded yet.</p>';
-  };
-  climbers('climb7', 7); climbers('climb30', 30);
 
   // ---- membership
   const rc = {}; cur.forEach(r => rc[r.role] = (rc[r.role] || 0) + 1);
@@ -362,7 +366,7 @@ function render(mem, club, zc, zp) {
       {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
       {k: 'gap', l: 'vs us', v: r => r.gap, f: r => r.tag === tag ? '–' : sgn(r.gap)},
       {k: 'wk', l: '7d gain', v: r => r.wk, f: r => `<span class="${cls(r.wk)}">${sgn(r.wk)}</span>`}
-    ], rv, 'rank', 1, r => r.tag === tag, 999);
+    ], rv, 'rank', 1, r => r.tag === tag ? 'me' : '', 999);
     const PAL = [TEAL, PINK, '#8C7CFF', '#FF9F4A'], pick = rv.filter(r => Math.abs(r.rank - me.rank) <= 2);
     trend('cRiv', 'barRiv', rng => {
       const d = cut(zd, rng); let i = 0;
@@ -378,26 +382,144 @@ function render(mem, club, zc, zp) {
   if (jump) items.push(`📈 Biggest rank jump: <b>${esc(nm(jump.r))}</b> up ${jump.m} place${jump.m > 1 ? 's' : ''}`);
   const pbN = b7m ? cur.filter(r => { const h = H.get(r.tag).filter(x => x.d <= b7m).map(x => x.t); return h.length && r.t > Math.max(...h); }).length : 0;
   if (pbN) items.push(`⭐ ${pbN} member${pbN > 1 ? 's' : ''} hit a new personal best`);
-  if (myG > 0) items.push(`🏆 The club gained <b class="up">${sgn(myG)}</b> trophies`);
   const sr = zb && me && Z.get(zb) ? Z.get(zb).find(r => r.tag === tag) : null;
   if (sr && num(sr.rank) > me.rank) items.push(`🇿🇦 Up ${num(sr.rank) - me.rank} place${num(sr.rank) - me.rank > 1 ? 's' : ''} in South Africa`);
   if (j > 0) items.push(`👋 ${j} new member${j > 1 ? 's' : ''} joined`);
   $('banner').innerHTML = `<h2>This week's highlights</h2>` + (items.length ? '<ul>' + items.map(x => `<li>${x}</li>`).join('') + '</ul>' : `<p class="note">${b7m ? 'Nothing new to highlight yet - keep pushing!' : 'Highlights appear after a second day of data.'}</p>`);
+
+  // ===== monthly race =====
+  const NAMES = new Map(); mem.forEach(r => NAMES.set(r.tag, r.name));
+  const who = t => SHOW_MEMBER_NAMES ? (NAMES.get(t) || t) : anon(t);
+  const months = [...new Set(md.map(d => d.slice(0, 7)))];
+  const raceOf = m => {
+    const inM = md.filter(d => d.slice(0, 7) === m), lastD = inM[inM.length - 1];
+    const baseD = before(md, addDays(m + '-01', -1));
+    const rows = [];
+    MG.get(lastD).forEach(r => {
+      const h = H.get(r.tag).filter(x => x.d.slice(0, 7) <= m);
+      const start = (baseD && h.find(x => x.d === baseD)) || h.find(x => x.d.slice(0, 7) === m);
+      rows.push({tag: r.tag, name: r.name, t: num(r.trophies), g: num(r.trophies) - start.t});
+    });
+    return {rows, baseD};
+  };
+  const drawRace = m => {
+    const R = raceOf(m), pos = R.rows.filter(x => x.g > 0).sort((a, b) => b.g - a.g).map((x, i) => ({...x, pos: i + 1}));
+    const today = new Date(Date.now() + 72e5).toISOString().slice(0, 10);
+    const dim = new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 0)).getUTCDate(), left = dim - Number(today.slice(8, 10));
+    $('raceNote').textContent = (today.slice(0, 7) === m ? `${left} day${left === 1 ? '' : 's'} left this month. ` : '') +
+      (R.baseD ? 'Gains since the end of the previous month. ' : 'Tracking began mid-month, so gains count from the first tracked day. ') + `Members with no gain aren't listed.`;
+    $('racePod').innerHTML = pos.slice(0, 3).map((x, i) => `<div><div class="m">${['🥇', '🥈', '🥉'][i]}</div><b>${esc(nm(x))}</b><div class="v up">${sgn(x.g)}</div></div>`).join('');
+    mkTable('tRace', [
+      {k: 'pos', l: '#', v: r => r.pos, f: r => r.pos, first: 1},
+      {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
+      {k: 'g', l: 'Gain', v: r => r.g, f: r => `<span class="up">${sgn(r.g)}</span>`},
+      {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}
+    ], pos, 'pos', 1, hlm, 999, true);
+  };
+  RACE_M = months.includes(RACE_M) ? RACE_M : months[months.length - 1];
+  const sel = $('raceMonth');
+  sel.innerHTML = months.slice().reverse().map(m => `<option value="${m}">${mlabel(m)}</option>`).join('');
+  sel.value = RACE_M; sel.onchange = () => { RACE_M = sel.value; drawRace(RACE_M); };
+  drawRace(RACE_M);
+
+  // ===== hall of fame =====
+  const rec = [], rc2 = (l, v, w, d) => `<div><div class="k">${l}</div><div class="v">${v}</div><div class="note">${[w, d].filter(Boolean).join(' · ')}</div></div>`;
+  const topClub = club.reduce((a, r) => num(r.trophies) > num(a.trophies) ? r : a, club[0]);
+  rec.push(rc2('Club trophy record', fmt(num(topClub.trophies)), '', topClub.date));
+  const myZ = zc.filter(r => r.tag === tag);
+  if (myZ.length) { const b = myZ.reduce((a, r) => num(r.rank) < num(a.rank) ? r : a, myZ[0]); rec.push(rc2('Best SA club rank', '#' + b.rank, '', b.date)); }
+  const cb = best7(club.map(r => ({d: r.date, t: num(r.trophies)})));
+  if (cb && cb.g > 0) rec.push(rc2('Best club 7-day gain', sgn(cb.g), '', cb.d));
+  let hi = null, wkr = null;
+  H.forEach((h, t) => {
+    h.forEach(x => { if (!hi || x.t > hi.v) hi = {t, v: x.t, d: x.d}; });
+    const b = best7(h); if (b && b.g > 0 && (!wkr || b.g > wkr.v)) wkr = {t, v: b.g, d: b.d};
+  });
+  if (hi) rec.push(rc2('Most trophies by a member', fmt(hi.v), esc(who(hi.t)), hi.d));
+  if (wkr) rec.push(rc2('Best member 7-day gain', sgn(wkr.v), esc(who(wkr.t)), wkr.d));
+  const bestR = cur.filter(r => num(r.best_elo) != null).sort((a, b) => (num(b.best_rank) * 1e5 + num(b.best_elo)) - (num(a.best_rank) * 1e5 + num(a.best_elo)))[0];
+  if (bestR) rec.push(rc2('Highest ranked ever', esc(bestR.best_rank_name) + ' · ' + fmt(num(bestR.best_elo)), esc(nm(bestR)), ''));
+  $('fameRecords').innerHTML = rec.join('');
+  $('fameNote').textContent = `Records cover tracked data since ${md[0]}.`;
+  const wins = months.slice(0, -1).reverse().map(m => { const R = raceOf(m), w = R.rows.filter(x => x.g > 0).sort((a, b) => b.g - a.g)[0]; return w ? `<li>${mlabel(m)}${R.baseD ? '' : ' (partial month)'}: <b>${esc(who(w.tag))}</b> <b class="up">${sgn(w.g)}</b></li>` : ''; }).join('');
+  $('fameWinners').innerHTML = wins ? '<ul>' + wins + '</ul>' : '<p class="note">Winners appear after the first full month.</p>';
+
+  // ===== friendly rival & head-to-head =====
+  const rivR = RIVAL && RIVAL !== ME ? cur.find(r => r.tag === RIVAL) : null, showH = !!(meR && rivR);
+  $('sec-h2h').style.display = showH ? '' : 'none';
+  $('navRival').style.display = showH ? '' : 'none';
+  if (showH) {
+    const rn = nm(rivR), A = H.get(ME), B = H.get(RIVAL), RM = raceOf(L.slice(0, 7)), T30 = tmap(base(md, L, 30));
+    const mg = t => (RM.rows.find(r => r.tag === t) || {}).g ?? null;
+    const g30 = r => T30.has(r.tag) ? r.t - T30.get(r.tag) : null;
+    const saR = t => { const x = pr.find(r => r.tag === t); return x ? x.rank : null; };
+    const R = (l, a, b, better, f, da, db) => ({l, a, b, better, da: da ?? (a == null ? '–' : (f || fmt)(a)), db: db ?? (b == null ? '–' : (f || fmt)(b))});
+    const rs = r => num(r.ranked_rank) != null && num(r.ranked_elo) != null ? num(r.ranked_rank) * 1e5 + num(r.ranked_elo) : null;
+    const bs = r => num(r.best_elo) != null ? num(r.best_rank) * 1e5 + num(r.best_elo) : null;
+    const bm = new Map(B.map(x => [x.d, x.t])), am = new Map(A.map(x => [x.d, x.t]));
+    const both = A.filter(x => bm.has(x.d)).map(x => ({d: x.d, df: x.t - bm.get(x.d)}));
+    let swaps = 0; both.forEach((x, i) => { if (i && x.df && both[i - 1].df && Math.sign(x.df) !== Math.sign(both[i - 1].df)) swaps++; });
+    const E7b = new Map((MG.get(base(md, L, 7)) || []).map(r => [r.tag, {s: num(r.ranked_season_id), e: num(r.ranked_elo)}]));
+    const e7 = r => { const o = E7b.get(r.tag); return o && o.s === num(r.ranked_season_id) && o.e != null && num(r.ranked_elo) != null ? num(r.ranked_elo) - o.e : null; };
+    const sameS = meR.ranked_season_id !== '' && meR.ranked_season_id === rivR.ranked_season_id;
+    const rowsH = [
+      R('Trophies', meR.t, rivR.t, 'hi'), R('Club rank', meR.rank, rivR.rank, 'lo', x => '#' + x),
+      R('SA player rank (top 200)', saR(ME), saR(RIVAL), 'lo', x => '#' + x),
+      R('Gain: 7 days', meR.d7, rivR.d7, 'hi', sgn), R('Gain: 30 days', g30(meR), g30(rivR), 'hi', sgn), R('Gain: this month', mg(ME), mg(RIVAL), 'hi', sgn),
+      R('Peak trophies (tracked)', Math.max(...A.map(x => x.t)), Math.max(...B.map(x => x.t)), 'hi'),
+      R('Best 7-day gain (tracked)', (best7(A) || {}).g ?? null, (best7(B) || {}).g ?? null, 'hi', sgn),
+      R('Days ahead of the other', both.filter(x => x.df > 0).length, both.filter(x => x.df < 0).length, 'hi'),
+      R('Biggest lead ever', Math.max(0, ...both.map(x => x.df)), Math.max(0, ...both.map(x => -x.df)), 'hi'),
+      ...(sameS ? [R('Ranked tier', rs(meR), rs(rivR), 'hi', null, meR.ranked_rank_name, rivR.ranked_rank_name), R('Ranked Elo', num(meR.ranked_elo), num(rivR.ranked_elo), 'hi'), R('Elo change: 7 days', e7(meR), e7(rivR), 'hi', sgn)] : []),
+      R('All-time best ranked', bs(meR), bs(rivR), 'hi', null, num(meR.best_elo) != null ? `${meR.best_rank_name} (${fmt(num(meR.best_elo))})` : '–', num(rivR.best_elo) != null ? `${rivR.best_rank_name} (${fmt(num(rivR.best_elo))})` : '–'),
+      R('Role', null, null, null, null, ROLES[meR.role] || meR.role, ROLES[rivR.role] || rivR.role)
+    ].filter(x => !(x.da === '–' && x.db === '–'));
+    const win = (x, w) => { if (x.a == null || x.b == null || x.a === x.b || !x.better) return ''; const aw = x.better === 'hi' ? x.a > x.b : x.a < x.b; return (w === 'a') === aw ? ' class="win"' : ''; };
+    $('h2hTitle').textContent = `Head to head: you vs ${rn}`;
+    $('tH2H').innerHTML = `<table><thead><tr><th>Stat</th><th>You</th><th>${esc(rn)}</th></tr></thead><tbody>` +
+      rowsH.map(x => `<tr><td>${x.l}</td><td${win(x, 'a')}>${esc(x.da)}</td><td${win(x, 'b')}>${esc(x.db)}</td></tr>`).join('') + '</tbody></table>';
+    $('h2hNote').textContent = both.length > 1 ? `The lead has changed hands ${swaps} time${swaps === 1 ? '' : 's'} since tracking began. Better figure shown in green.` : 'More history builds up each day. Better figure shown in green.';
+    const RED = cv('--red');
+    trend('cH2H', 'barH2H', rng => { const d = cut(md, rng); return line(d, [ds('You', d.map(x => am.get(x) ?? null), GOLD, {borderWidth: 3}), ds(rn, d.map(x => bm.get(x) ?? null), RED)], {x: axis(), y: axis()}); });
+    const sA = num(meR.ranked_season_id), ea = new Map(A.filter(x => x.s === sA && x.elo != null).map(x => [x.d, x.elo])), eb = new Map(B.filter(x => x.s === sA && x.elo != null).map(x => [x.d, x.elo]));
+    const showE = sameS && ea.size > 1 && eb.size > 1;
+    $('h2hElo').style.display = showE ? '' : 'none';
+    if (showE) { const dd = md.filter(d => ea.has(d) || eb.has(d)); mkChart('cH2HE', line(dd, [ds('You', dd.map(x => ea.get(x) ?? null), GOLD, {borderWidth: 3}), ds(rn, dd.map(x => eb.get(x) ?? null), RED)], {x: axis(), y: axis()})); }
+    const ms = months.slice(-6), mr = ms.map(m => raceOf(m).rows), pk = (t, i) => (mr[i].find(r => r.tag === t) || {}).g ?? null;
+    mkChart('cH2HM', {type: 'bar', data: {labels: ms.map(mlabel), datasets: [{label: 'You', data: ms.map((m, i) => pk(ME, i)), backgroundColor: GOLD}, {label: rn, data: ms.map((m, i) => pk(RIVAL, i)), backgroundColor: RED}]}, options: opts({x: axis(), y: axis()})});
+  }
 }
 
 function closeModal() { ['cMT', 'cME'].forEach(i => { const c = $(i) && Chart.getChart($(i)); if (c) c.destroy(); }); $('modal').style.display = 'none'; $('mbody').innerHTML = ''; }
 function openMember(t) {
   if (!CTX || !CTX.H.has(t)) return;
   const h = CTX.H.get(t), r = CTX.cur.find(x => x.tag === t); if (!r) return;
-  const season = num(r.ranked_season_id), eh = h.filter(x => x.s != null && x.s === season && x.elo != null);
-  $('mbody').innerHTML = `<h2>${esc(nm(r))}</h2><p class="note">${ROLES[r.role] || esc(r.role)} · club rank #${r.rank}</p><div class="grid">` +
+  const season = num(r.ranked_season_id), eh = h.filter(x => x.s != null && x.s === season && x.elo != null), g0 = r.t - h[0].t;
+  $('mbody').innerHTML = `<h2>${esc(nm(r))}</h2><p class="note">${ROLES[r.role] || esc(r.role)} · club rank #${r.rank}${t === ME ? ' · you' : t === RIVAL ? ' · your rival' : ''}</p><div class="grid">` +
     kv('Trophies', fmt(r.t)) + kv('Best tracked', fmt(Math.max(...h.map(x => x.t)))) + kv('7-day gain', `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`) +
-    (r.ranked_rank_name ? kv('Ranked', esc(r.ranked_rank_name) + ' · ' + fmt(num(r.ranked_elo))) : '') + '</div>' +
-    '<div class="k">Trophy history</div><canvas id="cMT" height="130"></canvas>' +
-    (eh.length > 1 ? `<div class="k" style="margin-top:12px">Ranked Elo (season ${season})</div><canvas id="cME" height="110"></canvas>` : '');
+    kv('Gain since ' + h[0].d, `<span class="${cls(g0)}">${sgn(g0)}</span>`) +
+    (r.ranked_rank_name ? kv('Ranked', esc(r.ranked_rank_name) + ' · ' + fmt(num(r.ranked_elo))) : '') +
+    (r.best_rank_name ? kv('All-time best', esc(r.best_rank_name) + ' · ' + fmt(num(r.best_elo))) : '') + '</div>' +
+    '<div class="k">Trophies over time</div><div class="bar" id="barMT"></div><canvas id="cMT" height="130"></canvas>' +
+    (eh.length > 1 ? `<div class="k" style="margin-top:12px">Ranked Elo over time (season ${season})</div><div class="bar" id="barME"></div><canvas id="cME" height="110"></canvas>` : '') +
+    (ME && t !== ME ? `<p><button class="btn small" id="mRival">${t === RIVAL ? 'Remove rival' : 'Make this my rival'}</button></p>` : '');
   $('modal').style.display = 'flex';
-  mkChart('cMT', line(h.map(x => x.d), [ds('Trophies', h.map(x => x.t), GOLD)], {x: axis(), y: axis()}));
-  if (eh.length > 1) mkChart('cME', line(eh.map(x => x.d), [ds('Elo', eh.map(x => x.elo), TEAL)], {x: axis(), y: axis()}));
+  trend('cMT', 'barMT', rng => { const d = cut(h.map(x => x.d), rng), m = new Map(h.map(x => [x.d, x.t])); return line(d, [ds('Trophies', d.map(x => m.get(x)), GOLD)], {x: axis(), y: axis()}); });
+  if (eh.length > 1) trend('cME', 'barME', rng => { const d = cut(eh.map(x => x.d), rng), m = new Map(eh.map(x => [x.d, x.elo])); return line(d, [ds('Elo', d.map(x => m.get(x)), TEAL)], {x: axis(), y: axis()}); });
+  const rb = $('mRival'); if (rb) rb.onclick = () => { RIVAL = t === RIVAL ? null : t; store('lty_rival', RIVAL); closeModal(); render(...DATA); };
+}
+function openRival() {
+  if (!CTX) return;
+  $('modal').style.display = 'flex';
+  if (!ME) { $('mbody').innerHTML = `<h2>Choose a rival</h2><p class="note">Set "Find me" first so we can compare you with your rival.</p><button class="btn on" id="rvFind">Find me</button>`; $('rvFind').onclick = openFind; return; }
+  const os = CTX.cur.filter(r => r.tag !== ME).map(r => `<option value="${esc(r.tag)}"${r.tag === RIVAL ? ' selected' : ''}>#${r.rank} · ${esc(nm(r))} · ${fmt(r.t)}</option>`).join('');
+  $('mbody').innerHTML = `<h2>Choose a rival</h2><p class="note">Pick a clubmate to compete with. They'll be highlighted in red and you'll get a head-to-head section. Saved in this browser only.</p><select id="rvSel" class="inp"><option value="">Select a member…</option>${os}</select><p class="note">Or enter their tag:</p><input id="rvTag" class="inp" placeholder="#ABC123"><p class="note" id="rvMsg"></p><button class="btn on" id="rvGo">Save</button> <button class="btn" id="rvClr">Remove rival</button>`;
+  $('rvGo').onclick = () => {
+    const raw = $('rvTag').value.trim(), t = raw ? normTag(raw) : $('rvSel').value;
+    if (!t || t === ME || !CTX.cur.some(r => r.tag === t)) { $('rvMsg').textContent = `Pick a clubmate (not yourself) or enter a tag that's in the club right now.`; return; }
+    RIVAL = t; store('lty_rival', t); closeModal(); render(...DATA);
+  };
+  $('rvClr').onclick = () => { RIVAL = null; store('lty_rival', null); closeModal(); render(...DATA); };
 }
 function openFind() {
   if (!CTX) return;
@@ -406,7 +528,7 @@ function openFind() {
   $('findGo').onclick = () => {
     const t = normTag($('tagIn').value);
     if (!CTX.cur.some(r => r.tag === t)) { $('findMsg').textContent = `That tag isn't in the club right now.`; return; }
-    ME = t; store('lty_me', t); closeModal(); render(...DATA);
+    ME = t; store('lty_me', t); if (RIVAL === t) { RIVAL = null; store('lty_rival', null); } closeModal(); render(...DATA);
   };
   $('findClr').onclick = () => { ME = null; store('lty_me', null); closeModal(); render(...DATA); };
 }
@@ -414,6 +536,7 @@ $('mclose').onclick = closeModal;
 $('modal').onclick = e => { if (e.target.id === 'modal') closeModal(); };
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 $('findBtn').onclick = openFind;
+$('rivalBtn').onclick = openRival;
 $('themeBtn').onclick = () => { setTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'); if (DATA) render(...DATA); };
 
 (async () => {
