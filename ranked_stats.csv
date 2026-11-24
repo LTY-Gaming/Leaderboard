@@ -913,18 +913,29 @@ legendary,hotZone,Parallel Plays,MICO,0,3,1,2,0,0,0,0,3,1
 legendary,hotZone,Parallel Plays,SHADE,0,3,1,2,0,0,0,0,3,1
 legendary,hotZone,Parallel Plays,SIRIUS,0,0,0,0,0,3,0,0,0,0
 legendary,hotZone,Parallel Plays,TRUNK,0,0,0,0,0,3,0,0,0,0
-legendary,knockout,Belle's Rock,*,2,0,0,0,0,0,0,0,0,0
+legendary,hotZone,Sunken harbor,*,1,0,0,0,0,0,0,0,0,0
+legendary,hotZone,Sunken harbor,ASH,0,1,0,1,0,0,0,0,0,0
+legendary,hotZone,Sunken harbor,EMZ,0,1,1,0,0,0,0,0,1,1
+legendary,hotZone,Sunken harbor,MELODIE,0,1,0,1,0,0,1,0,0,0
+legendary,hotZone,Sunken harbor,NANI,0,1,0,1,0,0,0,0,0,0
+legendary,hotZone,Sunken harbor,NITA,0,1,1,0,0,0,0,0,1,1
+legendary,hotZone,Sunken harbor,TICK,0,1,1,0,0,0,0,0,1,1
+legendary,knockout,Belle's Rock,*,4,0,0,0,0,0,0,0,0,0
 legendary,knockout,Belle's Rock,AMBER,0,0,0,0,0,2,0,0,0,0
-legendary,knockout,Belle's Rock,BROCK,0,0,0,0,0,2,0,0,0,0
+legendary,knockout,Belle's Rock,BROCK,0,2,0,2,0,2,0,0,2,0
 legendary,knockout,Belle's Rock,COLETTE,0,2,0,2,0,0,0,0,2,0
-legendary,knockout,Belle's Rock,EDGAR,0,0,0,0,0,2,0,0,0,0
+legendary,knockout,Belle's Rock,EDGAR,0,0,0,0,0,6,0,0,0,0
+legendary,knockout,Belle's Rock,GIGI,0,0,0,0,0,2,0,0,0,0
 legendary,knockout,Belle's Rock,GROM,0,2,0,2,0,0,0,0,2,0
 legendary,knockout,Belle's Rock,GUS,0,2,0,2,0,0,0,0,2,0
 legendary,knockout,Belle's Rock,LOU,0,0,0,0,0,2,0,0,0,0
-legendary,knockout,Belle's Rock,MANDY,0,2,2,0,0,0,2,2,0,0
-legendary,knockout,Belle's Rock,MR. P,0,2,2,0,0,0,2,2,0,0
-legendary,knockout,Belle's Rock,NAJIA,0,0,0,0,0,2,0,0,0,0
-legendary,knockout,Belle's Rock,NORI,0,2,2,0,0,0,2,2,0,0
+legendary,knockout,Belle's Rock,MANDY,0,4,4,0,0,0,4,4,0,0
+legendary,knockout,Belle's Rock,MICO,0,2,0,2,0,0,0,0,2,0
+legendary,knockout,Belle's Rock,MR. P,0,2,2,0,0,4,2,2,0,0
+legendary,knockout,Belle's Rock,NAJIA,0,2,0,2,0,2,0,0,2,0
+legendary,knockout,Belle's Rock,NORI,0,4,4,0,0,0,2,2,0,0
+legendary,knockout,Belle's Rock,PIPER,0,0,0,0,0,2,0,0,0,0
+legendary,knockout,Belle's Rock,SPROUT,0,2,2,0,0,0,0,0,0,0
 legendary,knockout,Belle's Rock,TICK,0,0,0,0,0,2,0,0,0,0
 legendary,knockout,Flaring Phoenix,*,2,0,0,0,0,0,0,0,0,0
 legendary,knockout,Flaring Phoenix,AMBER,0,2,0,2,0,0,0,0,2,0
@@ -1036,19 +1047,23 @@ mythic,bounty,Layer Cake,SQUEAK,0,2,2,0,0,0,0,0,2,2
 mythic,bounty,Layer Cake,SURGE,0,3,1,2,0,3,0,0,0,0
 mythic,bounty,Layer Cake,TICK,0,0,0,0,0,5,0,0,0,0
 mythic,bounty,Layer Cake,ZIGGY,0,3,2,1,0,0,0,0,3,2
-mythic,bounty,Shooting Star,*,2,0,0,0,0,0,0,0,0,0
-mythic,bounty,Shooting Star,ANGELO,0,0,0,0,0,2,0,0,0,0
+mythic,bounty,Shooting Star,*,5,0,0,0,0,0,0,0,0,0
+mythic,bounty,Shooting Star,ANGELO,0,3,1,2,0,2,0,0,0,0
+mythic,bounty,Shooting Star,BEA,0,3,2,1,0,0,0,0,3,2
 mythic,bounty,Shooting Star,BELLE,0,2,0,2,0,0,0,0,2,0
-mythic,bounty,Shooting Star,BROCK,0,0,0,0,0,2,0,0,0,0
-mythic,bounty,Shooting Star,BYRON,0,2,0,2,0,0,0,0,2,0
-mythic,bounty,Shooting Star,EDGAR,0,2,2,0,0,0,2,2,0,0
+mythic,bounty,Shooting Star,BROCK,0,0,0,0,0,5,0,0,0,0
+mythic,bounty,Shooting Star,BYRON,0,5,2,3,0,0,0,0,5,2
+mythic,bounty,Shooting Star,EDGAR,0,5,4,1,0,0,2,2,3,2
+mythic,bounty,Shooting Star,GENE,0,3,1,2,0,0,3,1,0,0
 mythic,bounty,Shooting Star,GUS,0,0,0,0,0,2,0,0,0,0
 mythic,bounty,Shooting Star,LEON,0,0,0,0,0,2,0,0,0,0
-mythic,bounty,Shooting Star,MANDY,0,0,0,0,0,2,0,0,0,0
-mythic,bounty,Shooting Star,MR. P,0,2,0,2,0,0,0,0,2,0
-mythic,bounty,Shooting Star,NAJIA,0,2,2,0,0,0,0,0,0,0
+mythic,bounty,Shooting Star,MANDY,0,0,0,0,0,5,0,0,0,0
+mythic,bounty,Shooting Star,MR. P,0,2,0,2,0,3,0,0,2,0
+mythic,bounty,Shooting Star,NAJIA,0,2,2,0,0,3,0,0,0,0
+mythic,bounty,Shooting Star,NANI,0,3,1,2,0,0,0,0,0,0
 mythic,bounty,Shooting Star,PEARL,0,2,2,0,0,0,2,2,0,0
-mythic,bounty,Shooting Star,PIPER,0,0,0,0,0,2,0,0,0,0
+mythic,bounty,Shooting Star,PIPER,0,0,0,0,0,5,0,0,0,0
+mythic,bounty,Shooting Star,SQUEAK,0,0,0,0,0,3,0,0,0,0
 mythic,bounty,Tasty Berry,*,2,0,0,0,0,0,0,0,0,0
 mythic,bounty,Tasty Berry,ALLI,0,1,1,0,0,0,0,0,0,0
 mythic,bounty,Tasty Berry,BROCK,0,2,1,1,0,0,1,1,1,0
@@ -1293,13 +1308,15 @@ mythic,gemGrab,Bottom Two,SPIKE,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Bottom Two,SURGE,0,3,2,1,0,0,0,0,2,1
 mythic,gemGrab,Bottom Two,TARA,0,3,1,2,0,0,0,0,3,1
 mythic,gemGrab,Bottom Two,TICK,0,3,3,0,0,0,2,2,1,1
-mythic,gemGrab,Don't Leaf Me,*,6,0,0,0,0,0,0,0,0,0
+mythic,gemGrab,Don't Leaf Me,*,7,0,0,0,0,0,0,0,0,0
 mythic,gemGrab,Don't Leaf Me,8-BIT,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Don't Leaf Me,BARLEY,0,1,0,1,0,0,0,0,0,0
 mythic,gemGrab,Don't Leaf Me,BIBI,0,1,1,0,0,0,0,0,0,0
+mythic,gemGrab,Don't Leaf Me,BO,0,1,1,0,0,0,0,0,0,0
 mythic,gemGrab,Don't Leaf Me,BROCK,0,4,3,1,0,0,0,0,0,0
 mythic,gemGrab,Don't Leaf Me,BUSTER,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Don't Leaf Me,BUZZ,0,2,1,1,0,0,0,0,2,1
+mythic,gemGrab,Don't Leaf Me,CARL,0,2,1,1,0,0,0,0,1,0
 mythic,gemGrab,Don't Leaf Me,CHARLIE,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Don't Leaf Me,COLT,0,1,1,0,0,0,0,0,0,0
 mythic,gemGrab,Don't Leaf Me,COSMO,0,1,0,1,0,0,1,0,0,0
@@ -1309,7 +1326,8 @@ mythic,gemGrab,Don't Leaf Me,EDGAR,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Don't Leaf Me,EL PRIMO,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Don't Leaf Me,EVE,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Don't Leaf Me,FANG,0,1,1,0,0,0,0,0,1,1
-mythic,gemGrab,Don't Leaf Me,GLOWY,0,2,2,0,0,0,2,2,0,0
+mythic,gemGrab,Don't Leaf Me,GENE,0,1,0,1,0,0,0,0,1,0
+mythic,gemGrab,Don't Leaf Me,GLOWY,0,3,3,0,0,0,3,3,0,0
 mythic,gemGrab,Don't Leaf Me,GRIFF,0,1,0,1,0,0,0,0,0,0
 mythic,gemGrab,Don't Leaf Me,JESSIE,0,1,0,1,0,0,0,0,0,0
 mythic,gemGrab,Don't Leaf Me,LEON,0,1,0,1,0,0,1,0,0,0
@@ -1322,6 +1340,7 @@ mythic,gemGrab,Don't Leaf Me,ROSA,0,1,0,1,0,0,0,0,0,0
 mythic,gemGrab,Don't Leaf Me,SANDY,0,3,3,0,0,0,0,0,3,3
 mythic,gemGrab,Don't Leaf Me,SHELLY,0,1,1,0,0,0,0,0,1,1
 mythic,gemGrab,Don't Leaf Me,SURGE,0,1,0,1,0,0,0,0,1,0
+mythic,gemGrab,Don't Leaf Me,VINCE,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Double Swoosh,*,12,0,0,0,0,0,0,0,0,0
 mythic,gemGrab,Double Swoosh,AMBER,0,4,2,2,0,5,0,0,3,1
 mythic,gemGrab,Double Swoosh,BARLEY,0,0,0,0,0,3,0,0,0,0
@@ -1382,25 +1401,32 @@ mythic,gemGrab,Gem Fort,NORI,0,0,0,0,0,2,0,0,0,0
 mythic,gemGrab,Gem Fort,RICO,0,3,1,2,0,0,0,0,3,1
 mythic,gemGrab,Gem Fort,TARA,0,1,1,0,0,0,0,0,0,0
 mythic,gemGrab,Gem Fort,TICK,0,1,0,1,0,0,0,0,1,0
-mythic,gemGrab,Hard Rock Mine,*,4,0,0,0,0,0,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,*,5,0,0,0,0,0,0,0,0,0
 mythic,gemGrab,Hard Rock Mine,AMBER,0,0,0,0,0,2,0,0,0,0
 mythic,gemGrab,Hard Rock Mine,BIBI,0,2,2,0,0,0,0,0,2,2
-mythic,gemGrab,Hard Rock Mine,BO,0,0,0,0,0,2,0,0,0,0
-mythic,gemGrab,Hard Rock Mine,CHESTER,0,2,0,2,0,0,0,0,2,0
+mythic,gemGrab,Hard Rock Mine,BO,0,0,0,0,0,3,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,CARL,0,1,0,1,0,0,0,0,1,0
+mythic,gemGrab,Hard Rock Mine,CHESTER,0,3,1,2,0,0,0,0,2,0
 mythic,gemGrab,Hard Rock Mine,CROW,0,2,0,2,0,0,0,0,0,0
-mythic,gemGrab,Hard Rock Mine,EDGAR,0,0,0,0,0,4,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,EDGAR,0,0,0,0,0,5,0,0,0,0
 mythic,gemGrab,Hard Rock Mine,EMZ,0,2,2,0,0,0,0,0,0,0
 mythic,gemGrab,Hard Rock Mine,GALE,0,0,0,0,0,2,0,0,0,0
-mythic,gemGrab,Hard Rock Mine,GUS,0,0,0,0,0,2,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,GUS,0,1,0,1,0,2,0,0,1,0
 mythic,gemGrab,Hard Rock Mine,KIT,0,2,0,2,0,0,0,0,2,0
 mythic,gemGrab,Hard Rock Mine,LEON,0,0,0,0,0,2,0,0,0,0
 mythic,gemGrab,Hard Rock Mine,LILY,0,2,2,0,0,2,0,0,2,2
 mythic,gemGrab,Hard Rock Mine,LOU,0,0,0,0,0,4,0,0,0,0
 mythic,gemGrab,Hard Rock Mine,MR. P,0,2,2,0,0,2,2,2,0,0
 mythic,gemGrab,Hard Rock Mine,NAJIA,0,0,0,0,0,2,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,NORI,0,0,0,0,0,1,0,0,0,0
 mythic,gemGrab,Hard Rock Mine,PEARL,0,2,0,2,0,0,0,0,2,0
-mythic,gemGrab,Hard Rock Mine,RICO,0,4,4,0,0,0,0,0,2,2
+mythic,gemGrab,Hard Rock Mine,PIERCE,0,0,0,0,0,1,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,RICO,0,5,5,0,0,0,1,1,2,2
+mythic,gemGrab,Hard Rock Mine,SQUEAK,0,0,0,0,0,1,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,STU,0,1,0,1,0,0,0,0,1,0
 mythic,gemGrab,Hard Rock Mine,SURGE,0,2,0,2,0,0,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,TARA,0,0,0,0,0,1,0,0,0,0
+mythic,gemGrab,Hard Rock Mine,TICK,0,1,1,0,0,0,0,0,0,0
 mythic,gemGrab,Hard Rock Mine,VINCE,0,2,0,2,0,0,2,0,0,0
 mythic,gemGrab,Undermine,*,4,0,0,0,0,0,0,0,0,0
 mythic,gemGrab,Undermine,AMBER,0,2,2,0,0,0,0,0,2,2
@@ -1747,26 +1773,32 @@ mythic,hotZone,Sunken harbor,KENJI,0,1,0,1,0,0,0,0,1,0
 mythic,hotZone,Sunken harbor,NITA,0,1,0,1,0,0,0,0,1,0
 mythic,hotZone,Sunken harbor,PAM,0,2,2,0,0,0,1,1,0,0
 mythic,hotZone,Sunken harbor,POCO,0,1,0,1,0,0,0,0,1,0
-mythic,knockout,Belle's Rock,*,9,0,0,0,0,0,0,0,0,0
+mythic,knockout,Belle's Rock,*,10,0,0,0,0,0,0,0,0,0
 mythic,knockout,Belle's Rock,ANGELO,0,2,0,2,0,0,0,0,2,0
 mythic,knockout,Belle's Rock,BO,0,2,0,2,0,0,0,0,2,0
 mythic,knockout,Belle's Rock,BONNIE,0,3,2,1,0,0,0,0,3,2
-mythic,knockout,Belle's Rock,BROCK,0,5,3,2,0,2,2,2,0,0
-mythic,knockout,Belle's Rock,BUZZ,0,1,0,1,0,0,0,0,1,0
+mythic,knockout,Belle's Rock,BROCK,0,6,4,2,0,2,2,2,1,1
+mythic,knockout,Belle's Rock,BULL,0,1,0,1,0,0,0,0,0,0
+mythic,knockout,Belle's Rock,BUZZ,0,2,1,1,0,0,0,0,2,1
 mythic,knockout,Belle's Rock,BYRON,0,4,2,2,0,0,0,0,0,0
 mythic,knockout,Belle's Rock,CHARLIE,0,2,2,0,0,0,0,0,2,2
+mythic,knockout,Belle's Rock,COLT,0,1,0,1,0,0,0,0,0,0
 mythic,knockout,Belle's Rock,DYNAMIKE,0,1,1,0,0,0,0,0,0,0
-mythic,knockout,Belle's Rock,EDGAR,0,1,1,0,0,5,0,0,0,0
+mythic,knockout,Belle's Rock,EDGAR,0,1,1,0,0,6,0,0,0,0
 mythic,knockout,Belle's Rock,EL PRIMO,0,1,0,1,0,0,0,0,1,0
+mythic,knockout,Belle's Rock,GIGI,0,1,1,0,0,0,0,0,1,1
 mythic,knockout,Belle's Rock,GRIFF,0,0,0,0,0,3,0,0,0,0
 mythic,knockout,Belle's Rock,GUS,0,0,0,0,0,2,0,0,0,0
 mythic,knockout,Belle's Rock,LEON,0,0,0,0,0,5,0,0,0,0
 mythic,knockout,Belle's Rock,LILY,0,2,2,0,0,0,0,0,2,2
+mythic,knockout,Belle's Rock,LOU,0,0,0,0,0,1,0,0,0,0
 mythic,knockout,Belle's Rock,MANDY,0,0,0,0,0,10,0,0,0,0
-mythic,knockout,Belle's Rock,MICO,0,5,1,4,0,2,3,1,0,0
+mythic,knockout,Belle's Rock,MICO,0,5,1,4,0,3,3,1,0,0
 mythic,knockout,Belle's Rock,MINA,0,3,1,2,0,0,0,0,3,1
+mythic,knockout,Belle's Rock,MR. P,0,0,0,0,0,2,0,0,0,0
+mythic,knockout,Belle's Rock,NAJIA,0,0,0,0,0,1,0,0,0,0
 mythic,knockout,Belle's Rock,PEARL,0,2,0,2,0,0,2,0,0,0
-mythic,knockout,Belle's Rock,PIPER,0,2,2,0,0,0,0,0,2,2
+mythic,knockout,Belle's Rock,PIPER,0,3,2,1,0,0,1,0,2,2
 mythic,knockout,Belle's Rock,RICO,0,1,1,0,0,5,0,0,1,1
 mythic,knockout,Belle's Rock,RUFFS,0,3,1,2,0,0,0,0,0,0
 mythic,knockout,Belle's Rock,SPIKE,0,2,2,0,0,0,0,0,0,0
