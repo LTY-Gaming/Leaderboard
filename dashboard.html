@@ -75,7 +75,7 @@ details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
 </style>
 </head>
 <body>
-<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-sa">SA</a><a href="#sec-h2h" id="navRival" style="display:none">Head to head</a><a href="#sec-rivals">Rival clubs</a><a href="#sec-race">Monthly races</a><a href="#sec-membership">Membership</a><a href="#sec-fame">Hall of fame</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="rivalBtn">Rival</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
+<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-mapbook">Map book</a><a href="#sec-sa">SA</a><a href="#sec-h2h" id="navRival" style="display:none">Head to head</a><a href="#sec-rivals">Rival clubs</a><a href="#sec-race">Monthly races</a><a href="#sec-membership">Membership</a><a href="#sec-fame">Hall of fame</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="rivalBtn">Rival</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
 <div class="wrap">
   <h1 id="title">Club Leaderboard</h1>
   <p class="sub" id="updated">Loading…</p>
@@ -91,6 +91,14 @@ details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
 
   <div class="card" id="sec-members"><h2>Member trophy leaderboard</h2><p class="note">Tap a member to see their history.</p><div class="tw" id="tMembers"></div></div>
   <div class="card" id="rankedCard" style="display:none"><h2>Member ranked leaderboard</h2><p class="note" id="rankedNote"></p><div id="tierChips"></div><canvas id="cTier" height="90"></canvas><div class="tw" id="tRanked" style="margin-top:14px"></div></div>
+
+  <div class="card" id="sec-elo" style="display:none"><h2>Ranked Elo: gained and lost</h2><div class="bar" id="eloBar"></div>
+    <div class="grid" id="eloCards"></div><p class="note" id="eloNote"></p><canvas id="cElo" height="110"></canvas>
+    <div class="tw" id="tElo" style="margin-top:14px"></div></div>
+
+  <div class="card" id="sec-mapbook" style="display:none"><h2>Ranked map book</h2>
+    <div class="bar" id="mbTiers"></div><div class="bar"><select id="mbMap" class="inp" style="width:auto;max-width:100%;margin:0"></select></div>
+    <p class="note" id="mbSample"></p><div class="two" id="mbBody"></div><p class="note" id="mbFoot"></p></div>
 
   <div class="card" id="sec-sa"><h2>Club vs South Africa</h2>
     <div class="grid" id="saCards"></div>
@@ -127,11 +135,9 @@ details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
 
 <div id="modal"><div class="mbox"><button class="btn small" id="mclose" aria-label="Close">✕</button><div id="mbody"></div></div></div>
 <script>
-const SHOW_MEMBER_NAMES = true;   // <-- set to true to show member names publicly
+const SHOW_MEMBER_NAMES = false;   // <-- set to true to show member names publicly
 // Goals: add more, e.g. {label: '100k club trophies', type: 'trophies', target: 100000}
-const GOALS = [{label: '2.5 Million Club Trophies', type: 'trophies', target: 2500000},
-               {label: 'Top 15 in South Africa', type: 'rank', target: 15}, 
-               {label: 'Top 10 in South Africa', type: 'rank', target: 10}];
+const GOALS = [{label: 'Top 10 in South Africa', type: 'rank', target: 10}];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = v => (v === '' || v == null || isNaN(v)) ? null : Number(v);
@@ -144,7 +150,7 @@ const ROLES = {president:'President', vicePresident:'Vice President', senior:'Se
 const ROLE_ORDER = {president:0, vicePresident:1, senior:2, member:3};
 const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0, 10);
 const cv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null, RIVAL = null, RACE_M = null, RACE_E = null;
+let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null, RIVAL = null, RACE_M = null, RACE_E = null, ELO_P = '7';
 const paint = () => { GOLD = cv('--gold'); TEAL = cv('--teal'); PINK = cv('--pink'); };
 const store = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
 const fetchStore = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
@@ -202,7 +208,52 @@ function trend(id, bar, build) {
 const line = (labels, datasets, scales) => ({type: 'line', data: {labels, datasets}, options: opts(scales)});
 const ds = (label, data, color, extra = {}) => ({label, data, borderColor: color, backgroundColor: color, tension: .25, pointRadius: 2, spanGaps: false, ...extra});
 
-function render(mem, club, zc, zp) {
+const MIN_GAMES = 3;   // games a brawler needs before it is recommended; raise this as data builds up
+const TIER_ORDER = ['diamond', 'mythic', 'legendary', 'masters'];
+const MB = {tier: null, map: null};
+const pretty = s => String(s || '').toLowerCase().replace(/(^|[ .'-])([a-z])/g, (m, a, b) => a + b.toUpperCase());
+const wilson = (w, n) => n ? (w / n + 1.9208 / n - 1.96 * Math.sqrt((w / n * (1 - w / n) + 0.9604 / n) / n)) / (1 + 3.8416 / n) : 0;
+function renderMapBook(rs, rm, meRow) {
+  const card = $('sec-mapbook');
+  const rows = rs.map(r => ({tier: r.tier, mode: r.mode, map: r.map, b: r.brawler, g: num(r.games) || 0, a: num(r.appearances) || 0, w: num(r.wins) || 0, l: num(r.losses) || 0,
+    bans: num(r.bans) || 0, og: num(r.own_games) || 0, ow: num(r.own_wins) || 0, pg: num(r.opp_games) || 0, pw: num(r.opp_wins) || 0}));
+  if (!rows.some(r => r.b === '*' && r.g > 0)) { card.style.display = 'none'; return; }
+  card.style.display = '';
+  const tiers = TIER_ORDER.filter(t => rows.some(r => r.tier === t && r.b === '*' && r.g > 0));
+  const meTier = ((meRow && meRow.ranked_rank_name) || '').split(' ')[0].toLowerCase();
+  if (!(MB.tier === 'all' || tiers.includes(MB.tier))) MB.tier = tiers.includes(meTier) ? meTier : 'all';
+  const sel = MB.tier === 'all' ? rows : rows.filter(r => r.tier === MB.tier), redraw = () => renderMapBook(rs, rm, meRow);
+  $('mbTiers').innerHTML = [['all', 'All tiers'], ...tiers.map(t => [t, pretty(t)])].map(([k, l]) => `<button class="btn small${k === MB.tier ? ' on' : ''}" data-k="${k}">${l}</button>`).join('');
+  $('mbTiers').onclick = e => { const b = e.target.closest('button'); if (b) { MB.tier = b.dataset.k; redraw(); } };
+  const maps = new Map();
+  sel.filter(r => r.b === '*' && r.g > 0).forEach(r => { const k = r.mode + '|' + r.map; maps.set(k, {mode: r.mode, map: r.map, g: (maps.get(k) || {g: 0}).g + r.g}); });
+  if (!maps.has(MB.map)) MB.map = [...maps.entries()].sort((a, b) => b[1].g - a[1].g)[0][0];
+  const byMode = new Map(); maps.forEach((v, k) => { if (!byMode.has(v.mode)) byMode.set(v.mode, []); byMode.get(v.mode).push([k, v]); });
+  $('mbMap').innerHTML = [...byMode].sort((a, b) => a[0].localeCompare(b[0])).map(([m, arr]) => `<optgroup label="${esc(pretty(m.replace(/([A-Z])/g, ' $1')))}">` +
+    arr.sort((a, b) => a[1].map.localeCompare(b[1].map)).map(([k, v]) => `<option value="${esc(k)}"${k === MB.map ? ' selected' : ''}>${esc(v.map)} (${v.g} game${v.g === 1 ? '' : 's'})</option>`).join('') + '</optgroup>').join('');
+  $('mbMap').onchange = () => { MB.map = $('mbMap').value; redraw(); };
+  const i = MB.map.indexOf('|'), mode = MB.map.slice(0, i), map = MB.map.slice(i + 1);
+  const mr = sel.filter(r => r.mode === mode && r.map === map);
+  const G = mr.filter(r => r.b === '*').reduce((a, r) => a + r.g, 0), slots = G * 6, agg = new Map();
+  mr.filter(r => r.b !== '*').forEach(r => { const o = agg.get(r.b) || {b: r.b, a: 0, w: 0, l: 0, bans: 0, og: 0, ow: 0, pg: 0, pw: 0}; for (const k of ['a', 'w', 'l', 'bans', 'og', 'ow', 'pg', 'pw']) o[k] += r[k]; agg.set(r.b, o); });
+  const Ls = [...agg.values()], pct = x => Math.round(x * 100) + '%', nmB = x => esc(pretty(x.b));
+  const sec = (title, items, f, empty) => `<div><div class="k">${title}</div>` + (items.length ? '<ul>' + items.map(x => `<li>${f(x)}</li>`).join('') + '</ul>' : `<p class="note">${empty}</p>`) + '</div>';
+  const picks = Ls.filter(x => x.w + x.l >= MIN_GAMES).sort((a, b) => wilson(b.w, b.w + b.l) - wilson(a.w, a.w + a.l)).slice(0, 8);
+  const hard = Ls.filter(x => x.pg >= MIN_GAMES && x.pw / x.pg >= 0.5).sort((a, b) => wilson(b.pw, b.pg) - wilson(a.pw, a.pg)).slice(0, 8);
+  const banned = Ls.filter(x => x.bans > 0).sort((a, b) => b.bans - a.bans).slice(0, 8);
+  const own = Ls.filter(x => x.og >= MIN_GAMES).sort((a, b) => wilson(b.ow, b.og) - wilson(a.ow, a.og)).slice(0, 8);
+  const none = `Not enough games yet (a brawler needs ${MIN_GAMES}+).`;
+  $('mbBody').innerHTML =
+    sec('✅ Recommended picks', picks, x => `<b>${nmB(x)}</b>: ${pct(x.w / (x.w + x.l))} win · ${x.w + x.l} games · picked in ${pct(x.a / slots)} of slots`, none) +
+    sec('🚫 Recommended bans (hardest to beat)', hard, x => `<b>${nmB(x)}</b>: beat us in ${pct(x.pw / x.pg)} of ${x.pg} games`, none) +
+    sec('📊 Most banned', banned, x => `<b>${nmB(x)}</b>: ${pct(x.bans / slots)} of all bans (${x.bans})`, 'No bans recorded yet.') +
+    sec('⭐ How our members did', own, x => `<b>${nmB(x)}</b>: ${pct(x.ow / x.og)} win · ${x.og} club games`, none);
+  $('mbSample').textContent = `${G} game${G === 1 ? '' : 's'} on this map` + (MB.tier === 'all' ? ' across all tiers.' : ` at ${pretty(MB.tier)}.`) + (G < 10 ? ' Small sample: treat as a rough guide.' : '');
+  $('mbFoot').textContent = 'Based on ranked games played by club members' + (rm && rm.updated ? ', updated ' + new Date(rm.updated).toLocaleString('en-ZA', {timeZone: 'Africa/Johannesburg', dateStyle: 'medium', timeStyle: 'short'}) + ' SAST' : '') +
+    `. Win rates count both teams in each game; "beat us" counts brawlers on the opposing team. ${MIN_GAMES}+ games needed to be listed.`;
+}
+
+function render(mem, club, zc, zp, rs = [], rm = null) {
   paint();
   const MG = group(mem), md = [...MG.keys()].sort(), L = md[md.length - 1];
   if (!L) throw new Error('no data yet — run the workflow once');
@@ -251,7 +302,6 @@ function render(mem, club, zc, zp) {
       {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
       {k: 'tier', l: 'Tier', v: r => r.rr * 1e5 + r.elo, f: r => esc(r.ranked_rank_name)},
       {k: 'elo', l: 'Elo', v: r => r.elo, f: r => fmt(r.elo)},
-      {k: 'e7', l: 'Elo 7d', v: r => r.e7, f: r => `<span class="${cls(r.e7)}">${sgn(r.e7)}</span>`},
       {k: 'best', l: 'All-time best', v: r => r.best, f: r => r.best == null ? '–' : `${esc(r.best_rank_name)} (${fmt(r.best)})`}
     ], rows, 'pos', 1, hlm, 999, true);
   }
@@ -475,6 +525,53 @@ function render(mem, club, zc, zp) {
   $('fameChamps').innerHTML = rowsC.length ? tbl(rowsC.slice(0, 6)) + (rowsC.length > 6 ? `<details><summary>Earlier months (${rowsC.length - 6})</summary>${tbl(rowsC.slice(6))}</details>` : '') +
     tally('a', 'Most trophy-race wins') + (hasElo ? tally('b', 'Most ranked-race wins') : '') : '<p class="note">Champions appear after the first full month.</p>';
 
+  // ===== Elo gained / lost =====
+  const eloPairs = t => {   // consecutive same-season readings -> net change between daily readings
+    const h = H.get(t).filter(x => x.s != null && x.elo != null), out = [];
+    for (let i = 1; i < h.length; i++) if (h[i].s === h[i - 1].s) out.push({d: h[i].d, s: h[i].s, v: h[i].elo - h[i - 1].elo});
+    return out;
+  };
+  const eloMembers = cur.filter(r => num(r.ranked_season_id) != null && num(r.ranked_elo) != null);
+  $('sec-elo').style.display = eloMembers.length ? '' : 'none';
+  if (eloMembers.length) {
+    const curSeason = Math.max(...eloMembers.map(r => num(r.ranked_season_id)));
+    const PAIRS = new Map(eloMembers.map(r => [r.tag, eloPairs(r.tag)]));
+    const sum = (a, f) => a.reduce((x, y) => x + f(y), 0);
+    const drawElo = p => {
+      const inP = x => p === 'S' ? x.s === curSeason : x.d > addDays(L, -Number(p));
+      const rows = eloMembers.map(r => {
+        const ps = PAIRS.get(r.tag).filter(inP), g = sum(ps, x => Math.max(0, x.v)), l = sum(ps, x => Math.max(0, -x.v));
+        return {tag: r.tag, name: r.name, elo: num(r.ranked_elo), g, l, net: g - l, best: ps.length ? Math.max(0, ...ps.map(x => x.v)) : null};
+      });
+      const G = sum(rows, r => r.g), Lo = sum(rows, r => r.l);
+      $('eloCards').innerHTML = kv('Elo gained', `<span class="up">${sgn(G)}</span>`) + kv('Elo lost', `<span class="down">${Lo ? '−' + fmt(Lo) : '0'}</span>`) + kv('Net', `<span class="${cls(G - Lo)}">${sgn(G - Lo)}</span>`);
+      $('eloNote').textContent = 'Changes are measured between daily readings, so a day with both wins and losses shows only the difference: gained and lost are minimums. Season resets are never counted.' + (p === 'S' ? ` Season ${curSeason}, since tracking began.` : '');
+      const byD = new Map();
+      eloMembers.forEach(r => PAIRS.get(r.tag).filter(inP).forEach(x => { const o = byD.get(x.d) || {g: 0, l: 0}; if (x.v > 0) o.g += x.v; else o.l += -x.v; byD.set(x.d, o); }));
+      const dd = [...byD.keys()].sort();
+      mkChart('cElo', {type: 'bar', data: {labels: dd, datasets: [
+        {label: 'Gained', data: dd.map(d => byD.get(d).g), backgroundColor: TEAL, stack: 's'},
+        {label: 'Lost', data: dd.map(d => -byD.get(d).l), backgroundColor: PINK, stack: 's'},
+        {type: 'line', label: 'Net', data: dd.map(d => byD.get(d).g - byD.get(d).l), borderColor: GOLD, backgroundColor: GOLD, tension: .25, pointRadius: 2}]},
+        options: opts({x: {...axis(), stacked: true}, y: {...axis(), stacked: true}})});
+      mkTable('tElo', [
+        {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
+        {k: 'g', l: 'Gained', v: r => r.g, f: r => `<span class="up">${r.g ? '+' + fmt(r.g) : '0'}</span>`},
+        {k: 'l', l: 'Lost', v: r => r.l, f: r => `<span class="down">${r.l ? '−' + fmt(r.l) : '0'}</span>`},
+        {k: 'net', l: 'Net', v: r => r.net, f: r => `<span class="${cls(r.net)}">${sgn(r.net)}</span>`},
+        {k: 'best', l: 'Best day', v: r => r.best, f: r => r.best ? `<span class="up">${sgn(r.best)}</span>` : '–'},
+        {k: 'elo', l: 'Elo now', v: r => r.elo, f: r => fmt(r.elo)}
+      ], rows, 'net', -1, hlm, 999, true);
+    };
+    const bar = $('eloBar');
+    bar.innerHTML = [['7', '7D'], ['30', '30D'], ['S', 'Season']].map(([k, l]) => `<button class="btn small" data-k="${k}">${l}</button>`).join('');
+    const go = () => { bar.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.k === ELO_P)); drawElo(ELO_P); };
+    bar.onclick = e => { const b = e.target.closest('button'); if (b) { ELO_P = b.dataset.k; go(); } };
+    go();
+  }
+
+  renderMapBook(rs, rm, cur.find(r => r.tag === ME));
+
   // ===== friendly rival & head-to-head =====
   const rivR = RIVAL && RIVAL !== ME ? cur.find(r => r.tag === RIVAL) : null, showH = !!(meR && rivR);
   $('sec-h2h').style.display = showH ? '' : 'none';
@@ -521,22 +618,25 @@ function render(mem, club, zc, zp) {
   }
 }
 
-function closeModal() { ['cMT', 'cME'].forEach(i => { const c = $(i) && Chart.getChart($(i)); if (c) c.destroy(); }); $('modal').style.display = 'none'; $('mbody').innerHTML = ''; }
+function closeModal() { ['cMT', 'cME', 'cMD'].forEach(i => { const c = $(i) && Chart.getChart($(i)); if (c) c.destroy(); }); $('modal').style.display = 'none'; $('mbody').innerHTML = ''; }
 function openMember(t) {
   if (!CTX || !CTX.H.has(t)) return;
   const h = CTX.H.get(t), r = CTX.cur.find(x => x.tag === t); if (!r) return;
   const season = num(r.ranked_season_id), eh = h.filter(x => x.s != null && x.s === season && x.elo != null), g0 = r.t - h[0].t;
+  const dl = eh.slice(1).map((x, i) => ({d: x.d, v: x.elo - eh[i].elo})), eg = dl.reduce((a, x) => a + Math.max(0, x.v), 0), el = dl.reduce((a, x) => a + Math.max(0, -x.v), 0);
   $('mbody').innerHTML = `<h2>${esc(nm(r))}</h2><p class="note">${ROLES[r.role] || esc(r.role)} · club rank #${r.rank}${t === ME ? ' · you' : t === RIVAL ? ' · your rival' : ''}</p><div class="grid">` +
     kv('Trophies', fmt(r.t)) + kv('Best tracked', fmt(Math.max(...h.map(x => x.t)))) + kv('7-day gain', `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`) +
     kv('Gain since ' + h[0].d, `<span class="${cls(g0)}">${sgn(g0)}</span>`) +
     (r.ranked_rank_name ? kv('Ranked', esc(r.ranked_rank_name) + ' · ' + fmt(num(r.ranked_elo))) : '') +
-    (r.best_rank_name ? kv('All-time best', esc(r.best_rank_name) + ' · ' + fmt(num(r.best_elo))) : '') + '</div>' +
+    (r.best_rank_name ? kv('All-time best', esc(r.best_rank_name) + ' · ' + fmt(num(r.best_elo))) : '') +
+    (dl.length ? kv('Elo gained (season)', `<span class="up">${sgn(eg)}</span>`) + kv('Elo lost (season)', `<span class="down">${el ? '−' + fmt(el) : '0'}</span>`) : '') + '</div>' +
     '<div class="k">Trophies over time</div><div class="bar" id="barMT"></div><canvas id="cMT" height="130"></canvas>' +
-    (eh.length > 1 ? `<div class="k" style="margin-top:12px">Ranked Elo over time (season ${season})</div><div class="bar" id="barME"></div><canvas id="cME" height="110"></canvas>` : '') +
+    (eh.length > 1 ? `<div class="k" style="margin-top:12px">Ranked Elo over time (season ${season})</div><div class="bar" id="barME"></div><canvas id="cME" height="110"></canvas><div class="k" style="margin-top:12px">Daily Elo change</div><canvas id="cMD" height="90"></canvas>` : '') +
     (ME && t !== ME ? `<p><button class="btn small" id="mRival">${t === RIVAL ? 'Remove rival' : 'Make this my rival'}</button></p>` : '');
   $('modal').style.display = 'flex';
   trend('cMT', 'barMT', rng => { const d = cut(h.map(x => x.d), rng), m = new Map(h.map(x => [x.d, x.t])); return line(d, [ds('Trophies', d.map(x => m.get(x)), GOLD)], {x: axis(), y: axis()}); });
   if (eh.length > 1) trend('cME', 'barME', rng => { const d = cut(eh.map(x => x.d), rng), m = new Map(eh.map(x => [x.d, x.elo])); return line(d, [ds('Elo', d.map(x => m.get(x)), TEAL)], {x: axis(), y: axis()}); });
+  if (dl.length) mkChart('cMD', {type: 'bar', data: {labels: dl.map(x => x.d), datasets: [{label: 'Elo change', data: dl.map(x => x.v), backgroundColor: dl.map(x => x.v >= 0 ? TEAL : PINK)}]}, options: opts({x: axis(), y: axis()})});
   const rb = $('mRival'); if (rb) rb.onclick = () => { RIVAL = t === RIVAL ? null : t; store('lty_rival', RIVAL); closeModal(); render(...DATA); };
 }
 function openRival() {
@@ -573,7 +673,9 @@ $('themeBtn').onclick = () => { setTheme(document.documentElement.dataset.theme 
 (async () => {
   try {
     const [mem, club, zc, zp] = await Promise.all(['club_members', 'club_daily', 'za_clubs', 'za_players'].map(load));
-    DATA = [mem, club, zc, zp]; render(...DATA);
+    const rs = await load('ranked_stats').catch(() => []);
+    const rm = await fetch('ranked_meta.json?' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+    DATA = [mem, club, zc, zp, rs, rm]; render(...DATA);
   } catch (e) {
     $('err').style.display = 'block';
     $('err').innerHTML = 'Could not load data: <code>' + esc(e.message) + '</code>. Run the workflow once so the CSV files exist, and open the deployed site rather than the file directly.';
