@@ -1,12 +1,12 @@
-# Save as: .github/workflows/collect-ranked.yml
+# lives in .github/workflows/
 name: Collect Ranked Battles
 
 on:
   schedule:
-    - cron: '17 2,8,14,20 * * *'   # UTC; every 6 hours (04:17, 10:17, 16:17, 22:17 SAST). Runs can be late.
+    - cron: '17 2,8,14,20 * * *'   # every 6 hours (UTC), so 04:17, 10:17, 16:17 and 22:17 in SA. can run late
   workflow_dispatch: {}
 
-# Same group as track-stats.yml so the two never push at the same time.
+# same group as track-stats.yml so they never push at the same time
 concurrency:
   group: club-tracker
   cancel-in-progress: false

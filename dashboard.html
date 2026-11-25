@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Club Leaderboard</title>
+<title>Leaderboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
@@ -72,13 +72,18 @@ select.inp{appearance:auto}
 .cme{color:var(--gold)}.crv{color:var(--red)}
 details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
 .sub2{font-size:17px!important;margin:18px 0 10px!important}
+:root{color-scheme:dark}
+[data-theme=light]{color-scheme:light}
+select.inp{background-color:var(--panel);color:var(--text)}
+select.inp option,select.inp optgroup{background:var(--panel);color:var(--text)}
+.bi{width:22px;height:22px;border-radius:6px;vertical-align:middle;margin-right:6px}
 </style>
 </head>
 <body>
-<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-mapbook">Map book</a><a href="#sec-sa">SA</a><a href="#sec-h2h" id="navRival" style="display:none">Head to head</a><a href="#sec-rivals">Rival clubs</a><a href="#sec-race">Monthly races</a><a href="#sec-membership">Membership</a><a href="#sec-fame">Hall of fame</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="rivalBtn">Rival</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
+<nav id="nav"><a href="#sec-goal">Goals</a><a href="#sec-members">Members</a><a href="#rankedCard">Ranked</a><a href="#sec-mapbook">Maps</a><a href="#sec-sa">SA</a><a href="#sec-h2h" id="navRival" style="display:none">Head to head</a><a href="#sec-rivals">Rival clubs</a><a href="#sec-race">Races</a><a href="#sec-membership">Membership</a><a href="#sec-fame">Hall of fame</a><span class="sp"></span><button class="btn small" id="findBtn">Find me</button><button class="btn small" id="rivalBtn">Rival</button><button class="btn small" id="themeBtn" aria-label="Toggle light or dark mode">◐</button></nav>
 <div class="wrap">
-  <h1 id="title">Club Leaderboard</h1>
-  <p class="sub" id="updated">Loading…</p>
+  <h1 id="title">Leaderboard</h1>
+  <p class="sub" id="updated">Loading...</p>
   <div id="err"></div>
   <div class="hero" id="hero"></div>
   <div class="card" id="banner"></div>
@@ -87,33 +92,33 @@ details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
     <div class="k" style="margin-top:14px">Trophies over time</div><div class="bar" id="barH2H"></div><canvas id="cH2H" height="110"></canvas>
     <div id="h2hElo"><div class="k" style="margin-top:14px">Ranked Elo (this season)</div><canvas id="cH2HE" height="100"></canvas></div>
     <div class="k" style="margin-top:14px">Monthly gains</div><canvas id="cH2HM" height="100"></canvas></div>
-  <div class="card" id="sec-goal"><h2>Club goals</h2><div id="goals"></div><p class="note">Rank goals: progress is your trophies as a share of the target club's trophies.</p></div>
+  <div class="card" id="sec-goal"><h2>Goals</h2><div id="goals"></div><p class="note">For rank goals the bar is our trophies as a percentage of the target club's.</p></div>
 
-  <div class="card" id="sec-members"><h2>Member trophy leaderboard</h2><p class="note">Tap a member to see their history.</p><div class="tw" id="tMembers"></div></div>
-  <div class="card" id="rankedCard" style="display:none"><h2>Member ranked leaderboard</h2><p class="note" id="rankedNote"></p><div id="tierChips"></div><canvas id="cTier" height="90"></canvas><div class="tw" id="tRanked" style="margin-top:14px"></div></div>
+  <div class="card" id="sec-members"><h2>Trophy leaderboard</h2><p class="note">Tap a name to see their history.</p><div class="tw" id="tMembers"></div></div>
+  <div class="card" id="rankedCard" style="display:none"><h2>Ranked leaderboard</h2><p class="note" id="rankedNote"></p><div id="tierChips"></div><canvas id="cTier" height="90"></canvas><div class="tw" id="tRanked" style="margin-top:14px"></div></div>
 
-  <div class="card" id="sec-elo" style="display:none"><h2>Ranked Elo: gained and lost</h2><div class="bar" id="eloBar"></div>
+  <div class="card" id="sec-elo" style="display:none"><h2>Elo gained and lost</h2><div class="bar" id="eloBar"></div>
     <div class="grid" id="eloCards"></div><p class="note" id="eloNote"></p><canvas id="cElo" height="110"></canvas>
     <div class="tw" id="tElo" style="margin-top:14px"></div></div>
 
-  <div class="card" id="sec-mapbook" style="display:none"><h2>Ranked map book</h2>
+  <div class="card" id="sec-mapbook" style="display:none"><h2>Ranked maps</h2>
     <div class="bar" id="mbTiers"></div><div class="bar"><select id="mbMap" class="inp" style="width:auto;max-width:100%;margin:0"></select></div>
     <p class="note" id="mbSample"></p><div class="two" id="mbBody"></div><p class="note" id="mbFoot"></p></div>
 
   <div class="card" id="sec-sa"><h2>Club vs South Africa</h2>
     <div class="grid" id="saCards"></div>
     <div class="bar" id="barSA"></div><canvas id="cSA" height="110"></canvas>
-    <h2 style="margin-top:20px;font-size:17px">South African top 200 clubs</h2><div class="tw" id="tZA"></div>
+    <h2 style="margin-top:20px;font-size:17px">SA top 200 clubs</h2><div class="tw" id="tZA"></div>
   </div>
 
   <div class="card" id="sec-rivals"><h2>Rival clubs</h2>
-    <p class="note" id="rivalsNote" style="display:none">Rivals appear once the club is in the SA top 200.</p>
-    <div id="rivalsBody"><p class="note">The three clubs above and below us. Chart: us and the two nearest on each side.</p><div class="tw" id="tRivals"></div>
+    <p class="note" id="rivalsNote" style="display:none">Shows up once we're in the SA top 200.</p>
+    <div id="rivalsBody"><p class="note">Three clubs above and three below us. The chart only has the two closest each way.</p><div class="tw" id="tRivals"></div>
     <div class="bar" id="barRiv" style="margin-top:14px"></div><canvas id="cRiv" height="110"></canvas></div></div>
 
-  <div class="card"><h2>Our members in the SA top 200 players</h2><div class="tw" id="tZP"></div></div>
+  <div class="card"><h2>Our members in the SA top 200</h2><div class="tw" id="tZP"></div></div>
 
-  <div class="card"><h2>Club trophy trend</h2>
+  <div class="card"><h2>Club trophies over time</h2>
     <div class="bar" id="barClub"></div><canvas id="cClub" height="110"></canvas></div>
 
   <div class="card" id="sec-race"><h2>Monthly trophy race</h2><div class="bar"><select id="raceMonth" class="inp" style="width:auto;margin:0"></select></div>
@@ -123,8 +128,8 @@ details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
 
   <div class="card" id="sec-membership"><h2>Membership</h2>
     <p id="roles"></p><p class="note" id="joins"></p>
-    <div class="two"><div><div class="k">Member count</div><canvas id="cCount" height="150"></canvas></div>
-    <div><div class="k">Trophy distribution</div><canvas id="cHist" height="150"></canvas></div></div>
+    <div class="two"><div><div class="k">Members</div><canvas id="cCount" height="150"></canvas></div>
+    <div><div class="k">Trophy spread</div><canvas id="cHist" height="150"></canvas></div></div>
   </div>
 
   <div class="card" id="sec-fame"><h2>Hall of fame</h2><p class="note" id="fameNote"></p>
@@ -135,11 +140,9 @@ details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
 
 <div id="modal"><div class="mbox"><button class="btn small" id="mclose" aria-label="Close">✕</button><div id="mbody"></div></div></div>
 <script>
-const SHOW_MEMBER_NAMES = true;   // <-- set to true to show member names publicly
-// Goals: add more, e.g. {label: '100k club trophies', type: 'trophies', target: 100000}
-const GOALS = [{label: 'Top 10 in South Africa', type: 'rank', target: 10}, 
-               {label: 'Top 15 in South Africa', type: 'rank', target: 15}, 
-               {label: '2.5 Million Club Trophies', type: 'trophies', target: 2500000}];
+const SHOW_MEMBER_NAMES = false;   // flip to true once everyone is fine with names being public
+// add more goals here, e.g. {label: '600k trophies', type: 'trophies', target: 600000}
+const GOALS = [{label: 'Top 10 in South Africa', type: 'rank', target: 10}];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num = v => (v === '' || v == null || isNaN(v)) ? null : Number(v);
@@ -151,33 +154,33 @@ const nm = r => SHOW_MEMBER_NAMES ? r.name : anon(r.tag);
 const ROLES = {president:'President', vicePresident:'Vice President', senior:'Senior', member:'Member'};
 const ROLE_ORDER = {president:0, vicePresident:1, senior:2, member:3};
 const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0, 10);
-const cv = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null, RIVAL = null, RACE_M = null, RACE_E = null, ELO_P = '7';
-const paint = () => { GOLD = cv('--gold'); TEAL = cv('--teal'); PINK = cv('--pink'); };
+const paint = () => { GOLD = cssVar('--gold'); TEAL = cssVar('--teal'); PINK = cssVar('--pink'); };
 const store = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
 const fetchStore = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
 const setTheme = t => { document.documentElement.dataset.theme = t; store('lty_theme', t); };
 setTheme(fetchStore('lty_theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
 ME = fetchStore('lty_me');
 RIVAL = fetchStore('lty_rival');
-const mkChart = (id, cfg) => { const old = Chart.getChart($(id)); if (old) old.destroy(); return new Chart($(id), cfg); };
-const kv = (k, v) => `<div><div class="k">${k}</div><div class="v">${v}</div></div>`;
+const drawChart = (id, cfg) => { const old = Chart.getChart($(id)); if (old) old.destroy(); return new Chart($(id), cfg); };
+const stat = (k, v) => `<div><div class="k">${k}</div><div class="v">${v}</div></div>`;
 const normTag = t => { t = t.trim().toUpperCase().replace(/O/g, '0'); return t.startsWith('#') ? t : '#' + t; };
-const hlm = r => r.tag === ME ? 'me' : (RIVAL && r.tag === RIVAL ? 'rival' : '');
+const rowClass = r => r.tag === ME ? 'me' : (RIVAL && r.tag === RIVAL ? 'rival' : '');
 const mlabel = m => new Date(m + '-01T00:00:00Z').toLocaleString('en-ZA', {month: 'long', year: 'numeric', timeZone: 'UTC'});
 const best7 = h => { const dd = h.map(y => y.d); let b = null; h.forEach(x => { const bd = before(dd, addDays(x.d, -7)); if (bd && bd !== x.d && bd >= addDays(x.d, -9)) { const g = x.t - h.find(y => y.d === bd).t; if (!b || g > b.g) b = {g, d: x.d}; } }); return b; };
 
 async function load(n) {
   const r = await fetch(n + '.csv?' + Date.now());
   if (!r.ok) throw new Error(n + '.csv not found');
-  // dynamicTyping stays OFF: ISO dates stay strings; numbers go through num()
+  // dynamicTyping is off on purpose, papaparse turns the dates into Date objects otherwise
   return Papa.parse(await r.text(), {header: true, skipEmptyLines: true}).data;
 }
 const group = rows => { const m = new Map(); rows.forEach(r => { if (!m.has(r.date)) m.set(r.date, []); m.get(r.date).push(r); }); return m; };
 const before = (dates, d) => { let b = null; for (const x of dates) if (x <= d) b = x; return b; };
 const base = (dates, latest, days) => before(dates, addDays(latest, -days)) || (dates[0] !== latest ? dates[0] : null);
 
-function mkTable(id, cols, rows, sk, sd, hl, n0 = 25, mem = false) {
+function buildTable(id, cols, rows, sk, sd, hl, n0 = 25, mem = false) {
   const st = {k: sk, d: sd, n: n0}, el = $(id);
   if (!rows.length) { el.innerHTML = '<p class="note">Nothing to show yet.</p>'; return; }
   const draw = () => {
@@ -195,22 +198,22 @@ function mkTable(id, cols, rows, sk, sd, hl, n0 = 25, mem = false) {
 
 const charts = {};
 const cut = (dates, rng) => rng ? dates.filter(d => d >= addDays(dates[dates.length - 1], -rng)) : dates;
-const axis = (extra = {}) => ({ticks: {color: cv('--dim'), maxTicksLimit: 8}, grid: {color: cv('--line')}, ...extra});
-const opts = scales => ({responsive: true, plugins: {legend: {labels: {color: cv('--dim')}}}, scales});
-function trend(id, bar, build) {
+const axis = (extra = {}) => ({ticks: {color: cssVar('--dim'), maxTicksLimit: 8}, grid: {color: cssVar('--line')}, ...extra});
+const opts = scales => ({responsive: true, plugins: {legend: {labels: {color: cssVar('--dim')}}}, scales});
+function rangeChart(id, bar, build) {
   const el = $(bar); let rng = 0;
   el.innerHTML = [['7D', 7], ['30D', 30], ['90D', 90], ['All', 0]].map(([l, d]) => `<button class="btn small" data-d="${d}">${l}</button>`).join('');
   const go = () => {
-    charts[id] = mkChart(id, build(rng));
+    charts[id] = drawChart(id, build(rng));
     el.querySelectorAll('button').forEach(b => b.classList.toggle('on', +b.dataset.d === rng));
   };
   el.onclick = e => { const b = e.target.closest('button'); if (b) { rng = +b.dataset.d; go(); } };
   go();
 }
 const line = (labels, datasets, scales) => ({type: 'line', data: {labels, datasets}, options: opts(scales)});
-const ds = (label, data, color, extra = {}) => ({label, data, borderColor: color, backgroundColor: color, tension: .25, pointRadius: 2, spanGaps: false, ...extra});
+const series = (label, data, color, extra = {}) => ({label, data, borderColor: color, backgroundColor: color, tension: .25, pointRadius: 2, spanGaps: false, ...extra});
 
-const MIN_GAMES = 3;   // games a brawler needs before it is recommended; raise this as data builds up
+const MIN_GAMES = 3;   // games needed before a brawler gets listed. bump this up once there's more data
 const TIER_ORDER = ['diamond', 'mythic', 'legendary', 'masters'];
 const MB = {tier: null, map: null};
 const pretty = s => String(s || '').toLowerCase().replace(/(^|[ .'-])([a-z])/g, (m, a, b) => a + b.toUpperCase());
@@ -218,8 +221,10 @@ const wilson = (w, n) => n ? (w / n + 1.9208 / n - 1.96 * Math.sqrt((w / n * (1 
 function renderMapBook(rs, rm, meRow) {
   const card = $('sec-mapbook');
   const rows = rs.map(r => ({tier: r.tier, mode: r.mode, map: r.map, b: r.brawler, g: num(r.games) || 0, a: num(r.appearances) || 0, w: num(r.wins) || 0, l: num(r.losses) || 0,
-    bans: num(r.bans) || 0, og: num(r.own_games) || 0, ow: num(r.own_wins) || 0, pg: num(r.opp_games) || 0, pw: num(r.opp_wins) || 0}));
+    bans: num(r.bans) || 0, og: num(r.own_games) || 0, ow: num(r.own_wins) || 0, pg: num(r.opp_games) || 0, pw: num(r.opp_wins) || 0, id: r.brawler_id || ''}));
   if (!rows.some(r => r.b === '*' && r.g > 0)) { card.style.display = 'none'; return; }
+  const ids = new Map(rows.filter(r => r.id).map(r => [r.b, r.id]));
+  const icon = b => ids.has(b) ? `<img class="bi" src="https://cdn.brawlify.com/brawlers/borderless/${esc(ids.get(b))}.png" alt="" loading="lazy" onerror="this.remove()">` : '';
   card.style.display = '';
   const tiers = TIER_ORDER.filter(t => rows.some(r => r.tier === t && r.b === '*' && r.g > 0));
   const meTier = ((meRow && meRow.ranked_rank_name) || '').split(' ')[0].toLowerCase();
@@ -238,34 +243,34 @@ function renderMapBook(rs, rm, meRow) {
   const mr = sel.filter(r => r.mode === mode && r.map === map);
   const G = mr.filter(r => r.b === '*').reduce((a, r) => a + r.g, 0), slots = G * 6, agg = new Map();
   mr.filter(r => r.b !== '*').forEach(r => { const o = agg.get(r.b) || {b: r.b, a: 0, w: 0, l: 0, bans: 0, og: 0, ow: 0, pg: 0, pw: 0}; for (const k of ['a', 'w', 'l', 'bans', 'og', 'ow', 'pg', 'pw']) o[k] += r[k]; agg.set(r.b, o); });
-  const Ls = [...agg.values()], pct = x => Math.round(x * 100) + '%', nmB = x => esc(pretty(x.b));
+  const Ls = [...agg.values()], pct = x => Math.round(x * 100) + '%', nmB = x => icon(x.b) + esc(pretty(x.b));
   const sec = (title, items, f, empty) => `<div><div class="k">${title}</div>` + (items.length ? '<ul>' + items.map(x => `<li>${f(x)}</li>`).join('') + '</ul>' : `<p class="note">${empty}</p>`) + '</div>';
   const picks = Ls.filter(x => x.w + x.l >= MIN_GAMES).sort((a, b) => wilson(b.w, b.w + b.l) - wilson(a.w, a.w + a.l)).slice(0, 8);
   const hard = Ls.filter(x => x.pg >= MIN_GAMES && x.pw / x.pg >= 0.5).sort((a, b) => wilson(b.pw, b.pg) - wilson(a.pw, a.pg)).slice(0, 8);
   const banned = Ls.filter(x => x.bans > 0).sort((a, b) => b.bans - a.bans).slice(0, 8);
   const own = Ls.filter(x => x.og >= MIN_GAMES).sort((a, b) => wilson(b.ow, b.og) - wilson(a.ow, a.og)).slice(0, 8);
-  const none = `Not enough games yet (a brawler needs ${MIN_GAMES}+).`;
+  const none = `Not enough games yet (needs ${MIN_GAMES}+ per brawler).`;
   $('mbBody').innerHTML =
-    sec('✅ Recommended picks', picks, x => `<b>${nmB(x)}</b>: ${pct(x.w / (x.w + x.l))} win · ${x.w + x.l} games · picked in ${pct(x.a / slots)} of slots`, none) +
-    sec('🚫 Recommended bans (hardest to beat)', hard, x => `<b>${nmB(x)}</b>: beat us in ${pct(x.pw / x.pg)} of ${x.pg} games`, none) +
-    sec('📊 Most banned', banned, x => `<b>${nmB(x)}</b>: ${pct(x.bans / slots)} of all bans (${x.bans})`, 'No bans recorded yet.') +
-    sec('⭐ How our members did', own, x => `<b>${nmB(x)}</b>: ${pct(x.ow / x.og)} win · ${x.og} club games`, none);
-  $('mbSample').textContent = `${G} game${G === 1 ? '' : 's'} on this map` + (MB.tier === 'all' ? ' across all tiers.' : ` at ${pretty(MB.tier)}.`) + (G < 10 ? ' Small sample: treat as a rough guide.' : '');
-  $('mbFoot').textContent = 'Based on ranked games played by club members' + (rm && rm.updated ? ', updated ' + new Date(rm.updated).toLocaleString('en-ZA', {timeZone: 'Africa/Johannesburg', dateStyle: 'medium', timeStyle: 'short'}) + ' SAST' : '') +
-    `. Win rates count both teams in each game; "beat us" counts brawlers on the opposing team. ${MIN_GAMES}+ games needed to be listed.`;
+    sec('Best picks', picks, x => `<b>${nmB(x)}</b>: ${pct(x.w / (x.w + x.l))} win · ${x.w + x.l} games · picked in ${pct(x.a / slots)} of games`, none) +
+    sec('Suggested bans (they beat us most)', hard, x => `<b>${nmB(x)}</b>: beat us in ${pct(x.pw / x.pg)} of ${x.pg} games`, none) +
+    sec('Most banned', banned, x => `<b>${nmB(x)}</b>: ${pct(x.bans / slots)} of all bans (${x.bans})`, 'No bans yet.') +
+    sec('How our members did', own, x => `<b>${nmB(x)}</b>: ${pct(x.ow / x.og)} win · ${x.og} club games`, none);
+  $('mbSample').textContent = `${G} game${G === 1 ? '' : 's'} on this map` + (MB.tier === 'all' ? ' across all tiers.' : ` at ${pretty(MB.tier)}.`) + (G < 10 ? ' Small sample, so take it with a pinch of salt.' : '');
+  $('mbFoot').textContent = 'From ranked games our members played' + (rm && rm.updated ? ', updated ' + new Date(rm.updated).toLocaleString('en-ZA', {timeZone: 'Africa/Johannesburg', dateStyle: 'medium', timeStyle: 'short'}) + ' SAST' : '') +
+    `. Win rates include both teams. "Beat us" means the brawler was on the other team. A brawler needs ${MIN_GAMES}+ games to be listed.`;
 }
 
 function render(mem, club, zc, zp, rs = [], rm = null) {
   paint();
   const MG = group(mem), md = [...MG.keys()].sort(), L = md[md.length - 1];
-  if (!L) throw new Error('no data yet — run the workflow once');
+  if (!L) throw new Error('no data yet, run the workflow once');
   club.sort((a, b) => a.date < b.date ? -1 : 1);
   const last = club[club.length - 1], tag = last.tag;
-  $('title').textContent = last.name + ' — Club Leaderboard';
-  document.title = last.name + ' — Club Leaderboard';
-  $('updated').textContent = 'Last updated: ' + new Date(last.fetched_at).toLocaleString('en-ZA', {timeZone: 'Africa/Johannesburg', dateStyle: 'medium', timeStyle: 'short'}) + ' SAST';
+  $('title').textContent = last.name + ' leaderboard';
+  document.title = last.name + ' leaderboard';
+  $('updated').textContent = 'Updated ' + new Date(last.fetched_at).toLocaleString('en-ZA', {timeZone: 'Africa/Johannesburg', dateStyle: 'medium', timeStyle: 'short'}) + ' SAST';
 
-  // ---- member trophy leaderboard
+  // trophy leaderboard
   const cur = MG.get(L).map(r => ({...r, t: num(r.trophies)})).sort((a, b) => b.t - a.t);
   cur.forEach((r, i) => r.rank = i + 1);
   const tmap = d => d ? new Map(MG.get(d).map(r => [r.tag, num(r.trophies)])) : new Map();
@@ -276,16 +281,16 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
     r.mv = prank.has(r.tag) ? prank.get(r.tag) - r.rank : null;
   });
   const arrow = m => m == null ? '–' : m > 0 ? `<span class="up">▲ ${m}</span>` : m < 0 ? `<span class="down">▼ ${-m}</span>` : '–';
-  mkTable('tMembers', [
+  buildTable('tMembers', [
     {k: 'rank', l: '#', v: r => r.rank, f: r => r.rank, first: 1},
     {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
     {k: 'role', l: 'Role', v: r => ROLE_ORDER[r.role] ?? 9, f: r => ROLES[r.role] || esc(r.role), first: 1},
     {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
     {k: 'd7', l: '7d', v: r => r.d7, f: r => `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`},
     {k: 'mv', l: 'Move', v: r => r.mv, f: r => arrow(r.mv)}
-  ], cur, 'rank', 1, hlm, 999, true);
+  ], cur, 'rank', 1, rowClass, 999, true);
 
-  // ---- ranked (only if real data exists)
+  // ranked leaderboard (hidden when nobody has ranked data)
   const rk = cur.filter(r => num(r.ranked_season_id) != null && num(r.ranked_elo) != null);
   if (rk.length) {
     const season = Math.max(...rk.map(r => num(r.ranked_season_id)));
@@ -294,21 +299,21 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
     rows.sort((a, b) => (b.rr * 1e5 + b.elo) - (a.rr * 1e5 + a.elo));
     rows.forEach((r, i) => r.pos = i + 1);
     $('rankedCard').style.display = '';
-    $('rankedNote').textContent = `Season ${season}. Sorted by tier, then Elo. Members with no ranked data this season aren't listed.`;
+    $('rankedNote').textContent = `Season ${season}. Sorted by tier, then Elo. Anyone with no ranked data this season is left out.`;
     const tiers = new Map(); rows.forEach(r => { const k = r.ranked_rank_name; if (!tiers.has(k)) tiers.set(k, {n: 0, rr: r.rr}); tiers.get(k).n++; });
     const tl = [...tiers].sort((a, b) => b[1].rr - a[1].rr);
     $('tierChips').innerHTML = tl.map(([k, v]) => `<span class="chip">${esc(k)}: <b>${v.n}</b></span>`).join('');
-    mkChart('cTier', {type: 'bar', data: {labels: tl.map(x => x[0]), datasets: [{label: 'Members', data: tl.map(x => x[1].n), backgroundColor: GOLD}]}, options: opts({x: axis(), y: axis({ticks: {color: cv('--dim'), precision: 0}})})});
-    mkTable('tRanked', [
+    drawChart('cTier', {type: 'bar', data: {labels: tl.map(x => x[0]), datasets: [{label: 'Members', data: tl.map(x => x[1].n), backgroundColor: GOLD}]}, options: opts({x: axis(), y: axis({ticks: {color: cssVar('--dim'), precision: 0}})})});
+    buildTable('tRanked', [
       {k: 'pos', l: '#', v: r => r.pos, f: r => r.pos, first: 1},
       {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
       {k: 'tier', l: 'Tier', v: r => r.rr * 1e5 + r.elo, f: r => esc(r.ranked_rank_name)},
       {k: 'elo', l: 'Elo', v: r => r.elo, f: r => fmt(r.elo)},
       {k: 'best', l: 'All-time best', v: r => r.best, f: r => r.best == null ? '–' : `${esc(r.best_rank_name)} (${fmt(r.best)})`}
-    ], rows, 'pos', 1, hlm, 999, true);
+    ], rows, 'pos', 1, rowClass, 999, true);
   }
 
-  // ---- club vs SA
+  // us vs the rest of SA
   const Z = group(zc), zd = [...Z.keys()].sort(), zL = zd[zd.length - 1];
   const zr = (Z.get(zL) || []).map(r => ({...r, rank: num(r.rank), t: num(r.trophies)})).sort((a, b) => a.rank - b.rank);
   const me = zr.find(r => r.tag === tag), myT = num(last.trophies);
@@ -318,46 +323,46 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
     const above = zr.find(r => r.rank === me.rank - 1), below = zr.find(r => r.rank === me.rank + 1), t10 = zr.find(r => r.rank === 10);
     saHero = '#' + me.rank;
     sa = card('SA rank', '#' + me.rank) + card('Trophies', fmt(me.t)) +
-      card('To climb a spot', above ? fmt(above.t - me.t + 1) : 'You\'re #1') +
-      card('Gap to top 10', me.rank <= 10 ? 'In the top 10' : t10 ? fmt(t10.t - me.t + 1) : '–') +
-      card('Lead over club below', below ? fmt(me.t - below.t) : '–');
+      card('To go up a spot', above ? fmt(above.t - me.t + 1) : 'We\'re #1') +
+      card('To reach the top 10', me.rank <= 10 ? 'Already there' : t10 ? fmt(t10.t - me.t + 1) : '–') +
+      card('Lead on the club below', below ? fmt(me.t - below.t) : '–');
   } else {
     const c200 = zr.length >= 200 ? zr[199] : null;
-    sa = card('SA rank', 'Not in top 200') + card('Trophies', fmt(myT)) + card('To reach #200', c200 ? fmt(c200.t - myT + 1) : '–');
+    sa = card('SA rank', 'Outside the top 200') + card('Trophies', fmt(myT)) + card('To get into the top 200', c200 ? fmt(c200.t - myT + 1) : '–');
   }
   $('saCards').innerHTML = sa;
-  mkTable('tZA', [
+  buildTable('tZA', [
     {k: 'rank', l: '#', v: r => r.rank, f: r => r.rank, first: 1},
     {k: 'name', l: 'Club', v: r => r.name, f: r => esc(r.name), first: 1},
     {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
     {k: 'mc', l: 'Members', v: r => num(r.member_count), f: r => fmt(num(r.member_count))}
   ], zr, 'rank', 1, r => r.tag === tag ? 'me' : '');
   const mine = new Map(zc.filter(r => r.tag === tag).map(r => [r.date, r]));
-  trend('cSA', 'barSA', rng => {
+  rangeChart('cSA', 'barSA', rng => {
     const d = cut(zd, rng);
-    return line(d, [ds('SA rank', d.map(x => mine.has(x) ? num(mine.get(x).rank) : null), GOLD, {yAxisID: 'y'}),
-                    ds('Trophies', d.map(x => mine.has(x) ? num(mine.get(x).trophies) : null), TEAL, {yAxisID: 'y1'})],
+    return line(d, [series('SA rank', d.map(x => mine.has(x) ? num(mine.get(x).rank) : null), GOLD, {yAxisID: 'y'}),
+                    series('Trophies', d.map(x => mine.has(x) ? num(mine.get(x).trophies) : null), TEAL, {yAxisID: 'y1'})],
       {x: axis(), y: axis({reverse: true, position: 'left'}), y1: axis({position: 'right', grid: {drawOnChartArea: false}})});
   });
 
-  // ---- our members in the SA player top 200
+  // our people in the SA player top 200
   const P = group(zp), pL = [...P.keys()].sort().pop();
   const pr = (P.get(pL) || []).map(r => ({...r, rank: num(r.rank), t: num(r.trophies)}));
-  mkTable('tZP', [
+  buildTable('tZP', [
     {k: 'rank', l: 'SA #', v: r => r.rank, f: r => r.rank, first: 1},
     {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
     {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}
-  ], pr, 'rank', 1, hlm, 999, true);
+  ], pr, 'rank', 1, rowClass, 999, true);
 
-  // ---- club trophy trend + weekly gain
+  // club trophy chart and the cards at the top
   const cd = club.map(r => r.date), cmap = new Map(club.map(r => [r.date, r]));
   const b7 = base(cd, last.date, 7);
-  trend('cClub', 'barClub', rng => { const d = cut(cd, rng); return line(d, [ds('Club trophies', d.map(x => num(cmap.get(x).trophies)), GOLD)], {x: axis(), y: axis()}); });
+  rangeChart('cClub', 'barClub', rng => { const d = cut(cd, rng); return line(d, [series('Club trophies', d.map(x => num(cmap.get(x).trophies)), GOLD)], {x: axis(), y: axis()}); });
   $('hero').innerHTML = [['Club trophies', fmt(myT)], ['SA rank', saHero], ['Members', last.member_count + '<small> / 30</small>'],
     ['Weekly gain', b7 ? sgn(myT - num(cmap.get(b7).trophies)) : '–']].map(([k, v]) => `<div class="card"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('');
 
 
-  // ---- membership
+  // membership
   const rc = {}; cur.forEach(r => rc[r.role] = (rc[r.role] || 0) + 1);
   $('roles').innerHTML = Object.keys(rc).sort((a, b) => (ROLE_ORDER[a] ?? 9) - (ROLE_ORDER[b] ?? 9)).map(k => `<span class="chip">${ROLES[k] || esc(k)}: <b>${rc[k]}</b></span>`).join('');
   let j = 0, lv = 0;
@@ -366,14 +371,14 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
     const a = new Set(MG.get(md[i - 1]).map(r => r.tag)), b = new Set(MG.get(md[i]).map(r => r.tag));
     b.forEach(t => { if (!a.has(t)) j++; }); a.forEach(t => { if (!b.has(t)) lv++; });
   }
-  $('joins').textContent = md.length > 1 ? `Last 7 days: ${j} joined, ${lv} left` : 'Joins and leaves appear after a second day of data.';
-  mkChart('cCount', line(cd, [ds('Members', club.map(r => num(r.member_count)), TEAL)], {x: axis(), y: axis({beginAtZero: false})}));
+  $('joins').textContent = md.length > 1 ? `Last 7 days: ${j} joined, ${lv} left` : 'Joins and leaves need a second day of data.';
+  drawChart('cCount', line(cd, [series('Members', club.map(r => num(r.member_count)), TEAL)], {x: axis(), y: axis({beginAtZero: false})}));
   const ts = cur.map(r => r.t), lo = Math.floor(Math.min(...ts) / 5000) * 5000, bins = [];
   for (let b = lo; b <= Math.max(...ts); b += 5000) bins.push(b);
-  mkChart('cHist', {type: 'bar', data: {labels: bins.map(b => (b / 1000) + 'k'), datasets: [{label: 'Members', data: bins.map(b => ts.filter(t => t >= b && t < b + 5000).length), backgroundColor: PINK}]},
-    options: opts({x: axis(), y: axis({ticks: {color: cv('--dim'), precision: 0}})})});
+  drawChart('cHist', {type: 'bar', data: {labels: bins.map(b => (b / 1000) + 'k'), datasets: [{label: 'Members', data: bins.map(b => ts.filter(t => t >= b && t < b + 5000).length), backgroundColor: PINK}]},
+    options: opts({x: axis(), y: axis({ticks: {color: cssVar('--dim'), precision: 0}})})});
 
-  // ===== extras: find me, goals, rivals, highlights =====
+  // find me, goals, rival clubs and the weekly banner
   const H = new Map();
   md.forEach(d => MG.get(d).forEach(r => { if (!H.has(r.tag)) H.set(r.tag, []); H.get(r.tag).push({d, t: num(r.trophies), s: num(r.ranked_season_id), elo: num(r.ranked_elo)}); }));
   CTX = {H, cur};
@@ -384,20 +389,20 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
   const zb = zL ? base(zd, zL, 7) : null;
   const zg = t => { const m = zh.get(t); return zb && m && m.has(zb) && m.has(zL) ? m.get(zL) - m.get(zb) : null; };
 
-  // find me
+  // personal card
   const meR = cur.find(r => r.tag === ME), meC = $('meCard');
   if (meR) {
     const up = cur[meR.rank - 2];
     meC.style.display = '';
     meC.innerHTML = `<h2>Your stats <button class="btn small" id="meChange" style="float:right">Change</button></h2><div class="grid">` +
-      kv('Club rank', '#' + meR.rank + ' of ' + cur.length) + kv('Trophies', fmt(meR.t)) +
-      kv('7-day gain', `<span class="${cls(meR.d7)}">${sgn(meR.d7)}</span>`) +
-      (up ? kv('To pass ' + esc(nm(up)), fmt(up.t - meR.t + 1)) : kv('Position', 'You lead the club')) +
-      (meR.ranked_rank_name ? kv('Ranked', esc(meR.ranked_rank_name) + ' · ' + fmt(num(meR.ranked_elo))) : '') + '</div>';
+      stat('Club rank', '#' + meR.rank + ' of ' + cur.length) + stat('Trophies', fmt(meR.t)) +
+      stat('7-day gain', `<span class="${cls(meR.d7)}">${sgn(meR.d7)}</span>`) +
+      (up ? stat('To pass ' + esc(nm(up)), fmt(up.t - meR.t + 1)) : stat('Next up', 'Nobody ahead of you')) +
+      (meR.ranked_rank_name ? stat('Ranked', esc(meR.ranked_rank_name) + ' · ' + fmt(num(meR.ranked_elo))) : '') + '</div>';
     $('meChange').onclick = openFind;
   } else meC.style.display = 'none';
 
-  // goals
+  // goal bars
   $('goals').innerHTML = GOALS.map(g => {
     let pct, done, line, eta = '';
     if (g.type === 'rank') {
@@ -406,22 +411,22 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
       done = !!me && me.rank <= g.target;
       pct = Math.min(100, myT / tg.t * 100);
       const gap = tg.t - myT + 1, rg = zg(tg.tag);
-      if (!done && myG != null && rg != null) { const net = myG - rg; eta = net > 0 ? ` At the current pace (${sgn(myG)} vs ${sgn(rg)} for #${g.target} this week) that's roughly ${Math.ceil(gap / net)} week(s) - a rough estimate, as the target keeps moving.` : ` Out-gain the #${g.target} club (${sgn(rg)} this week) to start closing the gap.`; }
-      line = done ? `We're at #${me.rank} in South Africa!` : `${fmt(gap)} trophies to pass ${esc(tg.name)} (#${g.target}).${eta}`;
+      if (!done && myG != null && rg != null) { const net = myG - rg; eta = net > 0 ? ` At this pace (${sgn(myG)} vs ${sgn(rg)} for #${g.target} this week) it would take about ${Math.ceil(gap / net)} week(s). Rough guess, the target keeps moving.` : ` We need to out-gain the #${g.target} club (${sgn(rg)} this week) before the gap starts to close.`; }
+      line = done ? `We're #${me.rank} in South Africa.` : `${fmt(gap)} trophies to pass ${esc(tg.name)} (#${g.target}).${eta}`;
     } else {
       done = myT >= g.target; pct = Math.min(100, myT / g.target * 100);
-      if (!done && myG > 0) eta = ` At ${sgn(myG)} a week, roughly ${Math.ceil((g.target - myT) / myG)} week(s).`;
-      line = done ? 'Reached!' : `${fmt(g.target - myT)} trophies to go.${eta}`;
+      if (!done && myG > 0) eta = ` At ${sgn(myG)} a week that's about ${Math.ceil((g.target - myT) / myG)} week(s).`;
+      line = done ? 'Reached' : `${fmt(g.target - myT)} trophies to go.${eta}`;
     }
     return `<div class="goal"><div class="gh"><b>${esc(g.label)}</b><span>${done ? 'Done' : pct.toFixed(1) + '%'}</span></div><div class="pb"><div style="width:${done ? 100 : pct}%"></div></div><p class="note">${line}</p></div>`;
-  }).join('') || '<p class="note">Goals appear once South African ranking data exists.</p>';
+  }).join('') || '<p class="note">Goals show up once there is SA ranking data.</p>';
 
-  // rivals
+  // rival clubs
   $('rivalsBody').style.display = me ? '' : 'none';
   $('rivalsNote').style.display = me ? 'none' : '';
   if (me) {
     const rv = zr.filter(r => Math.abs(r.rank - me.rank) <= 3).map(r => ({...r, gap: r.t - me.t, wk: zg(r.tag)}));
-    mkTable('tRivals', [
+    buildTable('tRivals', [
       {k: 'rank', l: '#', v: r => r.rank, f: r => r.rank, first: 1},
       {k: 'name', l: 'Club', v: r => r.name, f: r => esc(r.name), first: 1},
       {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)},
@@ -429,26 +434,26 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
       {k: 'wk', l: '7d gain', v: r => r.wk, f: r => `<span class="${cls(r.wk)}">${sgn(r.wk)}</span>`}
     ], rv, 'rank', 1, r => r.tag === tag ? 'me' : '', 999);
     const PAL = [TEAL, PINK, '#8C7CFF', '#FF9F4A'], pick = rv.filter(r => Math.abs(r.rank - me.rank) <= 2);
-    trend('cRiv', 'barRiv', rng => {
+    rangeChart('cRiv', 'barRiv', rng => {
       const d = cut(zd, rng); let i = 0;
-      return line(d, pick.map(r => r.tag === tag ? ds(r.name + ' (us)', d.map(x => zh.get(r.tag)?.get(x) ?? null), GOLD, {borderWidth: 4}) : ds(r.name, d.map(x => zh.get(r.tag)?.get(x) ?? null), PAL[i++ % PAL.length])), {x: axis(), y: axis()});
+      return line(d, pick.map(r => r.tag === tag ? series(r.name + ' (us)', d.map(x => zh.get(r.tag)?.get(x) ?? null), GOLD, {borderWidth: 4}) : series(r.name, d.map(x => zh.get(r.tag)?.get(x) ?? null), PAL[i++ % PAL.length])), {x: axis(), y: axis()});
     });
   }
 
-  // weekly highlights (positive only)
+  // weekly banner (good news only, on purpose)
   const items = [];
   const tc = cur.filter(r => r.d7 > 0).sort((a, b) => b.d7 - a.d7)[0];
-  if (tc) items.push(`🚀 <b>${esc(nm(tc))}</b> led the climb: <b class="up">${sgn(tc.d7)}</b> trophies`);
+  if (tc) items.push(`<b>${esc(nm(tc))}</b> gained the most this week: <b class="up">${sgn(tc.d7)}</b> trophies`);
   const jump = cur.map(r => ({r, m: rank7.has(r.tag) ? rank7.get(r.tag) - r.rank : null})).filter(x => x.m > 0).sort((a, b) => b.m - a.m)[0];
-  if (jump) items.push(`📈 Biggest rank jump: <b>${esc(nm(jump.r))}</b> up ${jump.m} place${jump.m > 1 ? 's' : ''}`);
+  if (jump) items.push(`Biggest jump up the table: <b>${esc(nm(jump.r))}</b> (up ${jump.m} place${jump.m > 1 ? 's' : ''})`);
   const pbN = b7m ? cur.filter(r => { const h = H.get(r.tag).filter(x => x.d <= b7m).map(x => x.t); return h.length && r.t > Math.max(...h); }).length : 0;
-  if (pbN) items.push(`⭐ ${pbN} member${pbN > 1 ? 's' : ''} hit a new personal best`);
+  if (pbN) items.push(`${pbN} member${pbN > 1 ? 's' : ''} set a new personal best`);
   const sr = zb && me && Z.get(zb) ? Z.get(zb).find(r => r.tag === tag) : null;
-  if (sr && num(sr.rank) > me.rank) items.push(`🇿🇦 Up ${num(sr.rank) - me.rank} place${num(sr.rank) - me.rank > 1 ? 's' : ''} in South Africa`);
-  if (j > 0) items.push(`👋 ${j} new member${j > 1 ? 's' : ''} joined`);
-  $('banner').innerHTML = `<h2>This week's highlights</h2>` + (items.length ? '<ul>' + items.map(x => `<li>${x}</li>`).join('') + '</ul>' : `<p class="note">${b7m ? 'Nothing new to highlight yet - keep pushing!' : 'Highlights appear after a second day of data.'}</p>`);
+  if (sr && num(sr.rank) > me.rank) items.push(`We moved up ${num(sr.rank) - me.rank} place${num(sr.rank) - me.rank > 1 ? 's' : ''} in South Africa`);
+  if (j > 0) items.push(`${j} new member${j > 1 ? 's' : ''} joined`);
+  $('banner').innerHTML = `<h2>This week</h2>` + (items.length ? '<ul>' + items.map(x => `<li>${x}</li>`).join('') + '</ul>' : `<p class="note">${b7m ? 'Nothing to report yet.' : 'Needs a second day of data first.'}</p>`);
 
-  // ===== monthly races (trophies + ranked Elo) =====
+  // monthly races
   const NAMES = new Map(); mem.forEach(r => NAMES.set(r.tag, r.name));
   const who = t => SHOW_MEMBER_NAMES ? (NAMES.get(t) || t) : anon(t);
   const months = [...new Set(md.map(d => d.slice(0, 7)))];
@@ -458,7 +463,7 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
     const rows = [];
     MG.get(lastD).forEach(r => {
       let h = H.get(r.tag).filter(x => x.d.slice(0, 7) <= m);
-      if (kind === 'e') {   // Elo resets each season, so only count the member's latest season
+      if (kind === 'e') {   // elo resets every season so only the latest one counts
         const sEnd = num(r.ranked_season_id);
         if (sEnd == null || num(r.ranked_elo) == null) return;
         h = h.filter(x => x.s === sEnd && x.elo != null);
@@ -477,14 +482,14 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
     const today = new Date(Date.now() + 72e5).toISOString().slice(0, 10);
     const dim = new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 0)).getUTCDate(), left = dim - Number(today.slice(8, 10));
     $(I.note).textContent = (today.slice(0, 7) === m ? `${left} day${left === 1 ? '' : 's'} left this month. ` : '') +
-      (R.baseD ? 'Gains since the end of the previous month. ' : 'Tracking began mid-month, so gains count from the first tracked day. ') +
-      (kind === 'e' ? 'Ranked seasons reset Elo, so only gains within the latest season count. ' : '') + `Members with no gain aren't listed.`;
-    $(I.pod).innerHTML = pos.slice(0, 3).map((x, i) => `<div><div class="m">${['🥇', '🥈', '🥉'][i]}</div><b>${esc(nm(x))}</b><div class="v up">${sgn(x.g)}</div></div>`).join('');
+      (R.baseD ? 'Gains are counted from the end of last month. ' : 'Tracking started part way through the month, so gains count from the first day we have. ') +
+      (kind === 'e' ? 'Elo resets every season, so only the latest season counts. ' : '') + `Anyone with no gain is left off.`;
+    $(I.pod).innerHTML = pos.slice(0, 3).map((x, i) => `<div><div class="m">${['1st', '2nd', '3rd'][i]}</div><b>${esc(nm(x))}</b><div class="v up">${sgn(x.g)}</div></div>`).join('');
     const c0 = [{k: 'pos', l: '#', v: r => r.pos, f: r => r.pos, first: 1},
       {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
       {k: 'g', l: kind === 't' ? 'Gain' : 'Elo gain', v: r => r.g, f: r => `<span class="up">${sgn(r.g)}</span>`}];
-    mkTable(I.tab, kind === 't' ? [...c0, {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}]
-      : [...c0, {k: 'tier', l: 'Tier', v: r => r.tier, f: r => esc(r.tier), first: 1}, {k: 't', l: 'Elo', v: r => r.t, f: r => fmt(r.t)}], pos, 'pos', 1, hlm, 999, true);
+    buildTable(I.tab, kind === 't' ? [...c0, {k: 't', l: 'Trophies', v: r => r.t, f: r => fmt(r.t)}]
+      : [...c0, {k: 'tier', l: 'Tier', v: r => r.tier, f: r => esc(r.tier), first: 1}, {k: 't', l: 'Elo', v: r => r.t, f: r => fmt(r.t)}], pos, 'pos', 1, rowClass, 999, true);
   };
   RACE_M = months.includes(RACE_M) ? RACE_M : months[months.length - 1];
   RACE_E = months.includes(RACE_E) ? RACE_E : months[months.length - 1];
@@ -497,38 +502,38 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
   $('sec-race-ranked').style.display = hasElo ? '' : 'none';
   if (hasElo) drawRace('e', RACE_E);
 
-  // ===== hall of fame =====
-  const rc2 = (l, v, w, d) => `<div><div class="k">${l}</div><div class="v">${v}</div><div class="note">${[w, d].filter(Boolean).join(' · ')}</div></div>`;
+  // hall of fame
+  const recordCard = (l, v, w, d) => `<div><div class="k">${l}</div><div class="v">${v}</div><div class="note">${[w, d].filter(Boolean).join(' · ')}</div></div>`;
   const recC = [], recM = [];
   const topClub = club.reduce((a, r) => num(r.trophies) > num(a.trophies) ? r : a, club[0]);
-  recC.push(rc2('Club trophy record', fmt(num(topClub.trophies)), '', topClub.date));
+  recC.push(recordCard('Club trophy record', fmt(num(topClub.trophies)), '', topClub.date));
   const myZ = zc.filter(r => r.tag === tag);
-  if (myZ.length) { const b = myZ.reduce((a, r) => num(r.rank) < num(a.rank) ? r : a, myZ[0]); recC.push(rc2('Best SA club rank', '#' + b.rank, '', b.date)); }
+  if (myZ.length) { const b = myZ.reduce((a, r) => num(r.rank) < num(a.rank) ? r : a, myZ[0]); recC.push(recordCard('Best SA club rank', '#' + b.rank, '', b.date)); }
   const cb = best7(club.map(r => ({d: r.date, t: num(r.trophies)})));
-  if (cb && cb.g > 0) recC.push(rc2('Best club 7-day gain', sgn(cb.g), '', cb.d));
+  if (cb && cb.g > 0) recC.push(recordCard('Best club 7-day gain', sgn(cb.g), '', cb.d));
   let hi = null, wkr = null;
   H.forEach((h, t) => {
     h.forEach(x => { if (!hi || x.t > hi.v) hi = {t, v: x.t, d: x.d}; });
     const b = best7(h); if (b && b.g > 0 && (!wkr || b.g > wkr.v)) wkr = {t, v: b.g, d: b.d};
   });
-  if (hi) recM.push(rc2('Most trophies', fmt(hi.v), esc(who(hi.t)), hi.d));
-  if (wkr) recM.push(rc2('Best 7-day gain', sgn(wkr.v), esc(who(wkr.t)), wkr.d));
+  if (hi) recM.push(recordCard('Most trophies', fmt(hi.v), esc(who(hi.t)), hi.d));
+  if (wkr) recM.push(recordCard('Best 7-day gain', sgn(wkr.v), esc(who(wkr.t)), wkr.d));
   const bestR = cur.filter(r => num(r.best_elo) != null).sort((a, b) => (num(b.best_rank) * 1e5 + num(b.best_elo)) - (num(a.best_rank) * 1e5 + num(a.best_elo)))[0];
-  if (bestR) recM.push(rc2('Highest ranked ever', esc(bestR.best_rank_name) + ' · ' + fmt(num(bestR.best_elo)), esc(nm(bestR)), ''));
+  if (bestR) recM.push(recordCard('Highest ranked ever', esc(bestR.best_rank_name) + ' · ' + fmt(num(bestR.best_elo)), esc(nm(bestR)), ''));
   $('fameClub').innerHTML = recC.join('');
-  $('fameMembers').innerHTML = recM.join('') || '<p class="note">Records appear as data builds up.</p>';
-  $('fameNote').textContent = `Records cover tracked data since ${md[0]}.`;
+  $('fameMembers').innerHTML = recM.join('') || '<p class="note">Records will show up as data builds up.</p>';
+  $('fameNote').textContent = `Records only go back to ${md[0]}, when tracking started.`;
   const win = (m, k) => { const w = raceOf(m, k).rows.filter(x => x.g > 0).sort((a, b) => b.g - a.g)[0]; return w || null; };
   const cell = w => w ? `<span class="${w.tag === ME ? 'cme' : w.tag === RIVAL ? 'crv' : ''}"><b>${esc(who(w.tag))}</b></span> <span class="up">${sgn(w.g)}</span>` : '–';
   const rowsC = months.slice(0, -1).reverse().map(m => ({m, a: win(m, 't'), b: hasElo ? win(m, 'e') : null, part: !before(md, addDays(m + '-01', -1))}));
-  const tbl = rs => `<div class="tw"><table><thead><tr><th>Month</th><th>🏆 Trophy race</th>${hasElo ? '<th>📈 Ranked race</th>' : ''}</tr></thead><tbody>` +
+  const tbl = rs => `<div class="tw"><table><thead><tr><th>Month</th><th>Trophy race</th>${hasElo ? '<th>Ranked race</th>' : ''}</tr></thead><tbody>` +
     rs.map(r => `<tr><td>${mlabel(r.m)}${r.part ? ' (partial)' : ''}</td><td>${cell(r.a)}</td>${hasElo ? `<td>${cell(r.b)}</td>` : ''}</tr>`).join('') + '</tbody></table></div>';
   const tally = (k, label) => { const c = new Map(); rowsC.forEach(r => { if (r[k]) c.set(r[k].tag, (c.get(r[k].tag) || 0) + 1); }); const mx = Math.max(0, ...c.values()); if (!mx) return ''; const ns = [...c].filter(([, n]) => n === mx).map(([t]) => who(t)); return `<p class="note">${label}: <b>${esc(ns.slice(0, 3).join(', '))}${ns.length > 3 ? ' …' : ''}</b> (${mx})</p>`; };
   $('fameChamps').innerHTML = rowsC.length ? tbl(rowsC.slice(0, 6)) + (rowsC.length > 6 ? `<details><summary>Earlier months (${rowsC.length - 6})</summary>${tbl(rowsC.slice(6))}</details>` : '') +
-    tally('a', 'Most trophy-race wins') + (hasElo ? tally('b', 'Most ranked-race wins') : '') : '<p class="note">Champions appear after the first full month.</p>';
+    tally('a', 'Most trophy-race wins') + (hasElo ? tally('b', 'Most ranked-race wins') : '') : '<p class="note">Champions show up after the first full month.</p>';
 
-  // ===== Elo gained / lost =====
-  const eloPairs = t => {   // consecutive same-season readings -> net change between daily readings
+  // elo gained and lost
+  const eloPairs = t => {   // change between two daily readings from the same season
     const h = H.get(t).filter(x => x.s != null && x.elo != null), out = [];
     for (let i = 1; i < h.length; i++) if (h[i].s === h[i - 1].s) out.push({d: h[i].d, s: h[i].s, v: h[i].elo - h[i - 1].elo});
     return out;
@@ -546,24 +551,24 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
         return {tag: r.tag, name: r.name, elo: num(r.ranked_elo), g, l, net: g - l, best: ps.length ? Math.max(0, ...ps.map(x => x.v)) : null};
       });
       const G = sum(rows, r => r.g), Lo = sum(rows, r => r.l);
-      $('eloCards').innerHTML = kv('Elo gained', `<span class="up">${sgn(G)}</span>`) + kv('Elo lost', `<span class="down">${Lo ? '−' + fmt(Lo) : '0'}</span>`) + kv('Net', `<span class="${cls(G - Lo)}">${sgn(G - Lo)}</span>`);
-      $('eloNote').textContent = 'Changes are measured between daily readings, so a day with both wins and losses shows only the difference: gained and lost are minimums. Season resets are never counted.' + (p === 'S' ? ` Season ${curSeason}, since tracking began.` : '');
+      $('eloCards').innerHTML = stat('Elo gained', `<span class="up">${sgn(G)}</span>`) + stat('Elo lost', `<span class="down">${Lo ? '−' + fmt(Lo) : '0'}</span>`) + stat('Net', `<span class="${cls(G - Lo)}">${sgn(G - Lo)}</span>`);
+      $('eloNote').textContent = 'Worked out from one reading a day, so a day with both wins and losses only shows the difference. The real numbers are at least this big. Season resets are ignored.' + (p === 'S' ? ` Season ${curSeason}, since tracking started.` : '');
       const byD = new Map();
       eloMembers.forEach(r => PAIRS.get(r.tag).filter(inP).forEach(x => { const o = byD.get(x.d) || {g: 0, l: 0}; if (x.v > 0) o.g += x.v; else o.l += -x.v; byD.set(x.d, o); }));
       const dd = [...byD.keys()].sort();
-      mkChart('cElo', {type: 'bar', data: {labels: dd, datasets: [
+      drawChart('cElo', {type: 'bar', data: {labels: dd, datasets: [
         {label: 'Gained', data: dd.map(d => byD.get(d).g), backgroundColor: TEAL, stack: 's'},
         {label: 'Lost', data: dd.map(d => -byD.get(d).l), backgroundColor: PINK, stack: 's'},
         {type: 'line', label: 'Net', data: dd.map(d => byD.get(d).g - byD.get(d).l), borderColor: GOLD, backgroundColor: GOLD, tension: .25, pointRadius: 2}]},
         options: opts({x: {...axis(), stacked: true}, y: {...axis(), stacked: true}})});
-      mkTable('tElo', [
+      buildTable('tElo', [
         {k: 'name', l: 'Name', v: nm, f: r => `<span class="nl">${esc(nm(r))}</span>`, first: 1},
         {k: 'g', l: 'Gained', v: r => r.g, f: r => `<span class="up">${r.g ? '+' + fmt(r.g) : '0'}</span>`},
         {k: 'l', l: 'Lost', v: r => r.l, f: r => `<span class="down">${r.l ? '−' + fmt(r.l) : '0'}</span>`},
         {k: 'net', l: 'Net', v: r => r.net, f: r => `<span class="${cls(r.net)}">${sgn(r.net)}</span>`},
         {k: 'best', l: 'Best day', v: r => r.best, f: r => r.best ? `<span class="up">${sgn(r.best)}</span>` : '–'},
         {k: 'elo', l: 'Elo now', v: r => r.elo, f: r => fmt(r.elo)}
-      ], rows, 'net', -1, hlm, 999, true);
+      ], rows, 'net', -1, rowClass, 999, true);
     };
     const bar = $('eloBar');
     bar.innerHTML = [['7', '7D'], ['30', '30D'], ['S', 'Season']].map(([k, l]) => `<button class="btn small" data-k="${k}">${l}</button>`).join('');
@@ -574,7 +579,7 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
 
   renderMapBook(rs, rm, cur.find(r => r.tag === ME));
 
-  // ===== friendly rival & head-to-head =====
+  // rival and head to head
   const rivR = RIVAL && RIVAL !== ME ? cur.find(r => r.tag === RIVAL) : null, showH = !!(meR && rivR);
   $('sec-h2h').style.display = showH ? '' : 'none';
   $('navRival').style.display = showH ? '' : 'none';
@@ -608,15 +613,15 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
     $('h2hTitle').textContent = `Head to head: you vs ${rn}`;
     $('tH2H').innerHTML = `<table><thead><tr><th>Stat</th><th>You</th><th>${esc(rn)}</th></tr></thead><tbody>` +
       rowsH.map(x => `<tr><td>${x.l}</td><td${win(x, 'a')}>${esc(x.da)}</td><td${win(x, 'b')}>${esc(x.db)}</td></tr>`).join('') + '</tbody></table>';
-    $('h2hNote').textContent = both.length > 1 ? `The lead has changed hands ${swaps} time${swaps === 1 ? '' : 's'} since tracking began. Better figure shown in green.` : 'More history builds up each day. Better figure shown in green.';
-    const RED = cv('--red');
-    trend('cH2H', 'barH2H', rng => { const d = cut(md, rng); return line(d, [ds('You', d.map(x => am.get(x) ?? null), GOLD, {borderWidth: 3}), ds(rn, d.map(x => bm.get(x) ?? null), RED)], {x: axis(), y: axis()}); });
+    $('h2hNote').textContent = both.length > 1 ? `The lead has swapped ${swaps} time${swaps === 1 ? '' : 's'} since tracking started. The better number is in green.` : 'Gets better with a few more days of history. The better number is in green.';
+    const RED = cssVar('--red');
+    rangeChart('cH2H', 'barH2H', rng => { const d = cut(md, rng); return line(d, [series('You', d.map(x => am.get(x) ?? null), GOLD, {borderWidth: 3}), series(rn, d.map(x => bm.get(x) ?? null), RED)], {x: axis(), y: axis()}); });
     const sA = num(meR.ranked_season_id), ea = new Map(A.filter(x => x.s === sA && x.elo != null).map(x => [x.d, x.elo])), eb = new Map(B.filter(x => x.s === sA && x.elo != null).map(x => [x.d, x.elo]));
     const showE = sameS && ea.size > 1 && eb.size > 1;
     $('h2hElo').style.display = showE ? '' : 'none';
-    if (showE) { const dd = md.filter(d => ea.has(d) || eb.has(d)); mkChart('cH2HE', line(dd, [ds('You', dd.map(x => ea.get(x) ?? null), GOLD, {borderWidth: 3}), ds(rn, dd.map(x => eb.get(x) ?? null), RED)], {x: axis(), y: axis()})); }
+    if (showE) { const dd = md.filter(d => ea.has(d) || eb.has(d)); drawChart('cH2HE', line(dd, [series('You', dd.map(x => ea.get(x) ?? null), GOLD, {borderWidth: 3}), series(rn, dd.map(x => eb.get(x) ?? null), RED)], {x: axis(), y: axis()})); }
     const ms = months.slice(-6), mr = ms.map(m => raceOf(m).rows), pk = (t, i) => (mr[i].find(r => r.tag === t) || {}).g ?? null;
-    mkChart('cH2HM', {type: 'bar', data: {labels: ms.map(mlabel), datasets: [{label: 'You', data: ms.map((m, i) => pk(ME, i)), backgroundColor: GOLD}, {label: rn, data: ms.map((m, i) => pk(RIVAL, i)), backgroundColor: RED}]}, options: opts({x: axis(), y: axis()})});
+    drawChart('cH2HM', {type: 'bar', data: {labels: ms.map(mlabel), datasets: [{label: 'You', data: ms.map((m, i) => pk(ME, i)), backgroundColor: GOLD}, {label: rn, data: ms.map((m, i) => pk(RIVAL, i)), backgroundColor: RED}]}, options: opts({x: axis(), y: axis()})});
   }
 }
 
@@ -627,40 +632,40 @@ function openMember(t) {
   const season = num(r.ranked_season_id), eh = h.filter(x => x.s != null && x.s === season && x.elo != null), g0 = r.t - h[0].t;
   const dl = eh.slice(1).map((x, i) => ({d: x.d, v: x.elo - eh[i].elo})), eg = dl.reduce((a, x) => a + Math.max(0, x.v), 0), el = dl.reduce((a, x) => a + Math.max(0, -x.v), 0);
   $('mbody').innerHTML = `<h2>${esc(nm(r))}</h2><p class="note">${ROLES[r.role] || esc(r.role)} · club rank #${r.rank}${t === ME ? ' · you' : t === RIVAL ? ' · your rival' : ''}</p><div class="grid">` +
-    kv('Trophies', fmt(r.t)) + kv('Best tracked', fmt(Math.max(...h.map(x => x.t)))) + kv('7-day gain', `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`) +
-    kv('Gain since ' + h[0].d, `<span class="${cls(g0)}">${sgn(g0)}</span>`) +
-    (r.ranked_rank_name ? kv('Ranked', esc(r.ranked_rank_name) + ' · ' + fmt(num(r.ranked_elo))) : '') +
-    (r.best_rank_name ? kv('All-time best', esc(r.best_rank_name) + ' · ' + fmt(num(r.best_elo))) : '') +
-    (dl.length ? kv('Elo gained (season)', `<span class="up">${sgn(eg)}</span>`) + kv('Elo lost (season)', `<span class="down">${el ? '−' + fmt(el) : '0'}</span>`) : '') + '</div>' +
+    stat('Trophies', fmt(r.t)) + stat('Best tracked', fmt(Math.max(...h.map(x => x.t)))) + stat('7-day gain', `<span class="${cls(r.d7)}">${sgn(r.d7)}</span>`) +
+    stat('Gain since ' + h[0].d, `<span class="${cls(g0)}">${sgn(g0)}</span>`) +
+    (r.ranked_rank_name ? stat('Ranked', esc(r.ranked_rank_name) + ' · ' + fmt(num(r.ranked_elo))) : '') +
+    (r.best_rank_name ? stat('All-time best', esc(r.best_rank_name) + ' · ' + fmt(num(r.best_elo))) : '') +
+    (dl.length ? stat('Elo gained (season)', `<span class="up">${sgn(eg)}</span>`) + stat('Elo lost (season)', `<span class="down">${el ? '−' + fmt(el) : '0'}</span>`) : '') + '</div>' +
     '<div class="k">Trophies over time</div><div class="bar" id="barMT"></div><canvas id="cMT" height="130"></canvas>' +
     (eh.length > 1 ? `<div class="k" style="margin-top:12px">Ranked Elo over time (season ${season})</div><div class="bar" id="barME"></div><canvas id="cME" height="110"></canvas><div class="k" style="margin-top:12px">Daily Elo change</div><canvas id="cMD" height="90"></canvas>` : '') +
     (ME && t !== ME ? `<p><button class="btn small" id="mRival">${t === RIVAL ? 'Remove rival' : 'Make this my rival'}</button></p>` : '');
   $('modal').style.display = 'flex';
-  trend('cMT', 'barMT', rng => { const d = cut(h.map(x => x.d), rng), m = new Map(h.map(x => [x.d, x.t])); return line(d, [ds('Trophies', d.map(x => m.get(x)), GOLD)], {x: axis(), y: axis()}); });
-  if (eh.length > 1) trend('cME', 'barME', rng => { const d = cut(eh.map(x => x.d), rng), m = new Map(eh.map(x => [x.d, x.elo])); return line(d, [ds('Elo', d.map(x => m.get(x)), TEAL)], {x: axis(), y: axis()}); });
-  if (dl.length) mkChart('cMD', {type: 'bar', data: {labels: dl.map(x => x.d), datasets: [{label: 'Elo change', data: dl.map(x => x.v), backgroundColor: dl.map(x => x.v >= 0 ? TEAL : PINK)}]}, options: opts({x: axis(), y: axis()})});
+  rangeChart('cMT', 'barMT', rng => { const d = cut(h.map(x => x.d), rng), m = new Map(h.map(x => [x.d, x.t])); return line(d, [series('Trophies', d.map(x => m.get(x)), GOLD)], {x: axis(), y: axis()}); });
+  if (eh.length > 1) rangeChart('cME', 'barME', rng => { const d = cut(eh.map(x => x.d), rng), m = new Map(eh.map(x => [x.d, x.elo])); return line(d, [series('Elo', d.map(x => m.get(x)), TEAL)], {x: axis(), y: axis()}); });
+  if (dl.length) drawChart('cMD', {type: 'bar', data: {labels: dl.map(x => x.d), datasets: [{label: 'Elo change', data: dl.map(x => x.v), backgroundColor: dl.map(x => x.v >= 0 ? TEAL : PINK)}]}, options: opts({x: axis(), y: axis()})});
   const rb = $('mRival'); if (rb) rb.onclick = () => { RIVAL = t === RIVAL ? null : t; store('lty_rival', RIVAL); closeModal(); render(...DATA); };
 }
 function openRival() {
   if (!CTX) return;
   $('modal').style.display = 'flex';
-  if (!ME) { $('mbody').innerHTML = `<h2>Choose a rival</h2><p class="note">Set "Find me" first so we can compare you with your rival.</p><button class="btn on" id="rvFind">Find me</button>`; $('rvFind').onclick = openFind; return; }
+  if (!ME) { $('mbody').innerHTML = `<h2>Choose a rival</h2><p class="note">Do "Find me" first so there's someone to compare against.</p><button class="btn on" id="rvFind">Find me</button>`; $('rvFind').onclick = openFind; return; }
   const os = CTX.cur.filter(r => r.tag !== ME).map(r => `<option value="${esc(r.tag)}"${r.tag === RIVAL ? ' selected' : ''}>#${r.rank} · ${esc(nm(r))} · ${fmt(r.t)}</option>`).join('');
-  $('mbody').innerHTML = `<h2>Choose a rival</h2><p class="note">Pick a clubmate to compete with. They'll be highlighted in red and you'll get a head-to-head section. Saved in this browser only.</p><select id="rvSel" class="inp"><option value="">Select a member…</option>${os}</select><p class="note">Or enter their tag:</p><input id="rvTag" class="inp" placeholder="#ABC123"><p class="note" id="rvMsg"></p><button class="btn on" id="rvGo">Save</button> <button class="btn" id="rvClr">Remove rival</button>`;
+  $('mbody').innerHTML = `<h2>Choose a rival</h2><p class="note">Pick someone in the club to race against. They show up in red in the lists and you get a head to head section. Only saved in this browser.</p><select id="rvSel" class="inp"><option value="">Select a member…</option>${os}</select><p class="note">Or enter their tag:</p><input id="rvTag" class="inp" placeholder="#ABC123"><p class="note" id="rvMsg"></p><button class="btn on" id="rvGo">Save</button> <button class="btn" id="rvClr">Remove rival</button>`;
   $('rvGo').onclick = () => {
     const raw = $('rvTag').value.trim(), t = raw ? normTag(raw) : $('rvSel').value;
-    if (!t || t === ME || !CTX.cur.some(r => r.tag === t)) { $('rvMsg').textContent = `Pick a clubmate (not yourself) or enter a tag that's in the club right now.`; return; }
+    if (!t || t === ME || !CTX.cur.some(r => r.tag === t)) { $('rvMsg').textContent = `Pick someone else from the club, or type a tag of a current member.`; return; }
     RIVAL = t; store('lty_rival', t); closeModal(); render(...DATA);
   };
   $('rvClr').onclick = () => { RIVAL = null; store('lty_rival', null); closeModal(); render(...DATA); };
 }
 function openFind() {
   if (!CTX) return;
-  $('mbody').innerHTML = `<h2>Find me</h2><p class="note">Enter your player tag from your in-game profile. It's saved in this browser only.</p><input id="tagIn" class="inp" placeholder="#ABC123" value="${esc(ME || '')}"><p class="note" id="findMsg"></p><button class="btn on" id="findGo">Save</button> <button class="btn" id="findClr">Clear</button>`;
+  $('mbody').innerHTML = `<h2>Find me</h2><p class="note">Type in your player tag (it's on your profile in the game). It only gets saved in this browser.</p><input id="tagIn" class="inp" placeholder="#ABC123" value="${esc(ME || '')}"><p class="note" id="findMsg"></p><button class="btn on" id="findGo">Save</button> <button class="btn" id="findClr">Clear</button>`;
   $('modal').style.display = 'flex';
   $('findGo').onclick = () => {
     const t = normTag($('tagIn').value);
-    if (!CTX.cur.some(r => r.tag === t)) { $('findMsg').textContent = `That tag isn't in the club right now.`; return; }
+    if (!CTX.cur.some(r => r.tag === t)) { $('findMsg').textContent = `That tag isn't in the club at the moment.`; return; }
     ME = t; store('lty_me', t); if (RIVAL === t) { RIVAL = null; store('lty_rival', null); } closeModal(); render(...DATA);
   };
   $('findClr').onclick = () => { ME = null; store('lty_me', null); closeModal(); render(...DATA); };
@@ -680,7 +685,7 @@ $('themeBtn').onclick = () => { setTheme(document.documentElement.dataset.theme 
     DATA = [mem, club, zc, zp, rs, rm]; render(...DATA);
   } catch (e) {
     $('err').style.display = 'block';
-    $('err').innerHTML = 'Could not load data: <code>' + esc(e.message) + '</code>. Run the workflow once so the CSV files exist, and open the deployed site rather than the file directly.';
+    $('err').innerHTML = 'Could not load the data: <code>' + esc(e.message) + '</code>. Run the workflow once so the CSV files exist, and open the live site instead of the file on your computer.';
     $('updated').textContent = '';
   }
 })();

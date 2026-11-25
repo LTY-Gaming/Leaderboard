@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Brawl Stars club tracker. Run daily by GitHub Actions; writes CSVs next to this file.
+"""Daily club snapshot. GitHub Actions runs this once a day and the CSVs get saved next to it.
 
-Env: BS_API_TOKEN, BS_CLUB_TAG. API via the RoyaleAPI proxy (token whitelists 128.128.128.128).
-One snapshot per day (SAST date): re-running the same day replaces that day's rows.
-Schema changes: only ever append columns at the END of a header list.
+Needs BS_API_TOKEN and BS_CLUB_TAG. Calls go through the RoyaleAPI proxy, so the API key only
+has to allow 128.128.128.128. Running it twice on the same day just replaces that day's rows.
+Any new CSV column has to go on the end.
 """
 import csv, os, sys, time
 from datetime import datetime, timezone, timedelta
@@ -44,7 +44,7 @@ def api_get(path, token):
         if i < len(DELAYS):
             print(f"{path}: {problem}; retry {i + 1}/{len(DELAYS)} in {DELAYS[i]}s")
             time.sleep(DELAYS[i])
-    sys.exit(f"{path} still failing after {len(DELAYS) + 1} attempts ({problem}). Re-run later.")
+    sys.exit(f"{path} still failing after {len(DELAYS) + 1} tries ({problem}). Try again later.")
 
 
 def norm(tag):
@@ -57,7 +57,7 @@ def q(tag):
 
 
 def upsert(name, header, new_rows, date):
-    """Replace all rows for `date`, keep the rest. Pads old rows if columns were appended."""
+    # swaps out the rows for this date and keeps the older ones. old rows get padded if a column was added
     path = D / name
     old = []
     if path.exists():
@@ -83,23 +83,23 @@ def upsert(name, header, new_rows, date):
 def main():
     token, tag = os.environ.get("BS_API_TOKEN"), os.environ.get("BS_CLUB_TAG")
     if not token or not tag:
-        sys.exit("Set BS_API_TOKEN and BS_CLUB_TAG (GitHub Secrets, no quotes).")
+        sys.exit("BS_API_TOKEN and BS_CLUB_TAG need to be set as GitHub secrets (no quotes).")
     tag = norm(tag)
     now = datetime.now(timezone.utc)
-    date = (now + timedelta(hours=2)).strftime("%Y-%m-%d")  # SAST
+    date = (now + timedelta(hours=2)).strftime("%Y-%m-%d")  # South African date (UTC+2)
 
     club = api_get(f"/clubs/{q(tag)}", token)
     if norm(club.get("tag", "")) != tag or not club.get("members"):
-        sys.exit("Club response missing tag/members; refusing to write partial data.")
+        sys.exit("Club response looks wrong (no tag or no members). Nothing was written.")
     members = club["members"]
     za_clubs = api_get("/rankings/ZA/clubs?limit=200", token).get("items")
     za_players = api_get("/rankings/ZA/players?limit=200", token).get("items")
     if za_clubs is None or za_players is None:
-        sys.exit("Ranking response missing 'items'; refusing to write partial data.")
+        sys.exit("Rankings came back without 'items'. Nothing was written.")
 
     ours = {m["tag"] for m in members}
     member_rows = []
-    for m in members:  # one call per member; keep ONLY the ranked fields
+    for m in members:  # one call per member, we only keep the ranked bits
         p = api_get(f"/players/{q(m['tag'])}", token)
         g = lambda k: "" if p.get(k) is None else p[k]
         member_rows.append([date, m["tag"], m["name"], m.get("role", ""), m["trophies"],
@@ -114,7 +114,7 @@ def main():
             for e in za_clubs]
     za_p = [[date, e["rank"], e["tag"], e["name"], e["trophies"]] for e in za_players if e["tag"] in ours]
 
-    # Everything fetched OK -> write all files.
+    # every call worked, so now it is safe to write
     upsert("club_members.csv", H_MEMBERS, member_rows, date)
     upsert("club_daily.csv", H_CLUB, club_row, date)
     upsert("za_clubs.csv", H_ZA_CLUBS, za_c, date)

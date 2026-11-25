@@ -1,9 +1,9 @@
-# Save as: .github/workflows/track-stats.yml  (GitHub only reads workflows from that exact folder)
+# lives in .github/workflows/ (GitHub ignores workflow files anywhere else)
 name: Track Club Stats
 
 on:
   schedule:
-    - cron: '0 6 * * *'   # UTC only; 06:00 UTC = 08:00 SAST. Runs can be hours late.
+    - cron: '0 6 * * *'   # cron is UTC, so 06:00 here is 08:00 in SA. can run late
   workflow_dispatch: {}
 
 concurrency:
@@ -60,7 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main   # without this, checkout uses the trigger commit and deploys stale data
+          ref: main   # need this or it deploys the old commit and misses the new data
 
       - name: Assemble the site
         run: |
