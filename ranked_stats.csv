@@ -74,19 +74,23 @@ diamond,bounty,Eye of the Beholder,GUS,0,1,1,0,0,0,0,0,0,0,16000061
 diamond,bounty,Eye of the Beholder,LILY,0,1,0,1,0,0,0,0,1,0,16000081
 diamond,bounty,Eye of the Beholder,MELODIE,0,1,0,1,0,0,0,0,1,0,16000078
 diamond,bounty,Eye of the Beholder,THUNDER FROGS,0,1,1,0,0,0,1,1,0,0,16000111
-diamond,bounty,Hideout,*,9,0,0,0,0,0,0,0,0,0,
+diamond,bounty,Hideout,*,12,0,0,0,0,0,0,0,0,0,
 diamond,bounty,Hideout,8-BIT,0,1,0,1,0,0,0,0,0,0,16000027
 diamond,bounty,Hideout,ALLI,0,1,0,1,0,0,0,0,1,0,16000095
-diamond,bounty,Hideout,BEA,0,2,1,1,0,1,0,0,2,1,16000029
-diamond,bounty,Hideout,BELLE,0,1,0,1,0,0,1,0,0,0,16000046
+diamond,bounty,Hideout,ANGELO,0,2,2,0,0,0,0,0,2,2,16000079
+diamond,bounty,Hideout,BEA,0,4,1,3,0,1,0,0,2,1,16000029
+diamond,bounty,Hideout,BELLE,0,1,0,1,0,4,1,0,0,0,16000046
 diamond,bounty,Hideout,BO,0,2,1,1,0,0,1,0,0,0,16000014
-diamond,bounty,Hideout,BROCK,0,3,2,1,0,0,2,1,1,1,16000003
+diamond,bounty,Hideout,BROCK,0,4,2,2,0,0,3,1,1,1,16000003
 diamond,bounty,Hideout,BULL,0,1,1,0,0,0,0,0,0,0,16000002
-diamond,bounty,Hideout,BYRON,0,3,1,2,0,0,2,0,1,1,16000042
+diamond,bounty,Hideout,BYRON,0,3,1,2,0,2,2,0,1,1,16000042
 diamond,bounty,Hideout,COLETTE,0,1,1,0,0,0,0,0,0,0,16000039
 diamond,bounty,Hideout,COSMO,0,0,0,0,0,1,0,0,0,0,16000109
+diamond,bounty,Hideout,CROW,0,1,0,1,0,0,0,0,0,0,16000012
 diamond,bounty,Hideout,DYNAMIKE,0,0,0,0,0,1,0,0,0,0,16000009
-diamond,bounty,Hideout,EDGAR,0,5,2,3,0,1,1,1,1,0,16000043
+diamond,bounty,Hideout,EDGAR,0,6,3,3,0,1,1,1,2,1,16000043
+diamond,bounty,Hideout,EL PRIMO,0,1,1,0,0,0,0,0,1,1,16000010
+diamond,bounty,Hideout,EMZ,0,2,2,0,0,0,0,0,2,2,16000030
 diamond,bounty,Hideout,FANG,0,2,1,1,0,0,0,0,2,1,16000054
 diamond,bounty,Hideout,GLOWY,0,1,0,1,0,0,0,0,1,0,16000101
 diamond,bounty,Hideout,GRAY,0,1,1,0,0,0,0,0,1,1,16000064
@@ -95,20 +99,23 @@ diamond,bounty,Hideout,GROM,0,1,1,0,0,0,0,0,1,1,16000048
 diamond,bounty,Hideout,JESSIE,0,1,0,1,0,0,0,0,1,0,16000007
 diamond,bounty,Hideout,KAZE,0,1,1,0,0,0,1,1,0,0,16000094
 diamond,bounty,Hideout,LEON,0,1,1,0,0,0,0,0,1,1,16000023
+diamond,bounty,Hideout,LOU,0,2,0,2,0,0,0,0,0,0,16000041
+diamond,bounty,Hideout,LUMI,0,1,0,1,0,0,0,0,0,0,16000091
 diamond,bounty,Hideout,MANDY,0,1,1,0,0,0,0,0,1,1,16000065
 diamond,bounty,Hideout,MEG,0,1,1,0,0,0,1,1,0,0,16000052
 diamond,bounty,Hideout,MICO,0,1,0,1,0,0,0,0,1,0,16000075
-diamond,bounty,Hideout,NAJIA,0,2,1,1,0,0,1,1,1,0,16000103
+diamond,bounty,Hideout,NAJIA,0,4,1,3,0,0,3,1,1,0,16000103
 diamond,bounty,Hideout,NANI,0,1,1,0,0,0,0,0,1,1,16000036
 diamond,bounty,Hideout,PEARL,0,1,0,1,0,0,1,0,0,0,16000072
-diamond,bounty,Hideout,PIPER,0,5,4,1,0,0,1,1,3,3,16000015
+diamond,bounty,Hideout,PIPER,0,5,4,1,0,2,1,1,3,3,16000015
 diamond,bounty,Hideout,RICO,0,2,0,2,0,0,0,0,2,0,16000004
 diamond,bounty,Hideout,SIRIUS,0,2,0,2,0,0,0,0,0,0,16000102
 diamond,bounty,Hideout,SPIKE,0,1,0,1,0,0,0,0,0,0,16000005
+diamond,bounty,Hideout,STU,0,2,2,0,0,0,0,0,2,2,16000045
 diamond,bounty,Hideout,SURGE,0,1,0,1,0,0,0,0,1,0,16000038
-diamond,bounty,Hideout,THUNDER FROGS,0,3,3,0,0,0,0,0,2,2,16000111
-diamond,bounty,Hideout,TICK,0,3,1,2,0,2,1,0,1,0,16000022
-diamond,bounty,Layer Cake,*,3,0,0,0,0,0,0,0,0,0,
+diamond,bounty,Hideout,THUNDER FROGS,0,4,4,0,0,0,0,0,3,3,16000111
+diamond,bounty,Hideout,TICK,0,3,1,2,0,6,1,0,1,0,16000022
+diamond,bounty,Layer Cake,*,4,0,0,0,0,0,0,0,0,0,
 diamond,bounty,Layer Cake,AMBER,0,1,0,1,0,0,0,0,0,0,16000040
 diamond,bounty,Layer Cake,ASH,0,0,0,0,0,1,0,0,0,0,16000051
 diamond,bounty,Layer Cake,BARLEY,0,0,0,0,0,1,0,0,0,0,16000006
@@ -118,50 +125,58 @@ diamond,bounty,Layer Cake,BYRON,0,1,0,1,0,0,1,0,0,0,16000042
 diamond,bounty,Layer Cake,COLT,0,1,1,0,0,0,0,0,1,1,16000001
 diamond,bounty,Layer Cake,CROW,0,1,0,1,0,0,0,0,0,0,16000012
 diamond,bounty,Layer Cake,DYNAMIKE,0,1,1,0,0,1,0,0,0,0,16000009
-diamond,bounty,Layer Cake,EDGAR,0,0,0,0,0,3,0,0,0,0,16000043
+diamond,bounty,Layer Cake,EDGAR,0,1,1,0,0,3,0,0,0,0,16000043
 diamond,bounty,Layer Cake,EMZ,0,0,0,0,0,1,0,0,0,0,16000030
 diamond,bounty,Layer Cake,FANG,0,0,0,0,0,1,0,0,0,0,16000054
 diamond,bounty,Layer Cake,FRANK,0,0,0,0,0,1,0,0,0,0,16000020
-diamond,bounty,Layer Cake,GUS,0,0,0,0,0,1,0,0,0,0,16000061
+diamond,bounty,Layer Cake,GUS,0,1,0,1,0,1,0,0,1,0,16000061
 diamond,bounty,Layer Cake,JUJU,0,0,0,0,0,1,0,0,0,0,16000087
 diamond,bounty,Layer Cake,KIT,0,0,0,0,0,2,0,0,0,0,16000076
 diamond,bounty,Layer Cake,LARRY & LAWRIE,0,0,0,0,0,1,0,0,0,0,16000077
 diamond,bounty,Layer Cake,LEON,0,1,0,1,0,0,0,0,0,0,16000023
-diamond,bounty,Layer Cake,LILY,0,2,1,1,0,0,0,0,2,1,16000081
-diamond,bounty,Layer Cake,MICO,0,1,0,1,0,0,0,0,1,0,16000075
+diamond,bounty,Layer Cake,LILY,0,2,1,1,0,1,0,0,2,1,16000081
+diamond,bounty,Layer Cake,MAX,0,0,0,0,0,1,0,0,0,0,16000032
+diamond,bounty,Layer Cake,MICO,0,1,0,1,0,1,0,0,1,0,16000075
+diamond,bounty,Layer Cake,MINA,0,1,1,0,0,0,1,1,0,0,16000097
 diamond,bounty,Layer Cake,MORTIS,0,0,0,0,0,1,0,0,0,0,16000011
-diamond,bounty,Layer Cake,PENNY,0,1,1,0,0,0,0,0,1,1,16000019
+diamond,bounty,Layer Cake,PENNY,0,1,1,0,0,1,0,0,1,1,16000019
 diamond,bounty,Layer Cake,PIERCE,0,1,0,1,0,0,1,0,0,0,16000099
 diamond,bounty,Layer Cake,SHADE,0,0,0,0,0,1,0,0,0,0,16000086
-diamond,bounty,Layer Cake,SPIKE,0,1,1,0,0,0,0,0,1,1,16000005
-diamond,bounty,Layer Cake,SPROUT,0,1,0,1,0,0,0,0,1,0,16000037
+diamond,bounty,Layer Cake,SPIKE,0,1,1,0,0,1,0,0,1,1,16000005
+diamond,bounty,Layer Cake,SPROUT,0,3,1,2,0,0,0,0,2,0,16000037
 diamond,bounty,Layer Cake,SQUEAK,0,1,0,1,0,0,0,0,0,0,16000047
-diamond,bounty,Layer Cake,TICK,0,1,1,0,0,1,0,0,0,0,16000022
-diamond,bounty,Shooting Star,*,3,0,0,0,0,0,0,0,0,0,
+diamond,bounty,Layer Cake,SURGE,0,1,0,1,0,0,0,0,1,0,16000038
+diamond,bounty,Layer Cake,TICK,0,1,1,0,0,2,0,0,0,0,16000022
+diamond,bounty,Shooting Star,*,4,0,0,0,0,0,0,0,0,0,
 diamond,bounty,Shooting Star,8-BIT,0,0,0,0,0,1,0,0,0,0,16000027
 diamond,bounty,Shooting Star,BARLEY,0,0,0,0,0,1,0,0,0,0,16000006
 diamond,bounty,Shooting Star,BEA,0,1,1,0,0,0,0,0,0,0,16000029
 diamond,bounty,Shooting Star,BELLE,0,1,1,0,0,0,1,1,0,0,16000046
 diamond,bounty,Shooting Star,BO,0,1,1,0,0,0,0,0,1,1,16000014
 diamond,bounty,Shooting Star,BONNIE,0,0,0,0,0,1,0,0,0,0,16000058
-diamond,bounty,Shooting Star,BROCK,0,0,0,0,0,1,0,0,0,0,16000003
-diamond,bounty,Shooting Star,COLETTE,0,1,1,0,0,0,0,0,1,1,16000039
+diamond,bounty,Shooting Star,BROCK,0,0,0,0,0,2,0,0,0,0,16000003
+diamond,bounty,Shooting Star,COLETTE,0,2,2,0,0,0,0,0,2,2,16000039
+diamond,bounty,Shooting Star,COLT,0,1,0,1,0,0,1,0,0,0,16000001
 diamond,bounty,Shooting Star,DARRYL,0,0,0,0,0,1,0,0,0,0,16000018
-diamond,bounty,Shooting Star,EDGAR,0,0,0,0,0,4,0,0,0,0,16000043
+diamond,bounty,Shooting Star,EDGAR,0,1,0,1,0,4,0,0,0,0,16000043
 diamond,bounty,Shooting Star,GRIFF,0,1,0,1,0,0,0,0,0,0,16000050
 diamond,bounty,Shooting Star,GROM,0,0,0,0,0,1,0,0,0,0,16000048
-diamond,bounty,Shooting Star,GUS,0,2,1,1,0,0,1,1,1,0,16000061
+diamond,bounty,Shooting Star,GUS,0,3,2,1,0,0,1,1,2,1,16000061
 diamond,bounty,Shooting Star,JESSIE,0,3,2,1,0,0,0,0,1,0,16000007
 diamond,bounty,Shooting Star,JUJU,0,0,0,0,0,1,0,0,0,0,16000087
+diamond,bounty,Shooting Star,LARRY & LAWRIE,0,0,0,0,0,1,0,0,0,0,16000077
 diamond,bounty,Shooting Star,LILY,0,0,0,0,0,1,0,0,0,0,16000081
 diamond,bounty,Shooting Star,MANDY,0,1,0,1,0,1,0,0,1,0,16000065
+diamond,bounty,Shooting Star,MEEPLE,0,1,1,0,0,0,0,0,1,1,16000089
 diamond,bounty,Shooting Star,MICO,0,1,0,1,0,0,0,0,1,0,16000075
 diamond,bounty,Shooting Star,MINA,0,1,0,1,0,0,1,0,0,0,16000097
 diamond,bounty,Shooting Star,NAJIA,0,0,0,0,0,1,0,0,0,0,16000103
 diamond,bounty,Shooting Star,NANI,0,0,0,0,0,1,0,0,0,0,16000036
-diamond,bounty,Shooting Star,PIPER,0,1,1,0,0,0,0,0,1,1,16000015
+diamond,bounty,Shooting Star,PIPER,0,1,1,0,0,2,0,0,1,1,16000015
+diamond,bounty,Shooting Star,RICO,0,1,0,1,0,0,0,0,0,0,16000004
 diamond,bounty,Shooting Star,SPIKE,0,4,1,3,0,0,0,0,2,0,16000005
-diamond,bounty,Shooting Star,TICK,0,0,0,0,0,3,0,0,0,0,16000022
+diamond,bounty,Shooting Star,STARR NOVA,0,0,0,0,0,1,0,0,0,0,16000105
+diamond,bounty,Shooting Star,TICK,0,0,0,0,0,4,0,0,0,0,16000022
 diamond,bounty,Supercut,*,11,0,0,0,0,0,0,0,0,0,
 diamond,bounty,Supercut,8-BIT,0,3,3,0,0,0,3,3,0,0,16000027
 diamond,bounty,Supercut,AMBER,0,1,0,1,0,0,0,0,1,0,16000040
@@ -225,7 +240,7 @@ diamond,brawlArena,Mirage Arena,DARRYL,0,1,0,1,0,0,0,0,1,0,16000018
 diamond,brawlArena,Mirage Arena,JACKY,0,1,0,1,0,0,0,0,1,0,16000034
 diamond,brawlArena,Mirage Arena,NORI,0,1,1,0,0,0,0,0,0,0,16000107
 diamond,brawlArena,Mirage Arena,POCO,0,2,1,1,0,0,1,1,1,0,16000013
-diamond,brawlBall,Backyard Bowl,*,10,0,0,0,0,0,0,0,0,0,
+diamond,brawlBall,Backyard Bowl,*,11,0,0,0,0,0,0,0,0,0,
 diamond,brawlBall,Backyard Bowl,AMBER,0,2,1,1,0,0,1,0,1,1,16000040
 diamond,brawlBall,Backyard Bowl,BEA,0,1,0,1,0,0,0,0,1,0,16000029
 diamond,brawlBall,Backyard Bowl,BIBI,0,6,4,2,0,0,0,0,2,0,16000026
@@ -233,11 +248,11 @@ diamond,brawlBall,Backyard Bowl,BOLT,0,1,1,0,0,0,0,0,0,0,16000106
 diamond,brawlBall,Backyard Bowl,BUSTER,0,1,0,1,0,0,0,0,1,0,16000062
 diamond,brawlBall,Backyard Bowl,BUZZ,0,1,0,1,0,0,0,0,1,0,16000049
 diamond,brawlBall,Backyard Bowl,DAMIAN,0,1,1,0,0,0,0,0,1,1,16000104
-diamond,brawlBall,Backyard Bowl,EDGAR,0,8,3,5,0,0,0,0,5,1,16000043
+diamond,brawlBall,Backyard Bowl,EDGAR,0,10,4,6,0,0,0,0,6,1,16000043
 diamond,brawlBall,Backyard Bowl,EL PRIMO,0,2,0,2,0,0,0,0,1,0,16000010
 diamond,brawlBall,Backyard Bowl,EMZ,0,3,2,1,0,0,2,2,1,0,16000030
 diamond,brawlBall,Backyard Bowl,FRANK,0,2,0,2,0,0,0,0,2,0,16000020
-diamond,brawlBall,Backyard Bowl,GRIFF,0,8,6,2,0,0,6,5,1,0,16000050
+diamond,brawlBall,Backyard Bowl,GRIFF,0,10,7,3,0,0,7,6,2,0,16000050
 diamond,brawlBall,Backyard Bowl,GROM,0,1,0,1,0,0,0,0,1,0,16000048
 diamond,brawlBall,Backyard Bowl,LILY,0,1,0,1,0,0,0,0,1,0,16000081
 diamond,brawlBall,Backyard Bowl,LOU,0,2,0,2,0,0,0,0,2,0,16000041
@@ -245,13 +260,13 @@ diamond,brawlBall,Backyard Bowl,MANDY,0,2,2,0,0,0,0,0,1,1,16000065
 diamond,brawlBall,Backyard Bowl,MELODIE,0,2,0,2,0,0,0,0,1,0,16000078
 diamond,brawlBall,Backyard Bowl,MORTIS,0,2,0,2,0,0,0,0,1,0,16000011
 diamond,brawlBall,Backyard Bowl,PIPER,0,1,1,0,0,0,0,0,0,0,16000015
-diamond,brawlBall,Backyard Bowl,RICO,0,1,0,1,0,0,0,0,1,0,16000004
+diamond,brawlBall,Backyard Bowl,RICO,0,2,1,1,0,0,0,0,1,0,16000004
 diamond,brawlBall,Backyard Bowl,SPIKE,0,2,2,0,0,0,0,0,0,0,16000005
 diamond,brawlBall,Backyard Bowl,SQUEAK,0,1,0,1,0,0,0,0,1,0,16000047
 diamond,brawlBall,Backyard Bowl,STARR NOVA,0,1,1,0,0,0,0,0,0,0,16000105
 diamond,brawlBall,Backyard Bowl,STU,0,3,3,0,0,0,1,1,2,2,16000045
 diamond,brawlBall,Backyard Bowl,SURGE,0,1,1,0,0,0,0,0,0,0,16000038
-diamond,brawlBall,Backyard Bowl,THUNDER FROGS,0,4,2,2,0,0,1,1,2,0,16000111
+diamond,brawlBall,Backyard Bowl,THUNDER FROGS,0,5,2,3,0,0,1,1,3,0,16000111
 diamond,brawlBall,Front Tackle,*,2,0,0,0,0,0,0,0,0,0,
 diamond,brawlBall,Front Tackle,BULL,0,2,1,1,0,0,0,0,2,1,16000002
 diamond,brawlBall,Front Tackle,COSMO,0,1,1,0,0,0,0,0,0,0,16000109
@@ -322,6 +337,18 @@ diamond,brawlBall,Pinball Dreams,SHADE,0,0,0,0,0,1,0,0,0,0,16000086
 diamond,brawlBall,Pinball Dreams,SHELLY,0,1,1,0,0,0,0,0,0,0,16000000
 diamond,brawlBall,Pinball Dreams,SPIKE,0,1,0,1,0,0,0,0,0,0,16000005
 diamond,brawlBall,Pinball Dreams,SURGE,0,3,2,1,0,0,0,0,2,2,16000038
+diamond,brawlBall,Sneaky Fields,*,1,0,0,0,0,0,0,0,0,0,
+diamond,brawlBall,Sneaky Fields,BARLEY,0,0,0,0,0,1,0,0,0,0,16000006
+diamond,brawlBall,Sneaky Fields,BIBI,0,0,0,0,0,2,0,0,0,0,16000026
+diamond,brawlBall,Sneaky Fields,BULL,0,1,0,1,0,0,0,0,1,0,16000002
+diamond,brawlBall,Sneaky Fields,DAMIAN,0,0,0,0,0,1,0,0,0,0,16000104
+diamond,brawlBall,Sneaky Fields,DARRYL,0,1,0,1,0,0,0,0,1,0,16000018
+diamond,brawlBall,Sneaky Fields,DOUG,0,1,1,0,0,0,0,0,0,0,16000071
+diamond,brawlBall,Sneaky Fields,EDGAR,0,1,1,0,0,0,1,1,0,0,16000043
+diamond,brawlBall,Sneaky Fields,EMZ,0,0,0,0,0,1,0,0,0,0,16000030
+diamond,brawlBall,Sneaky Fields,FRANK,0,1,0,1,0,0,0,0,1,0,16000020
+diamond,brawlBall,Sneaky Fields,GRIFF,0,0,0,0,0,1,0,0,0,0,16000050
+diamond,brawlBall,Sneaky Fields,RICO,0,1,1,0,0,0,0,0,0,0,16000004
 diamond,brawlBall,Sunny Soccer,*,8,0,0,0,0,0,0,0,0,0,
 diamond,brawlBall,Sunny Soccer,8-BIT,0,1,0,1,0,0,0,0,0,0,16000027
 diamond,brawlBall,Sunny Soccer,BIBI,0,4,2,2,0,0,0,0,4,2,16000026
@@ -353,27 +380,30 @@ diamond,brawlBall,Sunny Soccer,SHELLY,0,4,0,4,0,0,0,0,3,0,16000000
 diamond,brawlBall,Sunny Soccer,THUNDER FROGS,0,1,0,1,0,0,0,0,1,0,16000111
 diamond,brawlBall,Sunny Soccer,VINCE,0,1,1,0,0,0,0,0,0,0,16000110
 diamond,brawlBall,Sunny Soccer,WENDY,0,1,0,1,0,0,0,0,0,0,16000108
-diamond,brawlBall,Triple Dribble,*,14,0,0,0,0,0,0,0,0,0,
+diamond,brawlBall,Triple Dribble,*,15,0,0,0,0,0,0,0,0,0,
 diamond,brawlBall,Triple Dribble,8-BIT,0,1,0,1,0,0,0,0,1,0,16000027
 diamond,brawlBall,Triple Dribble,AMBER,0,4,2,1,1,0,0,0,3,2,16000040
 diamond,brawlBall,Triple Dribble,ASH,0,0,0,0,0,3,0,0,0,0,16000051
 diamond,brawlBall,Triple Dribble,BEA,0,0,0,0,0,3,0,0,0,0,16000029
-diamond,brawlBall,Triple Dribble,BIBI,0,12,6,5,1,2,2,2,9,4,16000026
-diamond,brawlBall,Triple Dribble,BULL,0,2,1,1,0,2,1,0,1,1,16000002
+diamond,brawlBall,Triple Dribble,BIBI,0,14,7,6,1,2,3,3,10,4,16000026
+diamond,brawlBall,Triple Dribble,BO,0,0,0,0,0,1,0,0,0,0,16000014
+diamond,brawlBall,Triple Dribble,BROCK,0,1,0,1,0,0,0,0,1,0,16000003
+diamond,brawlBall,Triple Dribble,BULL,0,3,2,1,0,2,1,0,1,1,16000002
 diamond,brawlBall,Triple Dribble,BUSTER,0,0,0,0,0,1,0,0,0,0,16000062
 diamond,brawlBall,Triple Dribble,BUZZ,0,1,0,1,0,1,0,0,1,0,16000049
 diamond,brawlBall,Triple Dribble,CLANCY,0,4,1,3,0,0,0,0,3,1,16000083
 diamond,brawlBall,Triple Dribble,COLETTE,0,2,2,0,0,0,0,0,0,0,16000039
+diamond,brawlBall,Triple Dribble,COLT,0,0,0,0,0,1,0,0,0,0,16000001
 diamond,brawlBall,Triple Dribble,DARRYL,0,1,0,1,0,0,0,0,1,0,16000018
 diamond,brawlBall,Triple Dribble,DOUG,0,2,1,1,0,0,0,0,1,1,16000071
-diamond,brawlBall,Triple Dribble,DYNAMIKE,0,1,1,0,0,2,0,0,1,1,16000009
-diamond,brawlBall,Triple Dribble,EDGAR,0,6,2,4,0,8,1,0,3,1,16000043
+diamond,brawlBall,Triple Dribble,DYNAMIKE,0,2,1,1,0,2,0,0,2,1,16000009
+diamond,brawlBall,Triple Dribble,EDGAR,0,6,2,4,0,9,1,0,3,1,16000043
 diamond,brawlBall,Triple Dribble,EL PRIMO,0,0,0,0,0,2,0,0,0,0,16000010
 diamond,brawlBall,Triple Dribble,EMZ,0,0,0,0,0,4,0,0,0,0,16000030
 diamond,brawlBall,Triple Dribble,FANG,0,1,0,1,0,0,0,0,1,0,16000054
-diamond,brawlBall,Triple Dribble,FRANK,0,1,0,1,0,2,0,0,1,0,16000020
+diamond,brawlBall,Triple Dribble,FRANK,0,1,0,1,0,3,0,0,1,0,16000020
 diamond,brawlBall,Triple Dribble,GALE,0,4,1,2,1,0,3,0,0,0,16000035
-diamond,brawlBall,Triple Dribble,GRIFF,0,9,7,1,1,2,6,5,3,2,16000050
+diamond,brawlBall,Triple Dribble,GRIFF,0,9,7,1,1,3,6,5,3,2,16000050
 diamond,brawlBall,Triple Dribble,HANK,0,1,1,0,0,0,0,0,1,1,16000069
 diamond,brawlBall,Triple Dribble,JACKY,0,2,2,0,0,0,2,2,0,0,16000034
 diamond,brawlBall,Triple Dribble,LEON,0,1,1,0,0,0,0,0,0,0,16000023
@@ -384,12 +414,12 @@ diamond,brawlBall,Triple Dribble,MOE,0,0,0,0,0,3,0,0,0,0,16000084
 diamond,brawlBall,Triple Dribble,NITA,0,1,0,1,0,0,0,0,1,0,16000008
 diamond,brawlBall,Triple Dribble,PENNY,0,0,0,0,0,1,0,0,0,0,16000019
 diamond,brawlBall,Triple Dribble,RICO,0,7,3,3,1,0,0,0,0,0,16000004
-diamond,brawlBall,Triple Dribble,SHADE,0,2,1,1,0,3,0,0,2,1,16000086
+diamond,brawlBall,Triple Dribble,SHADE,0,2,1,1,0,4,0,0,2,1,16000086
 diamond,brawlBall,Triple Dribble,SHELLY,0,3,0,3,0,0,0,0,2,0,16000000
 diamond,brawlBall,Triple Dribble,SIRIUS,0,0,0,0,0,2,0,0,0,0,16000102
 diamond,brawlBall,Triple Dribble,SPIKE,0,3,2,1,0,2,0,0,2,1,16000005
 diamond,brawlBall,Triple Dribble,STU,0,1,1,0,0,0,0,0,1,1,16000045
-diamond,brawlBall,Triple Dribble,SURGE,0,0,0,0,0,3,0,0,0,0,16000038
+diamond,brawlBall,Triple Dribble,SURGE,0,1,1,0,0,3,0,0,0,0,16000038
 diamond,brawlBall,Triple Dribble,THUNDER FROGS,0,6,3,3,0,0,0,0,3,1,16000111
 diamond,brawlBall,Triple Dribble,TICK,0,4,0,3,1,0,0,0,1,0,16000022
 diamond,deathmatch,WALKING ON HOT SAND,*,4,0,0,0,0,0,0,0,0,0,
@@ -440,74 +470,83 @@ diamond,gemGrab,Double Swoosh,MORTIS,0,1,0,1,0,0,0,0,0,0,16000011
 diamond,gemGrab,Double Swoosh,NITA,0,2,0,2,0,0,0,0,2,0,16000008
 diamond,gemGrab,Double Swoosh,TARA,0,1,0,1,0,0,0,0,0,0,16000017
 diamond,gemGrab,Double Swoosh,TICK,0,0,0,0,0,2,0,0,0,0,16000022
-diamond,gemGrab,Gem Fort,*,10,0,0,0,0,0,0,0,0,0,
-diamond,gemGrab,Gem Fort,AMBER,0,2,1,1,0,2,0,0,1,1,16000040
+diamond,gemGrab,Gem Fort,*,12,0,0,0,0,0,0,0,0,0,
+diamond,gemGrab,Gem Fort,AMBER,0,3,1,2,0,2,0,0,2,1,16000040
 diamond,gemGrab,Gem Fort,BEA,0,1,1,0,0,0,0,0,1,1,16000029
-diamond,gemGrab,Gem Fort,BIBI,0,1,0,1,0,1,1,0,0,0,16000026
-diamond,gemGrab,Gem Fort,BO,0,5,1,4,0,0,1,0,2,0,16000014
+diamond,gemGrab,Gem Fort,BIBI,0,2,1,1,0,2,1,0,0,0,16000026
+diamond,gemGrab,Gem Fort,BO,0,6,2,4,0,1,2,1,2,0,16000014
 diamond,gemGrab,Gem Fort,BOLT,0,1,0,1,0,0,0,0,1,0,16000106
-diamond,gemGrab,Gem Fort,BROCK,0,2,2,0,0,0,0,0,1,1,16000003
+diamond,gemGrab,Gem Fort,BROCK,0,3,3,0,0,0,0,0,1,1,16000003
 diamond,gemGrab,Gem Fort,BULL,0,1,1,0,0,2,0,0,0,0,16000002
 diamond,gemGrab,Gem Fort,BYRON,0,2,1,1,0,0,0,0,1,1,16000042
 diamond,gemGrab,Gem Fort,CHESTER,0,3,3,0,0,0,1,1,2,2,16000063
 diamond,gemGrab,Gem Fort,COLETTE,0,2,1,1,0,0,0,0,0,0,16000039
-diamond,gemGrab,Gem Fort,CORDELIUS,0,1,1,0,0,1,0,0,1,1,16000070
+diamond,gemGrab,Gem Fort,CORDELIUS,0,1,1,0,0,2,0,0,1,1,16000070
 diamond,gemGrab,Gem Fort,CROW,0,1,0,1,0,0,0,0,1,0,16000012
 diamond,gemGrab,Gem Fort,DOUG,0,2,1,1,0,0,2,1,0,0,16000071
-diamond,gemGrab,Gem Fort,EDGAR,0,3,1,2,0,4,1,0,1,0,16000043
-diamond,gemGrab,Gem Fort,EMZ,0,7,5,2,0,1,1,1,3,2,16000030
+diamond,gemGrab,Gem Fort,DRACO,0,1,0,1,0,0,0,0,1,0,16000080
+diamond,gemGrab,Gem Fort,EDGAR,0,3,1,2,0,6,1,0,1,0,16000043
+diamond,gemGrab,Gem Fort,EMZ,0,9,6,3,0,1,1,1,4,2,16000030
 diamond,gemGrab,Gem Fort,FANG,0,3,1,2,0,0,2,0,1,1,16000054
 diamond,gemGrab,Gem Fort,FRANK,0,0,0,0,0,1,0,0,0,0,16000020
-diamond,gemGrab,Gem Fort,GRIFF,0,0,0,0,0,2,0,0,0,0,16000050
+diamond,gemGrab,Gem Fort,GRIFF,0,0,0,0,0,3,0,0,0,0,16000050
 diamond,gemGrab,Gem Fort,GROM,0,0,0,0,0,1,0,0,0,0,16000048
-diamond,gemGrab,Gem Fort,GUS,0,1,0,1,0,1,1,0,0,0,16000061
+diamond,gemGrab,Gem Fort,GUS,0,2,0,2,0,1,1,0,1,0,16000061
+diamond,gemGrab,Gem Fort,JANET,0,1,0,1,0,0,0,0,1,0,16000057
 diamond,gemGrab,Gem Fort,JESSIE,0,1,0,1,0,0,0,0,1,0,16000007
 diamond,gemGrab,Gem Fort,JUJU,0,0,0,0,0,1,0,0,0,0,16000087
+diamond,gemGrab,Gem Fort,KAZE,0,0,0,0,0,1,0,0,0,0,16000094
 diamond,gemGrab,Gem Fort,KENJI,0,1,0,1,0,0,0,0,1,0,16000085
 diamond,gemGrab,Gem Fort,LEON,0,0,0,0,0,3,0,0,0,0,16000023
+diamond,gemGrab,Gem Fort,LILY,0,0,0,0,0,1,0,0,0,0,16000081
 diamond,gemGrab,Gem Fort,LOU,0,1,0,1,0,0,0,0,0,0,16000041
 diamond,gemGrab,Gem Fort,LUMI,0,1,1,0,0,0,1,1,0,0,16000091
 diamond,gemGrab,Gem Fort,MANDY,0,1,0,1,0,0,0,0,1,0,16000065
 diamond,gemGrab,Gem Fort,MELODIE,0,0,0,0,0,1,0,0,0,0,16000078
-diamond,gemGrab,Gem Fort,MICO,0,0,0,0,0,1,0,0,0,0,16000075
+diamond,gemGrab,Gem Fort,MICO,0,0,0,0,0,2,0,0,0,0,16000075
 diamond,gemGrab,Gem Fort,MORTIS,0,1,1,0,0,1,0,0,1,1,16000011
 diamond,gemGrab,Gem Fort,MR. P,0,1,1,0,0,0,1,1,0,0,16000031
-diamond,gemGrab,Gem Fort,NORI,0,1,0,1,0,0,0,0,1,0,16000107
-diamond,gemGrab,Gem Fort,OTIS,0,1,0,1,0,0,0,0,1,0,16000059
-diamond,gemGrab,Gem Fort,SHADE,0,1,0,1,0,3,0,0,1,0,16000086
+diamond,gemGrab,Gem Fort,NORI,0,2,1,1,0,0,1,1,1,0,16000107
+diamond,gemGrab,Gem Fort,OTIS,0,1,0,1,0,1,0,0,1,0,16000059
+diamond,gemGrab,Gem Fort,SHADE,0,2,0,2,0,3,0,0,2,0,16000086
 diamond,gemGrab,Gem Fort,SIRIUS,0,0,0,0,0,2,0,0,0,0,16000102
-diamond,gemGrab,Gem Fort,SPIKE,0,4,3,1,0,0,0,0,3,2,16000005
+diamond,gemGrab,Gem Fort,SPIKE,0,4,3,1,0,1,0,0,3,2,16000005
 diamond,gemGrab,Gem Fort,SQUEAK,0,2,1,1,0,0,0,0,1,1,16000047
-diamond,gemGrab,Gem Fort,SURGE,0,0,0,0,0,1,0,0,0,0,16000038
+diamond,gemGrab,Gem Fort,STU,0,1,1,0,0,0,0,0,0,0,16000045
+diamond,gemGrab,Gem Fort,SURGE,0,0,0,0,0,2,0,0,0,0,16000038
 diamond,gemGrab,Gem Fort,TARA,0,2,1,1,0,0,1,1,0,0,16000017
 diamond,gemGrab,Gem Fort,THUNDER FROGS,0,3,1,2,0,0,0,0,2,0,16000111
 diamond,gemGrab,Gem Fort,TICK,0,1,1,0,0,1,0,0,1,1,16000022
-diamond,gemGrab,Hard Rock Mine,*,4,0,0,0,0,0,0,0,0,0,
+diamond,gemGrab,Hard Rock Mine,*,5,0,0,0,0,0,0,0,0,0,
 diamond,gemGrab,Hard Rock Mine,AMBER,0,1,1,0,0,0,1,1,0,0,16000040
 diamond,gemGrab,Hard Rock Mine,BARLEY,0,0,0,0,0,1,0,0,0,0,16000006
 diamond,gemGrab,Hard Rock Mine,BERRY,0,1,0,1,0,0,0,0,0,0,16000082
 diamond,gemGrab,Hard Rock Mine,BIBI,0,1,1,0,0,0,0,0,0,0,16000026
-diamond,gemGrab,Hard Rock Mine,BO,0,2,1,1,0,2,1,0,1,1,16000014
-diamond,gemGrab,Hard Rock Mine,BROCK,0,0,0,0,0,1,0,0,0,0,16000003
+diamond,gemGrab,Hard Rock Mine,BO,0,2,1,1,0,4,1,0,1,1,16000014
+diamond,gemGrab,Hard Rock Mine,BROCK,0,0,0,0,0,2,0,0,0,0,16000003
+diamond,gemGrab,Hard Rock Mine,BULL,0,1,1,0,0,0,0,0,0,0,16000002
+diamond,gemGrab,Hard Rock Mine,COLETTE,0,1,0,1,0,0,0,0,1,0,16000039
 diamond,gemGrab,Hard Rock Mine,DARRYL,0,0,0,0,0,1,0,0,0,0,16000018
 diamond,gemGrab,Hard Rock Mine,DOUG,0,0,0,0,0,1,0,0,0,0,16000071
 diamond,gemGrab,Hard Rock Mine,DYNAMIKE,0,0,0,0,0,1,0,0,0,0,16000009
-diamond,gemGrab,Hard Rock Mine,EDGAR,0,0,0,0,0,5,0,0,0,0,16000043
-diamond,gemGrab,Hard Rock Mine,EMZ,0,3,0,3,0,0,0,0,2,0,16000030
-diamond,gemGrab,Hard Rock Mine,GRIFF,0,1,1,0,0,1,0,0,0,0,16000050
+diamond,gemGrab,Hard Rock Mine,EDGAR,0,1,0,1,0,5,0,0,1,0,16000043
+diamond,gemGrab,Hard Rock Mine,EMZ,0,4,1,3,0,0,0,0,2,0,16000030
+diamond,gemGrab,Hard Rock Mine,GRIFF,0,1,1,0,0,2,0,0,0,0,16000050
 diamond,gemGrab,Hard Rock Mine,GUS,0,2,0,2,0,0,0,0,1,0,16000061
 diamond,gemGrab,Hard Rock Mine,LEON,0,1,0,1,0,0,0,0,0,0,16000023
 diamond,gemGrab,Hard Rock Mine,LILY,0,1,1,0,0,1,0,0,0,0,16000081
+diamond,gemGrab,Hard Rock Mine,MAX,0,1,1,0,0,0,1,1,0,0,16000032
 diamond,gemGrab,Hard Rock Mine,MELODIE,0,1,1,0,0,0,0,0,1,1,16000078
 diamond,gemGrab,Hard Rock Mine,MICO,0,0,0,0,0,3,0,0,0,0,16000075
-diamond,gemGrab,Hard Rock Mine,MORTIS,0,1,1,0,0,0,0,0,1,1,16000011
+diamond,gemGrab,Hard Rock Mine,MORTIS,0,1,1,0,0,1,0,0,1,1,16000011
 diamond,gemGrab,Hard Rock Mine,NORI,0,1,1,0,0,1,1,1,0,0,16000107
 diamond,gemGrab,Hard Rock Mine,OTIS,0,1,0,1,0,0,0,0,1,0,16000059
 diamond,gemGrab,Hard Rock Mine,RICO,0,3,2,1,0,1,1,0,2,2,16000004
 diamond,gemGrab,Hard Rock Mine,SHADE,0,1,1,0,0,1,0,0,1,1,16000086
-diamond,gemGrab,Hard Rock Mine,SPIKE,0,1,1,0,0,2,0,0,0,0,16000005
+diamond,gemGrab,Hard Rock Mine,SPIKE,0,2,1,1,0,2,0,0,1,0,16000005
 diamond,gemGrab,Hard Rock Mine,STU,0,0,0,0,0,1,0,0,0,0,16000045
 diamond,gemGrab,Hard Rock Mine,SURGE,0,2,0,2,0,0,0,0,2,0,16000038
+diamond,gemGrab,Hard Rock Mine,TICK,0,0,0,0,0,1,0,0,0,0,16000022
 diamond,gemGrab,Hard Rock Mine,WENDY,0,0,0,0,0,1,0,0,0,0,16000108
 diamond,gemGrab,Undermine,*,11,0,0,0,0,0,0,0,0,0,
 diamond,gemGrab,Undermine,AMBER,0,1,1,0,0,0,1,1,0,0,16000040
@@ -551,42 +590,46 @@ diamond,gemGrab,Undermine,SURGE,0,2,0,2,0,0,0,0,2,0,16000038
 diamond,gemGrab,Undermine,TARA,0,1,1,0,0,0,0,0,1,1,16000017
 diamond,gemGrab,Undermine,THUNDER FROGS,0,2,1,1,0,0,0,0,2,1,16000111
 diamond,gemGrab,Undermine,TICK,0,1,0,1,0,0,0,0,1,0,16000022
-diamond,heist,Bridge Too Far,*,2,0,0,0,0,0,0,0,0,0,
+diamond,heist,Bridge Too Far,*,3,0,0,0,0,0,0,0,0,0,
 diamond,heist,Bridge Too Far,8-BIT,0,0,0,0,0,1,0,0,0,0,16000027
 diamond,heist,Bridge Too Far,AMBER,0,2,0,2,0,0,1,0,1,0,16000040
-diamond,heist,Bridge Too Far,BO,0,2,0,2,0,0,0,0,1,0,16000014
-diamond,heist,Bridge Too Far,BROCK,0,0,0,0,0,1,0,0,0,0,16000003
-diamond,heist,Bridge Too Far,CHUCK,0,1,0,1,0,0,0,0,0,0,16000073
-diamond,heist,Bridge Too Far,COLETTE,0,2,2,0,0,0,0,0,1,1,16000039
+diamond,heist,Bridge Too Far,BO,0,2,0,2,0,2,0,0,1,0,16000014
+diamond,heist,Bridge Too Far,BONNIE,0,1,1,0,0,0,0,0,0,0,16000058
+diamond,heist,Bridge Too Far,BROCK,0,2,1,1,0,1,1,1,1,0,16000003
+diamond,heist,Bridge Too Far,CHUCK,0,1,0,1,0,1,0,0,0,0,16000073
+diamond,heist,Bridge Too Far,COLETTE,0,4,3,1,0,0,0,0,2,1,16000039
+diamond,heist,Bridge Too Far,COLT,0,0,0,0,0,1,0,0,0,0,16000001
 diamond,heist,Bridge Too Far,DOUG,0,0,0,0,0,1,0,0,0,0,16000071
 diamond,heist,Bridge Too Far,EDGAR,0,0,0,0,0,2,0,0,0,0,16000043
 diamond,heist,Bridge Too Far,GRIFF,0,0,0,0,0,1,0,0,0,0,16000050
-diamond,heist,Bridge Too Far,JESSIE,0,0,0,0,0,1,0,0,0,0,16000007
+diamond,heist,Bridge Too Far,JESSIE,0,0,0,0,0,2,0,0,0,0,16000007
 diamond,heist,Bridge Too Far,LEON,0,1,1,0,0,0,0,0,1,1,16000023
 diamond,heist,Bridge Too Far,MANDY,0,0,0,0,0,1,0,0,0,0,16000065
 diamond,heist,Bridge Too Far,MELODIE,0,2,2,0,0,0,1,1,1,1,16000078
-diamond,heist,Bridge Too Far,MICO,0,0,0,0,0,2,0,0,0,0,16000075
+diamond,heist,Bridge Too Far,MICO,0,0,0,0,0,3,0,0,0,0,16000075
 diamond,heist,Bridge Too Far,PENNY,0,1,1,0,0,0,0,0,0,0,16000019
 diamond,heist,Bridge Too Far,PIPER,0,1,0,1,0,0,0,0,1,0,16000015
 diamond,heist,Bridge Too Far,SIRIUS,0,0,0,0,0,1,0,0,0,0,16000102
 diamond,heist,Bridge Too Far,SQUEAK,0,0,0,0,0,1,0,0,0,0,16000047
-diamond,heist,Hot Potato,*,12,0,0,0,0,0,0,0,0,0,
+diamond,heist,Bridge Too Far,TICK,0,1,0,1,0,0,0,0,1,0,16000022
+diamond,heist,Hot Potato,*,13,0,0,0,0,0,0,0,0,0,
 diamond,heist,Hot Potato,8-BIT,0,6,5,1,0,2,3,3,0,0,16000027
 diamond,heist,Hot Potato,AMBER,0,2,2,0,0,1,0,0,2,2,16000040
 diamond,heist,Hot Potato,BARLEY,0,0,0,0,0,2,0,0,0,0,16000006
 diamond,heist,Hot Potato,BIBI,0,1,0,1,0,0,0,0,1,0,16000026
 diamond,heist,Hot Potato,BO,0,1,0,1,0,1,1,0,0,0,16000014
 diamond,heist,Hot Potato,BOLT,0,1,0,1,0,0,0,0,1,0,16000106
+diamond,heist,Hot Potato,BONNIE,0,1,0,1,0,0,0,0,1,0,16000058
 diamond,heist,Hot Potato,BROCK,0,0,0,0,0,2,0,0,0,0,16000003
 diamond,heist,Hot Potato,BULL,0,2,2,0,0,0,0,0,2,2,16000002
 diamond,heist,Hot Potato,CHUCK,0,1,1,0,0,1,1,1,0,0,16000073
-diamond,heist,Hot Potato,COLETTE,0,2,1,1,0,0,0,0,1,1,16000039
-diamond,heist,Hot Potato,COLT,0,2,2,0,0,1,0,0,2,2,16000001
+diamond,heist,Hot Potato,COLETTE,0,3,1,2,0,0,0,0,2,1,16000039
+diamond,heist,Hot Potato,COLT,0,3,3,0,0,1,1,1,2,2,16000001
 diamond,heist,Hot Potato,CROW,0,1,0,1,0,1,0,0,0,0,16000012
 diamond,heist,Hot Potato,EDGAR,0,5,3,2,0,4,0,0,4,2,16000043
 diamond,heist,Hot Potato,FANG,0,1,0,1,0,0,0,0,0,0,16000054
-diamond,heist,Hot Potato,GRIFF,0,5,1,4,0,1,4,1,0,0,16000050
-diamond,heist,Hot Potato,JESSIE,0,7,2,5,0,0,1,0,2,2,16000007
+diamond,heist,Hot Potato,GRIFF,0,6,2,4,0,1,4,1,0,0,16000050
+diamond,heist,Hot Potato,JESSIE,0,9,3,6,0,0,1,0,3,2,16000007
 diamond,heist,Hot Potato,KAZE,0,1,1,0,0,0,0,0,1,1,16000094
 diamond,heist,Hot Potato,LARRY & LAWRIE,0,0,0,0,0,2,0,0,0,0,16000077
 diamond,heist,Hot Potato,LOU,0,1,0,1,0,0,0,0,1,0,16000041
@@ -606,7 +649,7 @@ diamond,heist,Hot Potato,SQUEAK,0,1,0,1,0,0,0,0,0,0,16000047
 diamond,heist,Hot Potato,SURGE,0,1,0,1,0,0,0,0,0,0,16000038
 diamond,heist,Hot Potato,THUNDER FROGS,0,1,0,1,0,0,0,0,0,0,16000111
 diamond,heist,Hot Potato,TICK,0,0,0,0,0,2,0,0,0,0,16000022
-diamond,heist,Hot Tubs,*,30,0,0,0,0,0,0,0,0,0,
+diamond,heist,Hot Tubs,*,31,0,0,0,0,0,0,0,0,0,
 diamond,heist,Hot Tubs,8-BIT,0,3,1,2,0,0,1,1,2,0,16000027
 diamond,heist,Hot Tubs,ANGELO,0,2,1,1,0,0,1,1,1,0,16000079
 diamond,heist,Hot Tubs,ASH,0,1,0,1,0,0,0,0,1,0,16000051
@@ -623,13 +666,13 @@ diamond,heist,Hot Tubs,CARL,0,1,0,1,0,0,0,0,1,0,16000025
 diamond,heist,Hot Tubs,CHUCK,0,7,7,0,0,0,1,1,1,1,16000073
 diamond,heist,Hot Tubs,CLANCY,0,1,0,1,0,0,0,0,1,0,16000083
 diamond,heist,Hot Tubs,COLETTE,0,4,1,3,0,0,0,0,3,1,16000039
-diamond,heist,Hot Tubs,COLT,0,3,1,2,0,0,1,0,1,0,16000001
+diamond,heist,Hot Tubs,COLT,0,4,2,2,0,0,1,0,1,0,16000001
 diamond,heist,Hot Tubs,CROW,0,3,2,1,0,0,0,0,3,2,16000012
 diamond,heist,Hot Tubs,DARRYL,0,4,0,4,0,0,0,0,4,0,16000018
 diamond,heist,Hot Tubs,DOUG,0,4,2,2,0,0,0,0,0,0,16000071
 diamond,heist,Hot Tubs,DRACO,0,8,7,1,0,0,8,7,0,0,16000080
 diamond,heist,Hot Tubs,DYNAMIKE,0,3,0,3,0,0,0,0,2,0,16000009
-diamond,heist,Hot Tubs,EDGAR,0,6,3,3,0,0,0,0,2,1,16000043
+diamond,heist,Hot Tubs,EDGAR,0,7,3,4,0,0,0,0,3,1,16000043
 diamond,heist,Hot Tubs,EL PRIMO,0,3,2,1,0,0,0,0,1,0,16000010
 diamond,heist,Hot Tubs,EMZ,0,3,3,0,0,0,0,0,1,1,16000030
 diamond,heist,Hot Tubs,EVE,0,1,0,1,0,0,1,0,0,0,16000056
@@ -640,19 +683,20 @@ diamond,heist,Hot Tubs,GRIFF,0,5,2,3,0,0,2,1,2,0,16000050
 diamond,heist,Hot Tubs,GUS,0,1,1,0,0,0,1,1,0,0,16000061
 diamond,heist,Hot Tubs,HANK,0,1,0,1,0,0,0,0,0,0,16000069
 diamond,heist,Hot Tubs,JAE-YONG,0,1,1,0,0,0,1,1,0,0,16000093
-diamond,heist,Hot Tubs,JESSIE,0,7,4,3,0,0,0,0,5,2,16000007
-diamond,heist,Hot Tubs,KENJI,0,2,0,2,0,0,0,0,2,0,16000085
+diamond,heist,Hot Tubs,JESSIE,0,8,5,3,0,0,0,0,5,2,16000007
+diamond,heist,Hot Tubs,KENJI,0,3,0,3,0,0,0,0,3,0,16000085
 diamond,heist,Hot Tubs,KIT,0,1,1,0,0,0,0,0,0,0,16000076
 diamond,heist,Hot Tubs,LEON,0,1,0,1,0,0,0,0,1,0,16000023
 diamond,heist,Hot Tubs,LOLA,0,1,1,0,0,0,0,0,0,0,16000053
 diamond,heist,Hot Tubs,LOU,0,3,0,3,0,0,0,0,3,0,16000041
 diamond,heist,Hot Tubs,MAISIE,0,2,0,2,0,0,0,0,2,0,16000068
-diamond,heist,Hot Tubs,MANDY,0,1,0,1,0,0,0,0,1,0,16000065
+diamond,heist,Hot Tubs,MANDY,0,2,0,2,0,0,0,0,2,0,16000065
 diamond,heist,Hot Tubs,MEG,0,1,1,0,0,0,0,0,1,1,16000052
 diamond,heist,Hot Tubs,MELODIE,0,13,8,5,0,0,0,0,8,4,16000078
 diamond,heist,Hot Tubs,MINA,0,2,1,1,0,0,0,0,1,1,16000097
 diamond,heist,Hot Tubs,MR. P,0,7,5,2,0,0,7,5,0,0,16000031
 diamond,heist,Hot Tubs,NITA,0,3,1,2,0,0,0,0,3,1,16000008
+diamond,heist,Hot Tubs,NORI,0,1,1,0,0,0,1,1,0,0,16000107
 diamond,heist,Hot Tubs,OLLIE,0,4,2,2,0,0,4,2,0,0,16000090
 diamond,heist,Hot Tubs,OTIS,0,1,0,1,0,0,0,0,0,0,16000059
 diamond,heist,Hot Tubs,PENNY,0,2,0,2,0,0,0,0,2,0,16000019
@@ -670,37 +714,41 @@ diamond,heist,Hot Tubs,TARA,0,1,1,0,0,0,0,0,0,0,16000017
 diamond,heist,Hot Tubs,THUNDER FROGS,0,5,4,1,0,0,0,0,2,2,16000111
 diamond,heist,Hot Tubs,TRUNK,0,1,1,0,0,0,0,0,1,1,16000096
 diamond,heist,Hot Tubs,VINCE,0,1,1,0,0,0,1,1,0,0,16000110
-diamond,heist,Kaboom Canyon,*,4,0,0,0,0,0,0,0,0,0,
-diamond,heist,Kaboom Canyon,8-BIT,0,0,0,0,0,1,0,0,0,0,16000027
-diamond,heist,Kaboom Canyon,AMBER,0,2,1,1,0,0,1,0,1,1,16000040
+diamond,heist,Kaboom Canyon,*,6,0,0,0,0,0,0,0,0,0,
+diamond,heist,Kaboom Canyon,8-BIT,0,1,0,1,0,1,0,0,1,0,16000027
+diamond,heist,Kaboom Canyon,AMBER,0,3,2,1,0,0,1,0,1,1,16000040
+diamond,heist,Kaboom Canyon,ANGELO,0,0,0,0,0,1,0,0,0,0,16000079
 diamond,heist,Kaboom Canyon,BARLEY,0,2,1,1,0,0,0,0,1,1,16000006
 diamond,heist,Kaboom Canyon,BELLE,0,0,0,0,0,1,0,0,0,0,16000046
-diamond,heist,Kaboom Canyon,BO,0,1,0,1,0,0,1,0,0,0,16000014
-diamond,heist,Kaboom Canyon,BROCK,0,1,0,1,0,1,0,0,0,0,16000003
+diamond,heist,Kaboom Canyon,BO,0,2,1,1,0,0,2,1,0,0,16000014
+diamond,heist,Kaboom Canyon,BROCK,0,2,0,2,0,1,0,0,1,0,16000003
 diamond,heist,Kaboom Canyon,BULL,0,1,1,0,0,0,0,0,1,1,16000002
 diamond,heist,Kaboom Canyon,CHUCK,0,1,0,1,0,1,0,0,0,0,16000073
-diamond,heist,Kaboom Canyon,COLETTE,0,0,0,0,0,2,0,0,0,0,16000039
-diamond,heist,Kaboom Canyon,COLT,0,1,1,0,0,1,0,0,1,1,16000001
+diamond,heist,Kaboom Canyon,COLETTE,0,0,0,0,0,3,0,0,0,0,16000039
+diamond,heist,Kaboom Canyon,COLT,0,1,1,0,0,3,0,0,1,1,16000001
 diamond,heist,Kaboom Canyon,CORDELIUS,0,1,1,0,0,0,0,0,1,1,16000070
-diamond,heist,Kaboom Canyon,EDGAR,0,3,2,1,0,1,0,0,2,2,16000043
+diamond,heist,Kaboom Canyon,CROW,0,0,0,0,0,1,0,0,0,0,16000012
+diamond,heist,Kaboom Canyon,EDGAR,0,5,3,2,0,1,0,0,3,2,16000043
 diamond,heist,Kaboom Canyon,EL PRIMO,0,0,0,0,0,1,0,0,0,0,16000010
 diamond,heist,Kaboom Canyon,FRANK,0,1,0,1,0,0,0,0,0,0,16000020
 diamond,heist,Kaboom Canyon,GRIFF,0,0,0,0,0,2,0,0,0,0,16000050
+diamond,heist,Kaboom Canyon,JESSIE,0,0,0,0,0,3,0,0,0,0,16000007
 diamond,heist,Kaboom Canyon,LEON,0,0,0,0,0,1,0,0,0,0,16000023
 diamond,heist,Kaboom Canyon,LOU,0,1,0,1,0,0,1,0,0,0,16000041
 diamond,heist,Kaboom Canyon,MAISIE,0,1,1,0,0,0,0,0,1,1,16000068
-diamond,heist,Kaboom Canyon,MANDY,0,0,0,0,0,1,0,0,0,0,16000065
-diamond,heist,Kaboom Canyon,MELODIE,0,1,1,0,0,0,0,0,1,1,16000078
-diamond,heist,Kaboom Canyon,MICO,0,1,0,1,0,2,0,0,0,0,16000075
-diamond,heist,Kaboom Canyon,MOE,0,1,0,1,0,0,1,0,0,0,16000084
-diamond,heist,Kaboom Canyon,NITA,0,1,0,1,0,0,0,0,0,0,16000008
+diamond,heist,Kaboom Canyon,MANDY,0,0,0,0,0,2,0,0,0,0,16000065
+diamond,heist,Kaboom Canyon,MELODIE,0,2,1,1,0,0,0,0,2,1,16000078
+diamond,heist,Kaboom Canyon,MICO,0,2,0,2,0,4,0,0,1,0,16000075
+diamond,heist,Kaboom Canyon,MOE,0,2,1,1,0,0,2,1,0,0,16000084
+diamond,heist,Kaboom Canyon,NITA,0,3,1,2,0,0,0,0,1,0,16000008
 diamond,heist,Kaboom Canyon,OTIS,0,0,0,0,0,2,0,0,0,0,16000059
 diamond,heist,Kaboom Canyon,PEARL,0,1,0,1,0,0,1,0,0,0,16000072
 diamond,heist,Kaboom Canyon,PENNY,0,0,0,0,0,1,0,0,0,0,16000019
 diamond,heist,Kaboom Canyon,PIPER,0,1,1,0,0,0,0,0,1,1,16000015
-diamond,heist,Kaboom Canyon,RICO,0,0,0,0,0,1,0,0,0,0,16000004
+diamond,heist,Kaboom Canyon,RICO,0,0,0,0,0,2,0,0,0,0,16000004
 diamond,heist,Kaboom Canyon,SIRIUS,0,1,1,0,0,0,0,0,1,1,16000102
 diamond,heist,Kaboom Canyon,SPIKE,0,1,1,0,0,1,0,0,1,1,16000005
+diamond,heist,Kaboom Canyon,STARR NOVA,0,1,1,0,0,0,0,0,0,0,16000105
 diamond,heist,Kaboom Canyon,STU,0,0,0,0,0,1,0,0,0,0,16000045
 diamond,heist,Kaboom Canyon,TICK,0,0,0,0,0,3,0,0,0,0,16000022
 diamond,heist,Safe Zone,*,2,0,0,0,0,0,0,0,0,0,
@@ -722,28 +770,37 @@ diamond,heist,Safe Zone,MELODIE,0,1,1,0,0,0,0,0,0,0,16000078
 diamond,heist,Safe Zone,MR. P,0,0,0,0,0,1,0,0,0,0,16000031
 diamond,heist,Safe Zone,NORI,0,0,0,0,0,1,0,0,0,0,16000107
 diamond,heist,Safe Zone,RICO,0,3,2,1,0,0,1,1,1,0,16000004
-diamond,hotZone,Dueling Beetles,*,2,0,0,0,0,0,0,0,0,0,
+diamond,hotZone,Dueling Beetles,*,5,0,0,0,0,0,0,0,0,0,
 diamond,hotZone,Dueling Beetles,8-BIT,0,1,0,1,0,0,0,0,0,0,16000027
-diamond,hotZone,Dueling Beetles,AMBER,0,1,1,0,0,1,0,0,1,1,16000040
-diamond,hotZone,Dueling Beetles,BIBI,0,0,0,0,0,1,0,0,0,0,16000026
-diamond,hotZone,Dueling Beetles,BO,0,2,1,1,0,0,1,0,1,1,16000014
-diamond,hotZone,Dueling Beetles,EMZ,0,0,0,0,0,3,0,0,0,0,16000030
-diamond,hotZone,Dueling Beetles,FRANK,0,1,1,0,0,0,0,0,1,1,16000020
-diamond,hotZone,Dueling Beetles,GALE,0,1,0,1,0,1,0,0,0,0,16000035
-diamond,hotZone,Dueling Beetles,JESSIE,0,1,0,1,0,0,0,0,0,0,16000007
-diamond,hotZone,Dueling Beetles,LOU,0,1,0,1,0,0,0,0,0,0,16000041
+diamond,hotZone,Dueling Beetles,AMBER,0,1,1,0,0,2,0,0,1,1,16000040
+diamond,hotZone,Dueling Beetles,BIBI,0,0,0,0,0,2,0,0,0,0,16000026
+diamond,hotZone,Dueling Beetles,BO,0,4,3,1,0,1,2,1,2,2,16000014
+diamond,hotZone,Dueling Beetles,BROCK,0,1,1,0,0,1,0,0,1,1,16000003
+diamond,hotZone,Dueling Beetles,BULL,0,1,0,1,0,0,0,0,1,0,16000002
+diamond,hotZone,Dueling Beetles,CHESTER,0,2,1,1,0,0,1,1,1,0,16000063
+diamond,hotZone,Dueling Beetles,DYNAMIKE,0,1,1,0,0,1,0,0,1,1,16000009
+diamond,hotZone,Dueling Beetles,EDGAR,0,2,2,0,0,1,0,0,0,0,16000043
+diamond,hotZone,Dueling Beetles,EMZ,0,0,0,0,0,6,0,0,0,0,16000030
+diamond,hotZone,Dueling Beetles,FRANK,0,2,1,1,0,0,1,0,1,1,16000020
+diamond,hotZone,Dueling Beetles,GALE,0,2,1,1,0,1,0,0,0,0,16000035
+diamond,hotZone,Dueling Beetles,GIGI,0,0,0,0,0,1,0,0,0,0,16000100
+diamond,hotZone,Dueling Beetles,GRIFF,0,2,1,1,0,1,0,0,0,0,16000050
+diamond,hotZone,Dueling Beetles,JESSIE,0,3,0,3,0,0,0,0,1,0,16000007
+diamond,hotZone,Dueling Beetles,LOU,0,1,0,1,0,1,0,0,0,0,16000041
 diamond,hotZone,Dueling Beetles,MAX,0,1,1,0,0,0,0,0,1,1,16000032
+diamond,hotZone,Dueling Beetles,MORTIS,0,1,0,1,0,0,0,0,1,0,16000011
 diamond,hotZone,Dueling Beetles,NITA,0,1,0,1,0,0,1,0,0,0,16000008
 diamond,hotZone,Dueling Beetles,NORI,0,0,0,0,0,1,0,0,0,0,16000107
 diamond,hotZone,Dueling Beetles,PENNY,0,1,1,0,0,0,0,0,1,1,16000019
 diamond,hotZone,Dueling Beetles,PIERCE,0,1,1,0,0,0,0,0,1,1,16000099
 diamond,hotZone,Dueling Beetles,ROSA,0,0,0,0,0,1,0,0,0,0,16000024
-diamond,hotZone,Dueling Beetles,SPIKE,0,0,0,0,0,2,0,0,0,0,16000005
-diamond,hotZone,Dueling Beetles,TICK,0,0,0,0,0,2,0,0,0,0,16000022
-diamond,hotZone,Golden Bay,*,6,0,0,0,0,0,0,0,0,0,
-diamond,hotZone,Golden Bay,AMBER,0,1,0,1,0,0,0,0,0,0,16000040
+diamond,hotZone,Dueling Beetles,SHADE,0,0,0,0,0,2,0,0,0,0,16000086
+diamond,hotZone,Dueling Beetles,SPIKE,0,2,0,2,0,2,0,0,2,0,16000005
+diamond,hotZone,Dueling Beetles,TICK,0,0,0,0,0,6,0,0,0,0,16000022
+diamond,hotZone,Golden Bay,*,8,0,0,0,0,0,0,0,0,0,
+diamond,hotZone,Golden Bay,AMBER,0,2,1,1,0,0,0,0,1,1,16000040
 diamond,hotZone,Golden Bay,BIBI,0,1,1,0,0,0,0,0,0,0,16000026
-diamond,hotZone,Golden Bay,BO,0,1,0,1,0,0,1,0,0,0,16000014
+diamond,hotZone,Golden Bay,BO,0,2,1,1,0,0,1,0,1,1,16000014
 diamond,hotZone,Golden Bay,BOLT,0,1,0,1,0,0,0,0,1,0,16000106
 diamond,hotZone,Golden Bay,BROCK,0,1,1,0,0,0,0,0,0,0,16000003
 diamond,hotZone,Golden Bay,BYRON,0,1,0,1,0,0,0,0,1,0,16000042
@@ -752,11 +809,16 @@ diamond,hotZone,Golden Bay,DAMIAN,0,1,1,0,0,0,0,0,1,1,16000104
 diamond,hotZone,Golden Bay,DRACO,0,1,0,1,0,0,0,0,0,0,16000080
 diamond,hotZone,Golden Bay,DYNAMIKE,0,1,0,1,0,0,0,0,1,0,16000009
 diamond,hotZone,Golden Bay,EDGAR,0,4,3,1,0,0,0,0,2,1,16000043
-diamond,hotZone,Golden Bay,EMZ,0,1,1,0,0,0,1,1,0,0,16000030
-diamond,hotZone,Golden Bay,FRANK,0,3,2,1,0,0,0,0,3,2,16000020
+diamond,hotZone,Golden Bay,EMZ,0,3,1,2,0,0,1,1,1,0,16000030
+diamond,hotZone,Golden Bay,FANG,0,1,0,1,0,0,0,0,1,0,16000054
+diamond,hotZone,Golden Bay,FRANK,0,4,3,1,0,0,1,1,3,2,16000020
+diamond,hotZone,Golden Bay,GIGI,0,1,1,0,0,0,0,0,0,0,16000100
+diamond,hotZone,Golden Bay,GRIFF,0,1,1,0,0,0,0,0,0,0,16000050
+diamond,hotZone,Golden Bay,MAX,0,1,0,1,0,0,0,0,1,0,16000032
 diamond,hotZone,Golden Bay,MEG,0,1,0,1,0,0,0,0,1,0,16000052
 diamond,hotZone,Golden Bay,MR. P,0,1,1,0,0,0,1,1,0,0,16000031
 diamond,hotZone,Golden Bay,NAJIA,0,1,0,1,0,0,0,0,1,0,16000103
+diamond,hotZone,Golden Bay,NITA,0,1,0,1,0,0,0,0,0,0,16000008
 diamond,hotZone,Golden Bay,NORI,0,1,0,1,0,0,0,0,1,0,16000107
 diamond,hotZone,Golden Bay,PAM,0,1,1,0,0,0,1,1,0,0,16000016
 diamond,hotZone,Golden Bay,PIPER,0,1,0,1,0,0,0,0,1,0,16000015
@@ -765,91 +827,106 @@ diamond,hotZone,Golden Bay,RICO,0,1,1,0,0,0,0,0,0,0,16000004
 diamond,hotZone,Golden Bay,SQUEAK,0,2,1,1,0,0,0,0,2,1,16000047
 diamond,hotZone,Golden Bay,STARR NOVA,0,1,0,1,0,0,0,0,0,0,16000105
 diamond,hotZone,Golden Bay,THUNDER FROGS,0,6,4,2,0,0,0,0,2,1,16000111
-diamond,hotZone,Golden Bay,TICK,0,1,0,1,0,0,1,0,0,0,16000022
-diamond,hotZone,Open Business,*,2,0,0,0,0,0,0,0,0,0,
-diamond,hotZone,Open Business,BIBI,0,1,1,0,0,0,1,1,0,0,16000026
-diamond,hotZone,Open Business,BO,0,1,1,0,0,1,0,0,0,0,16000014
-diamond,hotZone,Open Business,BROCK,0,1,1,0,0,0,0,0,1,1,16000003
+diamond,hotZone,Golden Bay,TICK,0,3,1,2,0,0,2,0,1,1,16000022
+diamond,hotZone,Open Business,*,4,0,0,0,0,0,0,0,0,0,
+diamond,hotZone,Open Business,AMBER,0,1,1,0,0,0,0,0,0,0,16000040
+diamond,hotZone,Open Business,BIBI,0,3,1,2,0,0,1,1,1,0,16000026
+diamond,hotZone,Open Business,BO,0,3,2,1,0,1,2,1,0,0,16000014
+diamond,hotZone,Open Business,BROCK,0,2,1,1,0,0,0,0,2,1,16000003
+diamond,hotZone,Open Business,BULL,0,0,0,0,0,1,0,0,0,0,16000002
 diamond,hotZone,Open Business,BYRON,0,1,0,1,0,0,0,0,1,0,16000042
-diamond,hotZone,Open Business,EDGAR,0,0,0,0,0,1,0,0,0,0,16000043
-diamond,hotZone,Open Business,EMZ,0,0,0,0,0,1,0,0,0,0,16000030
-diamond,hotZone,Open Business,FRANK,0,1,0,1,0,1,0,0,1,0,16000020
+diamond,hotZone,Open Business,DOUG,0,1,1,0,0,0,0,0,1,1,16000071
+diamond,hotZone,Open Business,DYNAMIKE,0,3,2,1,0,0,0,0,1,1,16000009
+diamond,hotZone,Open Business,EDGAR,0,0,0,0,0,3,0,0,0,0,16000043
+diamond,hotZone,Open Business,EMZ,0,0,0,0,0,2,0,0,0,0,16000030
+diamond,hotZone,Open Business,FRANK,0,2,1,1,0,1,0,0,2,1,16000020
 diamond,hotZone,Open Business,GIGI,0,1,0,1,0,0,0,0,0,0,16000100
 diamond,hotZone,Open Business,GUS,0,0,0,0,0,1,0,0,0,0,16000061
 diamond,hotZone,Open Business,JESSIE,0,1,0,1,0,0,0,0,1,0,16000007
 diamond,hotZone,Open Business,MAISIE,0,1,1,0,0,0,0,0,1,1,16000068
-diamond,hotZone,Open Business,MANDY,0,1,0,1,0,0,0,0,0,0,16000065
-diamond,hotZone,Open Business,MORTIS,0,1,1,0,0,0,0,0,1,1,16000011
+diamond,hotZone,Open Business,MANDY,0,1,0,1,0,1,0,0,0,0,16000065
+diamond,hotZone,Open Business,MELODIE,0,1,0,1,0,0,0,0,1,0,16000078
+diamond,hotZone,Open Business,MICO,0,0,0,0,0,1,0,0,0,0,16000075
+diamond,hotZone,Open Business,MORTIS,0,1,1,0,0,1,0,0,1,1,16000011
 diamond,hotZone,Open Business,POCO,0,1,1,0,0,0,0,0,0,0,16000013
 diamond,hotZone,Open Business,SHADE,0,0,0,0,0,1,0,0,0,0,16000086
+diamond,hotZone,Open Business,SIRIUS,0,0,0,0,0,1,0,0,0,0,16000102
 diamond,hotZone,Open Business,SPIKE,0,0,0,0,0,1,0,0,0,0,16000005
-diamond,hotZone,Open Business,SQUEAK,0,1,0,1,0,1,1,0,0,0,16000047
+diamond,hotZone,Open Business,SQUEAK,0,1,0,1,0,2,1,0,0,0,16000047
 diamond,hotZone,Open Business,SURGE,0,0,0,0,0,1,0,0,0,0,16000038
-diamond,hotZone,Open Business,TICK,0,0,0,0,0,2,0,0,0,0,16000022
+diamond,hotZone,Open Business,TICK,0,0,0,0,0,5,0,0,0,0,16000022
 diamond,hotZone,Open Business,VINCE,0,0,0,0,0,1,0,0,0,0,16000110
-diamond,hotZone,Parallel Plays,*,9,0,0,0,0,0,0,0,0,0,
+diamond,hotZone,Parallel Plays,*,10,0,0,0,0,0,0,0,0,0,
 diamond,hotZone,Parallel Plays,BARLEY,0,2,1,1,0,0,0,0,2,1,16000006
-diamond,hotZone,Parallel Plays,BERRY,0,0,0,0,0,1,0,0,0,0,16000082
-diamond,hotZone,Parallel Plays,BIBI,0,2,1,1,0,0,0,0,0,0,16000026
+diamond,hotZone,Parallel Plays,BERRY,0,1,0,1,0,1,0,0,0,0,16000082
+diamond,hotZone,Parallel Plays,BIBI,0,2,1,1,0,1,0,0,0,0,16000026
+diamond,hotZone,Parallel Plays,BO,0,1,0,1,0,0,1,0,0,0,16000014
 diamond,hotZone,Parallel Plays,BOLT,0,0,0,0,0,1,0,0,0,0,16000106
 diamond,hotZone,Parallel Plays,BROCK,0,0,0,0,0,1,0,0,0,0,16000003
 diamond,hotZone,Parallel Plays,BULL,0,1,0,1,0,0,0,0,1,0,16000002
 diamond,hotZone,Parallel Plays,BYRON,0,1,0,1,0,0,0,0,1,0,16000042
 diamond,hotZone,Parallel Plays,CHESTER,0,1,0,1,0,0,0,0,0,0,16000063
 diamond,hotZone,Parallel Plays,CROW,0,1,0,1,0,0,0,0,0,0,16000012
+diamond,hotZone,Parallel Plays,DAMIAN,0,1,0,1,0,0,0,0,0,0,16000104
 diamond,hotZone,Parallel Plays,DOUG,0,3,1,2,0,2,3,1,0,0,16000071
 diamond,hotZone,Parallel Plays,DYNAMIKE,0,1,1,0,0,1,0,0,0,0,16000009
-diamond,hotZone,Parallel Plays,EDGAR,0,3,2,1,0,2,2,2,0,0,16000043
+diamond,hotZone,Parallel Plays,EDGAR,0,3,2,1,0,3,2,2,0,0,16000043
 diamond,hotZone,Parallel Plays,EL PRIMO,0,1,0,1,0,0,1,0,0,0,16000010
 diamond,hotZone,Parallel Plays,EMZ,0,3,2,1,0,0,0,0,3,2,16000030
 diamond,hotZone,Parallel Plays,FANG,0,1,1,0,0,0,0,0,1,1,16000054
 diamond,hotZone,Parallel Plays,GALE,0,2,1,1,0,0,1,0,1,1,16000035
-diamond,hotZone,Parallel Plays,GRIFF,0,0,0,0,0,1,0,0,0,0,16000050
+diamond,hotZone,Parallel Plays,GRIFF,0,0,0,0,0,2,0,0,0,0,16000050
 diamond,hotZone,Parallel Plays,HANK,0,1,1,0,0,0,0,0,1,1,16000069
 diamond,hotZone,Parallel Plays,JACKY,0,2,1,1,0,0,0,0,1,1,16000034
-diamond,hotZone,Parallel Plays,JESSIE,0,2,1,1,0,0,0,0,2,1,16000007
+diamond,hotZone,Parallel Plays,JESSIE,0,3,2,1,0,0,0,0,3,2,16000007
 diamond,hotZone,Parallel Plays,KENJI,0,4,3,1,0,0,2,2,1,1,16000085
+diamond,hotZone,Parallel Plays,KIT,0,0,0,0,0,1,0,0,0,0,16000076
 diamond,hotZone,Parallel Plays,LARRY & LAWRIE,0,1,0,1,0,0,0,0,1,0,16000077
 diamond,hotZone,Parallel Plays,LOU,0,1,0,1,0,0,0,0,1,0,16000041
-diamond,hotZone,Parallel Plays,MEEPLE,0,1,1,0,0,0,0,0,1,1,16000089
+diamond,hotZone,Parallel Plays,MEEPLE,0,1,1,0,0,1,0,0,1,1,16000089
 diamond,hotZone,Parallel Plays,MEG,0,1,0,1,0,0,0,0,1,0,16000052
 diamond,hotZone,Parallel Plays,MICO,0,2,1,1,0,3,0,0,1,1,16000075
 diamond,hotZone,Parallel Plays,MINA,0,1,0,1,0,0,1,0,0,0,16000097
 diamond,hotZone,Parallel Plays,MORTIS,0,1,1,0,0,0,0,0,1,1,16000011
-diamond,hotZone,Parallel Plays,NORI,0,0,0,0,0,1,0,0,0,0,16000107
+diamond,hotZone,Parallel Plays,NORI,0,1,1,0,0,1,0,0,1,1,16000107
 diamond,hotZone,Parallel Plays,PENNY,0,1,0,1,0,0,0,0,1,0,16000019
 diamond,hotZone,Parallel Plays,R-T,0,0,0,0,0,1,0,0,0,0,16000066
 diamond,hotZone,Parallel Plays,SANDY,0,0,0,0,0,1,0,0,0,0,16000028
-diamond,hotZone,Parallel Plays,SHADE,0,2,1,1,0,2,0,0,1,0,16000086
+diamond,hotZone,Parallel Plays,SHADE,0,2,1,1,0,3,0,0,1,0,16000086
 diamond,hotZone,Parallel Plays,SIRIUS,0,2,2,0,0,0,2,2,0,0,16000102
 diamond,hotZone,Parallel Plays,SPIKE,0,2,1,1,0,0,0,0,1,0,16000005
 diamond,hotZone,Parallel Plays,SURGE,0,4,1,3,0,0,1,1,1,0,16000038
 diamond,hotZone,Parallel Plays,THUNDER FROGS,0,4,3,1,0,0,0,0,3,3,16000111
-diamond,hotZone,Parallel Plays,TICK,0,0,0,0,0,1,0,0,0,0,16000022
-diamond,hotZone,Ring of Fire,*,3,0,0,0,0,0,0,0,0,0,
+diamond,hotZone,Parallel Plays,TICK,0,1,1,0,0,1,0,0,1,1,16000022
+diamond,hotZone,Ring of Fire,*,4,0,0,0,0,0,0,0,0,0,
 diamond,hotZone,Ring of Fire,AMBER,0,0,0,0,0,4,0,0,0,0,16000040
 diamond,hotZone,Ring of Fire,BERRY,0,0,0,0,0,1,0,0,0,0,16000082
-diamond,hotZone,Ring of Fire,BO,0,3,1,2,0,0,1,0,1,0,16000014
+diamond,hotZone,Ring of Fire,BO,0,4,1,3,0,0,1,0,1,0,16000014
 diamond,hotZone,Ring of Fire,BONNIE,0,1,0,1,0,0,0,0,0,0,16000058
 diamond,hotZone,Ring of Fire,BROCK,0,1,1,0,0,0,0,0,1,1,16000003
 diamond,hotZone,Ring of Fire,COLETTE,0,1,1,0,0,0,0,0,1,1,16000039
 diamond,hotZone,Ring of Fire,COLT,0,1,1,0,0,0,0,0,1,1,16000001
+diamond,hotZone,Ring of Fire,DYNAMIKE,0,1,0,1,0,0,0,0,0,0,16000009
 diamond,hotZone,Ring of Fire,EDGAR,0,1,0,1,0,1,0,0,0,0,16000043
-diamond,hotZone,Ring of Fire,EMZ,0,2,2,0,0,1,0,0,2,2,16000030
+diamond,hotZone,Ring of Fire,EMZ,0,2,2,0,0,3,0,0,2,2,16000030
+diamond,hotZone,Ring of Fire,FANG,0,0,0,0,0,1,0,0,0,0,16000054
 diamond,hotZone,Ring of Fire,FINX,0,0,0,0,0,1,0,0,0,0,16000092
 diamond,hotZone,Ring of Fire,FRANK,0,0,0,0,0,1,0,0,0,0,16000020
 diamond,hotZone,Ring of Fire,GIGI,0,0,0,0,0,1,0,0,0,0,16000100
-diamond,hotZone,Ring of Fire,GRIFF,0,2,1,1,0,0,0,0,1,0,16000050
+diamond,hotZone,Ring of Fire,GRIFF,0,3,1,2,0,0,1,0,1,0,16000050
 diamond,hotZone,Ring of Fire,GROM,0,0,0,0,0,1,0,0,0,0,16000048
-diamond,hotZone,Ring of Fire,JESSIE,0,1,0,1,0,0,0,0,1,0,16000007
+diamond,hotZone,Ring of Fire,JANET,0,0,0,0,0,1,0,0,0,0,16000057
+diamond,hotZone,Ring of Fire,JESSIE,0,1,0,1,0,1,0,0,1,0,16000007
+diamond,hotZone,Ring of Fire,MEG,0,1,1,0,0,0,0,0,1,1,16000052
 diamond,hotZone,Ring of Fire,NORI,0,0,0,0,0,1,0,0,0,0,16000107
-diamond,hotZone,Ring of Fire,PENNY,0,1,0,1,0,1,0,0,0,0,16000019
+diamond,hotZone,Ring of Fire,PENNY,0,2,1,1,0,1,0,0,1,1,16000019
 diamond,hotZone,Ring of Fire,POCO,0,1,0,1,0,0,0,0,0,0,16000013
 diamond,hotZone,Ring of Fire,RICO,0,0,0,0,0,1,0,0,0,0,16000004
 diamond,hotZone,Ring of Fire,SHADE,0,0,0,0,0,1,0,0,0,0,16000086
 diamond,hotZone,Ring of Fire,SIRIUS,0,0,0,0,0,1,0,0,0,0,16000102
+diamond,hotZone,Ring of Fire,SPIKE,0,1,1,0,0,0,0,0,1,1,16000005
 diamond,hotZone,Ring of Fire,SPROUT,0,0,0,0,0,1,0,0,0,0,16000037
-diamond,hotZone,Ring of Fire,TICK,0,3,2,1,0,1,2,1,1,1,16000022
+diamond,hotZone,Ring of Fire,TICK,0,3,2,1,0,2,2,1,1,1,16000022
 diamond,hotZone,Sectioned,*,8,0,0,0,0,0,0,0,0,0,
 diamond,hotZone,Sectioned,AMBER,0,2,2,0,0,0,0,0,0,0,16000040
 diamond,hotZone,Sectioned,BARLEY,0,1,0,1,0,0,0,0,1,0,16000006
@@ -887,23 +964,23 @@ diamond,hotZone,Sunken harbor,MEG,0,1,1,0,0,0,0,0,0,0,16000052
 diamond,hotZone,Sunken harbor,NITA,0,1,0,1,0,0,0,0,1,0,16000008
 diamond,hotZone,Sunken harbor,SQUEAK,0,1,0,1,0,0,0,0,1,0,16000047
 diamond,hotZone,Sunken harbor,SURGE,0,1,1,0,0,0,1,1,0,0,16000038
-diamond,knockout,Belle's Rock,*,9,0,0,0,0,0,0,0,0,0,
+diamond,knockout,Belle's Rock,*,11,0,0,0,0,0,0,0,0,0,
 diamond,knockout,Belle's Rock,ALLI,0,1,0,1,0,0,1,0,0,0,16000095
 diamond,knockout,Belle's Rock,BO,0,0,0,0,0,1,0,0,0,0,16000014
 diamond,knockout,Belle's Rock,BROCK,0,5,0,5,0,0,0,0,3,0,16000003
 diamond,knockout,Belle's Rock,CARL,0,1,0,1,0,0,0,0,1,0,16000025
 diamond,knockout,Belle's Rock,COLT,0,1,0,1,0,0,0,0,1,0,16000001
-diamond,knockout,Belle's Rock,DYNAMIKE,0,3,1,2,0,0,1,0,1,1,16000009
-diamond,knockout,Belle's Rock,EDGAR,0,3,1,2,0,2,1,1,1,0,16000043
+diamond,knockout,Belle's Rock,DYNAMIKE,0,4,2,2,0,0,1,0,1,1,16000009
+diamond,knockout,Belle's Rock,EDGAR,0,5,2,3,0,2,1,1,2,0,16000043
 diamond,knockout,Belle's Rock,FINX,0,1,1,0,0,0,1,1,0,0,16000092
 diamond,knockout,Belle's Rock,GIGI,0,1,1,0,0,0,1,1,0,0,16000100
 diamond,knockout,Belle's Rock,GRIFF,0,1,1,0,0,0,0,0,1,1,16000050
-diamond,knockout,Belle's Rock,GROM,0,1,1,0,0,0,0,0,1,1,16000048
+diamond,knockout,Belle's Rock,GROM,0,2,1,1,0,0,0,0,2,1,16000048
 diamond,knockout,Belle's Rock,GUS,0,2,1,1,0,0,0,0,1,1,16000061
-diamond,knockout,Belle's Rock,KENJI,0,1,0,1,0,0,0,0,1,0,16000085
+diamond,knockout,Belle's Rock,KENJI,0,3,0,3,0,0,0,0,3,0,16000085
 diamond,knockout,Belle's Rock,LARRY & LAWRIE,0,2,1,1,0,0,0,0,1,1,16000077
 diamond,knockout,Belle's Rock,LEON,0,1,1,0,0,0,1,1,0,0,16000023
-diamond,knockout,Belle's Rock,LILY,0,0,0,0,0,1,0,0,0,0,16000081
+diamond,knockout,Belle's Rock,LILY,0,1,1,0,0,1,0,0,0,0,16000081
 diamond,knockout,Belle's Rock,MAISIE,0,1,0,1,0,0,1,0,0,0,16000068
 diamond,knockout,Belle's Rock,MANDY,0,2,1,1,0,0,1,1,1,0,16000065
 diamond,knockout,Belle's Rock,MEEPLE,0,1,0,1,0,0,0,0,1,0,16000089
@@ -913,14 +990,15 @@ diamond,knockout,Belle's Rock,MR. P,0,0,0,0,0,1,0,0,0,0,16000031
 diamond,knockout,Belle's Rock,NAJIA,0,1,1,0,0,0,1,1,0,0,16000103
 diamond,knockout,Belle's Rock,NORI,0,2,1,1,0,0,0,0,2,1,16000107
 diamond,knockout,Belle's Rock,PIPER,0,2,2,0,0,0,0,0,2,2,16000015
-diamond,knockout,Belle's Rock,RICO,0,3,2,1,0,0,0,0,3,2,16000004
+diamond,knockout,Belle's Rock,RICO,0,5,4,1,0,0,2,2,3,2,16000004
+diamond,knockout,Belle's Rock,SHADE,0,1,1,0,0,0,0,0,0,0,16000086
 diamond,knockout,Belle's Rock,SIRIUS,0,1,0,1,0,0,1,0,0,0,16000102
 diamond,knockout,Belle's Rock,SPIKE,0,2,1,1,0,0,0,0,1,0,16000005
 diamond,knockout,Belle's Rock,SPROUT,0,1,0,1,0,0,0,0,1,0,16000037
 diamond,knockout,Belle's Rock,SQUEAK,0,2,1,1,0,0,2,1,0,0,16000047
 diamond,knockout,Belle's Rock,SURGE,0,2,2,0,0,0,0,0,0,0,16000038
 diamond,knockout,Belle's Rock,TARA,0,1,1,0,0,0,0,0,1,1,16000017
-diamond,knockout,Belle's Rock,THUNDER FROGS,0,4,3,1,0,0,0,0,1,0,16000111
+diamond,knockout,Belle's Rock,THUNDER FROGS,0,6,3,3,0,0,0,0,3,0,16000111
 diamond,knockout,Belle's Rock,TICK,0,3,2,1,0,0,1,1,0,0,16000022
 diamond,knockout,Belle's Rock,ZIGGY,0,1,1,0,0,0,0,0,1,1,16000098
 diamond,knockout,Dry Run,*,35,0,0,0,0,0,0,0,0,0,
@@ -1030,27 +1108,33 @@ diamond,knockout,Goldarm Gulch,THUNDER FROGS,0,6,3,3,0,0,0,0,3,1,16000111
 diamond,knockout,Goldarm Gulch,TICK,0,1,0,1,0,0,1,0,0,0,16000022
 diamond,knockout,Goldarm Gulch,WILLOW,0,1,1,0,0,0,0,0,1,1,16000067
 diamond,knockout,Goldarm Gulch,ZIGGY,0,1,0,1,0,0,0,0,1,0,16000098
-diamond,knockout,New Horizons,*,2,0,0,0,0,0,0,0,0,0,
+diamond,knockout,New Horizons,*,3,0,0,0,0,0,0,0,0,0,
 diamond,knockout,New Horizons,AMBER,0,0,0,0,0,1,0,0,0,0,16000040
 diamond,knockout,New Horizons,BROCK,0,2,1,1,0,0,1,0,1,1,16000003
+diamond,knockout,New Horizons,BUZZ,0,1,1,0,0,0,0,0,1,1,16000049
 diamond,knockout,New Horizons,BYRON,0,0,0,0,0,1,0,0,0,0,16000042
 diamond,knockout,New Horizons,COLT,0,1,0,1,0,0,0,0,0,0,16000001
 diamond,knockout,New Horizons,DAMIAN,0,0,0,0,0,1,0,0,0,0,16000104
 diamond,knockout,New Horizons,DYNAMIKE,0,0,0,0,0,1,0,0,0,0,16000009
-diamond,knockout,New Horizons,EDGAR,0,0,0,0,0,1,0,0,0,0,16000043
+diamond,knockout,New Horizons,EDGAR,0,1,1,0,0,1,0,0,1,1,16000043
+diamond,knockout,New Horizons,GRAY,0,0,0,0,0,1,0,0,0,0,16000064
+diamond,knockout,New Horizons,GROM,0,2,1,1,0,0,0,0,1,1,16000048
 diamond,knockout,New Horizons,LEON,0,1,0,1,0,0,0,0,0,0,16000023
 diamond,knockout,New Horizons,MANDY,0,0,0,0,0,1,0,0,0,0,16000065
 diamond,knockout,New Horizons,MAX,0,1,1,0,0,0,0,0,1,1,16000032
 diamond,knockout,New Horizons,MICO,0,0,0,0,0,2,0,0,0,0,16000075
+diamond,knockout,New Horizons,MINA,0,1,0,1,0,0,0,0,0,0,16000097
 diamond,knockout,New Horizons,MR. P,0,1,1,0,0,0,0,0,1,1,16000031
 diamond,knockout,New Horizons,PEARL,0,1,1,0,0,0,0,0,1,1,16000072
-diamond,knockout,New Horizons,PIPER,0,1,1,0,0,0,0,0,1,1,16000015
-diamond,knockout,New Horizons,RICO,0,0,0,0,0,1,0,0,0,0,16000004
+diamond,knockout,New Horizons,PIERCE,0,1,0,1,0,0,1,0,0,0,16000099
+diamond,knockout,New Horizons,PIPER,0,1,1,0,0,1,0,0,1,1,16000015
+diamond,knockout,New Horizons,RICO,0,0,0,0,0,2,0,0,0,0,16000004
 diamond,knockout,New Horizons,SIRIUS,0,0,0,0,0,1,0,0,0,0,16000102
+diamond,knockout,New Horizons,SPIKE,0,0,0,0,0,2,0,0,0,0,16000005
 diamond,knockout,New Horizons,SPROUT,0,0,0,0,0,1,0,0,0,0,16000037
 diamond,knockout,New Horizons,SQUEAK,0,3,1,2,0,0,1,0,1,1,16000047
 diamond,knockout,New Horizons,STU,0,1,0,1,0,0,0,0,0,0,16000045
-diamond,knockout,New Horizons,TICK,0,0,0,0,0,1,0,0,0,0,16000022
+diamond,knockout,New Horizons,TICK,0,0,0,0,0,2,0,0,0,0,16000022
 diamond,knockout,Out in the Open,*,20,0,0,0,0,0,0,0,0,0,
 diamond,knockout,Out in the Open,ALLI,0,0,0,0,0,1,0,0,0,0,16000095
 diamond,knockout,Out in the Open,ANGELO,0,2,1,1,0,1,0,0,1,0,16000079
@@ -1100,6 +1184,40 @@ diamond,knockout,Out in the Open,SQUEAK,0,5,3,2,0,0,2,1,3,2,16000047
 diamond,knockout,Out in the Open,STARR NOVA,0,2,0,2,0,0,0,0,2,0,16000105
 diamond,knockout,Out in the Open,SURGE,0,2,0,2,0,0,0,0,2,0,16000038
 diamond,knockout,Out in the Open,TICK,0,0,0,0,0,3,0,0,0,0,16000022
+diamond,knockout,Please Remain Standing,*,10,0,0,0,0,0,0,0,0,0,
+diamond,knockout,Please Remain Standing,8-BIT,0,1,0,1,0,0,0,0,1,0,16000027
+diamond,knockout,Please Remain Standing,ANGELO,0,1,0,1,0,0,0,0,1,0,16000079
+diamond,knockout,Please Remain Standing,BARLEY,0,1,1,0,0,0,0,0,1,1,16000006
+diamond,knockout,Please Remain Standing,BROCK,0,4,0,4,0,0,0,0,4,0,16000003
+diamond,knockout,Please Remain Standing,BYRON,0,1,0,1,0,0,0,0,1,0,16000042
+diamond,knockout,Please Remain Standing,CHESTER,0,2,2,0,0,0,0,0,0,0,16000063
+diamond,knockout,Please Remain Standing,COLETTE,0,1,1,0,0,0,0,0,1,1,16000039
+diamond,knockout,Please Remain Standing,COLT,0,1,0,1,0,0,0,0,1,0,16000001
+diamond,knockout,Please Remain Standing,CROW,0,1,0,1,0,0,0,0,1,0,16000012
+diamond,knockout,Please Remain Standing,EMZ,0,1,0,1,0,0,0,0,1,0,16000030
+diamond,knockout,Please Remain Standing,FINX,0,4,3,1,0,0,4,3,0,0,16000092
+diamond,knockout,Please Remain Standing,GENE,0,1,0,1,0,0,0,0,1,0,16000021
+diamond,knockout,Please Remain Standing,GRAY,0,1,0,1,0,0,0,0,1,0,16000064
+diamond,knockout,Please Remain Standing,JACKY,0,6,6,0,0,0,6,6,0,0,16000034
+diamond,knockout,Please Remain Standing,KIT,0,1,0,1,0,0,0,0,1,0,16000076
+diamond,knockout,Please Remain Standing,LOU,0,1,0,1,0,0,0,0,1,0,16000041
+diamond,knockout,Please Remain Standing,MAISIE,0,1,0,1,0,0,0,0,1,0,16000068
+diamond,knockout,Please Remain Standing,MANDY,0,4,3,1,0,0,0,0,0,0,16000065
+diamond,knockout,Please Remain Standing,MINA,0,1,0,1,0,0,0,0,1,0,16000097
+diamond,knockout,Please Remain Standing,MORTIS,0,1,1,0,0,0,0,0,1,1,16000011
+diamond,knockout,Please Remain Standing,MR. P,0,1,0,1,0,0,0,0,0,0,16000031
+diamond,knockout,Please Remain Standing,NAJIA,0,1,0,1,0,0,0,0,1,0,16000103
+diamond,knockout,Please Remain Standing,NANI,0,1,0,1,0,0,0,0,1,0,16000036
+diamond,knockout,Please Remain Standing,PENNY,0,1,0,1,0,0,0,0,1,0,16000019
+diamond,knockout,Please Remain Standing,PIERCE,0,1,0,1,0,0,0,0,1,0,16000099
+diamond,knockout,Please Remain Standing,PIPER,0,2,0,2,0,0,0,0,2,0,16000015
+diamond,knockout,Please Remain Standing,POCO,0,1,1,0,0,0,0,0,0,0,16000013
+diamond,knockout,Please Remain Standing,SPIKE,0,1,0,1,0,0,0,0,1,0,16000005
+diamond,knockout,Please Remain Standing,STARR NOVA,0,1,0,1,0,0,0,0,1,0,16000105
+diamond,knockout,Please Remain Standing,STU,0,1,0,1,0,0,0,0,1,0,16000045
+diamond,knockout,Please Remain Standing,THUNDER FROGS,0,6,6,0,0,0,0,0,0,0,16000111
+diamond,knockout,Please Remain Standing,TICK,0,7,6,1,0,0,0,0,1,0,16000022
+diamond,knockout,Please Remain Standing,ZIGGY,0,1,0,1,0,0,0,0,1,0,16000098
 diamond,knockout5V5,Brawlerverse,*,1,0,0,0,0,0,0,0,0,0,
 diamond,knockout5V5,Brawlerverse,ANGELO,0,1,1,0,0,0,1,1,0,0,16000079
 diamond,knockout5V5,Brawlerverse,COLT,0,1,0,1,0,0,0,0,1,0,16000001
@@ -1216,18 +1334,25 @@ legendary,knockout,Belle's Rock,NORI,0,4,4,0,0,0,2,2,0,0,16000107
 legendary,knockout,Belle's Rock,PIPER,0,0,0,0,0,2,0,0,0,0,16000015
 legendary,knockout,Belle's Rock,SPROUT,0,2,2,0,0,0,0,0,0,0,16000037
 legendary,knockout,Belle's Rock,TICK,0,0,0,0,0,2,0,0,0,0,16000022
-legendary,knockout,Flaring Phoenix,*,2,0,0,0,0,0,0,0,0,0,
-legendary,knockout,Flaring Phoenix,AMBER,0,2,0,2,0,0,0,0,2,0,16000040
-legendary,knockout,Flaring Phoenix,BROCK,0,2,0,2,0,0,0,0,2,0,16000003
+legendary,knockout,Flaring Phoenix,*,4,0,0,0,0,0,0,0,0,0,
+legendary,knockout,Flaring Phoenix,AMBER,0,4,0,4,0,0,2,0,2,0,16000040
+legendary,knockout,Flaring Phoenix,BROCK,0,4,2,2,0,0,0,0,4,2,16000003
+legendary,knockout,Flaring Phoenix,BULL,0,2,2,0,0,0,0,0,2,2,16000002
 legendary,knockout,Flaring Phoenix,CROW,0,2,2,0,0,0,0,0,0,0,16000012
 legendary,knockout,Flaring Phoenix,EDGAR,0,0,0,0,0,4,0,0,0,0,16000043
 legendary,knockout,Flaring Phoenix,GRAY,0,0,0,0,0,2,0,0,0,0,16000064
 legendary,knockout,Flaring Phoenix,GROM,0,2,0,2,0,0,0,0,2,0,16000048
 legendary,knockout,Flaring Phoenix,GUS,0,2,2,0,0,0,2,2,0,0,16000061
-legendary,knockout,Flaring Phoenix,LOU,0,0,0,0,0,2,0,0,0,0,16000041
+legendary,knockout,Flaring Phoenix,LOU,0,0,0,0,0,4,0,0,0,0,16000041
+legendary,knockout,Flaring Phoenix,MANDY,0,0,0,0,0,2,0,0,0,0,16000065
+legendary,knockout,Flaring Phoenix,MAX,0,2,0,2,0,0,0,0,0,0,16000032
 legendary,knockout,Flaring Phoenix,MICO,0,2,2,0,0,0,0,0,0,0,16000075
 legendary,knockout,Flaring Phoenix,MORTIS,0,0,0,0,0,2,0,0,0,0,16000011
-legendary,knockout,Flaring Phoenix,MR. P,0,0,0,0,0,2,0,0,0,0,16000031
+legendary,knockout,Flaring Phoenix,MR. P,0,0,0,0,0,6,0,0,0,0,16000031
+legendary,knockout,Flaring Phoenix,NAJIA,0,2,0,2,0,0,0,0,0,0,16000103
+legendary,knockout,Flaring Phoenix,SHADE,0,0,0,0,0,2,0,0,0,0,16000086
+legendary,knockout,Flaring Phoenix,TICK,0,2,2,0,0,0,0,0,2,2,16000022
+legendary,knockout,Flaring Phoenix,VINCE,0,0,0,0,0,2,0,0,0,0,16000110
 mythic,basketBrawl,Pocket Pass,*,5,0,0,0,0,0,0,0,0,0,
 mythic,basketBrawl,Pocket Pass,8-BIT,0,1,1,0,0,0,0,0,0,0,16000027
 mythic,basketBrawl,Pocket Pass,BELLE,0,1,0,1,0,0,0,0,1,0,16000046
@@ -1250,13 +1375,14 @@ mythic,basketBrawl,Pocket Pass,SHADE,0,1,0,1,0,0,0,0,1,0,16000086
 mythic,basketBrawl,Pocket Pass,STARR NOVA,0,1,1,0,0,0,0,0,1,1,16000105
 mythic,basketBrawl,Pocket Pass,SURGE,0,1,0,1,0,0,0,0,0,0,16000038
 mythic,basketBrawl,Pocket Pass,TICK,0,1,1,0,0,0,0,0,1,1,16000022
-mythic,bounty,Alchemy,*,6,0,0,0,0,0,0,0,0,0,
+mythic,bounty,Alchemy,*,7,0,0,0,0,0,0,0,0,0,
 mythic,bounty,Alchemy,8-BIT,0,1,0,1,0,0,0,0,1,0,16000027
 mythic,bounty,Alchemy,BO,0,1,1,0,0,0,0,0,1,1,16000014
 mythic,bounty,Alchemy,BOLT,0,1,0,1,0,0,0,0,1,0,16000106
-mythic,bounty,Alchemy,BROCK,0,3,1,2,0,0,0,0,2,0,16000003
+mythic,bounty,Alchemy,BROCK,0,4,1,3,0,0,0,0,3,0,16000003
 mythic,bounty,Alchemy,BULL,0,1,0,1,0,0,0,0,1,0,16000002
 mythic,bounty,Alchemy,BYRON,0,1,0,1,0,0,0,0,1,0,16000042
+mythic,bounty,Alchemy,COLETTE,0,1,1,0,0,0,0,0,0,0,16000039
 mythic,bounty,Alchemy,COSMO,0,1,1,0,0,0,0,0,0,0,16000109
 mythic,bounty,Alchemy,CROW,0,1,1,0,0,0,0,0,0,0,16000012
 mythic,bounty,Alchemy,DAMIAN,0,1,0,1,0,0,0,0,1,0,16000104
@@ -1265,61 +1391,74 @@ mythic,bounty,Alchemy,EMZ,0,1,0,1,0,0,0,0,1,0,16000030
 mythic,bounty,Alchemy,FANG,0,1,1,0,0,0,1,1,0,0,16000054
 mythic,bounty,Alchemy,GRIFF,0,1,1,0,0,0,0,0,0,0,16000050
 mythic,bounty,Alchemy,LEON,0,1,0,1,0,0,0,0,0,0,16000023
-mythic,bounty,Alchemy,MANDY,0,3,2,1,0,0,1,0,0,0,16000065
+mythic,bounty,Alchemy,MANDY,0,5,3,2,0,0,1,0,1,0,16000065
 mythic,bounty,Alchemy,NORI,0,1,1,0,0,0,0,0,0,0,16000107
 mythic,bounty,Alchemy,OTIS,0,1,0,1,0,0,0,0,1,0,16000059
 mythic,bounty,Alchemy,PIERCE,0,2,1,1,0,0,1,1,1,0,16000099
 mythic,bounty,Alchemy,PIPER,0,6,3,3,0,0,2,2,3,1,16000015
+mythic,bounty,Alchemy,RICO,0,1,0,1,0,0,0,0,1,0,16000004
 mythic,bounty,Alchemy,SIRIUS,0,1,0,1,0,0,0,0,1,0,16000102
-mythic,bounty,Alchemy,THUNDER FROGS,0,3,2,1,0,0,1,1,2,1,16000111
+mythic,bounty,Alchemy,THUNDER FROGS,0,4,3,1,0,0,2,2,2,1,16000111
 mythic,bounty,Alchemy,TICK,0,1,0,1,0,0,0,0,1,0,16000022
 mythic,bounty,Alchemy,VINCE,0,1,1,0,0,0,0,0,0,0,16000110
-mythic,bounty,Dry Season,*,12,0,0,0,0,0,0,0,0,0,
-mythic,bounty,Dry Season,AMBER,0,2,0,2,0,2,0,0,2,0,16000040
+mythic,bounty,Dry Season,*,19,0,0,0,0,0,0,0,0,0,
+mythic,bounty,Dry Season,AMBER,0,2,0,2,0,4,0,0,2,0,16000040
 mythic,bounty,Dry Season,BEA,0,2,2,0,0,2,0,0,0,0,16000029
-mythic,bounty,Dry Season,BONNIE,0,2,0,2,0,0,0,0,2,0,16000058
-mythic,bounty,Dry Season,BROCK,0,6,6,0,0,4,0,0,0,0,16000003
+mythic,bounty,Dry Season,BO,0,2,0,2,0,0,0,0,0,0,16000014
+mythic,bounty,Dry Season,BONNIE,0,4,2,2,0,3,0,0,4,2,16000058
+mythic,bounty,Dry Season,BROCK,0,11,10,1,0,6,2,2,3,2,16000003
 mythic,bounty,Dry Season,BYRON,0,6,2,4,0,0,0,0,4,0,16000042
 mythic,bounty,Dry Season,CARL,0,2,2,0,0,0,2,2,0,0,16000025
+mythic,bounty,Dry Season,CHESTER,0,2,2,0,0,0,0,0,0,0,16000063
 mythic,bounty,Dry Season,COLT,0,4,0,4,0,0,0,0,4,0,16000001
-mythic,bounty,Dry Season,EDGAR,0,2,2,0,0,4,0,0,0,0,16000043
+mythic,bounty,Dry Season,DAMIAN,0,0,0,0,0,2,0,0,0,0,16000104
+mythic,bounty,Dry Season,EDGAR,0,5,3,2,0,6,0,0,0,0,16000043
+mythic,bounty,Dry Season,EMZ,0,0,0,0,0,2,0,0,0,0,16000030
 mythic,bounty,Dry Season,EVE,0,0,0,0,0,2,0,0,0,0,16000056
 mythic,bounty,Dry Season,GALE,0,0,0,0,0,2,0,0,0,0,16000035
+mythic,bounty,Dry Season,GIGI,0,0,0,0,0,5,0,0,0,0,16000100
+mythic,bounty,Dry Season,GRAY,0,2,2,0,0,0,0,0,2,2,16000064
+mythic,bounty,Dry Season,GRIFF,0,3,2,1,0,0,0,0,3,2,16000050
 mythic,bounty,Dry Season,GROM,0,4,2,2,0,2,0,0,2,0,16000048
 mythic,bounty,Dry Season,GUS,0,4,4,0,0,0,2,2,2,2,16000061
-mythic,bounty,Dry Season,LEON,0,0,0,0,0,6,0,0,0,0,16000023
+mythic,bounty,Dry Season,LEON,0,2,0,2,0,6,0,0,2,0,16000023
+mythic,bounty,Dry Season,LILY,0,2,0,2,0,0,0,0,2,0,16000081
 mythic,bounty,Dry Season,LOU,0,2,0,2,0,0,0,0,2,0,16000041
-mythic,bounty,Dry Season,MANDY,0,6,2,4,0,2,4,2,2,0,16000065
+mythic,bounty,Dry Season,MANDY,0,11,3,8,0,4,6,2,2,0,16000065
+mythic,bounty,Dry Season,MAX,0,2,2,0,0,0,0,0,0,0,16000032
 mythic,bounty,Dry Season,MEEPLE,0,0,0,0,0,2,0,0,0,0,16000089
-mythic,bounty,Dry Season,MORTIS,0,0,0,0,0,6,0,0,0,0,16000011
-mythic,bounty,Dry Season,MR. P,0,4,4,0,0,8,2,2,2,2,16000031
-mythic,bounty,Dry Season,NAJIA,0,2,2,0,0,6,2,2,0,0,16000103
-mythic,bounty,Dry Season,NANI,0,0,0,0,0,2,0,0,0,0,16000036
-mythic,bounty,Dry Season,NORI,0,0,0,0,0,2,0,0,0,0,16000107
+mythic,bounty,Dry Season,MICO,0,3,1,2,0,0,3,1,0,0,16000075
+mythic,bounty,Dry Season,MORTIS,0,5,4,1,0,6,0,0,5,4,16000011
+mythic,bounty,Dry Season,MR. P,0,4,4,0,0,12,2,2,2,2,16000031
+mythic,bounty,Dry Season,NAJIA,0,2,2,0,0,8,2,2,0,0,16000103
+mythic,bounty,Dry Season,NANI,0,2,0,2,0,2,0,0,0,0,16000036
+mythic,bounty,Dry Season,NORI,0,2,0,2,0,5,0,0,2,0,16000107
 mythic,bounty,Dry Season,OTIS,0,2,2,0,0,0,0,0,0,0,16000059
 mythic,bounty,Dry Season,PEARL,0,2,2,0,0,0,2,2,0,0,16000072
-mythic,bounty,Dry Season,PIERCE,0,0,0,0,0,4,0,0,0,0,16000099
-mythic,bounty,Dry Season,PIPER,0,6,2,4,0,2,0,0,6,2,16000015
+mythic,bounty,Dry Season,PIERCE,0,0,0,0,0,7,0,0,0,0,16000099
+mythic,bounty,Dry Season,PIPER,0,6,2,4,0,10,0,0,6,2,16000015
 mythic,bounty,Dry Season,SHADE,0,0,0,0,0,2,0,0,0,0,16000086
 mythic,bounty,Dry Season,SIRIUS,0,2,0,2,0,0,0,0,2,0,16000102
 mythic,bounty,Dry Season,SPIKE,0,6,2,4,0,0,0,0,2,0,16000005
 mythic,bounty,Dry Season,SQUEAK,0,4,0,4,0,2,0,0,2,0,16000047
 mythic,bounty,Dry Season,SURGE,0,0,0,0,0,2,0,0,0,0,16000038
-mythic,bounty,Dry Season,TICK,0,2,0,2,0,6,0,0,2,0,16000022
+mythic,bounty,Dry Season,TICK,0,2,0,2,0,8,0,0,2,0,16000022
 mythic,bounty,Dry Season,VINCE,0,0,0,0,0,2,0,0,0,0,16000110
-mythic,bounty,Hideout,*,20,0,0,0,0,0,0,0,0,0,
+mythic,bounty,Hideout,*,30,0,0,0,0,0,0,0,0,0,
+mythic,bounty,Hideout,ALLI,0,1,0,1,0,0,0,0,0,0,16000095
 mythic,bounty,Hideout,AMBER,0,1,0,1,0,3,0,0,1,0,16000040
 mythic,bounty,Hideout,ANGELO,0,0,0,0,0,3,0,0,0,0,16000079
-mythic,bounty,Hideout,BEA,0,3,2,1,0,0,0,0,0,0,16000029
-mythic,bounty,Hideout,BELLE,0,6,4,2,0,2,0,0,5,3,16000046
+mythic,bounty,Hideout,BEA,0,6,4,2,0,0,0,0,3,2,16000029
+mythic,bounty,Hideout,BELLE,0,7,4,3,0,2,0,0,5,3,16000046
 mythic,bounty,Hideout,BO,0,1,1,0,0,0,0,0,1,1,16000014
 mythic,bounty,Hideout,BONNIE,0,3,2,1,0,0,0,0,3,2,16000058
-mythic,bounty,Hideout,BROCK,0,13,8,5,0,5,4,3,6,4,16000003
-mythic,bounty,Hideout,BYRON,0,4,1,3,0,0,0,0,3,1,16000042
+mythic,bounty,Hideout,BROCK,0,14,9,5,0,11,4,3,6,4,16000003
+mythic,bounty,Hideout,BYRON,0,7,2,5,0,0,0,0,3,1,16000042
 mythic,bounty,Hideout,CARL,0,0,0,0,0,3,0,0,0,0,16000025
 mythic,bounty,Hideout,CHESTER,0,1,1,0,0,0,0,0,1,1,16000063
 mythic,bounty,Hideout,COLETTE,0,1,0,1,0,0,0,0,1,0,16000039
 mythic,bounty,Hideout,COLT,0,4,2,2,0,0,0,0,3,2,16000001
+mythic,bounty,Hideout,CORDELIUS,0,0,0,0,0,3,0,0,0,0,16000070
 mythic,bounty,Hideout,DAMIAN,0,1,0,1,0,0,0,0,0,0,16000104
 mythic,bounty,Hideout,DARRYL,0,3,1,2,0,0,0,0,0,0,16000018
 mythic,bounty,Hideout,DYNAMIKE,0,1,0,1,0,0,0,0,1,0,16000009
@@ -1329,41 +1468,46 @@ mythic,bounty,Hideout,EMZ,0,1,0,1,0,0,0,0,1,0,16000030
 mythic,bounty,Hideout,FANG,0,2,2,0,0,0,0,0,2,2,16000054
 mythic,bounty,Hideout,GIGI,0,0,0,0,0,3,0,0,0,0,16000100
 mythic,bounty,Hideout,GRAY,0,2,0,2,0,2,0,0,0,0,16000064
-mythic,bounty,Hideout,GRIFF,0,1,1,0,0,0,0,0,0,0,16000050
-mythic,bounty,Hideout,GROM,0,1,1,0,0,0,0,0,0,0,16000048
-mythic,bounty,Hideout,GUS,0,1,1,0,0,3,0,0,1,1,16000061
+mythic,bounty,Hideout,GRIFF,0,4,2,2,0,0,0,0,3,1,16000050
+mythic,bounty,Hideout,GROM,0,1,1,0,0,3,0,0,0,0,16000048
+mythic,bounty,Hideout,GUS,0,2,1,1,0,3,0,0,2,1,16000061
 mythic,bounty,Hideout,HANK,0,2,0,2,0,0,2,0,0,0,16000069
 mythic,bounty,Hideout,JESSIE,0,1,0,1,0,0,0,0,1,0,16000007
-mythic,bounty,Hideout,KIT,0,4,1,3,0,0,0,0,4,1,16000076
-mythic,bounty,Hideout,LEON,0,2,2,0,0,3,0,0,2,2,16000023
+mythic,bounty,Hideout,KIT,0,5,1,4,0,0,0,0,4,1,16000076
+mythic,bounty,Hideout,LEON,0,8,5,3,0,3,6,3,2,2,16000023
 mythic,bounty,Hideout,LILY,0,0,0,0,0,2,0,0,0,0,16000081
 mythic,bounty,Hideout,MAISIE,0,0,0,0,0,2,0,0,0,0,16000068
-mythic,bounty,Hideout,MANDY,0,8,4,4,0,6,4,1,4,3,16000065
+mythic,bounty,Hideout,MANDY,0,9,5,4,0,12,4,1,5,4,16000065
 mythic,bounty,Hideout,MAX,0,0,0,0,0,3,0,0,0,0,16000032
 mythic,bounty,Hideout,MEEPLE,0,1,1,0,0,0,0,0,1,1,16000089
-mythic,bounty,Hideout,MICO,0,0,0,0,0,2,0,0,0,0,16000075
+mythic,bounty,Hideout,MELODIE,0,3,2,1,0,0,0,0,0,0,16000078
+mythic,bounty,Hideout,MICO,0,0,0,0,0,5,0,0,0,0,16000075
 mythic,bounty,Hideout,MORTIS,0,0,0,0,0,3,0,0,0,0,16000011
 mythic,bounty,Hideout,MR. P,0,0,0,0,0,6,0,0,0,0,16000031
-mythic,bounty,Hideout,NAJIA,0,0,0,0,0,3,0,0,0,0,16000103
-mythic,bounty,Hideout,NANI,0,3,2,1,0,3,0,0,3,2,16000036
-mythic,bounty,Hideout,NORI,0,0,0,0,0,5,0,0,0,0,16000107
-mythic,bounty,Hideout,PIERCE,0,3,1,2,0,3,3,1,0,0,16000099
-mythic,bounty,Hideout,PIPER,0,10,4,6,0,2,6,1,2,2,16000015
-mythic,bounty,Hideout,RICO,0,2,2,0,0,0,0,0,2,2,16000004
-mythic,bounty,Hideout,SPIKE,0,11,3,8,0,0,0,0,1,1,16000005
-mythic,bounty,Hideout,STU,0,0,0,0,0,2,0,0,0,0,16000045
-mythic,bounty,Hideout,THUNDER FROGS,0,2,2,0,0,0,1,1,1,1,16000111
-mythic,bounty,Hideout,TICK,0,6,5,1,0,2,0,0,6,5,16000022
+mythic,bounty,Hideout,NAJIA,0,0,0,0,0,9,0,0,0,0,16000103
+mythic,bounty,Hideout,NANI,0,6,3,3,0,3,0,0,3,2,16000036
+mythic,bounty,Hideout,NORI,0,1,0,1,0,5,0,0,0,0,16000107
+mythic,bounty,Hideout,OTIS,0,1,0,1,0,0,0,0,1,0,16000059
+mythic,bounty,Hideout,PIERCE,0,6,3,3,0,3,3,1,0,0,16000099
+mythic,bounty,Hideout,PIPER,0,13,6,7,0,8,6,1,4,3,16000015
+mythic,bounty,Hideout,RICO,0,5,3,2,0,0,0,0,5,3,16000004
+mythic,bounty,Hideout,SIRIUS,0,2,0,2,0,0,2,0,0,0,16000102
+mythic,bounty,Hideout,SPIKE,0,15,6,9,0,0,0,0,5,4,16000005
+mythic,bounty,Hideout,SPROUT,0,1,1,0,0,0,0,0,1,1,16000037
+mythic,bounty,Hideout,SQUEAK,0,1,0,1,0,0,0,0,0,0,16000047
+mythic,bounty,Hideout,STU,0,3,2,1,0,2,0,0,3,2,16000045
+mythic,bounty,Hideout,THUNDER FROGS,0,7,6,1,0,0,3,2,4,4,16000111
+mythic,bounty,Hideout,TICK,0,12,8,4,0,5,0,0,11,8,16000022
 mythic,bounty,Hideout,VINCE,0,3,1,2,0,3,0,0,0,0,16000110
-mythic,bounty,Layer Cake,*,25,0,0,0,0,0,0,0,0,0,
+mythic,bounty,Layer Cake,*,28,0,0,0,0,0,0,0,0,0,
 mythic,bounty,Layer Cake,ALLI,0,2,2,0,0,3,0,0,0,0,16000095
 mythic,bounty,Layer Cake,AMBER,0,3,2,1,0,2,0,0,3,2,16000040
 mythic,bounty,Layer Cake,ASH,0,0,0,0,0,5,0,0,0,0,16000051
 mythic,bounty,Layer Cake,BEA,0,3,1,2,0,0,0,0,0,0,16000029
 mythic,bounty,Layer Cake,BERRY,0,7,4,3,0,3,0,0,7,4,16000082
 mythic,bounty,Layer Cake,BIBI,0,3,2,1,0,0,0,0,3,2,16000026
-mythic,bounty,Layer Cake,BO,0,0,0,0,0,4,0,0,0,0,16000014
-mythic,bounty,Layer Cake,BROCK,0,2,0,2,0,10,0,0,2,0,16000003
+mythic,bounty,Layer Cake,BO,0,3,2,1,0,4,0,0,0,0,16000014
+mythic,bounty,Layer Cake,BROCK,0,2,0,2,0,13,0,0,2,0,16000003
 mythic,bounty,Layer Cake,BULL,0,2,2,0,0,2,0,0,2,2,16000002
 mythic,bounty,Layer Cake,BUZZ,0,3,1,2,0,0,0,0,0,0,16000049
 mythic,bounty,Layer Cake,CHESTER,0,4,0,4,0,0,0,0,4,0,16000063
@@ -1372,8 +1516,9 @@ mythic,bounty,Layer Cake,COLETTE,0,2,0,2,0,2,0,0,0,0,16000039
 mythic,bounty,Layer Cake,COLT,0,2,0,2,0,0,2,0,0,0,16000001
 mythic,bounty,Layer Cake,CORDELIUS,0,0,0,0,0,2,0,0,0,0,16000070
 mythic,bounty,Layer Cake,DYNAMIKE,0,2,2,0,0,0,2,2,0,0,16000009
-mythic,bounty,Layer Cake,EDGAR,0,4,4,0,0,22,0,0,0,0,16000043
+mythic,bounty,Layer Cake,EDGAR,0,4,4,0,0,25,0,0,0,0,16000043
 mythic,bounty,Layer Cake,EVE,0,0,0,0,0,3,0,0,0,0,16000056
+mythic,bounty,Layer Cake,GALE,0,3,2,1,0,0,0,0,0,0,16000035
 mythic,bounty,Layer Cake,GENE,0,2,2,0,0,0,0,0,2,2,16000021
 mythic,bounty,Layer Cake,GIGI,0,2,0,2,0,0,0,0,2,0,16000100
 mythic,bounty,Layer Cake,GRIFF,0,6,0,6,0,0,0,0,6,0,16000050
@@ -1384,33 +1529,34 @@ mythic,bounty,Layer Cake,JUJU,0,3,1,2,0,0,3,1,0,0,16000087
 mythic,bounty,Layer Cake,KENJI,0,0,0,0,0,2,0,0,0,0,16000085
 mythic,bounty,Layer Cake,KIT,0,0,0,0,0,3,0,0,0,0,16000076
 mythic,bounty,Layer Cake,LARRY & LAWRIE,0,0,0,0,0,2,0,0,0,0,16000077
+mythic,bounty,Layer Cake,LEON,0,3,1,2,0,0,0,0,3,1,16000023
 mythic,bounty,Layer Cake,LILY,0,4,0,4,0,2,2,0,2,0,16000081
 mythic,bounty,Layer Cake,LOU,0,4,0,4,0,2,0,0,2,0,16000041
 mythic,bounty,Layer Cake,LUMI,0,0,0,0,0,4,0,0,0,0,16000091
-mythic,bounty,Layer Cake,MANDY,0,11,5,6,0,2,3,1,6,4,16000065
+mythic,bounty,Layer Cake,MANDY,0,11,5,6,0,5,3,1,6,4,16000065
 mythic,bounty,Layer Cake,MAX,0,0,0,0,0,4,0,0,0,0,16000032
-mythic,bounty,Layer Cake,MELODIE,0,0,0,0,0,4,0,0,0,0,16000078
+mythic,bounty,Layer Cake,MELODIE,0,3,1,2,0,4,0,0,3,1,16000078
 mythic,bounty,Layer Cake,MICO,0,2,2,0,0,11,0,0,0,0,16000075
-mythic,bounty,Layer Cake,MORTIS,0,3,1,2,0,2,0,0,0,0,16000011
-mythic,bounty,Layer Cake,MR. P,0,2,2,0,0,15,0,0,0,0,16000031
+mythic,bounty,Layer Cake,MORTIS,0,3,1,2,0,5,0,0,0,0,16000011
+mythic,bounty,Layer Cake,MR. P,0,2,2,0,0,21,0,0,0,0,16000031
 mythic,bounty,Layer Cake,NAJIA,0,0,0,0,0,5,0,0,0,0,16000103
 mythic,bounty,Layer Cake,NORI,0,5,2,3,0,2,0,0,5,2,16000107
 mythic,bounty,Layer Cake,PEARL,0,3,2,1,0,0,0,0,3,2,16000072
 mythic,bounty,Layer Cake,PENNY,0,5,4,1,0,0,2,2,3,2,16000019
 mythic,bounty,Layer Cake,PIPER,0,5,2,3,0,0,2,0,3,2,16000015
-mythic,bounty,Layer Cake,RICO,0,7,5,2,0,0,0,0,2,2,16000004
+mythic,bounty,Layer Cake,RICO,0,10,6,4,0,0,0,0,5,3,16000004
 mythic,bounty,Layer Cake,SHADE,0,5,1,4,0,5,0,0,0,0,16000086
 mythic,bounty,Layer Cake,SPIKE,0,11,6,5,0,3,2,2,5,4,16000005
 mythic,bounty,Layer Cake,SPROUT,0,2,2,0,0,2,0,0,2,2,16000037
 mythic,bounty,Layer Cake,SQUEAK,0,4,2,2,0,0,2,0,2,2,16000047
 mythic,bounty,Layer Cake,SURGE,0,9,7,2,0,3,0,0,4,4,16000038
-mythic,bounty,Layer Cake,TICK,0,4,2,2,0,9,2,2,0,0,16000022
+mythic,bounty,Layer Cake,TICK,0,7,4,3,0,9,5,4,0,0,16000022
 mythic,bounty,Layer Cake,VINCE,0,0,0,0,0,2,0,0,0,0,16000110
 mythic,bounty,Layer Cake,ZIGGY,0,3,2,1,0,0,0,0,3,2,16000098
-mythic,bounty,Shooting Star,*,25,0,0,0,0,0,0,0,0,0,
+mythic,bounty,Shooting Star,*,28,0,0,0,0,0,0,0,0,0,
 mythic,bounty,Shooting Star,8-BIT,0,3,1,2,0,0,3,1,0,0,16000027
 mythic,bounty,Shooting Star,AMBER,0,4,3,1,0,0,0,0,0,0,16000040
-mythic,bounty,Shooting Star,ANGELO,0,11,4,7,0,6,5,1,3,2,16000079
+mythic,bounty,Shooting Star,ANGELO,0,14,5,9,0,6,8,2,3,2,16000079
 mythic,bounty,Shooting Star,BARLEY,0,0,0,0,0,2,0,0,0,0,16000006
 mythic,bounty,Shooting Star,BEA,0,3,2,1,0,0,0,0,3,2,16000029
 mythic,bounty,Shooting Star,BELLE,0,5,2,3,0,0,0,0,5,2,16000046
@@ -1418,7 +1564,7 @@ mythic,bounty,Shooting Star,BERRY,0,0,0,0,0,2,0,0,0,0,16000082
 mythic,bounty,Shooting Star,BO,0,0,0,0,0,2,0,0,0,0,16000014
 mythic,bounty,Shooting Star,BOLT,0,1,1,0,0,2,0,0,1,1,16000106
 mythic,bounty,Shooting Star,BONNIE,0,2,2,0,0,0,0,0,2,2,16000058
-mythic,bounty,Shooting Star,BROCK,0,4,2,2,0,17,0,0,2,2,16000003
+mythic,bounty,Shooting Star,BROCK,0,7,3,4,0,17,0,0,2,2,16000003
 mythic,bounty,Shooting Star,BYRON,0,12,5,7,0,0,0,0,5,2,16000042
 mythic,bounty,Shooting Star,CARL,0,0,0,0,0,5,0,0,0,0,16000025
 mythic,bounty,Shooting Star,COLETTE,0,0,0,0,0,3,0,0,0,0,16000039
@@ -1428,23 +1574,25 @@ mythic,bounty,Shooting Star,EVE,0,7,4,3,0,0,0,0,3,2,16000056
 mythic,bounty,Shooting Star,FANG,0,7,4,3,0,0,0,0,0,0,16000054
 mythic,bounty,Shooting Star,FRANK,0,1,0,1,0,0,0,0,1,0,16000020
 mythic,bounty,Shooting Star,GENE,0,9,4,5,0,0,7,4,0,0,16000021
-mythic,bounty,Shooting Star,GRAY,0,2,0,2,0,0,2,0,0,0,16000064
+mythic,bounty,Shooting Star,GRAY,0,5,2,3,0,0,2,0,3,2,16000064
+mythic,bounty,Shooting Star,GRIFF,0,3,2,1,0,0,0,0,3,2,16000050
 mythic,bounty,Shooting Star,GROM,0,3,2,1,0,0,0,0,3,2,16000048
 mythic,bounty,Shooting Star,GUS,0,2,0,2,0,2,0,0,2,0,16000061
+mythic,bounty,Shooting Star,HANK,0,0,0,0,0,3,0,0,0,0,16000069
 mythic,bounty,Shooting Star,LARRY & LAWRIE,0,0,0,0,0,2,0,0,0,0,16000077
 mythic,bounty,Shooting Star,LEON,0,5,3,2,0,2,0,0,2,2,16000023
 mythic,bounty,Shooting Star,LILY,0,4,2,2,0,0,4,2,0,0,16000081
 mythic,bounty,Shooting Star,LOU,0,2,0,2,0,0,0,0,0,0,16000041
-mythic,bounty,Shooting Star,MANDY,0,4,4,0,0,21,0,0,4,4,16000065
-mythic,bounty,Shooting Star,MAX,0,4,2,2,0,3,0,0,4,2,16000032
-mythic,bounty,Shooting Star,MICO,0,0,0,0,0,2,0,0,0,0,16000075
+mythic,bounty,Shooting Star,MANDY,0,4,4,0,0,24,0,0,4,4,16000065
+mythic,bounty,Shooting Star,MAX,0,7,4,3,0,3,0,0,7,4,16000032
+mythic,bounty,Shooting Star,MICO,0,0,0,0,0,5,0,0,0,0,16000075
 mythic,bounty,Shooting Star,MORTIS,0,5,3,2,0,2,0,0,2,2,16000011
 mythic,bounty,Shooting Star,MR. P,0,7,2,5,0,10,2,0,5,2,16000031
 mythic,bounty,Shooting Star,NAJIA,0,2,2,0,0,8,0,0,0,0,16000103
-mythic,bounty,Shooting Star,NANI,0,7,3,4,0,0,0,0,4,2,16000036
+mythic,bounty,Shooting Star,NANI,0,7,3,4,0,3,0,0,4,2,16000036
 mythic,bounty,Shooting Star,NITA,0,1,0,1,0,0,0,0,1,0,16000008
 mythic,bounty,Shooting Star,PEARL,0,2,2,0,0,0,2,2,0,0,16000072
-mythic,bounty,Shooting Star,PIPER,0,7,4,3,0,11,0,0,5,4,16000015
+mythic,bounty,Shooting Star,PIPER,0,7,4,3,0,14,0,0,5,4,16000015
 mythic,bounty,Shooting Star,POCO,0,1,0,1,0,0,0,0,1,0,16000013
 mythic,bounty,Shooting Star,R-T,0,2,2,0,0,0,0,0,2,2,16000066
 mythic,bounty,Shooting Star,SHADE,0,0,0,0,0,2,0,0,0,0,16000086
@@ -1453,8 +1601,8 @@ mythic,bounty,Shooting Star,SPROUT,0,0,0,0,0,2,0,0,0,0,16000037
 mythic,bounty,Shooting Star,SQUEAK,0,0,0,0,0,7,0,0,0,0,16000047
 mythic,bounty,Shooting Star,STU,0,0,0,0,0,2,0,0,0,0,16000045
 mythic,bounty,Shooting Star,TARA,0,2,1,1,0,0,0,0,2,1,16000017
-mythic,bounty,Shooting Star,TICK,0,6,2,4,0,2,2,0,4,2,16000022
-mythic,bounty,Shooting Star,VINCE,0,0,0,0,0,2,0,0,0,0,16000110
+mythic,bounty,Shooting Star,TICK,0,9,3,6,0,2,2,0,4,2,16000022
+mythic,bounty,Shooting Star,VINCE,0,0,0,0,0,5,0,0,0,0,16000110
 mythic,bounty,Supercut,*,18,0,0,0,0,0,0,0,0,0,
 mythic,bounty,Supercut,ALLI,0,1,0,1,0,0,0,0,1,0,16000095
 mythic,bounty,Supercut,BERRY,0,2,1,1,0,0,0,0,2,1,16000082
@@ -1506,16 +1654,20 @@ mythic,bounty,Supercut,THUNDER FROGS,0,3,2,1,0,0,2,2,1,0,16000111
 mythic,bounty,Supercut,TICK,0,5,1,4,0,0,0,0,4,1,16000022
 mythic,bounty,Supercut,WENDY,0,1,1,0,0,0,0,0,0,0,16000108
 mythic,bounty,Supercut,WILLOW,0,1,1,0,0,0,0,0,0,0,16000067
-mythic,bounty,Tasty Berry,*,2,0,0,0,0,0,0,0,0,0,
+mythic,bounty,Tasty Berry,*,3,0,0,0,0,0,0,0,0,0,
 mythic,bounty,Tasty Berry,ALLI,0,1,1,0,0,0,0,0,0,0,16000095
 mythic,bounty,Tasty Berry,BROCK,0,2,1,1,0,0,1,1,1,0,16000003
 mythic,bounty,Tasty Berry,COLT,0,1,0,1,0,0,0,0,1,0,16000001
-mythic,bounty,Tasty Berry,EDGAR,0,2,1,1,0,0,1,1,1,0,16000043
+mythic,bounty,Tasty Berry,CROW,0,1,1,0,0,0,0,0,1,1,16000012
+mythic,bounty,Tasty Berry,EDGAR,0,3,1,2,0,0,2,1,1,0,16000043
+mythic,bounty,Tasty Berry,EVE,0,1,1,0,0,0,0,0,1,1,16000056
 mythic,bounty,Tasty Berry,GRAY,0,1,1,0,0,0,0,0,0,0,16000064
 mythic,bounty,Tasty Berry,GRIFF,0,1,1,0,0,0,0,0,0,0,16000050
 mythic,bounty,Tasty Berry,GUS,0,1,0,1,0,0,0,0,1,0,16000061
 mythic,bounty,Tasty Berry,NORI,0,1,0,1,0,0,0,0,1,0,16000107
-mythic,bounty,Tasty Berry,PIPER,0,1,0,1,0,0,0,0,1,0,16000015
+mythic,bounty,Tasty Berry,PIPER,0,2,1,1,0,0,0,0,2,1,16000015
+mythic,bounty,Tasty Berry,SIRIUS,0,1,0,1,0,0,0,0,0,0,16000102
+mythic,bounty,Tasty Berry,THUNDER FROGS,0,1,0,1,0,0,0,0,0,0,16000111
 mythic,bounty,Tasty Berry,TICK,0,1,1,0,0,0,0,0,0,0,16000022
 mythic,brawlArena,Mirage Arena,*,1,0,0,0,0,0,0,0,0,0,
 mythic,brawlArena,Mirage Arena,JESSIE,0,1,0,1,0,0,0,0,0,0,16000007
@@ -1583,29 +1735,30 @@ mythic,brawlBall,Backyard Bowl,SURGE,0,1,0,1,0,0,1,0,0,0,16000038
 mythic,brawlBall,Backyard Bowl,THUNDER FROGS,0,3,1,2,0,0,2,1,0,0,16000111
 mythic,brawlBall,Backyard Bowl,VINCE,0,1,1,0,0,0,0,0,1,1,16000110
 mythic,brawlBall,Backyard Bowl,WENDY,0,1,0,1,0,0,0,0,1,0,16000108
-mythic,brawlBall,Center Stage,*,12,0,0,0,0,0,0,0,0,0,
+mythic,brawlBall,Center Stage,*,14,0,0,0,0,0,0,0,0,0,
 mythic,brawlBall,Center Stage,8-BIT,0,0,0,0,0,2,0,0,0,0,16000027
 mythic,brawlBall,Center Stage,ALLI,0,0,0,0,0,2,0,0,0,0,16000095
 mythic,brawlBall,Center Stage,AMBER,0,4,2,2,0,2,2,0,2,2,16000040
 mythic,brawlBall,Center Stage,BIBI,0,0,0,0,0,2,0,0,0,0,16000026
-mythic,brawlBall,Center Stage,BO,0,2,2,0,0,2,0,0,0,0,16000014
+mythic,brawlBall,Center Stage,BO,0,2,2,0,0,4,0,0,0,0,16000014
+mythic,brawlBall,Center Stage,BOLT,0,0,0,0,0,2,0,0,0,0,16000106
 mythic,brawlBall,Center Stage,BROCK,0,0,0,0,0,2,0,0,0,0,16000003
-mythic,brawlBall,Center Stage,BULL,0,2,2,0,0,8,0,0,2,2,16000002
+mythic,brawlBall,Center Stage,BULL,0,2,2,0,0,10,0,0,2,2,16000002
 mythic,brawlBall,Center Stage,BUSTER,0,2,2,0,0,2,0,0,0,0,16000062
 mythic,brawlBall,Center Stage,CARL,0,6,4,2,0,0,0,0,4,2,16000025
 mythic,brawlBall,Center Stage,CHESTER,0,2,2,0,0,0,0,0,0,0,16000063
-mythic,brawlBall,Center Stage,COLETTE,0,2,0,2,0,2,2,0,0,0,16000039
+mythic,brawlBall,Center Stage,COLETTE,0,4,2,2,0,2,2,0,2,2,16000039
 mythic,brawlBall,Center Stage,COLT,0,2,0,2,0,0,0,0,2,0,16000001
 mythic,brawlBall,Center Stage,DAMIAN,0,0,0,0,0,2,0,0,0,0,16000104
-mythic,brawlBall,Center Stage,EDGAR,0,2,2,0,0,6,0,0,0,0,16000043
-mythic,brawlBall,Center Stage,EL PRIMO,0,0,0,0,0,4,0,0,0,0,16000010
+mythic,brawlBall,Center Stage,EDGAR,0,4,4,0,0,6,0,0,2,2,16000043
+mythic,brawlBall,Center Stage,EL PRIMO,0,0,0,0,0,6,0,0,0,0,16000010
 mythic,brawlBall,Center Stage,EMZ,0,0,0,0,0,2,0,0,0,0,16000030
 mythic,brawlBall,Center Stage,FANG,0,0,0,0,0,2,0,0,0,0,16000054
-mythic,brawlBall,Center Stage,FRANK,0,2,0,2,0,0,0,0,0,0,16000020
+mythic,brawlBall,Center Stage,FRANK,0,4,0,4,0,0,0,0,0,0,16000020
 mythic,brawlBall,Center Stage,GALE,0,2,2,0,0,0,0,0,2,2,16000035
 mythic,brawlBall,Center Stage,GENE,0,0,0,0,0,2,0,0,0,0,16000021
 mythic,brawlBall,Center Stage,GIGI,0,2,2,0,0,0,0,0,2,2,16000100
-mythic,brawlBall,Center Stage,GRIFF,0,2,0,2,0,4,0,0,0,0,16000050
+mythic,brawlBall,Center Stage,GRIFF,0,2,0,2,0,6,0,0,0,0,16000050
 mythic,brawlBall,Center Stage,GUS,0,2,0,2,0,0,2,0,0,0,16000061
 mythic,brawlBall,Center Stage,HANK,0,0,0,0,0,2,0,0,0,0,16000069
 mythic,brawlBall,Center Stage,JESSIE,0,2,0,2,0,0,0,0,2,0,16000007
@@ -1617,14 +1770,15 @@ mythic,brawlBall,Center Stage,MR. P,0,2,2,0,0,2,2,2,0,0,16000031
 mythic,brawlBall,Center Stage,NORI,0,2,2,0,0,0,0,0,2,2,16000107
 mythic,brawlBall,Center Stage,OTIS,0,2,0,2,0,0,0,0,2,0,16000059
 mythic,brawlBall,Center Stage,RICO,0,6,2,4,0,4,4,2,0,0,16000004
-mythic,brawlBall,Center Stage,RUFFS,0,2,0,2,0,0,0,0,2,0,16000044
+mythic,brawlBall,Center Stage,ROSA,0,0,0,0,0,2,0,0,0,0,16000024
+mythic,brawlBall,Center Stage,RUFFS,0,4,0,4,0,0,2,0,2,0,16000044
 mythic,brawlBall,Center Stage,SHADE,0,0,0,0,0,2,0,0,0,0,16000086
 mythic,brawlBall,Center Stage,SHELLY,0,2,2,0,0,0,0,0,2,2,16000000
 mythic,brawlBall,Center Stage,SIRIUS,0,0,0,0,0,2,0,0,0,0,16000102
-mythic,brawlBall,Center Stage,SPIKE,0,8,6,2,0,0,0,0,6,4,16000005
+mythic,brawlBall,Center Stage,SPIKE,0,10,6,4,0,0,0,0,6,4,16000005
 mythic,brawlBall,Center Stage,STARR NOVA,0,0,0,0,0,2,0,0,0,0,16000105
 mythic,brawlBall,Center Stage,SURGE,0,4,0,4,0,4,0,0,2,0,16000038
-mythic,brawlBall,Center Stage,TARA,0,4,2,2,0,0,2,2,2,0,16000017
+mythic,brawlBall,Center Stage,TARA,0,6,4,2,0,0,2,2,4,2,16000017
 mythic,brawlBall,Center Stage,THUNDER FROGS,0,0,0,0,0,2,0,0,0,0,16000111
 mythic,brawlBall,Front Tackle,*,28,0,0,0,0,0,0,0,0,0,
 mythic,brawlBall,Front Tackle,8-BIT,0,1,0,1,0,0,0,0,1,0,16000027
@@ -1778,38 +1932,84 @@ mythic,brawlBall,Pinhole Punt,NORI,0,1,0,1,0,0,0,0,1,0,16000107
 mythic,brawlBall,Pinhole Punt,PIERCE,0,1,0,1,0,0,0,0,1,0,16000099
 mythic,brawlBall,Pinhole Punt,SPIKE,0,1,0,1,0,0,0,0,1,0,16000005
 mythic,brawlBall,Pinhole Punt,THUNDER FROGS,0,3,2,1,0,0,0,0,1,0,16000111
-mythic,brawlBall,Sneaky Fields,*,10,0,0,0,0,0,0,0,0,0,
-mythic,brawlBall,Sneaky Fields,AMBER,0,4,2,2,0,0,2,0,2,2,16000040
-mythic,brawlBall,Sneaky Fields,ASH,0,2,2,0,0,4,0,0,2,2,16000051
+mythic,brawlBall,Pump It Up,*,15,0,0,0,0,0,0,0,0,0,
+mythic,brawlBall,Pump It Up,AMBER,0,1,0,1,0,0,0,0,1,0,16000040
+mythic,brawlBall,Pump It Up,BARLEY,0,1,0,1,0,0,0,0,1,0,16000006
+mythic,brawlBall,Pump It Up,BELLE,0,1,0,1,0,0,0,0,1,0,16000046
+mythic,brawlBall,Pump It Up,BO,0,1,0,1,0,0,0,0,1,0,16000014
+mythic,brawlBall,Pump It Up,BONNIE,0,10,7,3,0,0,0,0,1,0,16000058
+mythic,brawlBall,Pump It Up,BROCK,0,1,0,1,0,0,0,0,1,0,16000003
+mythic,brawlBall,Pump It Up,BULL,0,1,0,1,0,0,0,0,0,0,16000002
+mythic,brawlBall,Pump It Up,BUZZ,0,2,1,0,1,0,0,0,2,1,16000049
+mythic,brawlBall,Pump It Up,CARL,0,1,1,0,0,0,0,0,1,1,16000025
+mythic,brawlBall,Pump It Up,CLANCY,0,12,9,3,0,0,12,9,0,0,16000083
+mythic,brawlBall,Pump It Up,COLT,0,4,2,2,0,0,0,0,4,2,16000001
+mythic,brawlBall,Pump It Up,DARRYL,0,1,1,0,0,0,0,0,0,0,16000018
+mythic,brawlBall,Pump It Up,DYNAMIKE,0,2,1,1,0,0,0,0,2,1,16000009
+mythic,brawlBall,Pump It Up,EDGAR,0,1,0,1,0,0,0,0,1,0,16000043
+mythic,brawlBall,Pump It Up,EL PRIMO,0,1,1,0,0,0,0,0,1,1,16000010
+mythic,brawlBall,Pump It Up,EMZ,0,1,0,0,1,0,0,0,1,0,16000030
+mythic,brawlBall,Pump It Up,EVE,0,1,0,1,0,0,0,0,1,0,16000056
+mythic,brawlBall,Pump It Up,FRANK,0,2,1,1,0,0,0,0,2,1,16000020
+mythic,brawlBall,Pump It Up,GALE,0,1,0,1,0,0,0,0,1,0,16000035
+mythic,brawlBall,Pump It Up,GLOWY,0,1,1,0,0,0,0,0,0,0,16000101
+mythic,brawlBall,Pump It Up,GRIFF,0,2,1,1,0,0,0,0,2,1,16000050
+mythic,brawlBall,Pump It Up,JACKY,0,1,0,1,0,0,0,0,1,0,16000034
+mythic,brawlBall,Pump It Up,KAZE,0,1,1,0,0,0,0,0,1,1,16000094
+mythic,brawlBall,Pump It Up,KIT,0,1,0,1,0,0,0,0,1,0,16000076
+mythic,brawlBall,Pump It Up,LEON,0,1,0,0,1,0,0,0,1,0,16000023
+mythic,brawlBall,Pump It Up,LUMI,0,2,2,0,0,0,0,0,2,2,16000091
+mythic,brawlBall,Pump It Up,MANDY,0,2,0,1,1,0,2,0,0,0,16000065
+mythic,brawlBall,Pump It Up,MORTIS,0,2,1,1,0,0,0,0,2,1,16000011
+mythic,brawlBall,Pump It Up,NORI,0,1,0,1,0,0,1,0,0,0,16000107
+mythic,brawlBall,Pump It Up,RICO,0,3,1,2,0,0,0,0,3,1,16000004
+mythic,brawlBall,Pump It Up,RUFFS,0,1,0,1,0,0,0,0,1,0,16000044
+mythic,brawlBall,Pump It Up,SHELLY,0,1,0,1,0,0,0,0,1,0,16000000
+mythic,brawlBall,Pump It Up,SPIKE,0,1,0,1,0,0,0,0,1,0,16000005
+mythic,brawlBall,Pump It Up,SPROUT,0,1,1,0,0,0,0,0,1,1,16000037
+mythic,brawlBall,Pump It Up,SQUEAK,0,1,0,1,0,0,0,0,1,0,16000047
+mythic,brawlBall,Pump It Up,STU,0,1,0,1,0,0,0,0,1,0,16000045
+mythic,brawlBall,Pump It Up,SURGE,0,5,1,3,1,0,3,0,2,1,16000038
+mythic,brawlBall,Pump It Up,TARA,0,1,0,1,0,0,0,0,1,0,16000017
+mythic,brawlBall,Pump It Up,THUNDER FROGS,0,10,7,3,0,0,0,0,1,0,16000111
+mythic,brawlBall,Pump It Up,VINCE,0,6,2,3,1,0,6,2,0,0,16000110
+mythic,brawlBall,Sneaky Fields,*,15,0,0,0,0,0,0,0,0,0,
+mythic,brawlBall,Sneaky Fields,AMBER,0,4,2,2,0,8,2,0,2,2,16000040
+mythic,brawlBall,Sneaky Fields,ASH,0,2,2,0,0,6,0,0,2,2,16000051
 mythic,brawlBall,Sneaky Fields,BIBI,0,2,0,2,0,0,0,0,0,0,16000026
 mythic,brawlBall,Sneaky Fields,BULL,0,2,2,0,0,6,2,2,0,0,16000002
-mythic,brawlBall,Sneaky Fields,CHESTER,0,0,0,0,0,2,0,0,0,0,16000063
+mythic,brawlBall,Sneaky Fields,CHESTER,0,2,0,2,0,5,2,0,0,0,16000063
 mythic,brawlBall,Sneaky Fields,COLT,0,2,2,0,0,0,0,0,0,0,16000001
+mythic,brawlBall,Sneaky Fields,CORDELIUS,0,2,0,2,0,0,0,0,0,0,16000070
 mythic,brawlBall,Sneaky Fields,DOUG,0,2,2,0,0,0,0,0,2,2,16000071
-mythic,brawlBall,Sneaky Fields,EDGAR,0,2,2,0,0,6,0,0,2,2,16000043
+mythic,brawlBall,Sneaky Fields,EDGAR,0,2,2,0,0,9,0,0,2,2,16000043
 mythic,brawlBall,Sneaky Fields,EL PRIMO,0,2,2,0,0,2,0,0,2,2,16000010
-mythic,brawlBall,Sneaky Fields,EMZ,0,4,0,4,0,2,2,0,2,0,16000030
+mythic,brawlBall,Sneaky Fields,EMZ,0,4,0,4,0,4,2,0,2,0,16000030
 mythic,brawlBall,Sneaky Fields,FRANK,0,2,0,2,0,0,2,0,0,0,16000020
-mythic,brawlBall,Sneaky Fields,GALE,0,2,0,2,0,2,0,0,0,0,16000035
-mythic,brawlBall,Sneaky Fields,GRIFF,0,0,0,0,0,4,0,0,0,0,16000050
+mythic,brawlBall,Sneaky Fields,GALE,0,2,0,2,0,4,0,0,0,0,16000035
+mythic,brawlBall,Sneaky Fields,GRIFF,0,5,2,3,0,4,0,0,0,0,16000050
+mythic,brawlBall,Sneaky Fields,GUS,0,0,0,0,0,3,0,0,0,0,16000061
 mythic,brawlBall,Sneaky Fields,JESSIE,0,2,0,2,0,0,2,0,0,0,16000007
 mythic,brawlBall,Sneaky Fields,KENJI,0,4,2,2,0,0,0,0,0,0,16000085
 mythic,brawlBall,Sneaky Fields,LILY,0,2,0,2,0,0,0,0,0,0,16000081
-mythic,brawlBall,Sneaky Fields,LOU,0,2,2,0,0,6,0,0,2,2,16000041
+mythic,brawlBall,Sneaky Fields,LOU,0,2,2,0,0,9,0,0,2,2,16000041
 mythic,brawlBall,Sneaky Fields,MICO,0,2,0,2,0,0,2,0,0,0,16000075
-mythic,brawlBall,Sneaky Fields,MR. P,0,2,0,2,0,0,0,0,0,0,16000031
+mythic,brawlBall,Sneaky Fields,MR. P,0,5,2,3,0,0,3,2,0,0,16000031
 mythic,brawlBall,Sneaky Fields,NANI,0,0,0,0,0,4,0,0,0,0,16000036
 mythic,brawlBall,Sneaky Fields,NORI,0,0,0,0,0,4,0,0,0,0,16000107
 mythic,brawlBall,Sneaky Fields,PEARL,0,2,0,2,0,0,2,0,0,0,16000072
 mythic,brawlBall,Sneaky Fields,PENNY,0,0,0,0,0,2,0,0,0,0,16000019
-mythic,brawlBall,Sneaky Fields,RICO,0,6,2,4,0,2,0,0,4,2,16000004
+mythic,brawlBall,Sneaky Fields,RICO,0,9,3,6,0,6,0,0,7,3,16000004
+mythic,brawlBall,Sneaky Fields,RUFFS,0,2,2,0,0,0,0,0,2,2,16000044
 mythic,brawlBall,Sneaky Fields,SHADE,0,0,0,0,0,4,0,0,0,0,16000086
 mythic,brawlBall,Sneaky Fields,SIRIUS,0,0,0,0,0,2,0,0,0,0,16000102
 mythic,brawlBall,Sneaky Fields,STARR NOVA,0,0,0,0,0,2,0,0,0,0,16000105
 mythic,brawlBall,Sneaky Fields,STU,0,0,0,0,0,2,0,0,0,0,16000045
-mythic,brawlBall,Sneaky Fields,SURGE,0,8,6,2,0,2,0,0,8,6,16000038
-mythic,brawlBall,Sneaky Fields,TARA,0,4,4,0,0,0,0,0,4,4,16000017
+mythic,brawlBall,Sneaky Fields,SURGE,0,13,10,3,0,2,0,0,10,8,16000038
+mythic,brawlBall,Sneaky Fields,TARA,0,6,6,0,0,0,0,0,6,6,16000017
 mythic,brawlBall,Sneaky Fields,TRUNK,0,0,0,0,0,2,0,0,0,0,16000096
+mythic,brawlBall,Sneaky Fields,VINCE,0,3,1,2,0,0,0,0,3,1,16000110
+mythic,brawlBall,Sneaky Fields,ZIGGY,0,3,1,2,0,0,0,0,3,1,16000098
 mythic,brawlBall,Sunny Soccer,*,2,0,0,0,0,0,0,0,0,0,
 mythic,brawlBall,Sunny Soccer,BULL,0,1,0,1,0,0,0,0,1,0,16000002
 mythic,brawlBall,Sunny Soccer,BUZZ,0,1,1,0,0,0,0,0,1,1,16000049
@@ -1820,8 +2020,8 @@ mythic,brawlBall,Sunny Soccer,RICO,0,1,0,1,0,0,0,0,1,0,16000004
 mythic,brawlBall,Sunny Soccer,SHADE,0,2,1,1,0,0,0,0,0,0,16000086
 mythic,brawlBall,Sunny Soccer,SIRIUS,0,1,1,0,0,0,0,0,1,1,16000102
 mythic,brawlBall,Sunny Soccer,SURGE,0,1,0,1,0,0,0,0,1,0,16000038
-mythic,brawlBall,Triple Dribble,*,18,0,0,0,0,0,0,0,0,0,
-mythic,brawlBall,Triple Dribble,AMBER,0,4,4,0,0,4,2,2,2,2,16000040
+mythic,brawlBall,Triple Dribble,*,19,0,0,0,0,0,0,0,0,0,
+mythic,brawlBall,Triple Dribble,AMBER,0,5,4,1,0,4,3,2,2,2,16000040
 mythic,brawlBall,Triple Dribble,ASH,0,1,1,0,0,0,1,1,0,0,16000051
 mythic,brawlBall,Triple Dribble,BIBI,0,1,1,0,0,0,0,0,0,0,16000026
 mythic,brawlBall,Triple Dribble,BO,0,2,0,2,0,0,0,0,0,0,16000014
@@ -1836,7 +2036,7 @@ mythic,brawlBall,Triple Dribble,DOUG,0,1,0,1,0,0,0,0,1,0,16000071
 mythic,brawlBall,Triple Dribble,DYNAMIKE,0,10,5,5,0,0,0,0,1,0,16000009
 mythic,brawlBall,Triple Dribble,EDGAR,0,3,2,1,0,7,0,0,3,2,16000043
 mythic,brawlBall,Triple Dribble,EL PRIMO,0,4,2,2,0,0,2,2,2,0,16000010
-mythic,brawlBall,Triple Dribble,EMZ,0,4,2,2,0,3,0,0,4,2,16000030
+mythic,brawlBall,Triple Dribble,EMZ,0,5,3,2,0,3,0,0,5,3,16000030
 mythic,brawlBall,Triple Dribble,FRANK,0,2,0,2,0,4,0,0,2,0,16000020
 mythic,brawlBall,Triple Dribble,GALE,0,6,2,4,0,2,4,2,2,0,16000035
 mythic,brawlBall,Triple Dribble,GRIFF,0,6,2,4,0,8,0,0,5,1,16000050
@@ -1847,7 +2047,7 @@ mythic,brawlBall,Triple Dribble,LOU,0,4,0,4,0,2,2,0,2,0,16000041
 mythic,brawlBall,Triple Dribble,MANDY,0,1,0,1,0,0,0,0,1,0,16000065
 mythic,brawlBall,Triple Dribble,MELODIE,0,1,1,0,0,2,0,0,0,0,16000078
 mythic,brawlBall,Triple Dribble,MICO,0,0,0,0,0,5,0,0,0,0,16000075
-mythic,brawlBall,Triple Dribble,MORTIS,0,0,0,0,0,1,0,0,0,0,16000011
+mythic,brawlBall,Triple Dribble,MORTIS,0,1,1,0,0,1,0,0,1,1,16000011
 mythic,brawlBall,Triple Dribble,NITA,0,2,2,0,0,0,0,0,0,0,16000008
 mythic,brawlBall,Triple Dribble,NORI,0,0,0,0,0,3,0,0,0,0,16000107
 mythic,brawlBall,Triple Dribble,RICO,0,6,2,4,0,8,5,2,1,0,16000004
@@ -1855,8 +2055,8 @@ mythic,brawlBall,Triple Dribble,SHADE,0,0,0,0,0,4,0,0,0,0,16000086
 mythic,brawlBall,Triple Dribble,SHELLY,0,5,1,4,0,0,0,0,5,1,16000000
 mythic,brawlBall,Triple Dribble,STARR NOVA,0,1,0,1,0,2,0,0,1,0,16000105
 mythic,brawlBall,Triple Dribble,STU,0,2,0,2,0,0,0,0,0,0,16000045
-mythic,brawlBall,Triple Dribble,SURGE,0,11,7,4,0,3,1,1,10,6,16000038
-mythic,brawlBall,Triple Dribble,THUNDER FROGS,0,1,1,0,0,0,0,0,0,0,16000111
+mythic,brawlBall,Triple Dribble,SURGE,0,12,7,5,0,3,1,1,10,6,16000038
+mythic,brawlBall,Triple Dribble,THUNDER FROGS,0,3,2,1,0,0,0,0,1,1,16000111
 mythic,brawlBall,Triple Dribble,VINCE,0,1,1,0,0,2,1,1,0,0,16000110
 mythic,brawlBall,Triple Dribble,WILLOW,0,2,2,0,0,2,0,0,2,2,16000067
 mythic,deathmatch,WALKING ON HOT SAND,*,3,0,0,0,0,0,0,0,0,0,
@@ -1979,55 +2179,57 @@ mythic,gemGrab,Double Swoosh,STU,0,0,0,0,0,3,0,0,0,0,16000045
 mythic,gemGrab,Double Swoosh,SURGE,0,4,2,2,0,20,0,0,2,0,16000038
 mythic,gemGrab,Double Swoosh,TARA,0,8,3,5,0,5,0,0,8,3,16000017
 mythic,gemGrab,Double Swoosh,VINCE,0,3,1,2,0,0,0,0,3,1,16000110
-mythic,gemGrab,Gem Fort,*,23,0,0,0,0,0,0,0,0,0,
+mythic,gemGrab,Gem Fort,*,27,0,0,0,0,0,0,0,0,0,
 mythic,gemGrab,Gem Fort,8-BIT,0,6,2,4,0,0,0,0,6,2,16000027
 mythic,gemGrab,Gem Fort,AMBER,0,7,4,3,0,8,2,2,0,0,16000040
 mythic,gemGrab,Gem Fort,ASH,0,3,2,1,0,3,3,2,0,0,16000051
 mythic,gemGrab,Gem Fort,BERRY,0,2,0,2,0,0,0,0,2,0,16000082
 mythic,gemGrab,Gem Fort,BIBI,0,4,2,2,0,2,0,0,0,0,16000026
-mythic,gemGrab,Gem Fort,BO,0,5,2,3,0,5,0,0,5,2,16000014
+mythic,gemGrab,Gem Fort,BO,0,5,2,3,0,7,0,0,5,2,16000014
 mythic,gemGrab,Gem Fort,BONNIE,0,0,0,0,0,2,0,0,0,0,16000058
 mythic,gemGrab,Gem Fort,BROCK,0,0,0,0,0,3,0,0,0,0,16000003
+mythic,gemGrab,Gem Fort,BULL,0,0,0,0,0,2,0,0,0,0,16000002
 mythic,gemGrab,Gem Fort,BUZZ,0,3,2,1,0,0,0,0,0,0,16000049
-mythic,gemGrab,Gem Fort,CARL,0,0,0,0,0,3,0,0,0,0,16000025
+mythic,gemGrab,Gem Fort,CARL,0,2,0,2,0,3,0,0,2,0,16000025
 mythic,gemGrab,Gem Fort,CHESTER,0,4,3,1,0,8,0,0,3,2,16000063
-mythic,gemGrab,Gem Fort,COLETTE,0,3,1,2,0,0,3,1,0,0,16000039
+mythic,gemGrab,Gem Fort,COLETTE,0,5,1,4,0,0,3,1,2,0,16000039
 mythic,gemGrab,Gem Fort,COLT,0,0,0,0,0,2,0,0,0,0,16000001
 mythic,gemGrab,Gem Fort,CORDELIUS,0,0,0,0,0,3,0,0,0,0,16000070
 mythic,gemGrab,Gem Fort,COSMO,0,0,0,0,0,3,0,0,0,0,16000109
 mythic,gemGrab,Gem Fort,CROW,0,3,3,0,0,0,0,0,2,2,16000012
 mythic,gemGrab,Gem Fort,DYNAMIKE,0,0,0,0,0,2,0,0,0,0,16000009
-mythic,gemGrab,Gem Fort,EDGAR,0,8,3,5,0,8,0,0,0,0,16000043
-mythic,gemGrab,Gem Fort,EL PRIMO,0,3,2,1,0,0,0,0,3,2,16000010
-mythic,gemGrab,Gem Fort,EMZ,0,3,2,1,0,9,0,0,3,2,16000030
+mythic,gemGrab,Gem Fort,EDGAR,0,10,5,5,0,10,0,0,1,1,16000043
+mythic,gemGrab,Gem Fort,EL PRIMO,0,5,4,1,0,0,0,0,3,2,16000010
+mythic,gemGrab,Gem Fort,EMZ,0,5,4,1,0,9,2,2,3,2,16000030
 mythic,gemGrab,Gem Fort,FANG,0,1,1,0,0,0,0,0,1,1,16000054
 mythic,gemGrab,Gem Fort,GALE,0,0,0,0,0,5,0,0,0,0,16000035
 mythic,gemGrab,Gem Fort,GIGI,0,3,2,1,0,0,0,0,0,0,16000100
 mythic,gemGrab,Gem Fort,GRAY,0,2,2,0,0,0,0,0,2,2,16000064
-mythic,gemGrab,Gem Fort,GRIFF,0,5,3,2,0,7,0,0,3,1,16000050
-mythic,gemGrab,Gem Fort,JANET,0,3,1,2,0,0,0,0,3,1,16000057
-mythic,gemGrab,Gem Fort,JESSIE,0,4,4,0,0,0,2,2,2,2,16000007
-mythic,gemGrab,Gem Fort,LEON,0,3,1,2,0,0,0,0,3,1,16000023
+mythic,gemGrab,Gem Fort,GRIFF,0,7,4,3,0,7,0,0,5,2,16000050
+mythic,gemGrab,Gem Fort,JANET,0,4,2,2,0,2,0,0,3,1,16000057
+mythic,gemGrab,Gem Fort,JESSIE,0,5,4,1,0,0,2,2,3,2,16000007
+mythic,gemGrab,Gem Fort,LEON,0,4,1,3,0,0,0,0,3,1,16000023
 mythic,gemGrab,Gem Fort,LILY,0,3,2,1,0,0,3,2,0,0,16000081
-mythic,gemGrab,Gem Fort,LOU,0,9,4,5,0,3,5,2,2,2,16000041
+mythic,gemGrab,Gem Fort,LOU,0,11,6,5,0,3,5,2,2,2,16000041
 mythic,gemGrab,Gem Fort,MANDY,0,1,0,1,0,0,0,0,0,0,16000065
 mythic,gemGrab,Gem Fort,MELODIE,0,0,0,0,0,2,0,0,0,0,16000078
-mythic,gemGrab,Gem Fort,MICO,0,2,0,2,0,5,0,0,2,0,16000075
+mythic,gemGrab,Gem Fort,MICO,0,2,0,2,0,7,0,0,2,0,16000075
 mythic,gemGrab,Gem Fort,MINA,0,0,0,0,0,2,0,0,0,0,16000097
 mythic,gemGrab,Gem Fort,MORTIS,0,8,4,4,0,5,0,0,8,4,16000011
 mythic,gemGrab,Gem Fort,MR. P,0,8,3,5,0,11,6,3,0,0,16000031
 mythic,gemGrab,Gem Fort,NORI,0,3,2,1,0,2,0,0,3,2,16000107
+mythic,gemGrab,Gem Fort,PIERCE,0,1,1,0,0,0,0,0,1,1,16000099
 mythic,gemGrab,Gem Fort,PIPER,0,1,0,1,0,0,0,0,0,0,16000015
-mythic,gemGrab,Gem Fort,RICO,0,7,2,5,0,3,2,0,5,2,16000004
+mythic,gemGrab,Gem Fort,RICO,0,8,2,6,0,3,2,0,5,2,16000004
 mythic,gemGrab,Gem Fort,ROSA,0,0,0,0,0,2,0,0,0,0,16000024
 mythic,gemGrab,Gem Fort,SHADE,0,1,0,1,0,5,1,0,0,0,16000086
 mythic,gemGrab,Gem Fort,SIRIUS,0,0,0,0,0,3,0,0,0,0,16000102
-mythic,gemGrab,Gem Fort,SPIKE,0,3,2,1,0,0,0,0,0,0,16000005
-mythic,gemGrab,Gem Fort,SQUEAK,0,5,1,4,0,0,2,0,3,1,16000047
+mythic,gemGrab,Gem Fort,SPIKE,0,3,2,1,0,2,0,0,0,0,16000005
+mythic,gemGrab,Gem Fort,SQUEAK,0,7,1,6,0,0,2,0,5,1,16000047
 mythic,gemGrab,Gem Fort,STU,0,2,2,0,0,0,0,0,2,2,16000045
-mythic,gemGrab,Gem Fort,SURGE,0,3,1,2,0,0,0,0,1,1,16000038
+mythic,gemGrab,Gem Fort,SURGE,0,5,2,3,0,0,2,1,1,1,16000038
 mythic,gemGrab,Gem Fort,TARA,0,1,1,0,0,0,0,0,0,0,16000017
-mythic,gemGrab,Gem Fort,THUNDER FROGS,0,1,1,0,0,0,0,0,0,0,16000111
+mythic,gemGrab,Gem Fort,THUNDER FROGS,0,2,1,1,0,0,0,0,1,0,16000111
 mythic,gemGrab,Gem Fort,TICK,0,2,0,2,0,4,0,0,2,0,16000022
 mythic,gemGrab,Gem Fort,VINCE,0,3,2,1,0,0,0,0,3,2,16000110
 mythic,gemGrab,Hard Rock Mine,*,10,0,0,0,0,0,0,0,0,0,
@@ -2083,42 +2285,44 @@ mythic,gemGrab,Ravenous Rapids,SHELLY,0,1,0,1,0,0,0,0,0,0,16000000
 mythic,gemGrab,Ravenous Rapids,SQUEAK,0,1,0,1,0,0,0,0,1,0,16000047
 mythic,gemGrab,Ravenous Rapids,TARA,0,1,0,1,0,0,0,0,1,0,16000017
 mythic,gemGrab,Ravenous Rapids,VINCE,0,1,0,1,0,0,0,0,1,0,16000110
-mythic,gemGrab,Undermine,*,12,0,0,0,0,0,0,0,0,0,
+mythic,gemGrab,Undermine,*,16,0,0,0,0,0,0,0,0,0,
 mythic,gemGrab,Undermine,AMBER,0,2,2,0,0,5,0,0,2,2,16000040
 mythic,gemGrab,Undermine,ASH,0,0,0,0,0,3,0,0,0,0,16000051
-mythic,gemGrab,Undermine,BO,0,10,3,7,0,2,0,0,5,2,16000014
+mythic,gemGrab,Undermine,BO,0,13,4,9,0,2,0,0,5,2,16000014
 mythic,gemGrab,Undermine,BOLT,0,1,1,0,0,0,0,0,0,0,16000106
 mythic,gemGrab,Undermine,BULL,0,0,0,0,0,2,0,0,0,0,16000002
 mythic,gemGrab,Undermine,BUZZ,0,2,0,2,0,0,2,0,0,0,16000049
-mythic,gemGrab,Undermine,CHESTER,0,0,0,0,0,2,0,0,0,0,16000063
+mythic,gemGrab,Undermine,CHESTER,0,0,0,0,0,5,0,0,0,0,16000063
 mythic,gemGrab,Undermine,CHUCK,0,0,0,0,0,2,0,0,0,0,16000073
 mythic,gemGrab,Undermine,COLETTE,0,1,0,1,0,0,0,0,1,0,16000039
 mythic,gemGrab,Undermine,CORDELIUS,0,0,0,0,0,2,0,0,0,0,16000070
 mythic,gemGrab,Undermine,DAMIAN,0,0,0,0,0,3,0,0,0,0,16000104
 mythic,gemGrab,Undermine,DARRYL,0,0,0,0,0,2,0,0,0,0,16000018
-mythic,gemGrab,Undermine,EDGAR,0,1,1,0,0,13,0,0,0,0,16000043
+mythic,gemGrab,Undermine,EDGAR,0,1,1,0,0,16,0,0,0,0,16000043
 mythic,gemGrab,Undermine,EL PRIMO,0,0,0,0,0,2,0,0,0,0,16000010
 mythic,gemGrab,Undermine,EMZ,0,0,0,0,0,2,0,0,0,0,16000030
 mythic,gemGrab,Undermine,FANG,0,0,0,0,0,2,0,0,0,0,16000054
-mythic,gemGrab,Undermine,GALE,0,3,1,2,0,0,3,1,0,0,16000035
-mythic,gemGrab,Undermine,GRIFF,0,4,2,2,0,0,0,0,0,0,16000050
+mythic,gemGrab,Undermine,GALE,0,6,2,4,0,0,3,1,0,0,16000035
+mythic,gemGrab,Undermine,GRIFF,0,5,3,2,0,0,0,0,1,1,16000050
 mythic,gemGrab,Undermine,GUS,0,0,0,0,0,2,0,0,0,0,16000061
-mythic,gemGrab,Undermine,LOU,0,2,2,0,0,2,0,0,2,2,16000041
-mythic,gemGrab,Undermine,MAX,0,3,2,1,0,0,0,0,3,2,16000032
+mythic,gemGrab,Undermine,LOU,0,2,2,0,0,8,0,0,2,2,16000041
+mythic,gemGrab,Undermine,MAX,0,6,4,2,0,0,0,0,6,4,16000032
 mythic,gemGrab,Undermine,MEEPLE,0,2,0,2,0,0,0,0,0,0,16000089
 mythic,gemGrab,Undermine,MICO,0,2,2,0,0,0,0,0,0,0,16000075
 mythic,gemGrab,Undermine,MOE,0,2,0,2,0,0,2,0,0,0,16000084
-mythic,gemGrab,Undermine,MORTIS,0,0,0,0,0,3,0,0,0,0,16000011
-mythic,gemGrab,Undermine,MR. P,0,6,6,0,0,3,2,2,4,4,16000031
-mythic,gemGrab,Undermine,NORI,0,3,2,1,0,2,0,0,3,2,16000107
-mythic,gemGrab,Undermine,PEARL,0,2,0,2,0,0,2,0,0,0,16000072
+mythic,gemGrab,Undermine,MORTIS,0,1,0,1,0,6,1,0,0,0,16000011
+mythic,gemGrab,Undermine,MR. P,0,6,6,0,0,6,2,2,4,4,16000031
+mythic,gemGrab,Undermine,NORI,0,4,3,1,0,2,0,0,4,3,16000107
+mythic,gemGrab,Undermine,PEARL,0,5,1,4,0,0,5,1,0,0,16000072
 mythic,gemGrab,Undermine,PIPER,0,3,1,2,0,0,0,0,0,0,16000015
 mythic,gemGrab,Undermine,RICO,0,3,2,1,0,4,0,0,3,2,16000004
 mythic,gemGrab,Undermine,SHADE,0,0,0,0,0,4,0,0,0,0,16000086
+mythic,gemGrab,Undermine,SHELLY,0,1,1,0,0,0,0,0,1,1,16000000
 mythic,gemGrab,Undermine,SPIKE,0,9,2,7,0,0,2,0,3,2,16000005
 mythic,gemGrab,Undermine,STU,0,2,2,0,0,0,0,0,2,2,16000045
-mythic,gemGrab,Undermine,SURGE,0,6,4,2,0,2,0,0,6,4,16000038
-mythic,gemGrab,Undermine,THUNDER FROGS,0,1,1,0,0,0,1,1,0,0,16000111
+mythic,gemGrab,Undermine,SURGE,0,10,6,4,0,2,0,0,9,6,16000038
+mythic,gemGrab,Undermine,TARA,0,3,2,1,0,0,0,0,3,2,16000017
+mythic,gemGrab,Undermine,THUNDER FROGS,0,2,1,1,0,0,1,1,0,0,16000111
 mythic,gemGrab,Undermine,TICK,0,2,0,2,0,2,0,0,2,0,16000022
 mythic,heist,Bridge Too Far,*,16,0,0,0,0,0,0,0,0,0,
 mythic,heist,Bridge Too Far,8-BIT,0,5,3,2,0,5,0,0,2,2,16000027
@@ -2202,29 +2406,29 @@ mythic,heist,Hot Potato,SURGE,0,3,2,1,0,0,0,0,0,0,16000038
 mythic,heist,Hot Potato,TARA,0,0,0,0,0,3,0,0,0,0,16000017
 mythic,heist,Hot Potato,THUNDER FROGS,0,2,1,1,0,0,1,1,1,0,16000111
 mythic,heist,Hot Potato,TICK,0,1,0,1,0,2,0,0,0,0,16000022
-mythic,heist,Hot Tubs,*,23,0,0,0,0,0,0,0,0,0,
+mythic,heist,Hot Tubs,*,25,0,0,0,0,0,0,0,0,0,
 mythic,heist,Hot Tubs,8-BIT,0,3,1,2,0,0,0,0,3,1,16000027
 mythic,heist,Hot Tubs,AMBER,0,1,0,1,0,0,1,0,0,0,16000040
-mythic,heist,Hot Tubs,ANGELO,0,2,1,1,0,0,1,0,0,0,16000079
+mythic,heist,Hot Tubs,ANGELO,0,3,2,1,0,0,1,0,0,0,16000079
 mythic,heist,Hot Tubs,ASH,0,2,1,1,0,0,0,0,0,0,16000051
 mythic,heist,Hot Tubs,BARLEY,0,4,1,3,0,0,0,0,4,1,16000006
 mythic,heist,Hot Tubs,BEA,0,1,1,0,0,0,0,0,1,1,16000029
 mythic,heist,Hot Tubs,BERRY,0,2,0,2,0,0,0,0,1,0,16000082
 mythic,heist,Hot Tubs,BIBI,0,2,1,1,0,0,1,0,1,1,16000026
 mythic,heist,Hot Tubs,BO,0,1,1,0,0,0,0,0,1,1,16000014
-mythic,heist,Hot Tubs,BROCK,0,2,0,2,0,0,0,0,2,0,16000003
+mythic,heist,Hot Tubs,BROCK,0,3,0,3,0,0,0,0,3,0,16000003
 mythic,heist,Hot Tubs,BULL,0,5,1,4,0,0,0,0,2,1,16000002
 mythic,heist,Hot Tubs,BUZZ,0,1,0,1,0,0,0,0,1,0,16000049
 mythic,heist,Hot Tubs,CHESTER,0,1,0,1,0,0,0,0,0,0,16000063
 mythic,heist,Hot Tubs,CHUCK,0,1,1,0,0,0,0,0,1,1,16000073
 mythic,heist,Hot Tubs,CLANCY,0,1,0,1,0,0,0,0,1,0,16000083
-mythic,heist,Hot Tubs,COLETTE,0,7,4,3,0,0,1,0,4,3,16000039
+mythic,heist,Hot Tubs,COLETTE,0,8,5,3,0,0,1,0,4,3,16000039
 mythic,heist,Hot Tubs,COLT,0,2,1,1,0,0,0,0,1,1,16000001
 mythic,heist,Hot Tubs,COSMO,0,1,1,0,0,0,0,0,0,0,16000109
 mythic,heist,Hot Tubs,CROW,0,3,0,3,0,0,0,0,2,0,16000012
 mythic,heist,Hot Tubs,DRACO,0,2,2,0,0,0,0,0,0,0,16000080
-mythic,heist,Hot Tubs,DYNAMIKE,0,1,1,0,0,0,0,0,0,0,16000009
-mythic,heist,Hot Tubs,EDGAR,0,9,6,3,0,0,0,0,3,2,16000043
+mythic,heist,Hot Tubs,DYNAMIKE,0,2,2,0,0,0,0,0,1,1,16000009
+mythic,heist,Hot Tubs,EDGAR,0,11,6,5,0,0,1,0,4,2,16000043
 mythic,heist,Hot Tubs,EL PRIMO,0,3,2,1,0,0,2,2,1,0,16000010
 mythic,heist,Hot Tubs,EMZ,0,9,5,4,0,0,0,0,6,4,16000030
 mythic,heist,Hot Tubs,EVE,0,1,1,0,0,0,0,0,1,1,16000056
@@ -2233,18 +2437,20 @@ mythic,heist,Hot Tubs,GLOWY,0,1,0,1,0,0,0,0,0,0,16000101
 mythic,heist,Hot Tubs,GRIFF,0,1,0,1,0,0,0,0,1,0,16000050
 mythic,heist,Hot Tubs,GROM,0,1,1,0,0,0,0,0,0,0,16000048
 mythic,heist,Hot Tubs,HANK,0,4,3,1,0,0,1,1,3,2,16000069
-mythic,heist,Hot Tubs,JESSIE,0,6,3,3,0,0,0,0,4,2,16000007
+mythic,heist,Hot Tubs,JESSIE,0,7,3,4,0,0,0,0,4,2,16000007
 mythic,heist,Hot Tubs,JUJU,0,1,0,1,0,0,0,0,1,0,16000087
 mythic,heist,Hot Tubs,LARRY & LAWRIE,0,1,0,1,0,0,0,0,1,0,16000077
-mythic,heist,Hot Tubs,MANDY,0,2,1,1,0,0,0,0,2,1,16000065
+mythic,heist,Hot Tubs,MANDY,0,3,2,1,0,0,0,0,3,2,16000065
 mythic,heist,Hot Tubs,MAX,0,1,0,1,0,0,0,0,1,0,16000032
 mythic,heist,Hot Tubs,MEG,0,2,2,0,0,0,0,0,2,2,16000052
-mythic,heist,Hot Tubs,MELODIE,0,12,7,5,0,0,0,0,5,4,16000078
+mythic,heist,Hot Tubs,MELODIE,0,13,8,5,0,0,0,0,6,5,16000078
 mythic,heist,Hot Tubs,MICO,0,2,1,1,0,0,0,0,1,1,16000075
 mythic,heist,Hot Tubs,MINA,0,1,1,0,0,0,0,0,1,1,16000097
+mythic,heist,Hot Tubs,MORTIS,0,1,0,1,0,0,0,0,0,0,16000011
 mythic,heist,Hot Tubs,NAJIA,0,3,2,1,0,0,3,2,0,0,16000103
 mythic,heist,Hot Tubs,NITA,0,3,2,1,0,0,0,0,1,0,16000008
 mythic,heist,Hot Tubs,NORI,0,3,2,1,0,0,1,0,2,2,16000107
+mythic,heist,Hot Tubs,OTIS,0,1,1,0,0,0,1,1,0,0,16000059
 mythic,heist,Hot Tubs,PEARL,0,1,0,1,0,0,0,0,1,0,16000072
 mythic,heist,Hot Tubs,PENNY,0,2,1,1,0,0,2,1,0,0,16000019
 mythic,heist,Hot Tubs,PIERCE,0,1,0,1,0,0,1,0,0,0,16000099
@@ -2258,7 +2464,7 @@ mythic,heist,Hot Tubs,SIRIUS,0,2,2,0,0,0,2,2,0,0,16000102
 mythic,heist,Hot Tubs,SPIKE,0,2,1,1,0,0,0,0,0,0,16000005
 mythic,heist,Hot Tubs,SQUEAK,0,1,1,0,0,0,0,0,1,1,16000047
 mythic,heist,Hot Tubs,STARR NOVA,0,3,1,2,0,0,3,1,0,0,16000105
-mythic,heist,Hot Tubs,STU,0,1,0,1,0,0,0,0,0,0,16000045
+mythic,heist,Hot Tubs,STU,0,2,0,2,0,0,0,0,1,0,16000045
 mythic,heist,Hot Tubs,SURGE,0,1,0,1,0,0,0,0,1,0,16000038
 mythic,heist,Hot Tubs,VINCE,0,1,0,1,0,0,0,0,1,0,16000110
 mythic,heist,Hot Tubs,ZIGGY,0,2,1,1,0,0,2,1,0,0,16000098
@@ -2428,32 +2634,84 @@ mythic,hotZone,Golden Bay,SIRIUS,0,1,0,1,0,0,0,0,0,0,16000102
 mythic,hotZone,Golden Bay,SPIKE,0,1,1,0,0,0,0,0,0,0,16000005
 mythic,hotZone,Golden Bay,SQUEAK,0,2,1,1,0,0,0,0,2,1,16000047
 mythic,hotZone,Golden Bay,THUNDER FROGS,0,4,2,2,0,0,0,0,3,1,16000111
-mythic,hotZone,Open Business,*,15,0,0,0,0,0,0,0,0,0,
+mythic,hotZone,Hyacinth House,*,27,0,0,0,0,0,0,0,0,0,
+mythic,hotZone,Hyacinth House,8-BIT,0,4,2,2,0,0,0,0,0,0,16000027
+mythic,hotZone,Hyacinth House,AMBER,0,2,1,1,0,0,0,0,2,1,16000040
+mythic,hotZone,Hyacinth House,ANGELO,0,1,0,1,0,0,0,0,1,0,16000079
+mythic,hotZone,Hyacinth House,ASH,0,1,0,1,0,0,0,0,1,0,16000051
+mythic,hotZone,Hyacinth House,BARLEY,0,2,1,1,0,0,0,0,2,1,16000006
+mythic,hotZone,Hyacinth House,BEA,0,2,0,2,0,0,0,0,2,0,16000029
+mythic,hotZone,Hyacinth House,BERRY,0,18,14,4,0,0,18,14,0,0,16000082
+mythic,hotZone,Hyacinth House,BIBI,0,2,1,1,0,0,0,0,2,1,16000026
+mythic,hotZone,Hyacinth House,BO,0,2,2,0,0,0,0,0,2,2,16000014
+mythic,hotZone,Hyacinth House,BROCK,0,2,0,2,0,0,0,0,2,0,16000003
+mythic,hotZone,Hyacinth House,BULL,0,3,2,1,0,0,0,0,2,2,16000002
+mythic,hotZone,Hyacinth House,BYRON,0,1,0,1,0,0,0,0,1,0,16000042
+mythic,hotZone,Hyacinth House,CARL,0,2,0,2,0,0,0,0,2,0,16000025
+mythic,hotZone,Hyacinth House,CLANCY,0,2,0,2,0,0,0,0,2,0,16000083
+mythic,hotZone,Hyacinth House,COLETTE,0,2,0,2,0,0,0,0,2,0,16000039
+mythic,hotZone,Hyacinth House,COLT,0,2,1,1,0,0,0,0,2,1,16000001
+mythic,hotZone,Hyacinth House,CROW,0,2,1,1,0,0,0,0,2,1,16000012
+mythic,hotZone,Hyacinth House,DAMIAN,0,1,0,1,0,0,0,0,1,0,16000104
+mythic,hotZone,Hyacinth House,DARRYL,0,1,0,1,0,0,0,0,1,0,16000018
+mythic,hotZone,Hyacinth House,DRACO,0,1,0,1,0,0,1,0,0,0,16000080
+mythic,hotZone,Hyacinth House,EDGAR,0,1,0,1,0,0,0,0,1,0,16000043
+mythic,hotZone,Hyacinth House,EMZ,0,14,12,2,0,0,0,0,0,0,16000030
+mythic,hotZone,Hyacinth House,EVE,0,3,1,2,0,0,0,0,3,1,16000056
+mythic,hotZone,Hyacinth House,FANG,0,2,0,2,0,0,0,0,2,0,16000054
+mythic,hotZone,Hyacinth House,FRANK,0,4,1,3,0,0,0,0,3,0,16000020
+mythic,hotZone,Hyacinth House,GIGI,0,2,1,1,0,0,0,0,0,0,16000100
+mythic,hotZone,Hyacinth House,GRIFF,0,4,1,3,0,0,0,0,4,1,16000050
+mythic,hotZone,Hyacinth House,GROM,0,1,1,0,0,0,0,0,1,1,16000048
+mythic,hotZone,Hyacinth House,JESSIE,0,2,0,2,0,0,0,0,2,0,16000007
+mythic,hotZone,Hyacinth House,KENJI,0,1,0,1,0,0,0,0,1,0,16000085
+mythic,hotZone,Hyacinth House,KIT,0,2,1,1,0,0,1,0,1,1,16000076
+mythic,hotZone,Hyacinth House,LEON,0,17,13,4,0,0,16,13,1,0,16000023
+mythic,hotZone,Hyacinth House,LOU,0,5,2,3,0,0,3,2,2,0,16000041
+mythic,hotZone,Hyacinth House,MANDY,0,1,0,1,0,0,0,0,1,0,16000065
+mythic,hotZone,Hyacinth House,MELODIE,0,3,1,2,0,0,0,0,3,1,16000078
+mythic,hotZone,Hyacinth House,MORTIS,0,1,1,0,0,0,0,0,1,1,16000011
+mythic,hotZone,Hyacinth House,MR. P,0,1,0,1,0,0,0,0,1,0,16000031
+mythic,hotZone,Hyacinth House,NITA,0,2,1,1,0,0,0,0,1,0,16000008
+mythic,hotZone,Hyacinth House,PENNY,0,6,4,2,0,0,3,2,2,1,16000019
+mythic,hotZone,Hyacinth House,POCO,0,2,1,1,0,0,0,0,2,1,16000013
+mythic,hotZone,Hyacinth House,RICO,0,8,2,6,0,0,0,0,3,0,16000004
+mythic,hotZone,Hyacinth House,SANDY,0,2,0,2,0,0,0,0,2,0,16000028
+mythic,hotZone,Hyacinth House,SQUEAK,0,10,7,3,0,0,5,2,3,3,16000047
+mythic,hotZone,Hyacinth House,STARR NOVA,0,1,0,1,0,0,0,0,1,0,16000105
+mythic,hotZone,Hyacinth House,STU,0,2,2,0,0,0,1,1,1,1,16000045
+mythic,hotZone,Hyacinth House,SURGE,0,2,0,2,0,0,0,0,2,0,16000038
+mythic,hotZone,Hyacinth House,TARA,0,1,0,1,0,0,0,0,1,0,16000017
+mythic,hotZone,Hyacinth House,TICK,0,7,3,4,0,0,1,1,6,2,16000022
+mythic,hotZone,Hyacinth House,WENDY,0,2,1,1,0,0,1,0,1,1,16000108
+mythic,hotZone,Open Business,*,17,0,0,0,0,0,0,0,0,0,
 mythic,hotZone,Open Business,ALLI,0,0,0,0,0,2,0,0,0,0,16000095
-mythic,hotZone,Open Business,AMBER,0,2,0,2,0,10,2,0,0,0,16000040
+mythic,hotZone,Open Business,AMBER,0,4,2,2,0,10,2,0,0,0,16000040
 mythic,hotZone,Open Business,BARLEY,0,2,0,2,0,0,0,0,0,0,16000006
-mythic,hotZone,Open Business,BO,0,2,2,0,0,11,2,2,0,0,16000014
-mythic,hotZone,Open Business,BROCK,0,7,2,5,0,0,0,0,5,2,16000003
+mythic,hotZone,Open Business,BO,0,4,4,0,0,11,4,4,0,0,16000014
+mythic,hotZone,Open Business,BROCK,0,9,2,7,0,0,0,0,7,2,16000003
 mythic,hotZone,Open Business,BULL,0,2,2,0,0,0,0,0,2,2,16000002
 mythic,hotZone,Open Business,BYRON,0,2,0,2,0,0,0,0,2,0,16000042
 mythic,hotZone,Open Business,CHESTER,0,4,2,2,0,5,0,0,4,2,16000063
 mythic,hotZone,Open Business,CORDELIUS,0,0,0,0,0,2,0,0,0,0,16000070
 mythic,hotZone,Open Business,COSMO,0,0,0,0,0,2,0,0,0,0,16000109
-mythic,hotZone,Open Business,EDGAR,0,4,2,2,0,2,0,0,2,2,16000043
-mythic,hotZone,Open Business,EMZ,0,13,8,5,0,0,2,0,9,6,16000030
+mythic,hotZone,Open Business,EDGAR,0,4,2,2,0,4,0,0,2,2,16000043
+mythic,hotZone,Open Business,EMZ,0,15,8,7,0,0,2,0,11,6,16000030
 mythic,hotZone,Open Business,FANG,0,3,2,1,0,0,0,0,3,2,16000054
 mythic,hotZone,Open Business,FRANK,0,0,0,0,0,2,0,0,0,0,16000020
-mythic,hotZone,Open Business,GALE,0,0,0,0,0,2,0,0,0,0,16000035
+mythic,hotZone,Open Business,GALE,0,0,0,0,0,4,0,0,0,0,16000035
 mythic,hotZone,Open Business,GRAY,0,3,1,2,0,2,0,0,0,0,16000064
 mythic,hotZone,Open Business,GRIFF,0,2,2,0,0,2,2,2,0,0,16000050
 mythic,hotZone,Open Business,GUS,0,2,2,0,0,0,0,0,0,0,16000061
+mythic,hotZone,Open Business,KENJI,0,0,0,0,0,2,0,0,0,0,16000085
 mythic,hotZone,Open Business,LARRY & LAWRIE,0,2,2,0,0,0,0,0,2,2,16000077
-mythic,hotZone,Open Business,LOU,0,5,1,4,0,8,5,1,0,0,16000041
+mythic,hotZone,Open Business,LOU,0,7,1,6,0,8,5,1,2,0,16000041
+mythic,hotZone,Open Business,MAX,0,2,2,0,0,0,0,0,0,0,16000032
 mythic,hotZone,Open Business,MEG,0,0,0,0,0,2,0,0,0,0,16000052
 mythic,hotZone,Open Business,MELODIE,0,0,0,0,0,2,0,0,0,0,16000078
 mythic,hotZone,Open Business,MICO,0,0,0,0,0,2,0,0,0,0,16000075
 mythic,hotZone,Open Business,MINA,0,2,0,2,0,0,0,0,0,0,16000097
-mythic,hotZone,Open Business,MORTIS,0,3,1,2,0,2,0,0,0,0,16000011
+mythic,hotZone,Open Business,MORTIS,0,3,1,2,0,4,0,0,0,0,16000011
 mythic,hotZone,Open Business,MR. P,0,2,0,2,0,4,0,0,2,0,16000031
 mythic,hotZone,Open Business,NORI,0,2,2,0,0,0,0,0,0,0,16000107
 mythic,hotZone,Open Business,OTIS,0,2,0,2,0,0,0,0,0,0,16000059
@@ -2461,7 +2719,7 @@ mythic,hotZone,Open Business,PAM,0,2,0,2,0,0,0,0,0,0,16000016
 mythic,hotZone,Open Business,PEARL,0,0,0,0,0,3,0,0,0,0,16000072
 mythic,hotZone,Open Business,PENNY,0,2,2,0,0,0,0,0,2,2,16000019
 mythic,hotZone,Open Business,POCO,0,0,0,0,0,2,0,0,0,0,16000013
-mythic,hotZone,Open Business,SHADE,0,0,0,0,0,5,0,0,0,0,16000086
+mythic,hotZone,Open Business,SHADE,0,0,0,0,0,9,0,0,0,0,16000086
 mythic,hotZone,Open Business,SHELLY,0,2,2,0,0,0,0,0,2,2,16000000
 mythic,hotZone,Open Business,SIRIUS,0,0,0,0,0,2,0,0,0,0,16000102
 mythic,hotZone,Open Business,SPIKE,0,4,2,2,0,0,0,0,0,0,16000005
@@ -2472,33 +2730,34 @@ mythic,hotZone,Open Business,STU,0,2,2,0,0,0,0,0,2,2,16000045
 mythic,hotZone,Open Business,SURGE,0,4,2,2,0,0,2,0,2,2,16000038
 mythic,hotZone,Open Business,TICK,0,2,0,2,0,12,0,0,2,0,16000022
 mythic,hotZone,Open Business,VINCE,0,0,0,0,0,2,0,0,0,0,16000110
-mythic,hotZone,Parallel Plays,*,12,0,0,0,0,0,0,0,0,0,
+mythic,hotZone,Parallel Plays,*,14,0,0,0,0,0,0,0,0,0,
 mythic,hotZone,Parallel Plays,AMBER,0,0,0,0,0,2,0,0,0,0,16000040
-mythic,hotZone,Parallel Plays,BERRY,0,4,2,2,0,2,2,2,0,0,16000082
+mythic,hotZone,Parallel Plays,BERRY,0,6,4,2,0,2,4,4,0,0,16000082
 mythic,hotZone,Parallel Plays,BIBI,0,4,1,3,0,0,1,0,0,0,16000026
 mythic,hotZone,Parallel Plays,BO,0,1,1,0,0,2,0,0,1,1,16000014
-mythic,hotZone,Parallel Plays,BULL,0,4,0,4,0,0,0,0,2,0,16000002
+mythic,hotZone,Parallel Plays,BULL,0,5,1,4,0,0,0,0,2,0,16000002
 mythic,hotZone,Parallel Plays,CHESTER,0,2,0,2,0,0,2,0,0,0,16000063
 mythic,hotZone,Parallel Plays,CORDELIUS,0,4,4,0,0,0,2,2,2,2,16000070
 mythic,hotZone,Parallel Plays,DOUG,0,1,1,0,0,4,0,0,0,0,16000071
 mythic,hotZone,Parallel Plays,DYNAMIKE,0,3,3,0,0,0,0,0,3,3,16000009
-mythic,hotZone,Parallel Plays,EDGAR,0,7,5,2,0,4,0,0,6,4,16000043
+mythic,hotZone,Parallel Plays,EDGAR,0,8,5,3,0,4,0,0,7,4,16000043
 mythic,hotZone,Parallel Plays,EMZ,0,2,0,2,0,0,0,0,2,0,16000030
 mythic,hotZone,Parallel Plays,FANG,0,1,0,1,0,0,0,0,1,0,16000054
 mythic,hotZone,Parallel Plays,FRANK,0,0,0,0,0,2,0,0,0,0,16000020
 mythic,hotZone,Parallel Plays,GRIFF,0,2,0,2,0,0,0,0,2,0,16000050
 mythic,hotZone,Parallel Plays,HANK,0,0,0,0,0,2,0,0,0,0,16000069
-mythic,hotZone,Parallel Plays,JESSIE,0,1,1,0,0,0,0,0,0,0,16000007
-mythic,hotZone,Parallel Plays,JUJU,0,0,0,0,0,2,0,0,0,0,16000087
+mythic,hotZone,Parallel Plays,JACKY,0,1,0,1,0,0,0,0,1,0,16000034
+mythic,hotZone,Parallel Plays,JESSIE,0,2,1,1,0,0,0,0,1,0,16000007
+mythic,hotZone,Parallel Plays,JUJU,0,1,1,0,0,2,0,0,0,0,16000087
 mythic,hotZone,Parallel Plays,LOU,0,0,0,0,0,4,0,0,0,0,16000041
-mythic,hotZone,Parallel Plays,MEEPLE,0,2,2,0,0,2,0,0,2,2,16000089
+mythic,hotZone,Parallel Plays,MEEPLE,0,3,3,0,0,2,0,0,2,2,16000089
 mythic,hotZone,Parallel Plays,MELODIE,0,2,2,0,0,0,0,0,2,2,16000078
-mythic,hotZone,Parallel Plays,MICO,0,2,0,2,0,6,0,0,2,0,16000075
+mythic,hotZone,Parallel Plays,MICO,0,4,1,3,0,6,0,0,3,0,16000075
 mythic,hotZone,Parallel Plays,MR. P,0,2,2,0,0,0,0,0,2,2,16000031
 mythic,hotZone,Parallel Plays,NORI,0,0,0,0,0,2,0,0,0,0,16000107
 mythic,hotZone,Parallel Plays,R-T,0,3,1,2,0,2,3,1,0,0,16000066
 mythic,hotZone,Parallel Plays,RICO,0,2,0,2,0,2,0,0,0,0,16000004
-mythic,hotZone,Parallel Plays,SHADE,0,4,1,3,0,4,2,0,0,0,16000086
+mythic,hotZone,Parallel Plays,SHADE,0,5,1,4,0,4,2,0,1,0,16000086
 mythic,hotZone,Parallel Plays,SIRIUS,0,3,1,2,0,0,1,1,0,0,16000102
 mythic,hotZone,Parallel Plays,SQUEAK,0,1,0,1,0,0,0,0,1,0,16000047
 mythic,hotZone,Parallel Plays,STARR NOVA,0,1,0,1,0,0,0,0,1,0,16000105
@@ -2506,6 +2765,7 @@ mythic,hotZone,Parallel Plays,STU,0,0,0,0,0,2,0,0,0,0,16000045
 mythic,hotZone,Parallel Plays,SURGE,0,9,5,4,0,0,1,1,5,4,16000038
 mythic,hotZone,Parallel Plays,TARA,0,1,1,0,0,0,0,0,1,1,16000017
 mythic,hotZone,Parallel Plays,THUNDER FROGS,0,1,1,0,0,0,0,0,0,0,16000111
+mythic,hotZone,Parallel Plays,TICK,0,1,0,1,0,0,0,0,1,0,16000022
 mythic,hotZone,Parallel Plays,TRUNK,0,3,2,1,0,2,0,0,1,0,16000096
 mythic,hotZone,Parallel Plays,WILLOW,0,0,0,0,0,2,0,0,0,0,16000067
 mythic,hotZone,Ring of Fire,*,25,0,0,0,0,0,0,0,0,0,
@@ -2565,14 +2825,15 @@ mythic,hotZone,Sunken harbor,KENJI,0,1,0,1,0,0,0,0,1,0,16000085
 mythic,hotZone,Sunken harbor,NITA,0,1,0,1,0,0,0,0,1,0,16000008
 mythic,hotZone,Sunken harbor,PAM,0,2,2,0,0,0,1,1,0,0,16000016
 mythic,hotZone,Sunken harbor,POCO,0,1,0,1,0,0,0,0,1,0,16000013
-mythic,knockout,Belle's Rock,*,24,0,0,0,0,0,0,0,0,0,
+mythic,knockout,Belle's Rock,*,27,0,0,0,0,0,0,0,0,0,
 mythic,knockout,Belle's Rock,AMBER,0,0,0,0,0,2,0,0,0,0,16000040
 mythic,knockout,Belle's Rock,ANGELO,0,2,0,2,0,0,0,0,2,0,16000079
 mythic,knockout,Belle's Rock,ASH,0,0,0,0,0,2,0,0,0,0,16000051
+mythic,knockout,Belle's Rock,BEA,0,1,0,1,0,0,0,0,0,0,16000029
 mythic,knockout,Belle's Rock,BERRY,0,0,0,0,0,2,0,0,0,0,16000082
 mythic,knockout,Belle's Rock,BO,0,2,0,2,0,0,0,0,2,0,16000014
-mythic,knockout,Belle's Rock,BONNIE,0,7,6,1,0,0,0,0,7,6,16000058
-mythic,knockout,Belle's Rock,BROCK,0,13,5,8,0,10,4,2,1,1,16000003
+mythic,knockout,Belle's Rock,BONNIE,0,9,6,3,0,0,0,0,9,6,16000058
+mythic,knockout,Belle's Rock,BROCK,0,16,8,8,0,10,4,2,2,2,16000003
 mythic,knockout,Belle's Rock,BULL,0,1,0,1,0,0,0,0,0,0,16000002
 mythic,knockout,Belle's Rock,BUZZ,0,2,1,1,0,0,0,0,2,1,16000049
 mythic,knockout,Belle's Rock,BYRON,0,6,4,2,0,0,0,0,2,2,16000042
@@ -2583,7 +2844,7 @@ mythic,knockout,Belle's Rock,CORDELIUS,0,0,0,0,0,2,0,0,0,0,16000070
 mythic,knockout,Belle's Rock,CROW,0,1,0,1,0,0,0,0,1,0,16000012
 mythic,knockout,Belle's Rock,DARRYL,0,0,0,0,0,3,0,0,0,0,16000018
 mythic,knockout,Belle's Rock,DYNAMIKE,0,1,1,0,0,0,0,0,0,0,16000009
-mythic,knockout,Belle's Rock,EDGAR,0,6,2,4,0,10,3,1,2,0,16000043
+mythic,knockout,Belle's Rock,EDGAR,0,6,2,4,0,12,3,1,2,0,16000043
 mythic,knockout,Belle's Rock,EL PRIMO,0,1,0,1,0,2,0,0,1,0,16000010
 mythic,knockout,Belle's Rock,GIGI,0,1,1,0,0,0,0,0,1,1,16000100
 mythic,knockout,Belle's Rock,GRAY,0,4,4,0,0,2,0,0,4,4,16000064
@@ -2597,18 +2858,18 @@ mythic,knockout,Belle's Rock,LEON,0,2,2,0,0,5,0,0,2,2,16000023
 mythic,knockout,Belle's Rock,LILY,0,2,2,0,0,0,0,0,2,2,16000081
 mythic,knockout,Belle's Rock,LOLA,0,0,0,0,0,2,0,0,0,0,16000053
 mythic,knockout,Belle's Rock,LOU,0,0,0,0,0,1,0,0,0,0,16000041
-mythic,knockout,Belle's Rock,MANDY,0,4,2,2,0,14,2,0,2,2,16000065
+mythic,knockout,Belle's Rock,MANDY,0,4,2,2,0,16,2,0,2,2,16000065
 mythic,knockout,Belle's Rock,MAX,0,3,1,2,0,0,0,0,3,1,16000032
 mythic,knockout,Belle's Rock,MEEPLE,0,5,2,3,0,0,5,2,0,0,16000089
-mythic,knockout,Belle's Rock,MICO,0,5,1,4,0,12,3,1,0,0,16000075
-mythic,knockout,Belle's Rock,MINA,0,3,1,2,0,0,0,0,3,1,16000097
-mythic,knockout,Belle's Rock,MR. P,0,0,0,0,0,4,0,0,0,0,16000031
-mythic,knockout,Belle's Rock,NAJIA,0,2,0,2,0,3,0,0,0,0,16000103
-mythic,knockout,Belle's Rock,NORI,0,0,0,0,0,3,0,0,0,0,16000107
+mythic,knockout,Belle's Rock,MICO,0,5,1,4,0,14,3,1,0,0,16000075
+mythic,knockout,Belle's Rock,MINA,0,4,2,2,0,0,0,0,4,2,16000097
+mythic,knockout,Belle's Rock,MR. P,0,0,0,0,0,6,0,0,0,0,16000031
+mythic,knockout,Belle's Rock,NAJIA,0,4,2,2,0,3,2,2,0,0,16000103
+mythic,knockout,Belle's Rock,NORI,0,2,0,2,0,3,0,0,2,0,16000107
 mythic,knockout,Belle's Rock,OTIS,0,3,2,1,0,0,0,0,0,0,16000059
 mythic,knockout,Belle's Rock,PEARL,0,4,0,4,0,0,4,0,0,0,16000072
-mythic,knockout,Belle's Rock,PIPER,0,3,2,1,0,0,1,0,2,2,16000015
-mythic,knockout,Belle's Rock,RICO,0,12,8,4,0,5,0,0,6,5,16000004
+mythic,knockout,Belle's Rock,PIPER,0,6,4,2,0,0,1,0,2,2,16000015
+mythic,knockout,Belle's Rock,RICO,0,12,8,4,0,7,0,0,6,5,16000004
 mythic,knockout,Belle's Rock,RUFFS,0,5,1,4,0,0,2,0,0,0,16000044
 mythic,knockout,Belle's Rock,SHADE,0,0,0,0,0,2,0,0,0,0,16000086
 mythic,knockout,Belle's Rock,SIRIUS,0,0,0,0,0,2,0,0,0,0,16000102
@@ -2617,8 +2878,9 @@ mythic,knockout,Belle's Rock,SPROUT,0,5,3,2,0,2,0,0,5,3,16000037
 mythic,knockout,Belle's Rock,SQUEAK,0,2,1,1,0,0,2,1,0,0,16000047
 mythic,knockout,Belle's Rock,STU,0,3,2,1,0,4,0,0,3,2,16000045
 mythic,knockout,Belle's Rock,SURGE,0,2,1,1,0,0,0,0,1,1,16000038
-mythic,knockout,Belle's Rock,THUNDER FROGS,0,7,3,4,0,0,2,2,3,0,16000111
-mythic,knockout,Belle's Rock,TICK,0,7,2,5,0,8,0,0,5,2,16000022
+mythic,knockout,Belle's Rock,THUNDER FROGS,0,8,4,4,0,0,2,2,4,1,16000111
+mythic,knockout,Belle's Rock,TICK,0,8,2,6,0,10,1,0,5,2,16000022
+mythic,knockout,Belle's Rock,VINCE,0,2,0,2,0,0,0,0,2,0,16000110
 mythic,knockout,Belle's Rock,WILLOW,0,1,0,1,0,0,0,0,1,0,16000067
 mythic,knockout,Belle's Rock,ZIGGY,0,1,1,0,0,2,0,0,0,0,16000098
 mythic,knockout,Chivalry,*,8,0,0,0,0,0,0,0,0,0,
@@ -2698,40 +2960,42 @@ mythic,knockout,Dry Run,THUNDER FROGS,0,10,6,4,0,0,0,0,4,3,16000111
 mythic,knockout,Dry Run,TICK,0,3,2,1,0,0,0,0,3,2,16000022
 mythic,knockout,Dry Run,WILLOW,0,1,0,1,0,0,0,0,1,0,16000067
 mythic,knockout,Dry Run,ZIGGY,0,1,0,1,0,0,0,0,1,0,16000098
-mythic,knockout,Flaring Phoenix,*,26,0,0,0,0,0,0,0,0,0,
+mythic,knockout,Flaring Phoenix,*,29,0,0,0,0,0,0,0,0,0,
 mythic,knockout,Flaring Phoenix,AMBER,0,5,4,1,0,2,0,0,3,2,16000040
 mythic,knockout,Flaring Phoenix,BIBI,0,2,0,2,0,0,2,0,0,0,16000026
 mythic,knockout,Flaring Phoenix,BO,0,1,1,0,0,1,0,0,0,0,16000014
-mythic,knockout,Flaring Phoenix,BROCK,0,6,4,2,0,19,3,2,2,2,16000003
+mythic,knockout,Flaring Phoenix,BROCK,0,9,6,3,0,19,3,2,5,4,16000003
+mythic,knockout,Flaring Phoenix,BULL,0,3,1,2,0,0,0,0,0,0,16000002
 mythic,knockout,Flaring Phoenix,BUSTER,0,2,2,0,0,0,0,0,2,2,16000062
 mythic,knockout,Flaring Phoenix,BYRON,0,2,0,2,0,2,0,0,2,0,16000042
 mythic,knockout,Flaring Phoenix,CARL,0,3,2,1,0,0,0,0,0,0,16000025
 mythic,knockout,Flaring Phoenix,COLETTE,0,2,2,0,0,0,0,0,2,2,16000039
 mythic,knockout,Flaring Phoenix,COLT,0,2,0,2,0,0,0,0,2,0,16000001
-mythic,knockout,Flaring Phoenix,EDGAR,0,4,4,0,0,20,4,4,0,0,16000043
+mythic,knockout,Flaring Phoenix,EDGAR,0,7,6,1,0,20,4,4,3,2,16000043
 mythic,knockout,Flaring Phoenix,EMZ,0,0,0,0,0,3,0,0,0,0,16000030
 mythic,knockout,Flaring Phoenix,GENE,0,2,2,0,0,7,0,0,2,2,16000021
-mythic,knockout,Flaring Phoenix,GRAY,0,5,2,3,0,0,0,0,5,2,16000064
+mythic,knockout,Flaring Phoenix,GIGI,0,0,0,0,0,3,0,0,0,0,16000100
+mythic,knockout,Flaring Phoenix,GRAY,0,8,4,4,0,0,0,0,8,4,16000064
 mythic,knockout,Flaring Phoenix,GRIFF,0,7,2,5,0,0,0,0,4,1,16000050
 mythic,knockout,Flaring Phoenix,GROM,0,8,3,5,0,3,0,0,5,2,16000048
-mythic,knockout,Flaring Phoenix,GUS,0,4,3,1,0,0,0,0,1,1,16000061
+mythic,knockout,Flaring Phoenix,GUS,0,7,4,3,0,0,0,0,1,1,16000061
 mythic,knockout,Flaring Phoenix,HANK,0,2,0,2,0,2,0,0,0,0,16000069
 mythic,knockout,Flaring Phoenix,JANET,0,1,1,0,0,0,1,1,0,0,16000057
 mythic,knockout,Flaring Phoenix,JUJU,0,0,0,0,0,2,0,0,0,0,16000087
 mythic,knockout,Flaring Phoenix,KENJI,0,2,0,2,0,0,0,0,2,0,16000085
 mythic,knockout,Flaring Phoenix,KIT,0,0,0,0,0,3,0,0,0,0,16000076
 mythic,knockout,Flaring Phoenix,LEON,0,3,1,2,0,0,0,0,0,0,16000023
-mythic,knockout,Flaring Phoenix,LILY,0,4,0,4,0,13,0,0,2,0,16000081
+mythic,knockout,Flaring Phoenix,LILY,0,7,1,6,0,13,3,1,2,0,16000081
 mythic,knockout,Flaring Phoenix,LOU,0,0,0,0,0,2,0,0,0,0,16000041
-mythic,knockout,Flaring Phoenix,MANDY,0,12,7,5,0,13,0,0,9,6,16000065
+mythic,knockout,Flaring Phoenix,MANDY,0,12,7,5,0,19,0,0,9,6,16000065
 mythic,knockout,Flaring Phoenix,MAX,0,1,0,1,0,0,0,0,1,0,16000032
-mythic,knockout,Flaring Phoenix,MICO,0,1,0,1,0,5,0,0,1,0,16000075
+mythic,knockout,Flaring Phoenix,MICO,0,1,0,1,0,8,0,0,1,0,16000075
 mythic,knockout,Flaring Phoenix,MINA,0,8,4,4,0,0,3,1,0,0,16000097
 mythic,knockout,Flaring Phoenix,MORTIS,0,2,2,0,0,0,0,0,0,0,16000011
 mythic,knockout,Flaring Phoenix,MR. P,0,5,4,1,0,11,2,2,3,2,16000031
 mythic,knockout,Flaring Phoenix,NAJIA,0,8,5,3,0,2,5,3,3,2,16000103
 mythic,knockout,Flaring Phoenix,NANI,0,0,0,0,0,1,0,0,0,0,16000036
-mythic,knockout,Flaring Phoenix,NORI,0,2,0,2,0,3,0,0,2,0,16000107
+mythic,knockout,Flaring Phoenix,NORI,0,2,0,2,0,6,0,0,2,0,16000107
 mythic,knockout,Flaring Phoenix,PEARL,0,9,5,4,0,2,4,1,5,4,16000072
 mythic,knockout,Flaring Phoenix,PIERCE,0,0,0,0,0,3,0,0,0,0,16000099
 mythic,knockout,Flaring Phoenix,PIPER,0,6,2,4,0,6,2,2,2,0,16000015
@@ -2742,17 +3006,23 @@ mythic,knockout,Flaring Phoenix,SPIKE,0,0,0,0,0,2,0,0,0,0,16000005
 mythic,knockout,Flaring Phoenix,SPROUT,0,0,0,0,0,7,0,0,0,0,16000037
 mythic,knockout,Flaring Phoenix,SQUEAK,0,10,5,5,0,4,0,0,5,2,16000047
 mythic,knockout,Flaring Phoenix,STARR NOVA,0,0,0,0,0,1,0,0,0,0,16000105
-mythic,knockout,Flaring Phoenix,SURGE,0,3,1,2,0,3,0,0,3,1,16000038
+mythic,knockout,Flaring Phoenix,SURGE,0,3,1,2,0,6,0,0,3,1,16000038
 mythic,knockout,Flaring Phoenix,TICK,0,13,8,5,0,7,2,2,3,1,16000022
 mythic,knockout,Flaring Phoenix,VINCE,0,3,2,1,0,2,0,0,3,2,16000110
 mythic,knockout,Flaring Phoenix,WENDY,0,0,0,0,0,1,0,0,0,0,16000108
-mythic,knockout,Goldarm Gulch,*,5,0,0,0,0,0,0,0,0,0,
+mythic,knockout,Goldarm Gulch,*,7,0,0,0,0,0,0,0,0,0,
+mythic,knockout,Goldarm Gulch,8-BIT,0,1,0,1,0,0,0,0,1,0,16000027
+mythic,knockout,Goldarm Gulch,ALLI,0,1,1,0,0,0,0,0,0,0,16000095
+mythic,knockout,Goldarm Gulch,BEA,0,1,0,1,0,0,0,0,0,0,16000029
+mythic,knockout,Goldarm Gulch,BELLE,0,1,1,0,0,0,0,0,0,0,16000046
 mythic,knockout,Goldarm Gulch,BO,0,1,0,1,0,0,0,0,1,0,16000014
-mythic,knockout,Goldarm Gulch,BROCK,0,5,2,3,0,0,2,1,2,0,16000003
+mythic,knockout,Goldarm Gulch,BROCK,0,6,3,3,0,0,2,1,3,1,16000003
 mythic,knockout,Goldarm Gulch,COLETTE,0,1,0,1,0,0,0,0,1,0,16000039
 mythic,knockout,Goldarm Gulch,COLT,0,1,0,1,0,0,0,0,1,0,16000001
 mythic,knockout,Goldarm Gulch,EDGAR,0,3,1,2,0,0,0,0,2,0,16000043
+mythic,knockout,Goldarm Gulch,EMZ,0,1,0,1,0,0,0,0,1,0,16000030
 mythic,knockout,Goldarm Gulch,EVE,0,1,0,1,0,0,0,0,1,0,16000056
+mythic,knockout,Goldarm Gulch,JAE-YONG,0,1,1,0,0,0,0,0,1,1,16000093
 mythic,knockout,Goldarm Gulch,LEON,0,1,1,0,0,0,0,0,0,0,16000023
 mythic,knockout,Goldarm Gulch,LILY,0,2,1,1,0,0,0,0,1,0,16000081
 mythic,knockout,Goldarm Gulch,MAISIE,0,1,0,1,0,0,0,0,0,0,16000068
@@ -2761,9 +3031,11 @@ mythic,knockout,Goldarm Gulch,MR. P,0,1,1,0,0,0,1,1,0,0,16000031
 mythic,knockout,Goldarm Gulch,NANI,0,1,0,1,0,0,0,0,1,0,16000036
 mythic,knockout,Goldarm Gulch,NORI,0,1,1,0,0,0,0,0,1,1,16000107
 mythic,knockout,Goldarm Gulch,PIPER,0,3,2,1,0,0,0,0,1,0,16000015
-mythic,knockout,Goldarm Gulch,RICO,0,3,3,0,0,0,2,2,1,1,16000004
+mythic,knockout,Goldarm Gulch,POCO,0,1,0,1,0,0,0,0,0,0,16000013
+mythic,knockout,Goldarm Gulch,RICO,0,4,4,0,0,0,2,2,2,2,16000004
 mythic,knockout,Goldarm Gulch,SIRIUS,0,1,1,0,0,0,0,0,1,1,16000102
-mythic,knockout,Goldarm Gulch,THUNDER FROGS,0,2,2,0,0,0,0,0,0,0,16000111
+mythic,knockout,Goldarm Gulch,SPIKE,0,1,0,1,0,0,0,0,1,0,16000005
+mythic,knockout,Goldarm Gulch,THUNDER FROGS,0,4,3,1,0,0,2,1,0,0,16000111
 mythic,knockout,Goldarm Gulch,TRUNK,0,1,0,1,0,0,0,0,1,0,16000096
 mythic,knockout,New Horizons,*,19,0,0,0,0,0,0,0,0,0,
 mythic,knockout,New Horizons,AMBER,0,2,0,2,0,5,0,0,2,0,16000040
@@ -2800,30 +3072,37 @@ mythic,knockout,New Horizons,SPROUT,0,5,3,2,0,0,0,0,5,3,16000037
 mythic,knockout,New Horizons,STU,0,2,2,0,0,2,0,0,0,0,16000045
 mythic,knockout,New Horizons,SURGE,0,0,0,0,0,2,0,0,0,0,16000038
 mythic,knockout,New Horizons,TICK,0,3,2,1,0,13,0,0,3,2,16000022
-mythic,knockout,Out in the Open,*,6,0,0,0,0,0,0,0,0,0,
+mythic,knockout,Out in the Open,*,8,0,0,0,0,0,0,0,0,0,
 mythic,knockout,Out in the Open,8-BIT,0,3,2,1,0,0,0,0,3,2,16000027
+mythic,knockout,Out in the Open,AMBER,0,0,0,0,0,2,0,0,0,0,16000040
 mythic,knockout,Out in the Open,ANGELO,0,3,1,2,0,0,0,0,0,0,16000079
+mythic,knockout,Out in the Open,BO,0,2,0,2,0,0,0,0,2,0,16000014
 mythic,knockout,Out in the Open,BONNIE,0,1,1,0,0,2,0,0,0,0,16000058
-mythic,knockout,Out in the Open,BROCK,0,4,3,1,0,3,1,1,1,0,16000003
+mythic,knockout,Out in the Open,BROCK,0,6,5,1,0,3,3,3,1,0,16000003
 mythic,knockout,Out in the Open,BULL,0,3,2,1,0,0,0,0,3,2,16000002
+mythic,knockout,Out in the Open,BYRON,0,0,0,0,0,2,0,0,0,0,16000042
 mythic,knockout,Out in the Open,CARL,0,0,0,0,0,1,0,0,0,0,16000025
-mythic,knockout,Out in the Open,COLT,0,1,1,0,0,0,0,0,0,0,16000001
+mythic,knockout,Out in the Open,COLT,0,1,1,0,0,2,0,0,0,0,16000001
 mythic,knockout,Out in the Open,EDGAR,0,0,0,0,0,4,0,0,0,0,16000043
 mythic,knockout,Out in the Open,GRAY,0,3,1,2,0,0,3,1,0,0,16000064
 mythic,knockout,Out in the Open,GROM,0,0,0,0,0,3,0,0,0,0,16000048
-mythic,knockout,Out in the Open,GUS,0,1,0,1,0,2,0,0,1,0,16000061
+mythic,knockout,Out in the Open,GUS,0,3,2,1,0,2,0,0,1,0,16000061
+mythic,knockout,Out in the Open,KIT,0,0,0,0,0,2,0,0,0,0,16000076
 mythic,knockout,Out in the Open,LEON,0,3,1,2,0,0,0,0,0,0,16000023
 mythic,knockout,Out in the Open,MANDY,0,0,0,0,0,5,0,0,0,0,16000065
+mythic,knockout,Out in the Open,MAX,0,2,0,2,0,0,0,0,2,0,16000032
 mythic,knockout,Out in the Open,MELODIE,0,2,0,2,0,0,0,0,2,0,16000078
-mythic,knockout,Out in the Open,MICO,0,0,0,0,0,4,0,0,0,0,16000075
+mythic,knockout,Out in the Open,MICO,0,0,0,0,0,6,0,0,0,0,16000075
 mythic,knockout,Out in the Open,MINA,0,2,0,2,0,0,0,0,2,0,16000097
+mythic,knockout,Out in the Open,MORTIS,0,0,0,0,0,2,0,0,0,0,16000011
 mythic,knockout,Out in the Open,MR. P,0,0,0,0,0,2,0,0,0,0,16000031
 mythic,knockout,Out in the Open,NAJIA,0,2,2,0,0,0,2,2,0,0,16000103
-mythic,knockout,Out in the Open,PEARL,0,2,2,0,0,0,0,0,0,0,16000072
+mythic,knockout,Out in the Open,PEARL,0,4,2,2,0,0,0,0,2,0,16000072
 mythic,knockout,Out in the Open,PIERCE,0,0,0,0,0,1,0,0,0,0,16000099
 mythic,knockout,Out in the Open,PIPER,0,2,0,2,0,4,0,0,2,0,16000015
 mythic,knockout,Out in the Open,SPIKE,0,4,2,2,0,0,0,0,4,2,16000005
 mythic,knockout,Out in the Open,SQUEAK,0,0,0,0,0,5,0,0,0,0,16000047
+mythic,knockout,Out in the Open,TICK,0,2,2,0,0,0,0,0,0,0,16000022
 other,bounty,Hideout,*,1,0,0,0,0,0,0,0,0,0,
 other,bounty,Hideout,BEA,0,1,0,1,0,0,0,0,0,0,16000029
 other,bounty,Hideout,BROCK,0,1,1,0,0,0,0,0,1,1,16000003
