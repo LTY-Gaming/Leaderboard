@@ -1,22 +1,79 @@
 date,mode,map,brawler,games,club_wins,club_losses,brawler_id
-2026-11-27,bounty,Layer Cake,*,4,4,0,
+2026-11-27,airHockey,Arabesque,*,4,2,2,
+2026-11-27,airHockey,Arabesque,ASH,3,2,1,16000051
+2026-11-27,airHockey,Arabesque,DAMIAN,1,0,1,16000104
+2026-11-27,bounty,Hideout,*,1,0,1,
+2026-11-27,bounty,Hideout,BOLT,1,0,1,16000106
+2026-11-27,bounty,Layer Cake,*,6,6,0,
+2026-11-27,bounty,Layer Cake,BO,2,2,0,16000014
 2026-11-27,bounty,Layer Cake,BROCK,2,2,0,16000003
 2026-11-27,bounty,Layer Cake,SPIKE,2,2,0,16000005
-2026-11-27,bounty,Shooting Star,*,2,0,2,
+2026-11-27,bounty,Shooting Star,*,3,1,2,
+2026-11-27,bounty,Shooting Star,COLT,1,1,0,16000001
 2026-11-27,bounty,Shooting Star,GUS,2,0,2,16000061
-2026-11-27,gemGrab,Gem Fort,*,6,3,3,
+2026-11-27,bounty,Tasty Berry,*,1,1,0,
+2026-11-27,bounty,Tasty Berry,EL PRIMO,1,1,0,16000010
+2026-11-27,brawlBall,Backyard Bowl,*,1,0,1,
+2026-11-27,brawlBall,Backyard Bowl,BULL,1,0,1,16000002
+2026-11-27,brawlBall,Pinball Dreams,*,5,2,3,
+2026-11-27,brawlBall,Pinball Dreams,AMBER,5,2,3,16000040
+2026-11-27,brawlBall,Sneaky Fields,*,3,1,2,
+2026-11-27,brawlBall,Sneaky Fields,LUMI,1,1,0,16000091
+2026-11-27,brawlBall,Sneaky Fields,RICO,2,0,2,16000004
+2026-11-27,brawlBall,Triple Dribble,*,7,3,4,
+2026-11-27,brawlBall,Triple Dribble,AMBER,1,0,1,16000040
+2026-11-27,brawlBall,Triple Dribble,BARLEY,1,1,0,16000006
+2026-11-27,brawlBall,Triple Dribble,EL PRIMO,1,1,0,16000010
+2026-11-27,brawlBall,Triple Dribble,FRANK,2,1,1,16000020
+2026-11-27,brawlBall,Triple Dribble,GRIFF,1,0,1,16000050
+2026-11-27,brawlBall,Triple Dribble,VINCE,1,0,1,16000110
+2026-11-27,gemGrab,Double Swoosh,*,3,2,1,
+2026-11-27,gemGrab,Double Swoosh,COLETTE,3,2,1,16000039
+2026-11-27,gemGrab,Gem Fort,*,9,3,6,
+2026-11-27,gemGrab,Gem Fort,BO,3,0,3,16000014
 2026-11-27,gemGrab,Gem Fort,BULL,3,2,1,16000002
 2026-11-27,gemGrab,Gem Fort,LOU,3,1,2,16000041
-2026-11-27,heist,Bridge Too Far,*,3,2,1,
+2026-11-27,gemGrab,Undermine,*,1,0,1,
+2026-11-27,gemGrab,Undermine,RICO,1,0,1,16000004
+2026-11-27,heist,Bridge Too Far,*,8,4,4,
+2026-11-27,heist,Bridge Too Far,8-BIT,3,2,1,16000027
+2026-11-27,heist,Bridge Too Far,COLETTE,2,0,2,16000039
 2026-11-27,heist,Bridge Too Far,COLT,3,2,1,16000001
-2026-11-27,heist,Safe Zone,*,3,2,1,
+2026-11-27,heist,Hot Potato,*,5,1,4,
+2026-11-27,heist,Hot Potato,BULL,1,0,1,16000002
+2026-11-27,heist,Hot Potato,COLT,2,0,2,16000001
+2026-11-27,heist,Hot Potato,GRIFF,1,0,1,16000050
+2026-11-27,heist,Hot Potato,LOU,1,1,0,16000041
+2026-11-27,heist,Hot Tubs,*,2,2,0,
+2026-11-27,heist,Hot Tubs,NORI,2,2,0,16000107
+2026-11-27,heist,Safe Zone,*,6,3,3,
 2026-11-27,heist,Safe Zone,BROCK,3,2,1,16000003
-2026-11-27,hotZone,Dueling Beetles,*,2,0,2,
+2026-11-27,heist,Safe Zone,NORI,3,1,2,16000107
+2026-11-27,hotZone,Dueling Beetles,*,3,1,2,
 2026-11-27,hotZone,Dueling Beetles,LILY,2,0,2,16000081
+2026-11-27,hotZone,Dueling Beetles,LOU,1,1,0,16000041
+2026-11-27,hotZone,Golden Bay,*,3,1,2,
+2026-11-27,hotZone,Golden Bay,GALE,1,0,1,16000035
+2026-11-27,hotZone,Golden Bay,OLLIE,1,1,0,16000090
+2026-11-27,hotZone,Golden Bay,SHADE,1,0,1,16000086
+2026-11-27,hotZone,Parallel Plays,*,2,1,1,
+2026-11-27,hotZone,Parallel Plays,EMZ,1,0,1,16000030
+2026-11-27,hotZone,Parallel Plays,SIRIUS,1,1,0,16000102
+2026-11-27,hotZone,Ring of Fire,*,4,2,2,
+2026-11-27,hotZone,Ring of Fire,BERRY,2,0,2,16000082
+2026-11-27,hotZone,Ring of Fire,TICK,2,2,0,16000022
+2026-11-27,knockout,Belle's Rock,*,1,1,0,
+2026-11-27,knockout,Belle's Rock,RICO,1,1,0,16000004
 2026-11-27,knockout,Double Decker,*,2,2,0,
 2026-11-27,knockout,Double Decker,MR. P,2,2,0,16000031
-2026-11-27,knockout,Flaring Phoenix,*,4,2,2,
+2026-11-27,knockout,Flaring Phoenix,*,7,4,3,
 2026-11-27,knockout,Flaring Phoenix,LILY,2,0,2,16000081
+2026-11-27,knockout,Flaring Phoenix,LUMI,1,0,1,16000091
+2026-11-27,knockout,Flaring Phoenix,MORTIS,2,2,0,16000011
 2026-11-27,knockout,Flaring Phoenix,PEARL,2,2,0,16000072
+2026-11-27,knockout,Goldarm Gulch,*,1,1,0,
+2026-11-27,knockout,Goldarm Gulch,BROCK,1,1,0,16000003
+2026-11-27,knockout,Out in the Open,*,1,0,1,
+2026-11-27,knockout,Out in the Open,PIPER,1,0,1,16000015
 2026-11-27,knockout,Please Remain Standing,*,13,7,6,
 2026-11-27,knockout,Please Remain Standing,MR. P,13,7,6,16000031
