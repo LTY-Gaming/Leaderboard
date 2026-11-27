@@ -2,68 +2,139 @@ date,mode,map,brawler,games,club_wins,club_losses,brawler_id
 2026-11-27,airHockey,Arabesque,*,4,2,2,
 2026-11-27,airHockey,Arabesque,ASH,3,2,1,16000051
 2026-11-27,airHockey,Arabesque,DAMIAN,1,0,1,16000104
-2026-11-27,bounty,Hideout,*,1,0,1,
+2026-11-27,airHockey,Nullscapes,*,4,2,2,
+2026-11-27,airHockey,Nullscapes,AMBER,1,0,1,16000040
+2026-11-27,airHockey,Nullscapes,GLOWY,1,1,0,16000101
+2026-11-27,airHockey,Nullscapes,LUMI,1,1,0,16000091
+2026-11-27,airHockey,Nullscapes,SQUEAK,1,0,1,16000047
+2026-11-27,bounty,Alchemy,*,1,1,0,
+2026-11-27,bounty,Alchemy,BELLE,1,1,0,16000046
+2026-11-27,bounty,Dry Season,*,2,0,2,
+2026-11-27,bounty,Dry Season,CHESTER,2,0,2,16000063
+2026-11-27,bounty,Hideout,*,7,5,2,
+2026-11-27,bounty,Hideout,AMBER,2,2,0,16000040
+2026-11-27,bounty,Hideout,BELLE,1,0,1,16000046
 2026-11-27,bounty,Hideout,BOLT,1,0,1,16000106
-2026-11-27,bounty,Layer Cake,*,6,6,0,
+2026-11-27,bounty,Hideout,MR. P,1,1,0,16000031
+2026-11-27,bounty,Hideout,PEARL,2,2,0,16000072
+2026-11-27,bounty,Layer Cake,*,16,11,5,
+2026-11-27,bounty,Layer Cake,ALLI,3,1,2,16000095
 2026-11-27,bounty,Layer Cake,BO,2,2,0,16000014
-2026-11-27,bounty,Layer Cake,BROCK,2,2,0,16000003
+2026-11-27,bounty,Layer Cake,BROCK,4,2,2,16000003
+2026-11-27,bounty,Layer Cake,CHESTER,3,2,1,16000063
+2026-11-27,bounty,Layer Cake,MANDY,2,2,0,16000065
 2026-11-27,bounty,Layer Cake,SPIKE,2,2,0,16000005
-2026-11-27,bounty,Shooting Star,*,3,1,2,
+2026-11-27,bounty,Shooting Star,*,11,3,8,
+2026-11-27,bounty,Shooting Star,BELLE,5,1,4,16000046
 2026-11-27,bounty,Shooting Star,COLT,1,1,0,16000001
 2026-11-27,bounty,Shooting Star,GUS,2,0,2,16000061
-2026-11-27,bounty,Tasty Berry,*,1,1,0,
+2026-11-27,bounty,Shooting Star,LILY,3,1,2,16000081
+2026-11-27,bounty,Tasty Berry,*,2,1,1,
 2026-11-27,bounty,Tasty Berry,EL PRIMO,1,1,0,16000010
-2026-11-27,brawlBall,Backyard Bowl,*,1,0,1,
+2026-11-27,bounty,Tasty Berry,PIPER,1,0,1,16000015
+2026-11-27,brawlArena,Silver Highlands,*,10,5,5,
+2026-11-27,brawlArena,Silver Highlands,BROCK,1,0,1,16000003
+2026-11-27,brawlArena,Silver Highlands,EDGAR,3,1,2,16000043
+2026-11-27,brawlArena,Silver Highlands,MANDY,4,2,2,16000065
+2026-11-27,brawlArena,Silver Highlands,PIPER,1,1,0,16000015
+2026-11-27,brawlArena,Silver Highlands,THUNDER FROGS,1,1,0,16000111
+2026-11-27,brawlBall,Backyard Bowl,*,4,2,2,
 2026-11-27,brawlBall,Backyard Bowl,BULL,1,0,1,16000002
-2026-11-27,brawlBall,Pinball Dreams,*,5,2,3,
+2026-11-27,brawlBall,Backyard Bowl,DYNAMIKE,1,1,0,16000009
+2026-11-27,brawlBall,Backyard Bowl,MEG,1,0,1,16000052
+2026-11-27,brawlBall,Backyard Bowl,RICO,1,1,0,16000004
+2026-11-27,brawlBall,Center Stage,*,2,0,2,
+2026-11-27,brawlBall,Center Stage,DOUG,2,0,2,16000071
+2026-11-27,brawlBall,Pinball Dreams,*,13,6,7,
 2026-11-27,brawlBall,Pinball Dreams,AMBER,5,2,3,16000040
+2026-11-27,brawlBall,Pinball Dreams,EMZ,3,1,2,16000030
+2026-11-27,brawlBall,Pinball Dreams,MR. P,3,1,2,16000031
+2026-11-27,brawlBall,Pinball Dreams,RICO,2,2,0,16000004
 2026-11-27,brawlBall,Sneaky Fields,*,3,1,2,
 2026-11-27,brawlBall,Sneaky Fields,LUMI,1,1,0,16000091
 2026-11-27,brawlBall,Sneaky Fields,RICO,2,0,2,16000004
-2026-11-27,brawlBall,Triple Dribble,*,7,3,4,
+2026-11-27,brawlBall,Triple Dribble,*,11,6,5,
 2026-11-27,brawlBall,Triple Dribble,AMBER,1,0,1,16000040
 2026-11-27,brawlBall,Triple Dribble,BARLEY,1,1,0,16000006
+2026-11-27,brawlBall,Triple Dribble,DYNAMIKE,1,1,0,16000009
 2026-11-27,brawlBall,Triple Dribble,EL PRIMO,1,1,0,16000010
 2026-11-27,brawlBall,Triple Dribble,FRANK,2,1,1,16000020
-2026-11-27,brawlBall,Triple Dribble,GRIFF,1,0,1,16000050
+2026-11-27,brawlBall,Triple Dribble,GRIFF,3,2,1,16000050
+2026-11-27,brawlBall,Triple Dribble,KAZE,1,0,1,16000094
 2026-11-27,brawlBall,Triple Dribble,VINCE,1,0,1,16000110
-2026-11-27,gemGrab,Double Swoosh,*,3,2,1,
+2026-11-27,deathmatch5v5,Big Battle Basin,*,5,1,4,
+2026-11-27,deathmatch5v5,Big Battle Basin,KENJI,1,0,1,16000085
+2026-11-27,deathmatch5v5,Big Battle Basin,PIERCE,1,0,1,16000099
+2026-11-27,deathmatch5v5,Big Battle Basin,SQUEAK,3,1,2,16000047
+2026-11-27,gemGrab,Double Swoosh,*,5,4,1,
 2026-11-27,gemGrab,Double Swoosh,COLETTE,3,2,1,16000039
-2026-11-27,gemGrab,Gem Fort,*,9,3,6,
+2026-11-27,gemGrab,Double Swoosh,LOU,2,2,0,16000041
+2026-11-27,gemGrab,Gem Fort,*,12,4,8,
 2026-11-27,gemGrab,Gem Fort,BO,3,0,3,16000014
 2026-11-27,gemGrab,Gem Fort,BULL,3,2,1,16000002
+2026-11-27,gemGrab,Gem Fort,DOUG,1,1,0,16000071
+2026-11-27,gemGrab,Gem Fort,EDGAR,2,0,2,16000043
 2026-11-27,gemGrab,Gem Fort,LOU,3,1,2,16000041
-2026-11-27,gemGrab,Undermine,*,1,0,1,
-2026-11-27,gemGrab,Undermine,RICO,1,0,1,16000004
-2026-11-27,heist,Bridge Too Far,*,8,4,4,
+2026-11-27,gemGrab,Undermine,*,10,3,7,
+2026-11-27,gemGrab,Undermine,LOU,3,1,2,16000041
+2026-11-27,gemGrab,Undermine,RICO,2,0,2,16000004
+2026-11-27,gemGrab,Undermine,SPIKE,4,1,3,16000005
+2026-11-27,gemGrab,Undermine,SURGE,1,1,0,16000038
+2026-11-27,heist,Bridge Too Far,*,12,4,8,
 2026-11-27,heist,Bridge Too Far,8-BIT,3,2,1,16000027
+2026-11-27,heist,Bridge Too Far,BROCK,2,0,2,16000003
+2026-11-27,heist,Bridge Too Far,CLANCY,2,0,2,16000083
 2026-11-27,heist,Bridge Too Far,COLETTE,2,0,2,16000039
 2026-11-27,heist,Bridge Too Far,COLT,3,2,1,16000001
-2026-11-27,heist,Hot Potato,*,5,1,4,
+2026-11-27,heist,Hot Potato,*,19,10,9,
 2026-11-27,heist,Hot Potato,BULL,1,0,1,16000002
+2026-11-27,heist,Hot Potato,BUZZ,3,1,2,16000049
 2026-11-27,heist,Hot Potato,COLT,2,0,2,16000001
+2026-11-27,heist,Hot Potato,EDGAR,1,1,0,16000043
+2026-11-27,heist,Hot Potato,EL PRIMO,2,0,2,16000010
 2026-11-27,heist,Hot Potato,GRIFF,1,0,1,16000050
+2026-11-27,heist,Hot Potato,JESSIE,1,1,0,16000007
 2026-11-27,heist,Hot Potato,LOU,1,1,0,16000041
-2026-11-27,heist,Hot Tubs,*,2,2,0,
+2026-11-27,heist,Hot Potato,MELODIE,2,2,0,16000078
+2026-11-27,heist,Hot Potato,MICO,2,2,0,16000075
+2026-11-27,heist,Hot Potato,NITA,2,2,0,16000008
+2026-11-27,heist,Hot Potato,RICO,1,0,1,16000004
+2026-11-27,heist,Hot Tubs,*,3,3,0,
+2026-11-27,heist,Hot Tubs,AMBER,1,1,0,16000040
 2026-11-27,heist,Hot Tubs,NORI,2,2,0,16000107
-2026-11-27,heist,Safe Zone,*,6,3,3,
+2026-11-27,heist,Kaboom Canyon,*,2,2,0,
+2026-11-27,heist,Kaboom Canyon,8-BIT,2,2,0,16000027
+2026-11-27,heist,Safe Zone,*,8,5,3,
 2026-11-27,heist,Safe Zone,BROCK,3,2,1,16000003
+2026-11-27,heist,Safe Zone,COLETTE,2,2,0,16000039
 2026-11-27,heist,Safe Zone,NORI,3,1,2,16000107
-2026-11-27,hotZone,Dueling Beetles,*,3,1,2,
+2026-11-27,hotZone,Dueling Beetles,*,9,5,4,
+2026-11-27,hotZone,Dueling Beetles,EMZ,2,2,0,16000030
+2026-11-27,hotZone,Dueling Beetles,JESSIE,1,1,0,16000007
 2026-11-27,hotZone,Dueling Beetles,LILY,2,0,2,16000081
 2026-11-27,hotZone,Dueling Beetles,LOU,1,1,0,16000041
-2026-11-27,hotZone,Golden Bay,*,3,1,2,
+2026-11-27,hotZone,Dueling Beetles,MR. P,3,1,2,16000031
+2026-11-27,hotZone,Golden Bay,*,5,2,3,
+2026-11-27,hotZone,Golden Bay,EMZ,1,1,0,16000030
 2026-11-27,hotZone,Golden Bay,GALE,1,0,1,16000035
 2026-11-27,hotZone,Golden Bay,OLLIE,1,1,0,16000090
 2026-11-27,hotZone,Golden Bay,SHADE,1,0,1,16000086
-2026-11-27,hotZone,Parallel Plays,*,2,1,1,
+2026-11-27,hotZone,Golden Bay,THUNDER FROGS,1,0,1,16000111
+2026-11-27,hotZone,Parallel Plays,*,6,3,3,
+2026-11-27,hotZone,Parallel Plays,BULL,2,2,0,16000002
 2026-11-27,hotZone,Parallel Plays,EMZ,1,0,1,16000030
+2026-11-27,hotZone,Parallel Plays,SHADE,1,0,1,16000086
 2026-11-27,hotZone,Parallel Plays,SIRIUS,1,1,0,16000102
-2026-11-27,hotZone,Ring of Fire,*,4,2,2,
+2026-11-27,hotZone,Parallel Plays,THUNDER FROGS,1,0,1,16000111
+2026-11-27,hotZone,Ring of Fire,*,9,6,3,
 2026-11-27,hotZone,Ring of Fire,BERRY,2,0,2,16000082
+2026-11-27,hotZone,Ring of Fire,BO,3,2,1,16000014
+2026-11-27,hotZone,Ring of Fire,LILY,2,2,0,16000081
 2026-11-27,hotZone,Ring of Fire,TICK,2,2,0,16000022
-2026-11-27,knockout,Belle's Rock,*,1,1,0,
-2026-11-27,knockout,Belle's Rock,RICO,1,1,0,16000004
+2026-11-27,knockout,Belle's Rock,*,6,4,2,
+2026-11-27,knockout,Belle's Rock,LARRY & LAWRIE,2,0,2,16000077
+2026-11-27,knockout,Belle's Rock,RICO,2,2,0,16000004
+2026-11-27,knockout,Belle's Rock,TICK,2,2,0,16000022
 2026-11-27,knockout,Double Decker,*,2,2,0,
 2026-11-27,knockout,Double Decker,MR. P,2,2,0,16000031
 2026-11-27,knockout,Flaring Phoenix,*,7,4,3,
@@ -71,8 +142,13 @@ date,mode,map,brawler,games,club_wins,club_losses,brawler_id
 2026-11-27,knockout,Flaring Phoenix,LUMI,1,0,1,16000091
 2026-11-27,knockout,Flaring Phoenix,MORTIS,2,2,0,16000011
 2026-11-27,knockout,Flaring Phoenix,PEARL,2,2,0,16000072
-2026-11-27,knockout,Goldarm Gulch,*,1,1,0,
+2026-11-27,knockout,Goldarm Gulch,*,4,2,2,
 2026-11-27,knockout,Goldarm Gulch,BROCK,1,1,0,16000003
+2026-11-27,knockout,Goldarm Gulch,RICO,3,1,2,16000004
+2026-11-27,knockout,New Horizons,*,8,3,5,
+2026-11-27,knockout,New Horizons,MANDY,3,1,2,16000065
+2026-11-27,knockout,New Horizons,MICO,3,2,1,16000075
+2026-11-27,knockout,New Horizons,PEARL,2,0,2,16000072
 2026-11-27,knockout,Out in the Open,*,1,0,1,
 2026-11-27,knockout,Out in the Open,PIPER,1,0,1,16000015
 2026-11-27,knockout,Please Remain Standing,*,13,7,6,
