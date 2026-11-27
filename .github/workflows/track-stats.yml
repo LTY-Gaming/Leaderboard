@@ -67,7 +67,7 @@ jobs:
           mkdir -p _site
           cp dashboard.html _site/index.html
           cp club_members.csv club_daily.csv za_clubs.csv za_players.csv _site/
-          cp ranked_stats.csv ranked_meta.json _site/ 2>/dev/null || true
+          cp ranked_stats.csv ranked_daily.csv ranked_meta.json _site/ 2>/dev/null || true
 
       - uses: actions/upload-pages-artifact@v3
         with:

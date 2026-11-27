@@ -77,6 +77,9 @@ details summary{cursor:pointer;color:var(--dim);margin:10px 0;font-size:13px}
 select.inp{background-color:var(--panel);color:var(--text)}
 select.inp option,select.inp optgroup{background:var(--panel);color:var(--text)}
 .bi{width:22px;height:22px;border-radius:6px;vertical-align:middle;margin-right:6px}
+.grid>div.clk{cursor:pointer}
+.grid>div.sel{outline:1px solid var(--gold)}
+.mapdetail{background:var(--ph);border-radius:12px;padding:12px 14px;margin:10px 0}
 </style>
 </head>
 <body>
@@ -98,7 +101,7 @@ select.inp option,select.inp optgroup{background:var(--panel);color:var(--text)}
   <div class="card" id="rankedCard" style="display:none"><h2>Ranked leaderboard</h2><p class="note" id="rankedNote"></p><div id="tierChips"></div><canvas id="cTier" height="90"></canvas><div class="tw" id="tRanked" style="margin-top:14px"></div></div>
 
   <div class="card" id="sec-elo" style="display:none"><h2>Elo gained and lost</h2><div class="bar" id="eloBar"></div>
-    <div class="grid" id="eloCards"></div><p class="note" id="eloNote"></p><canvas id="cElo" height="110"></canvas>
+    <div class="grid" id="eloCards"></div><div id="eloMap"></div><p class="note" id="eloNote"></p><canvas id="cElo" height="110"></canvas>
     <div class="tw" id="tElo" style="margin-top:14px"></div></div>
 
   <div class="card" id="sec-mapbook" style="display:none"><h2>Ranked maps</h2>
@@ -140,7 +143,7 @@ select.inp option,select.inp optgroup{background:var(--panel);color:var(--text)}
 
 <div id="modal"><div class="mbox"><button class="btn small" id="mclose" aria-label="Close">✕</button><div id="mbody"></div></div></div>
 <script>
-const SHOW_MEMBER_NAMES = true;   // flip to true once everyone is fine with names being public
+const SHOW_MEMBER_NAMES = false;   // flip to true once everyone is fine with names being public
 // add more goals here, e.g. {label: '600k trophies', type: 'trophies', target: 600000}
 const GOALS = [{label: 'Top 10 in South Africa', type: 'rank', target: 10}];
 const $ = id => document.getElementById(id);
@@ -155,7 +158,7 @@ const ROLES = {president:'President', vicePresident:'Vice President', senior:'Se
 const ROLE_ORDER = {president:0, vicePresident:1, senior:2, member:3};
 const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0, 10);
 const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null, RIVAL = null, RACE_M = null, RACE_E = null, ELO_P = '7';
+let GOLD, TEAL, PINK, DATA = null, CTX = null, ME = null, RIVAL = null, RACE_M = null, RACE_E = null, ELO_P = '7', ELO_SEL = null;
 const paint = () => { GOLD = cssVar('--gold'); TEAL = cssVar('--teal'); PINK = cssVar('--pink'); };
 const store = (k, v) => { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch (e) {} };
 const fetchStore = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
@@ -260,7 +263,7 @@ function renderMapBook(rs, rm, meRow) {
     `. Win rates include both teams. "Beat us" means the brawler was on the other team. A brawler needs ${MIN_GAMES}+ games to be listed.`;
 }
 
-function render(mem, club, zc, zp, rs = [], rm = null) {
+function render(mem, club, zc, zp, rs = [], rm = null, rd = []) {
   paint();
   const MG = group(mem), md = [...MG.keys()].sort(), L = md[md.length - 1];
   if (!L) throw new Error('no data yet, run the workflow once');
@@ -544,6 +547,36 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
     const curSeason = Math.max(...eloMembers.map(r => num(r.ranked_season_id)));
     const PAIRS = new Map(eloMembers.map(r => [r.tag, eloPairs(r.tag)]));
     const sum = (a, f) => a.reduce((x, y) => x + f(y), 0);
+    // map behind the gained/lost tiles: most club wins (or losses) in the period, plus the top 3 brawlers there
+    const showEloMap = p => {
+      const box = $('eloMap');
+      if (ELO_SEL !== 'g' && ELO_SEL !== 'l') { box.innerHTML = ''; return; }
+      const wins = ELO_SEL === 'g', key = wins ? 'w' : 'l', word = wins ? 'wins' : 'losses';
+      const count = c => `${c} ${c === 1 ? (wins ? 'win' : 'loss') : word}`, games = g => `${g} game${g === 1 ? '' : 's'}`;
+      const note = msg => { box.innerHTML = `<div class="mapdetail"><p class="note">${msg}</p></div>`; };
+      if (!rd.length) return note('Map results start building up from the next ranked collection run.');
+      const from = p === 'S' ? '' : addDays(L, -Number(p));
+      const inPeriod = rd.filter(r => !from || r.date > from);
+      const maps = new Map();
+      inPeriod.filter(r => r.brawler === '*').forEach(r => {
+        const k = r.mode + '|' + r.map, o = maps.get(k) || {mode: r.mode, map: r.map, g: 0, w: 0, l: 0};
+        o.g += num(r.games) || 0; o.w += num(r.club_wins) || 0; o.l += num(r.club_losses) || 0; maps.set(k, o);
+      });
+      const top = [...maps.values()].sort((a, b) => b[key] - a[key] || b.g - a.g)[0];
+      if (!top || !top[key]) return note(`No ranked ${word} recorded in this period yet. Map tracking started on ${esc(rd.map(r => r.date).sort()[0])}.`);
+      const by = new Map();
+      inPeriod.filter(r => r.brawler !== '*' && r.mode === top.mode && r.map === top.map).forEach(r => {
+        const o = by.get(r.brawler) || {b: r.brawler, g: 0, w: 0, l: 0, id: ''};
+        o.g += num(r.games) || 0; o.w += num(r.club_wins) || 0; o.l += num(r.club_losses) || 0; o.id = r.brawler_id || o.id; by.set(r.brawler, o);
+      });
+      const best = [...by.values()].sort((a, b) => b[key] - a[key] || b.g - a.g).slice(0, 3);
+      const when = p === 'S' ? 'since tracking started' : `in the last ${p} days`;
+      box.innerHTML = `<div class="mapdetail"><div class="k">Most ${word} ${when}</div><div class="v">${esc(top.map)}</div>` +
+        `<p class="note">${esc(pretty(top.mode.replace(/([A-Z])/g, ' $1')))}: ${count(top[key])} from ${games(top.g)} (${Math.round(top.w / top.g * 100)}% won)</p>` +
+        (best.length ? `<div class="k">${wins ? 'Brawlers with the most wins here' : 'Brawlers with the most losses here'}</div><ul>` +
+          best.map(x => `<li>${x.id ? `<img class="bi" src="https://cdn.brawlify.com/brawlers/borderless/${esc(x.id)}.png" alt="" loading="lazy" onerror="this.remove()">` : ''}<b>${esc(pretty(x.b))}</b>: ${count(x[key])} from ${games(x.g)}</li>`).join('') + '</ul>' : '') +
+        `<p class="note">Only counts ranked games our members played. It shows where we won or lost games, not the exact Elo.</p></div>`;
+    };
     const drawElo = p => {
       const inP = x => p === 'S' ? x.s === curSeason : x.d > addDays(L, -Number(p));
       const rows = eloMembers.map(r => {
@@ -551,8 +584,11 @@ function render(mem, club, zc, zp, rs = [], rm = null) {
         return {tag: r.tag, name: r.name, elo: num(r.ranked_elo), g, l, net: g - l, best: ps.length ? Math.max(0, ...ps.map(x => x.v)) : null};
       });
       const G = sum(rows, r => r.g), Lo = sum(rows, r => r.l);
-      $('eloCards').innerHTML = stat('Elo gained', `<span class="up">${sgn(G)}</span>`) + stat('Elo lost', `<span class="down">${Lo ? '−' + fmt(Lo) : '0'}</span>`) + stat('Net', `<span class="${cls(G - Lo)}">${sgn(G - Lo)}</span>`);
-      $('eloNote').textContent = 'Worked out from one reading a day, so a day with both wins and losses only shows the difference. The real numbers are at least this big. Season resets are ignored.' + (p === 'S' ? ` Season ${curSeason}, since tracking started.` : '');
+      const tile = (label, val, tap) => `<div${tap ? ` class="clk${ELO_SEL === tap ? ' sel' : ''}" data-tap="${tap}"` : ''}><div class="k">${label}</div><div class="v">${val}</div></div>`;
+      $('eloCards').innerHTML = tile('Elo gained', `<span class="up">${sgn(G)}</span>`, 'g') + tile('Elo lost', `<span class="down">${Lo ? '−' + fmt(Lo) : '0'}</span>`, 'l') + tile('Net', `<span class="${cls(G - Lo)}">${sgn(G - Lo)}</span>`);
+      $('eloCards').onclick = e => { const c = e.target.closest('[data-tap]'); if (c) { ELO_SEL = ELO_SEL === c.dataset.tap ? null : c.dataset.tap; drawElo(ELO_P); } };
+      showEloMap(p);
+      $('eloNote').textContent = 'Worked out from one reading a day, so a day with both wins and losses only shows the difference. The real numbers are at least this big. Season resets are ignored. Tap "Elo gained" or "Elo lost" to see the map behind it.' + (p === 'S' ? ` Season ${curSeason}, since tracking started.` : '');
       const byD = new Map();
       eloMembers.forEach(r => PAIRS.get(r.tag).filter(inP).forEach(x => { const o = byD.get(x.d) || {g: 0, l: 0}; if (x.v > 0) o.g += x.v; else o.l += -x.v; byD.set(x.d, o); }));
       const dd = [...byD.keys()].sort();
@@ -682,7 +718,8 @@ $('themeBtn').onclick = () => { setTheme(document.documentElement.dataset.theme 
     const [mem, club, zc, zp] = await Promise.all(['club_members', 'club_daily', 'za_clubs', 'za_players'].map(load));
     const rs = await load('ranked_stats').catch(() => []);
     const rm = await fetch('ranked_meta.json?' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
-    DATA = [mem, club, zc, zp, rs, rm]; render(...DATA);
+    const rd = await load('ranked_daily').catch(() => []);
+    DATA = [mem, club, zc, zp, rs, rm, rd]; render(...DATA);
   } catch (e) {
     $('err').style.display = 'block';
     $('err').innerHTML = 'Could not load the data: <code>' + esc(e.message) + '</code>. Run the workflow once so the CSV files exist, and open the live site instead of the file on your computer.';
